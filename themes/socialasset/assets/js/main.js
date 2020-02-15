@@ -168,6 +168,22 @@ $('.hh-accordion-tab-row').removeClass('remove-border');
 });
 
 
+if (windowWidth > 767) {
+  if( $('#sidebar').length ){
+  $('#sidebar').stickySidebar({
+      topSpacing: 100,
+      bottomSpacing: 60
+  });
+}
+}
+
+$('#scrollToAarea').onePageNav({
+  changeHash: false,
+  scrollSpeed: 500,
+  scrollThreshold: 0.5,
+  filter: '',
+  easing: 'swing',
+});
 
 
 
