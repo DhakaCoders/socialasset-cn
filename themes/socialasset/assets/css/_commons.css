@@ -88,7 +88,8 @@ Containers
 	
 }
 .container-lg{
-
+	max-width: 1395px;
+	width: 100%;
 }
 .container{
 	max-width: 1270px;
