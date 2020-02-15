@@ -156,13 +156,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
 /*Rannojit*/
 
 var allPanels = $('.hh-accordion-des').hide();
+$('.hh-accordion-tab-row').removeClass('remove-border');
   $('.hh-accordion-title').click(function() {
         allPanels.slideUp();
         $('.hh-accordion-title').removeClass('hh-accordion-active');
+        $('.hh-accordion-tab-row').removeClass('remove-border');
         $(this).next().slideDown();
         $(this).addClass('hh-accordion-active');
+        $(this).parent().next().addClass('remove-border');
         return false;
-  });
+});
 
 
 
