@@ -155,6 +155,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /*Rannojit*/
 
+var allPanels = $('.hh-accordion-des').hide();
+  $('.hh-accordion-title').click(function() {
+        allPanels.slideUp();
+        $('.hh-accordion-title').removeClass('hh-accordion-active');
+        $(this).next().slideDown();
+        $(this).addClass('hh-accordion-active');
+        return false;
+  });
 
 
 

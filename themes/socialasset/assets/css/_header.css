@@ -157,11 +157,12 @@ nav.main-nav ul.sub-menu li:hover:before {
     height: 100%;
 }
 
-nav.main-nav ul li:hover a,
-nav.main-nav ul li.current-menu-item a{
+nav.main-nav ul li:hover a{
 	color: #0055FF;
 }
-
+.main-nav > ul > li.current-menu-item > a:after{
+	transform: scale(1, 1);
+}
 
 .humberger-menu-btn{
 	text-align: center;

@@ -98,8 +98,8 @@ Containers
 
 }
 
-.container-sm{
-
+.container-xs{
+	max-width: 850px;
 }
 
 
