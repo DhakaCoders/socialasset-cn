@@ -1,6 +1,9 @@
 .faq-page-sec-cntlr{
 	background: #f4f5f9;
 	padding: 150px 0 290px;
+	-webkit-box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
+	-moz-box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
+	box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
 }
 
 .faq-page-entry-hdr h1{
