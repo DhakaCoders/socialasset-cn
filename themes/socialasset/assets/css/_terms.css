@@ -1,6 +1,6 @@
 .policy-page-sec {
-	padding-top:105px;
-	padding-bottom:285px;
+	padding-top:120px;
+	padding-bottom:265px;
 	-webkit-box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
 	-moz-box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
 	box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
@@ -8,7 +8,7 @@
 }
 .policy-inner {
 	padding-left: 75px;
-	padding-right: 105px;
+	padding-right: 99px;
 }
 #items-content #sidebar{
 	width: 21%;
@@ -16,7 +16,7 @@
 }
 #items-content #sidebar .tcheadings{
 	padding: 25px 28px 20px 28px;
-	min-height: 330px;
+	min-height: 300px;
 	-webkit-box-shadow: 15px 0px 48px -26px rgba(219,221,221,1);
 	-moz-box-shadow: 15px 0px 48px -26px rgba(219,221,221,1);
 	box-shadow: 15px 0px 48px -26px rgba(219,221,221,1);
@@ -26,9 +26,8 @@
 	color:#000;
 	text-transform: capitalize;
 	font-size: 22px;
-	font-weight: bold;
 	margin: 0;
-	margin-bottom:28px;
+	margin-bottom:30px;
 }
 .item-menu ul{
 	list-style: none;
@@ -36,9 +35,10 @@
 	padding: 0;
 }
 .item-menu ul li{
-	padding: 9px 0;
+	padding: 0 0 25px;
 	font-size: 18px;
 	line-height: 21px;
+	font-weight: 500;
 }
 
 .item-menu ul li a{
@@ -53,7 +53,7 @@
 }
 .item-menu ul li.active a,
 .item-menu ul li.current a{
-	color:#069e5f;
+	color: #0055FF;
 }
 .itemsipcontent{
 	float: right;
@@ -63,26 +63,30 @@
 	padding-left:66px;
 }
 .item-cont p{
-	margin-bottom: 35px;
-	font-size: 17px;
+	margin-bottom: 30px;
+	font-size: 18px;
 	line-height: 1.5;
 }
 
 .item-cont h4{
-	color:#ff4526;
+	color:#0055FF;
 	margin: 0;
+	margin-top:27px;
 	margin-bottom:25px;
 }
-.item-cont h4{
-	color: #0055FF;
-	margin-top:27px;
-	margin-bottom:20px;
+.item-cont h6{
+	font-size: 22px;
+}
+
+.privacy-policy,
+.cookies-services{
+	padding-top: 15px;
 }
 .privacy-policy h5{
 	margin-top: 0;
 }
 #termsofservices{
-	padding-top: 35px;
+	padding-top: 25px;
 }
 .pdt-top-45{
 	padding-top: 45px;
