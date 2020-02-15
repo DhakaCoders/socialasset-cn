@@ -1,5 +1,5 @@
 /**
-Commons
+Commons 
 */
 *, *:focus,.btn,.btn:focus{
 	outline: 0!important;
@@ -85,18 +85,22 @@ Containers
 	clear: both;
 }
 .container-xlg{
-	
-}
-.container-lg{
 	max-width: 1395px;
 	width: 100%;
+}
+.container-lg{
+<<<<<<< HEAD
+	
+=======
+	max-width: 1300px;
+>>>>>>> 698c9b036b0167272fdbb7753944eed592517b48
 }
 .container{
 	max-width: 1270px;
 	width: 100%;
 }
 .container-md{
-
+	
 }
 
 .container-xs{

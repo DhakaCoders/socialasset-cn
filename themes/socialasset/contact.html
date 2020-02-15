@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home Page</title>
+	<title>Contact</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -82,19 +82,112 @@
   </div>
 </header>
 
-<section class="main-content" style="background: #707070; height: 200px;">
+<section class="sa-contact-form-sec-wrp">
   <div class="container">
-      <div class="row">
-        <div class="col-md-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="sa-contact-form-block">
+          <div class="sa-contact-form-wrp">
+            <form>
+              <div class="sa-form-group-wrap clearfix">
+                <div class="sa-input form-group">
+                  <label>Name *</label>
+                  <input type="text" name="name" data-error="Name is required." required>
+                </div>
+                <div class="sa-input form-group">
+                  <label>Surname *</label>
+                  <input type="text" name="name" data-error="Email is required." required>
+                </div>
+              </div>
+              <div class="sa-form-group-wrap clearfix">
+                <div class="sa-input form-group">
+                  <label>Select Your Type *</label>
+                  <input type="email" name="email" data-error="Email is required." required>
+                </div>
+                <div class="sa-input select-input form-group">
+                  <label >Select Department</label>
+                  <div class="select-dep">
+                    <select name="select-dep" class="selectpicker form-control" title="User, NGO or Businesses">
+                      <option value="1">Dep1</option>
+                      <option value="2">Dep2</option>
+                      <option value="3">Dep3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-        </div>
-        <div class="col-md-6">
-
+              <div class="sa-form-group-wrap clearfix">
+                <div class="sa-input select-input form-group">
+                  <label >Industry background</label>
+                  <div class="select-dep">
+                    <select name="select-dep" class="selectpicker form-control" title="Select">
+                      <option value="1">Dep1</option>
+                      <option value="2">Dep2</option>
+                      <option value="3">Dep3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="sa-input form-group">
+                  <label>Subject</label>
+                  <input type="text" name="subject">
+                </div>
+              </div>
+              
+              <div class="sa-contact-message clearfix">
+                <div class="form-group">
+                  <label>Message *</label>
+                  <textarea name="message" data-error="Message is required." required></textarea>
+                </div>
+              </div>
+              <div class="sa-form-submit-wrap clearfix">
+                <div class="sa-form-submit-btn clearfix">
+                  <input type="submit" name="submit" value="SEND">
+                </div>
+                <div class="sa-form-submit-text">
+                  <p> * Υποχρεωτικά Πεδία </p>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-  </div>    
-</section>
+    </div>
+  </div>
+</section><!-- end of sa-contact-form-sec-wrp-->
 
+
+<section class="sa-google-map-sec-wrp">
+  <div class="map-address">
+    <div class="addr-box">
+      <div class="addr-box-inner">
+        <h3>Our <strong>Headquarters</strong></h3>
+        <ul>
+          <li><a href="#">Kefallinias 46, Athens,<br> Attica 11251, GR</a></li>
+          <li><a href="tel:210 9610761">(+30) 210 9610761</a></li>
+          <li><a href="mailto:info@socialasset.gr">info@socialasset.gr</a></li>
+        </ul>
+        <div class="map-socail">
+          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="map-date">
+          <ul>
+            <li>
+              <span>Monday - Friday</span>
+              <span>09am - 18pm</span>
+            </li>
+            <li>
+              <span>Saturday - Sunday</span>
+              <span>24h Call center</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="map-address-bg"></div>
+    </div>
+  </div>
+  <div id="googlemap" data-latitude="38.03898" data-longitude="23.804699"></div>
+</section>
 
 
 
