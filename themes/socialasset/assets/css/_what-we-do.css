@@ -4,7 +4,7 @@
 	background-repeat: no-repeat !important;
 }
 .page-banner-des-inner{
-	margin-top: 220px;
+	margin-top: 215px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -17,7 +17,7 @@
 }
 
 .wwd-des-section{
-	padding-top: 115px;
+	padding-top: 112px;
 	padding-bottom: 125px;
 	position: relative;
 }
@@ -28,7 +28,7 @@
 }
 .wwd-desc-sct-inner p{
 	text-align: center;
-	padding-bottom: 40px;
+	padding-bottom: 45px;
 	line-height: 30px;
 	font-size: 20px;
 	color: #000000;
@@ -40,7 +40,7 @@
 	left: 0;
 	right: 0;
 	background: #F4F5F9;
-	height: 490px;
+	height: 495px;
 }
 
 
@@ -100,6 +100,7 @@
 
 .wwd-user-section{
 	margin-top: -90px;
+	margin-bottom: -58px;
 }
 .wwd-user-sec-inner{
 	padding: 27px 22px 23px 22px;
@@ -119,7 +120,8 @@
 	bottom: 0;
 	top: 0;
 	background: #0055FF;
-	width: 400px;
+	max-width: 400px;
+	width: 100%;
 }
 .wwd-user-sec-rgt-inner{
 	display: flex;
@@ -159,9 +161,8 @@
 
 .wwd-campaigns-sec{
 	background: #F4F5F9;
-	padding-top: 145px;
-	padding-bottom: 150px;
-	margin-top: -58px;
+	padding-top: 140px;
+	padding-bottom: 142px;
 }
 .wwd-campaigns-title h3{
 	text-align: center;
@@ -191,7 +192,7 @@
 }
 
 .wwd-campaigns-grid-item-des{
-	margin-top: 12px;
+	margin-top: 10px;
 }
 .wwd-campaigns-grid-item-des h6{
 	margin: 0;
