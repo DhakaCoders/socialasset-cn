@@ -225,11 +225,15 @@ $('#scrollToAarea').onePageNav({
 
 $('.masonry').masonry({
   // options
-  itemSelector: '.grid-item'
+  itemSelector: 'ul.masonry li',
+  columnWidth: '.campaigns-list-item-wrp',
+  percentPosition: true,
+  fitWidth: true
+
 });
 
 
 
-    new WOW().init();
+    //new WOW().init();
 
 })(jQuery);
