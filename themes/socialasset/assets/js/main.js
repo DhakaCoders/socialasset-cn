@@ -223,6 +223,12 @@ $('#scrollToAarea').onePageNav({
 
 
 
+$('.masonry').masonry({
+  // options
+  itemSelector: '.grid-item'
+});
+
+
 
     new WOW().init();
 
