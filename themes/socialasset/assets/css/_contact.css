@@ -335,6 +335,10 @@ sa-google-map-sec-wrp
 	#googlemap {
 	    height: 500px;
 	}
+	.sa-contact-form-sec-wrp {
+	    padding-top: 50px;
+	    padding-bottom: 80px;
+	}
 }
 
 @media(max-width: 479px){
