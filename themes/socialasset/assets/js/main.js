@@ -183,7 +183,42 @@ if( $('#googlemap').length ){
 
 
 /*Prashanto*/
+/*
+ Product Details Slider
+*/
 
+if( $('.miraclePlanBigSlider').length ){
+  $('miraclePlanBigSlider').slick({
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // infinite: false,
+    // speed: 700,
+    // dots: false,
+    // arrows: false,
+    // asNavFor: '.miraclePlanthumbSlider'
+
+
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+  });
+}
+
+if( $('.miraclePlanthumbSlider').length ){
+  $('.miraclePlanthumbSlider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: false,
+    arrows: false,
+    focusOnSelect: true,
+    asNavFor: '.miraclePlanBigSlider',
+  });
+
+}
 
 
 
