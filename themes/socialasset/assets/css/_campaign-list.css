@@ -139,9 +139,51 @@ min-height: 42px;
 	width: 25%;
 	padding: 0 10px 20px;
 }
-/*.user-campaign-list-cntlr ul li.campaigns-list-item-50{
+.user-campaign-list-cntlr ul li.campaigns-list-item-50{
 	width: 50%;
-}*/
+}
+.campaigns-list-item-50 .campaigns-item-img{
+	min-height: 430px;
+	border-radius: 5px;
+}
+
+.campaigns-list-item-50 .campaigns-item-des{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: transparent;
+	color: #fff;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,.5);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.campaigns-list-item-50 .campaigns-item-cat-name{
+	margin-left: -17px;
+	margin-right: -10px;
+}
+.campaigns-list-item-50 .campaigns-list-item:hover .campaigns-item-cat-name{
+	margin-left: 0;
+	margin-right: 0;
+}
+.campaigns-list-item-50 .campaigns-item-cat-name strong{
+	background: #4b4c46;
+}
+.campaigns-list-item-50 .campaigns-item-des-btm{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.campaigns-list-item-50 .campaigns-item-des-inr{
+	position: relative;
+	height: 100%;
+}
+.campaigns-list-item-50 .campaigns-vote-percentage-number span{
+	color: #fff;
+}
 .campaigns-item-img{
 	height: 230px;
 	background-size: cover!important;
