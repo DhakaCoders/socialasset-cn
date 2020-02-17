@@ -16,7 +16,7 @@
 }
 .about-story-des-main p{
   font-size: 20px;
-  line-height: 26px;
+  line-height: 31px;
   color: #000;
   margin-bottom: 15px;
 }
@@ -77,7 +77,7 @@
 }
 .core-value-sec{
   background: #0055FF;
-  padding: 95px 0 130px;
+  padding: 95px 0 132px;
   position: relative;
   overflow: hidden;
 }
@@ -126,7 +126,7 @@
 }
 
 .abt-social-asset-sec{
-  padding: 140px 0 200px;
+  padding: 150px 0 185px;
   background: #F4F5F9;
 }
 .abt-social-asset-innr{
@@ -138,6 +138,9 @@
   float: left;
   padding-left: 18px;
   padding-right: 112px;
+  padding-top: 20px;
+  padding: 20px 112px 0 18px;
+
 }
 .abt-social-asset-lft h4{
   color: #000;
@@ -146,10 +149,12 @@
 }
 .abt-social-asset-lft p{
   color: #000;
-  margin-bottom: 38px;
+  margin-bottom: 28px;
+  line-height: 29px;
 }
-
-
+.abt-social-asset-lft p:nth-child(2){
+  line-height: 26px;
+}
 .abt-social-asset-rgt{
   width: 58.4%;
   float: left;
@@ -168,31 +173,51 @@
 .abt-social-asset-rgt li:hover{
   background: #fff;
   -webkit-box-shadow: 0px 0px 35px -19px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 35px -19px rgba(0,0,0,0.75);
+  -ms-box-shadow: 0px 0px 35px -19px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 35px -19px rgba(0,0,0,0.75);
 }
-.abt-social-asset-rgt li i{
+.abt-social-asset-rgt li i {
   display: inline-block;
   vertical-align: baseline;
   position: absolute;
   left: 25px;
-  top: 19px;
+  top: 50%;
   width: 85px;
   height: 85px;
   border-radius: 100%;
   background: #0055FF;
   text-align: center;
-  padding-top: 20px; 
+  padding-top: 20px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
+.abt-social-asset-rgt li i img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+
 .abt-social-asset-rgt li h6{
   font-weight: 700;
   margin-bottom: 12px;
   color: #000;
 }
-.abt-social-asset-rgt p{
-  font-size: 16px;
+.abt-social-asset-rgt p {
+  font-size: 14px;
   margin-bottom: 8px;
   color: #000;
+  line-height: 22px;
+}
+.abt-social-asset-rgt p strong{
+  font-size: 16px;
+  font-weight: 700;
 }
 .abt-social-asset-rgt p strong{
   display: block;

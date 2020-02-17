@@ -2,16 +2,20 @@
 .footer-wrp{
   background: #000417;
   padding-top: 70px;
-}
+} 
 
 .ftr-col-1{
   max-width: 175px;
 }
-.ftr-col-1 h5,
-.ftr-col-2 h5 {
+.ftr-col-1 h5{
   color: #fff;
   font-weight: 700;
   margin-bottom: 20px;
+}
+.ftr-col-2 h5 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 .ftr-col-1 ul li:first-child {
   margin-bottom: 26px;
@@ -37,7 +41,7 @@
   font-size: 14px;
   color: #969392;
   line-height: 22px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 .nl-from-wrp{
   position: relative;
@@ -81,6 +85,9 @@
   padding-top: 4px;
   color: #fff;
   font-size: 20px
+}
+.nl-from-wrp button:hover i{
+  color: #0055FF;
 }
 .ftr-col-2 ul li a{
   display: inline-block;
