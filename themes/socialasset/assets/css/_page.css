@@ -1,0 +1,10 @@
+.hdr-has-shadow{
+	background: #fff;
+-webkit-box-shadow: 0px 14px 23px 0px rgba(227,228,232,1);
+-moz-box-shadow: 0px 14px 23px 0px rgba(227,228,232,1);
+box-shadow: 0px 14px 23px 0px rgba(227,228,232,1);
+}
+
+.gray-bg{
+	background-color: #f4f5f9;
+}
