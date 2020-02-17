@@ -142,7 +142,7 @@
 .hm-wc-social-assets-top {
 	background: #F4F5F9;
 	padding-top: 80px;
-	padding-bottom: 25px;
+	padding-bottom: 122px;
 	position: relative;
 }
 
@@ -181,7 +181,7 @@
 	background: #0055FF;
 	border:  2px solid #0055FF;
 	border-radius: 60px;
-	margin-top: 105px;
+	margin-top: 55px;
 	position: relative;
 }
 .hm-wc-social-assets-top a:hover{
@@ -504,17 +504,32 @@ span.hm-wc-social-assets-top-shape {
 
 
 
+.wwd-user-section.hm-wwd-user-sec {
+    margin: 0!important;
+}
+.wwd-user-section.hm-wwd-user-sec .wwd-user-sec-inner {
+    padding: 0;
+    background: #fff;
+}
+.wwd-user-section.hm-wwd-user-sec .wwd-user-sec-rgt {
+    right: 32px;
+    bottom: 23px;
+    top: 27px;
+}
 
 
 
-
-
-
-
-
-
-
-
+.join-journey-section.hm-join-journey-sec{
+	margin-top: -152px;
+	padding-bottom: 50px;
+}
+.join-journey-section.hm-join-journey-sec .join-journey-sct-grid-img-top {
+    z-index: 4;
+}
+.join-journey-section.hm-join-journey-sec .jjsg-des-top,
+.join-journey-section.hm-join-journey-sec .jjsg-des-bottom {
+    background: #0000;
+}
 
 
 
