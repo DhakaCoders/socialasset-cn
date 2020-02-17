@@ -195,14 +195,13 @@ if( $('.miraclePlanBigSlider').length ){
     speed: 700,
     dots: false,
     arrows: false,
-    asNavFor: '.miraclePlanthumbSlider'
+    //asNavFor: '.miraclePlanthumbSlider'
 
-
-      // dots: false,
-      // infinite: false,
-      // speed: 300,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
+    // dots: false,
+    // infinite: false,
+    // speed: 300,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
   });
 }
 
@@ -215,7 +214,7 @@ if( $('.miraclePlanthumbSlider').length ){
     dots: false,
     arrows: false,
     focusOnSelect: true,
-    asNavFor: '.miraclePlanBigSlider',
+    //asNavFor: '.miraclePlanBigSlider',
   });
 
 }
