@@ -187,6 +187,18 @@ if( $('#googlemap').length ){
  Product Details Slider
 */
 
+if( $('.hm-banner-slider').length ){
+  $('hm-banner-slider').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1
+  });
+}
+
+
+
 if( $('.miraclePlanBigSlider').length ){
   $('miraclePlanBigSlider').slick({
     slidesToShow: 1,
