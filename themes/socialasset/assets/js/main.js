@@ -189,20 +189,20 @@ if( $('#googlemap').length ){
 
 if( $('.miraclePlanBigSlider').length ){
   $('miraclePlanBigSlider').slick({
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
-    // infinite: false,
-    // speed: 700,
-    // dots: false,
-    // arrows: false,
-    // asNavFor: '.miraclePlanthumbSlider'
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    speed: 700,
+    dots: false,
+    arrows: false,
+    asNavFor: '.miraclePlanthumbSlider'
 
 
-      dots: false,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      // dots: false,
+      // infinite: false,
+      // speed: 300,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
   });
 }
 
