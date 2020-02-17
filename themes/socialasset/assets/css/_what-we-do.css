@@ -1,13 +1,29 @@
+.page-banner{
+	position: relative;
+}
 .page-banner-bg{
 	background-size: cover !important;
 	background-position: center center !important;
 	background-repeat: no-repeat !important;
 }
 .page-banner-des-inner{
-	margin-top: 215px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.page-banner-des{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.page-banner-controller .page-banner-des,
+.page-banner-controller .container,
+.page-banner-controller .row,
+.page-banner-controller .col-sm-12,
+.page-banner-controller .page-banner-des-inner{
+	height: 100%;
 }
 .page-banner-des-inner h1.banner-page-title{
 	margin-bottom: 0;
