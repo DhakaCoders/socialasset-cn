@@ -187,6 +187,18 @@ if( $('#googlemap').length ){
  Product Details Slider
 */
 
+if( $('.hm-banner-slider').length ){
+  $('hm-banner-slider').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1
+  });
+}
+
+
+
 if( $('.miraclePlanBigSlider').length ){
   $('miraclePlanBigSlider').slick({
     slidesToShow: 1,
@@ -195,14 +207,13 @@ if( $('.miraclePlanBigSlider').length ){
     speed: 700,
     dots: false,
     arrows: false,
-    asNavFor: '.miraclePlanthumbSlider'
+    //asNavFor: '.miraclePlanthumbSlider'
 
-
-      // dots: false,
-      // infinite: false,
-      // speed: 300,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
+    // dots: false,
+    // infinite: false,
+    // speed: 300,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
   });
 }
 
@@ -215,7 +226,7 @@ if( $('.miraclePlanthumbSlider').length ){
     dots: false,
     arrows: false,
     focusOnSelect: true,
-    asNavFor: '.miraclePlanBigSlider',
+    //asNavFor: '.miraclePlanBigSlider',
   });
 
 }

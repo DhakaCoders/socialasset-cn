@@ -9,3 +9,13 @@
          url('LatoRegular/LatoRegular.svg#LatoRegular') format('svg');
     font-weight: normal;
 }
+
+@font-face {
+	font-family: "NeutrafaceTextBold";
+	src: url("NeutrafaceTextBold/NeutrafaceTextBold.eot");
+	src: url("NeutrafaceTextBold/NeutrafaceTextBold.eot?#iefix") format("embedded-opentype"),
+		url("NeutrafaceTextBold/NeutrafaceTextBold.woff2") format("woff2"),
+		url("NeutrafaceTextBold/NeutrafaceTextBold.woff") format("woff"),
+		url("NeutrafaceTextBold/NeutrafaceTextBold.ttf") format("truetype"),
+		url("NeutrafaceTextBold/NeutrafaceTextBold.svg#Neutraface Text Bold") format("svg");
+}
