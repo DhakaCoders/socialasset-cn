@@ -390,8 +390,119 @@ span.hm-wc-social-assets-top-shape {
 .hm-testimonials-slider-item i{
 	display: inline-block;
 	vertical-align: baseline;
-
 }
+
+
+
+
+
+
+
+
+
+
+.hm-blog-sec{
+	padding: 112px 0 130px;
+}
+.hm-blog-head{
+	padding-bottom: 55px;
+}
+.hm-blog-head h4{
+	font-weight: 700;
+	color: #0054FD;
+	margin-bottom: 22px;
+}
+.hm-blog-head p{
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+.hm-blog-grid-wrp{
+	margin-left: -14px;
+	margin-right: -14px;
+}
+.hm-blog-grid-item{
+	width: 33.333%;
+	float: left;
+	padding-left: 14px;
+	padding-right: 14px;
+	margin-bottom: 15px;
+	position: relative;
+	z-index: 1;
+}
+.hm-blog-grid-item:nth-child(3n+1){
+	clear: left;
+}
+.hm-blog-grid-item-innr{
+	position: relative;
+	-webkit-transition: all .5s ease;
+	 -o-transition: all .5s ease;
+	 transition: all .5s ease; 
+	 border-radius: 8px
+}
+.hm-blog-grid-item-innr:hover{
+	-webkit-box-shadow: 1px 1px 26px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 26px -10px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 26px -10px rgba(0,0,0,0.75);
+}
+.hm-blog-grid-bg{
+	overflow: hidden;
+	border-radius: 8px;
+}
+.hm-blog-grid-bg-main{
+	min-height: 360px;
+	background-position: center center!important;
+	background-size: cover!important;
+	background-repeat: no-repeat!important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	-webkit-transition: all .5s ease;
+	 -o-transition: all .5s ease;
+	 transition: all .5s ease; 
+}
+.hm-blog-grid-item-innr:hover .hm-blog-grid-bg-main{
+	transform: scale(1.05);
+}
+.hm-blog-grid-des{
+	font-family: 'Roboto Condensed', sans-serif;
+	padding: 30px 22px 20px 16px;
+}
+.hm-blog-grid-des h6{
+	font-size: 15px;
+	font-weight: 700;
+	margin-bottom: 6px;
+}
+.hm-blog-grid-des p{
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 19px;
+	margin-bottom: 12px;
+}
+.hm-blog-load-more{
+	padding-top: 15px;
+}
+.hm-blog-load-more a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight:900;
+	line-height: 15px;
+	padding: 16px 70px;
+	color: #fff;
+	background: #0055FF;
+	border:  2px solid #0055FF;
+	border-radius: 60px;
+	position: relative;
+}
+.hm-blog-load-more a:hover{
+	background: #fff;
+	color: #0055FF;
+}
+
+
+
 
 
 
