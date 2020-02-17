@@ -83,6 +83,7 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
+  <span class="login-form-clip"><img src="assets/images/form-clip.png"></span>
   <section class="login-businesses">
     <div class="container">
         <div class="row">
@@ -93,17 +94,53 @@
               </div>
               <div class="login-businesses-form">
                 <div class="fl-tabs clearfix text-center">
-                  <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
-                  <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
+                  <button class="tab-link" data-tab="tab-1"><span>REGISTER</span></button>
+                  <button class="tab-link current" data-tab="tab-2"><span>Log in</span></button>
                 </div>
-                <div id="tab-1" class="fl-tab-content current">
+                <div id="tab-1" class="fl-tab-content">
                   <div class="tab-con-inr">
-                    
+                    <form>
+                        <div class="fl-input-field-row sa-input">
+                          <label>Email *</label>
+                          <input type="email" name="" placeholder="Your Email">
+                        </div>
+                        
+                      </form>
                   </div>
                 </div>
-                <div id="tab-2" class="fl-tab-content">
+                <div id="tab-2" class="fl-tab-content current">
                   <div class="tab-con-inr">
-                    
+                    <div class="login-form">
+                      <form>
+                        <div class="fl-input-field-row sa-input">
+                          <label>Email *</label>
+                          <input type="email" name="" placeholder="Your Email">
+                        </div>
+                        <div class="fl-input-field-row sa-input">
+                          <label>Password *</label>
+                          <input type="password" name="" placeholder="Password">
+                        </div>
+                        <div class="fl-forget-row">
+                          <a href="#">Forgot your password?</a>
+                        </div>
+                        <div class="fl-submit-btn w-full">
+                          <input type="submit" value="Sign In">
+                        </div>
+                        <div class="fl-or-text">
+                          <span>Or</span>
+                        </div>
+                        <div class="fl-sign-in-another">
+                          <a href="#">
+                            <i class="fab fa-google"></i>
+                            Sign In with Google
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                            Sign In with LinkedIn
+                          </a>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
