@@ -16,12 +16,14 @@
 
 /*Prashanto*/
 @import url('_about-us.css');
+@import url('_user-campaign-page.css');
 
 
 /*Rannojit*/
 @import url('_faq.css');
 @import url('_terms.css');
 @import url('_campaign-list.css');
+@import url('_login-register.css');
 
 
 @import url('_contact.css');

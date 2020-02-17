@@ -183,7 +183,42 @@ if( $('#googlemap').length ){
 
 
 /*Prashanto*/
+/*
+ Product Details Slider
+*/
 
+if( $('.miraclePlanBigSlider').length ){
+  $('miraclePlanBigSlider').slick({
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // infinite: false,
+    // speed: 700,
+    // dots: false,
+    // arrows: false,
+    // asNavFor: '.miraclePlanthumbSlider'
+
+
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+  });
+}
+
+if( $('.miraclePlanthumbSlider').length ){
+  $('.miraclePlanthumbSlider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: false,
+    arrows: false,
+    focusOnSelect: true,
+    asNavFor: '.miraclePlanBigSlider',
+  });
+
+}
 
 
 
@@ -225,11 +260,26 @@ $('#scrollToAarea').onePageNav({
 
 $('.masonry').masonry({
   // options
-  itemSelector: '.grid-item'
+  itemSelector: 'ul.masonry li',
+  columnWidth: '.campaigns-list-item-wrp',
+  percentPosition: true,
+  fitWidth: true
+
+});
+
+
+$('div.fl-tabs button').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('div.fl-tabs button').removeClass('current');
+    $('.fl-tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
 });
 
 
 
-    new WOW().init();
+    //new WOW().init();
 
 })(jQuery);
