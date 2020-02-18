@@ -100,6 +100,9 @@
   float: left;
   margin-right: 35px;
 }
+.ftr-col-2 ul li:last-child {
+  margin-right: 0;
+}
 .ftr-col-2 ul li a:hover{
   color: #0055FF;
 }
@@ -171,11 +174,6 @@
 
 
 
-
-
-
-
-
 @media(max-width: 1499px){
 
 }
@@ -199,7 +197,20 @@
 }
 
 @media(max-width: 767px){
-
+  .footer-wrp .ftr-btm {
+    padding: 30px 0 30px;
+  }
+  .ftr-col-2 {
+    max-width: initial;
+    float: none;
+    padding-top: 45px;
+  }
+  .ftr-col-1 {
+    max-width: initial;
+  }
+  .ftr-social {
+    padding-top: 20px;
+  }
 }
 
 @media(max-width: 575px){
@@ -208,10 +219,16 @@
 }
 
 @media(max-width: 479px){
-
-
+  .ftr-col-2 ul li {
+    margin-right: 20px;
+  }
+  .nl-from-wrp input {
+    padding: 20px 70px 20px 15px;
+  }
 }
 
 @media(max-width: 359px){
-
+  .ftr-col-2 ul li a {
+    font-size: 11px;
+  }
 }

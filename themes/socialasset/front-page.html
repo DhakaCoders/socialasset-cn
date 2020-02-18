@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<title>Home Page</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,7 @@
 
 </head>
 <body>
-<header class="header">
+<header class="header d-none">
   <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -165,7 +165,7 @@
 </section>
 
 
-<section class="hm-wc-social-assets-sec " id="hm-wc-social-assets-sec">
+<section class="hm-wc-social-assets-sec" id="hm-wc-social-assets-sec">
   <div class="hm-wc-social-assets-top">
     <div class="container">
       <div class="row">
@@ -184,7 +184,7 @@
 </section>
 
 
-<section class="join-journey-section hm-join-journey-sec">
+<section class="join-journey-section hm-join-journey-sec d-none">
   <div class="container-xlg">
     <div class="row">
       <div class="col-sm-12">
@@ -243,11 +243,17 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-user-support-inner" style="background: url('assets/images/hm-user-support-bg.jpg');">
-          <div class="hm-user-support-rgt-des">
+          <div class="hm-user-support-rgt-des hide-md">
             <h3>For Users</h3>
             <p>Access certified courses and <br> publications related to your field</p>
             <a href="#">SUPPORT A CAMPAIGN</a>
           </div>
+        </div>
+
+        <div class="hm-user-support-rgt-des show-md">
+          <h3>For Users</h3>
+          <p>Access certified courses and <br> publications related to your field</p>
+          <a href="#">SUPPORT A CAMPAIGN</a>
         </div>
       </div>
     </div>
