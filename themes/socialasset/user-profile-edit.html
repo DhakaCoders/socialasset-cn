@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> User Profile</title>
+	<title> User Profile Edit</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -83,18 +83,18 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <section class="user-profile-sec">
+  <section class="user-profile-sec user-profile-edit-sec">
     <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="user-profile-sec-iner width-1115">
               <div class="user-profile-sec-tab">
                 <div class="fl-tabs clearfix">
-                  <button class="tab-link " data-tab="tab-1"><span>My ACCONT</span></button>
-                  <button class="tab-link current" data-tab="tab-2"><span>Contributions</span></button>
+                  <button class="tab-link current" data-tab="tab-1"><span>My ACCONT</span></button>
+                  <button class="tab-link" data-tab="tab-2"><span>Contributions</span></button>
                 </div>
               </div>
-              <div id="tab-1" class="fl-tab-content">
+              <div id="tab-1" class="fl-tab-content current">
                 <div class="tab-con-inr">
                   <div class="tab-con-title">
                     <strong>My Account</strong>
@@ -104,13 +104,21 @@
                       <div class="tab-con-col-4">
                         <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
                           <div class="profile-img">
-                            <img src="assets/images/img_avatar.png">
+                            <input type="file" name="" value="" id="choose-file">
+                            <label for="choose-file">
+                              <i><img src="assets/images/plus-icon-2.png"></i>
+                            </label>
                           </div>
                           <strong>George Malamatlis</strong>
                           <span>George@webflow.gr</span>
+                          <div class="fl-input-field-row sa-input plr-30 text-left">
+                            <label>Username</label>
+                            <input type="text" name="">
+                          </div>
                           <hr>
-                          <div class="profile-submit-btn flx-btn-center">
-                            <input type="submit" name="" value="Edit Profile">
+                          <div class="profile-submit-btn flx-btn-center plr-30">
+                            <input type="submit" name="" value="Save Changes">
+                            <input type="reset" name="" value="Cancel">
                           </div>
                         </div>
                       </div>
@@ -182,7 +190,7 @@
                   </form>
                 </div>
               </div>
-              <div id="tab-2" class="fl-tab-content current">
+              <div id="tab-2" class="fl-tab-content">
                 <div class="tab-con-inr">
                   <div class="user-profile-1-hdr clearfix">
                     <strong>Contributions</strong>
