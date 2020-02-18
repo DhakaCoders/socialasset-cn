@@ -34,7 +34,7 @@
 	width: 100%
 }
 .hm-banner-design-1 .hm-banner-slider-item-innr{
-	padding-top: 220px;
+	padding-top: 222px;
 	padding-bottom: 50px;
 	max-width: 950px;
 	position: relative;
@@ -42,7 +42,7 @@
 }
 .hm-banner-design-1 .hm-banner-slider-item-lft-bg{
 	width: 46%;
-	min-height: 440px;
+	min-height: 442px;
 	float: left;
 	background-position: center center!important;
 	background-size: cover!important;
@@ -98,7 +98,7 @@
 
 
 .hm-banner-design-2 .hm-banner-slider-item-innr{
-	padding-top: 330px;
+	padding-top: 322px;
 	padding-bottom: 50px;
 	max-width: 800px;
 	margin: 0 auto;
@@ -114,7 +114,7 @@
 	margin-bottom: 38px;
 	text-transform: uppercase;
 	font-weight: 700;
-	line-height: 55px;
+	line-height: 56px;
 
 }
 
@@ -148,7 +148,7 @@
 }
 
 .hm-wc-social-assets-top-innr{
-	margin: 810px;
+	max-width: 805px;
 	margin: 0 auto;
 	position: relative;
 	z-index: 5
@@ -199,6 +199,9 @@ span.hm-wc-social-assets-top-shape {
     z-index: 2;
     background: url(../images/hm-wc-social-assets-top-shape-1.png);
     background-repeat: repeat-x;
+}
+.hm-user-support-sec{
+	padding-bottom: 125px;
 }
 .hm-user-support-inner{
 	background-repeat: no-repeat !important;
@@ -402,6 +405,7 @@ span.hm-wc-social-assets-top-shape {
 	font-weight: 700;
 }
 .hm-testimonials-head p{
+	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 16px;
 	line-height: 20px;
 }
@@ -434,6 +438,25 @@ span.hm-wc-social-assets-top-shape {
 .hm-testimonials-slider-item p strong{
 	text-transform: uppercase;
 }
+span.top-q-icon{
+	max-width: 36px;	
+	font-size: 81px;
+	color: #0054FD;
+	position: absolute;
+	display: inline-block;
+	top: 42px;
+	left: 215px;
+}
+span.btm-q-icon{
+	max-width: 36px;
+	font-size: 81px;
+	color: #0054FD;
+	position: absolute;
+	display: inline-block;
+	bottom: 85px;
+	right: 50px;
+}
+
 
 .hm-testimonials-ftr {
 	padding-top: 22px;	
@@ -573,7 +596,7 @@ span.hm-wc-social-assets-top-shape {
 }
 .join-journey-section.hm-join-journey-sec{
 	margin-top: -152px;
-	padding-bottom: 50px;
+	padding-bottom: 60px;
 }
 .join-journey-section.hm-join-journey-sec .join-journey-sct-grid-img-top {
     z-index: 4;
