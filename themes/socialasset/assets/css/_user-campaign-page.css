@@ -6,11 +6,53 @@
   width: 60.5%;
   float: left;
 }
-.miraclePlanBigSlider-item{
+.miraclePlanBigSlider-item {
+  position: relative;
   min-height: 480px;
+  text-align: center;
+}
+.miraclePlanBigSlider-item::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00e";
+  color: #fff;
+  font-size: 25px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -webkit-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.miraclePlanBigSlider-item:hover::before {
+  opacity: 1;
+}
+
+
+.miraclePlanBigSlider-item-bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
   background-repeat: no-repeat!important;
   background-position: center center!important;
   background-size: cover!important;
+}
+.miraclePlanBigSlider-item-bg > span{
+  display: none;
+  max-width: 750px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+.miraclePlanBigSlider-item-bg > span img{
+  width: 100%;
+  height: auto; 
 }
 .miraclePlanthumbSlider{
   text-align: center;
@@ -133,16 +175,32 @@ span.miraclePlanthumbSlider-item img{
   display: inline-block;
   vertical-align: baseline;
   padding-left: 25px;
+  position: relative;
+}
+.miracle-plan-progress-btm-des span::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f017";
+  color: #000;
+  font-size: 15px;
+  position: absolute;
+  top:0;
+  left: 0;
 }
 .miracle-plan-progress-main{
   background: #D1D1D1;
-  border-radius: 20px
+  height: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background: #d1d1d1;
+  position: relative;
 }
-.miracle-plan-progress-main-innr{
+.miracle-plan-progress-main > span{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
   background: #03D39B;
-  border-radius: 20px;
-  width: 50%;
-  min-height:10px; 
+  border-radius: 10px;
 }
 .miracle-plan-progress-link-wrp{
   position: relative;
@@ -166,19 +224,32 @@ span.miraclePlanthumbSlider-item img{
 }
 .miracle-plan-progress-link-wrp .share-btn{
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: middle;
   position: absolute;
-  right: 52px;
-  top: 22px;
+  right: 0; 
+  top: 16px;
   font-size: 12px;
   color: #000;
   font-weight: 700;
   text-transform: uppercase;
 }
-.miracle-plan-progress-link-wrp .share-btn:hover{
-  color: #0055FF;
+.miracle-plan-progress-link-wrp .share-btn a{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 9px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  background: #E2E2E2;
+  padding-top: 7px;
+  color: #000;
+  font-size: 15px;
 }
-
+.miracle-plan-progress-link-wrp .share-btn a:hover{
+  background: #0055FF ;
+  color: #fff;
+}
 
 .user-story-cmpaign-sec{
   padding-top: 45px;
@@ -199,39 +270,26 @@ span.miraclePlanthumbSlider-item img{
   margin-bottom: 23px;
   line-height: 24px;
 }
-.user-story-cmpaign-bg-wrp{
-  padding-top: 60px;
-}
-.user-story-cmpaign-fw-bg{
-  min-height: 350px;
-  background-repeat: no-repeat!important;
-  background-position: center center!important;
-  background-size: cover!important;
-  margin-bottom: 25px;
-}
-.user-story-part-bg{
+.user-story-gallery{
+  padding: 60px 0 35px;
   margin-right: -10px;
   margin-left: -10px;
-  margin-bottom: 57px;
 }
-.user-story-two-part-lft{
-  width: 52%;
-  float: left;
+.user-story-gallery-item {
+  margin-bottom: 25px;
   padding-left: 10px;
   padding-right: 10px;
-}
-.user-story-two-part-rgt{
-  width: 48%;
+  width: 50%;
   float: left;
-  padding-left: 10px;
-  padding-right: 10px;
 }
-.user-story-two-part-lft-bg,
-.user-story-two-part-rgt-bg{
+.user-story-gallery-item-bg{
   min-height: 350px;
   background-repeat: no-repeat!important;
   background-position: center center!important;
   background-size: cover!important;
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
 
@@ -239,11 +297,110 @@ span.miraclePlanthumbSlider-item img{
 
 
 
+@media(max-width: 1499px){
 
+}
 
+@media(max-width: 1399px){
 
+}
 
+@media(max-width: 1299px){
 
+}
+
+@media(max-width: 1199px){
+  .miracle-plan-des-wrp {
+    padding-left: 20px;
+  }
+  .miracle-plan-sec {
+    background: #F4F5F9;
+    padding: 90px 0;
+  }
+  .miraclePlanBigSlider-item {
+      min-height: 430px;
+  }
+}
+
+@media(max-width: 991px){
+  .miracle-plan-slider-wrp {
+    width: 100%;
+  }
+  .miracle-plan-des-wrp {
+    width: 100%;
+    float: left;
+    padding: 0;
+    padding-top: 30px;
+  }
+  .miraclePlanBigSlider-item{
+    min-height: initial;
+  }
+  .miraclePlanBigSlider-item-bg{
+    position: static;
+    background: none!important;
+  }
+  .miraclePlanBigSlider-item-bg > span{
+    display: inline-block;
+  }
+  .miracle-plan-des-innr{
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  .user-story-cmpaign-con {
+    padding-left: 0;
+    max-width: 705px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 767px){
+  .miracle-plan-sec {
+    background: #F4F5F9;
+    padding: 50px 0;
+  }
+  .user-story-cmpaign-con {
+    padding-left: 0;
+    max-width: initial;
+  }
+  .user-story-cmpaign-con h2 {
+    margin-bottom: 30px;
+  }
+  .user-story-gallery {
+    padding: 25px 0;
+  }
+}
+
+@media(max-width: 575px){
+  .user-story-gallery-item {
+    width:100%;
+  }
+  .user-story-gallery {
+    padding: 20px 0;
+  }
+
+}
+
+@media(max-width: 479px){
+  .miracle-plan-des-wrp {
+    padding-top: 15px;
+  }
+  .miracle-plan-progress-link-wrp .share-btn {
+    position: static;
+    margin-top: 25px;
+  }
+  .miracle-plan-progress-link-wrp {
+    padding-right: 70px;
+  }
+  .user-story-cmpaign-con h2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media(max-width: 359px){
+  .miracle-plan-progress-link-wrp {
+    padding-right: 28px;
+  }
+}
 
 
 

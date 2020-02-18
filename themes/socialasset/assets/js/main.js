@@ -234,35 +234,13 @@ if( $('.hm-partner-slider').length ){
 
 if( $('.miraclePlanBigSlider').length ){
    $('.miraclePlanBigSlider').slick({
-    slidesToShow: 6,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
     speed: 700,
-    dots: true,
+    dots: false,
     arrows: false,
-    responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-          }
-        },
-        {
-          breakpoint: 575,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          }
-        }
-      ]
+    asNavFor: '.miraclePlanthumbSlider',
   });
 }
 
@@ -270,7 +248,7 @@ if( $('.miraclePlanthumbSlider').length ){
   $('.miraclePlanthumbSlider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
     speed: 700,
     dots: false,
     arrows: false,
