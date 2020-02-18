@@ -26,7 +26,7 @@ $(window).scroll(function() {
 });
 
 
-if($('.fancybox').length){
+if($('.fancybox').length){ 
 $('.fancybox').fancybox({
     //openEffect  : 'none',
     //closeEffect : 'none'
@@ -34,6 +34,15 @@ $('.fancybox').fancybox({
 
 }
 
+
+// body animate
+$(".hm-bnr-scroll").click(function(e) {
+    e.preventDefault();
+    var goto = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(goto).offset().top - 0
+    }, 800);
+});
 
 /**
 Responsive on 767px
@@ -223,22 +232,51 @@ if( $('#googlemap').length ){
  Product Details Slider
 */
 
+if( $('.hm-banner-slider').length ){
+  $('.hm-banner-slider').slick({
+      dots: true,
+      arrows: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1
+  });
+}
+
+if( $('.hm-testimonials-slider').length ){
+  $('.hm-testimonials-slider').slick({
+      dots: true,
+      arrows: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1
+  });
+}
+
+
+
+if( $('.hm-partner-slider').length ){
+  $('.hm-partner-slider').slick({
+      dots: true,
+      arrows: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 6,
+      slidesToScroll: 1
+  });
+}
+
+
 if( $('.miraclePlanBigSlider').length ){
-  $('miraclePlanBigSlider').slick({
+   $('.miraclePlanBigSlider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: false,
     speed: 700,
     dots: false,
     arrows: false,
-    asNavFor: '.miraclePlanthumbSlider'
-
-
-      // dots: false,
-      // infinite: false,
-      // speed: 300,
-      // slidesToShow: 1,
-      // slidesToScroll: 1,
+    asNavFor: '.miraclePlanthumbSlider',
   });
 }
 
@@ -246,7 +284,7 @@ if( $('.miraclePlanthumbSlider').length ){
   $('.miraclePlanthumbSlider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
     speed: 700,
     dots: false,
     arrows: false,

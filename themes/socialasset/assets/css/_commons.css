@@ -1,11 +1,11 @@
 /**
-Commons  
+Commons   
 */
 *, *:focus,.btn,.btn:focus{
 	outline: 0!important;
 	text-decoration: none;
 }
-a, button, input{
+a, button, input{ 
 	outline: 0;
 	border: 0;
 }
@@ -96,7 +96,7 @@ Containers
 	width: 100%;
 }
 .container-md{
-	
+	max-width: 1160px;
 }
 
 .container-xs{
@@ -222,19 +222,19 @@ form .btn-default:focus,
 form .bootstrap-select .dropdown-toggle:focus{
 	outline: 0!important;
 }
-form  .dropdown-menu{
+form .dropdown-menu{
     margin: 0;
-    background-color: #cabb9f;
+    background-color: #ccc;
     border: none;
     border-radius: 0;
     box-shadow: none;
     padding: 12px 0 10px;
 }
-form  .dropdown-menu li{
+form .dropdown-menu li{
     position: relative;
     margin-bottom: 6px;
 }
-form  .dropdown-menu li a{
+form .dropdown-menu li a{
 	padding-top: 6px;
 	color: #fff;
 }
