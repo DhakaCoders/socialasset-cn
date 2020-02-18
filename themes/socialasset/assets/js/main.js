@@ -26,7 +26,7 @@ $(window).scroll(function() {
 });
 
 
-if($('.fancybox').length){
+if($('.fancybox').length){ 
 $('.fancybox').fancybox({
     //openEffect  : 'none',
     //closeEffect : 'none'
@@ -34,6 +34,15 @@ $('.fancybox').fancybox({
 
 }
 
+
+// body animate
+$(".hm-bnr-scroll").click(function(e) {
+    e.preventDefault();
+    var goto = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(goto).offset().top - 0
+    }, 800);
+});
 
 /**
 Responsive on 767px
