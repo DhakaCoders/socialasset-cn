@@ -140,7 +140,43 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /*Shoriful*/
 
+$('.sa-main-slider').slick({
+      pauseOnHover: false,
+      dots: true,
+      infinite: true,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1
+});
 
+$('.scroll-btn').on('click', function(e){
+  e.preventDefault();
+  var togo = $(this).data('to');
+  goToByScroll(togo, 0);
+});
+
+function goToByScroll(id, offset){
+  if(id){
+      // Remove "link" from the ID
+    id = id.replace("link", "");
+      // Scroll
+    $('html,body').animate(
+        {scrollTop: $(id).offset().top - offset},
+      500);
+  }
+}
+
+
+$('.sa-testimonial-slider').slick({
+      pauseOnHover: false,
+      dots: true,
+      infinite: true,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1
+});
 
 
 

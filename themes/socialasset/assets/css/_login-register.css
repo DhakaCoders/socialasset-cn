@@ -892,6 +892,9 @@ span.status-published-title{
 	display: inline-block;
 	vertical-align: baseline;
 }
+.sort-by .sa-selctpicker-ctlr{
+	padding-bottom: 0;
+}
 .sort-by label{
 	margin-bottom: 0;
 	padding-right: 15px;
