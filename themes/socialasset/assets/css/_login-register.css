@@ -30,7 +30,7 @@ z-index: 5;
 }
 
 .fl-tabs{
-	border-bottom: 3px solid #efefef;
+	border-bottom: 3px solid #D6DAE0;
 }
 
 button.tab-link{
@@ -467,7 +467,7 @@ a.linkedin-login-btn:hover{
 }
 
 
-.user-profile-sec{
+.user-profile-sec,.business-profile-sec{
 	padding: 50px 0 105px;
 }
 
@@ -860,4 +860,57 @@ a.linkedin-login-btn:hover{
 	justify-content: center;
 	margin-bottom: 0;
 	cursor: pointer;
+}
+
+span.status-published-title{
+	display: block;
+	color: #39CBB1!important;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 700;
+}
+
+.business-profile-sec .profile-basic-info-bx-cntlr hr{
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.supported-campaigns-tab-hdr{
+	display: flex;
+	align-items: center;
+	margin-bottom: 35px;
+}
+.sort-by{
+	margin-left: auto;
+}
+.supported-campaigns-tab-hdr .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+	width: 185px;
+}
+.sort-by label,
+.sort-by .sa-selctpicker-ctlr{
+	display: inline-block;
+	vertical-align: baseline;
+}
+.sort-by label{
+	margin-bottom: 0;
+	padding-right: 15px;
+	font-style: italic;
+	font-size: 14px;
+	font-weight: 400;
+	color: #5D5D5D;
+}
+.supported-campaigns-tab-hdr strong{
+	font-size: 19px;
+	line-height: 22px;
+	font-weight: 400;
+
+}
+.supported-campaigns-tab-items ul{
+	margin: 0 -10px;
+}
+.supported-campaigns-tab-items ul li{
+	float: left;
+	width: 33.3333%;
+	padding: 0 10px;
 }
