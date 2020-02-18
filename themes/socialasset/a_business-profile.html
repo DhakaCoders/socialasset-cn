@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> User Profile</title>
+	<title>Business Profile</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -83,18 +83,18 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <section class="user-profile-sec">
+  <section class="business-profile-sec">
     <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="user-profile-sec-iner width-1115">
+            <div class="business-profile-sec-iner width-1115">
               <div class="user-profile-sec-tab">
                 <div class="fl-tabs clearfix">
-                  <button class="tab-link current" data-tab="tab-1"><span>My ACCONT</span></button>
-                  <button class="tab-link" data-tab="tab-2"><span>Contributions</span></button>
+                  <button class="tab-link" data-tab="tab-1"><span>My ACCONT</span></button>
+                  <button class="tab-link current" data-tab="tab-2"><span>Supported campaigns</span></button>
                 </div>
               </div>
-              <div id="tab-1" class="fl-tab-content current">
+              <div id="tab-1" class="fl-tab-content">
                 <div class="tab-con-inr">
                   <div class="tab-con-title">
                     <strong>My Account</strong>
@@ -104,10 +104,11 @@
                       <div class="tab-con-col-4">
                         <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
                           <div class="profile-img">
-                            <img src="assets/images/img_avatar.png">
+                            <img src="assets/images/ngo-logo.png">
                           </div>
-                          <strong>George Malamatlis</strong>
-                          <span>George@webflow.gr</span>
+                          <strong>Web Flow</strong>
+                          <span>info@webflow.gr</span>
+                          <span class="status-published-title">STATUS: PUBLISHED</span>
                           <hr>
                           <div class="profile-submit-btn flx-btn-center">
                             <input type="submit" name="" value="Edit Profile">
@@ -182,8 +183,117 @@
                   </form>
                 </div>
               </div>
-              <div id="tab-2" class="fl-tab-content">
+              <div id="tab-2" class="fl-tab-content current">
                 <div class="tab-con-inr">
+                  <div class="supported-campaigns-tab-hdr clearfix">
+                    <strong>Your Campaigns</strong>
+                    <div class="sort-by clearfix">
+                      <label>Sort by</label>
+                      <div class="sa-selctpicker-ctlr">
+                        <select class="selectpicker">
+                            <option selected="selected">Old Campaigns</option>
+                            <option>New Campaigns</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="supported-campaigns-tab-items">
+                    <ul class="clearfix ulc">
+                      <li class="campaigns-list-item-wrp">
+                        <div class="campaigns-list-item">
+                          <div class="campaigns-item-img" style="background: url(assets/images/user-campaign-list-img-02.png);"></div>
+                          <div class="campaigns-item-des">
+                            <div class="campaigns-item-des-inr">
+                              <div class="campaigns-item-cat-name">
+                                <strong>environment</strong>
+                              </div>
+                              <div class="campaigns-item-des-btm">
+                                <div>
+                                  <h6>Τree planting - Athens</h6>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                                </div>
+                                <div class="campaigns-vote-percentage-bar clearfix">
+                                    <div class="campaigns-vote-percentage-number"><span>80%</span></div>
+                                    <div class="campaigns-vote-percentage">
+                                      <div>
+                                        <span style="width: 80%"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="months-left">
+                                    <i class="fas fa-clock"></i>
+                                    <span>3 months left</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                      <li class="campaigns-list-item-wrp">
+                        <div class="campaigns-list-item">
+                          <div class="campaigns-item-img" style="background: url(assets/images/user-campaign-list-img-02.png);"></div>
+                          <div class="campaigns-item-des">
+                            <div class="campaigns-item-des-inr">
+                              <div class="campaigns-item-cat-name">
+                                <strong>environment</strong>
+                              </div>
+                              <div class="campaigns-item-des-btm">
+                                <div>
+                                  <h6>Τree planting - Athens</h6>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                                </div>
+                                <div class="campaigns-vote-percentage-bar clearfix">
+                                    <div class="campaigns-vote-percentage-number"><span>80%</span></div>
+                                    <div class="campaigns-vote-percentage">
+                                      <div>
+                                        <span style="width: 80%"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="months-left">
+                                    <i class="fas fa-clock"></i>
+                                    <span>3 months left</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                      <li class="campaigns-list-item-wrp">
+                        <div class="campaigns-list-item">
+                          <div class="campaigns-item-img" style="background: url(assets/images/user-campaign-list-img-02.png);"></div>
+                          <div class="campaigns-item-des">
+                            <div class="campaigns-item-des-inr">
+                              <div class="campaigns-item-cat-name">
+                                <strong>environment</strong>
+                              </div>
+                              <div class="campaigns-item-des-btm">
+                                <div>
+                                  <h6>Τree planting - Athens</h6>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                                </div>
+                                <div class="campaigns-vote-percentage-bar clearfix">
+                                    <div class="campaigns-vote-percentage-number"><span>80%</span></div>
+                                    <div class="campaigns-vote-percentage">
+                                      <div>
+                                        <span style="width: 80%"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="months-left">
+                                    <i class="fas fa-clock"></i>
+                                    <span>3 months left</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
