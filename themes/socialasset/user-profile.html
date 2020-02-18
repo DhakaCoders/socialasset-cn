@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> User Profile</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--   <?php $favicon = get_theme_mod('favicon'); if(!empty($favicon)) { ?> 
+  <link rel="shortcut icon" href="<?php echo $favicon; ?>" />
+  <?php } ?> -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/font-awesome.css">
+  
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="assets/fancybox3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/slick.slider/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="assets/slick.slider/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/custom-fonts.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->	
+
+</head>
+<body>
+<header class="header hdr-has-shadow">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-inr clearfix">
+            <div class="hdr-lft">
+              <div class="logo">
+                <a href="#"><img src="assets/images/logo.png"></a>
+              </div>
+            </div>
+            <div class="hdr-rgt">
+              <nav class="main-nav">
+                <ul class="clearfix ulc">
+                  <li><a href="#">What We Do</a></li>
+                  <li class="current-menu-item"><a href="#">For NGOs</a></li>
+                  <li class="menu-item-has-children">
+                    <a href="#">For Businesses</a>
+                    <ul class="sub-menu">
+                      <li><a href="#">sub menu item</a></li>
+                      <li><a href="#">sub menu item</a></li>
+                      <li><a href="#">sub menu item</a></li>
+                      <li><a href="#">sub menu item</a></li>
+                      <li><a href="#">sub menu item</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Campaigns</a></li>
+                </ul>
+              </nav>
+              <div class="hdr-btns clearfix">
+                <button class="login-btn">LOGIN</button>
+                <button class="campaign-btn">Start a Campaign</button>
+              </div>
+              <div class="humberger-menu-btn">
+                <strong>MENU</strong>
+                <div class="humberger-menu-btn-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</header>
+
+<div class="content-center-cntlr gray-bg">
+  <section class="user-profile-sec">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="user-profile-sec-iner width-1115">
+              <div class="user-profile-sec-tab">
+                <div class="fl-tabs clearfix">
+                  <button class="tab-link current" data-tab="tab-1"><span>My ACCONT</span></button>
+                  <button class="tab-link" data-tab="tab-2"><span>Contributions</span></button>
+                </div>
+              </div>
+              <div id="tab-1" class="fl-tab-content current">
+                <div class="tab-con-inr">
+                  <div class="tab-con-title">
+                    <strong>My Account</strong>
+                  </div>
+                  <form>
+                    <div class="clearfix tab-con-col-row">
+                      <div class="tab-con-col-4">
+                        <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
+                          <div class="profile-img">
+                            <img src="assets/images/img_avatar.png">
+                          </div>
+                          <strong>George Malamatlis</strong>
+                          <span>George@webflow.gr</span>
+                          <hr>
+                          <div class="profile-submit-btn flx-btn-center">
+                            <input type="submit" name="" value="Edit Profile">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-con-col-8">
+                        <div class="has-bx-shadow profile-rgt-info-bx-cntlr">
+                          <strong class="profile-rgt-info-bx-title prib-plr">Change Password</strong>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>Current Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>New Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>Confirm New Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="fl-forget-row prib-plr">
+                            <a href="#">Forgot your password?</a>
+                          </div>
+                          <div class="prib-plr">
+                            <div class="prib-btns profile-submit-btn clearfix">
+                              <input type="submit" name="" value="Change Password">
+                              <input type="reset" name="" value="Cancel">
+                            </div>
+                          </div>
+                          <hr>
+                          <strong class="profile-rgt-info-bx-title prib-plr">Notification Settings</strong>
+                          <div class="switch-checkbox-con prib-plr">
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" checked id="checkbox-switch1">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch1">I would like to receive notification through Email</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch2">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch2">Newsletters</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch3">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch3">Emails for new campaigns</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch4">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch4">Lorem ipsum</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div id="tab-2" class="fl-tab-content">
+                <div class="tab-con-inr">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>    
+  </section>
+</div>
+
+ 
+
+
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/jquery.sticky-sidebar.js"></script>
+<script src="assets/fancybox3/dist/jquery.fancybox.min.js"></script>
+<script src="assets/slick.slider/slick.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo2-QJ7RdCkLw3NFZEu71mEKJ_8LczG-c"></script>
+<script src="assets/js/jquery.matchHeight-min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/masonry.pkgd.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
