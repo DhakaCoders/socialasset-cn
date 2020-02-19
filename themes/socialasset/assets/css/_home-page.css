@@ -10,7 +10,7 @@
 
 .sa-page-banner-des-inner{
 	text-align: center;
-	padding-top: 330px;
+	padding-top: 370px;
 }
 .sa-page-banner-des-inner strong{
 	font-size: 47px;
@@ -64,8 +64,7 @@
 	letter-spacing: 2px;
 }
 .sa-page-banner-des-inner a:hover{
-	background: #000417;
-	color: #fff;
+	background: #0d57ea;
 }
 
 .sa-banner-cam-inner{
@@ -83,7 +82,7 @@
 	padding-left: 52px;
 	padding-top: 90px;
 }
-.sa-banner-cam-des a.action{
+.sa-banner-cam-des span{
 	display: inline-block;
 	padding: 8px 10px;
 	font-size: 13px;
@@ -138,44 +137,55 @@
 
 .page-banner .slick-dots {
     position: absolute;
-    bottom: 0px;
+    bottom: initial;
     display: block;
-    width: 100%;
+    width: 30px;
     padding: 0;
     margin: 0;
     list-style: none;
     text-align: center;
     top: 50%;
+    left: auto;
+    right: 20px;
+    transform: translateY(-50%);
 }
-.page-banner .slick-dots li{
-	display: block;
-	width: 12px;
-    height: 12px;
-    right: -97%;
-    padding: 10px 0;
-}
-.page-banner .slick-dots li button:before{
-    font-family: 'slick';
-    font-size: 11px;
-    line-height: 11px;
-    position: absolute;
-    top: 0;
-    left: 0;
+.page-banner .slick-dots li {
+    position: relative;
+    display: inline-block;
     width: 12px;
     height: 12px;
-    content: '•';
-    text-align: center;
-    opacity: .25;
-    color: transparent;
-    -webkit-font-smoothing: antialiased;
-    background: transparent;
-    border: 2px solid #fbf2f2;
+    margin: 3px 10px;
+    padding: 0;
+    cursor: pointer;
+    float: initial;
+}
+.page-banner .slick-dots li button::before {
+    content: none;
+}
+.page-banner .slick-dots li button {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #fff;
     border-radius: 100%;
+    cursor: pointer;
+    outline: none;
+    background: #0000;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
-.page-banner .slick-dots li.slick-active button:before{
-    opacity: .75;
-    color: #fbf2f2;
+.page-banner .slick-dots li button:hover {
+    background: #fff;
 }
+.page-banner .slick-dots li.slick-active button {
+    background: #fff;
+}
+
+.page-banner.slick-dotted{
+    margin-bottom: 0!important;
+}
+
 .page-banner .slick-dotted.slick-slider {
     margin-bottom: 0px;
 }
@@ -227,7 +237,7 @@
 	letter-spacing: 1px;
 }
 .more-btn a:hover{
-	background: #0F55E1;
+	background: #145def;
 }
 
 .sa-welcome-grid-item-top-img-wrap,
@@ -466,9 +476,13 @@
 	text-transform: uppercase;
 	font-weight: 900;
 	margin-bottom: 25px;
+	border: 1px solid #0055FF;
+	cursor: pointer;
 }
 .sa-cam-sec-link button:hover{
-	background: #0D54E1;
+	background: transparent;
+	border: 1px solid #0D54E1;
+	color: #0D54E1;
 }
 
 .sa-cam-sec-link-start a{
@@ -640,6 +654,7 @@
 }
 .sa-company-name ul li a{
 	max-width: 120px;
+	display: inline-block;
 }
 .sa-company-name ul li a img{
 	width: 100%;
@@ -730,10 +745,115 @@
 	background: #0055FF;
 	border-radius: 35px;
 	font-weight: 900;
+	border: 1px solid #0055FF
 }
 .sa-blog-link a:hover{
-	background: #0D54E1;
+	background: transparent;
+	border: 1px solid #0055FF;
+	color: #0055FF;
 }
 .sa-blog-grid-item{
 	position: relative;
+}
+
+
+
+
+
+@media(max-width: 1199px){
+	.hide-lg{
+		display: none!important;
+	}
+	.show-lg{
+		display: block!important;
+	}
+
+}
+
+@media(max-width: 991px){
+	.hide-md{
+		display: none!important;
+	}
+	.show-md{
+		display: block!important;
+	}
+	.social-asset-welcome-section{
+	    padding-top: 70px;
+	    padding-bottom: 80px;
+	}
+	.social-asset-welcome-section-inner h1{
+	    font-size: 32px;
+	    line-height: 39px;
+	    padding-bottom: 25px;
+	}
+	.social-asset-welcome-section-inner em{
+	    font-size: 22px;
+	    line-height: 28px;
+	    padding-bottom: 18px;
+	}
+	.social-asset-welcome-section-inner p{
+	    font-size: 18px;
+	    line-height: 31px;
+	    padding-bottom: 45px;
+	}
+	.sa-welcome-grid-section{
+	    margin-top: 0px;
+	    padding-top: 20px;
+	}
+	.sa-welcome-grid-item-top-img-wrap,
+	.sa-welcome-grid-item-bottom-des-wrap{
+	    width: 100%;
+	}
+	.sa-welcome-grid-item-top-des-wrap, 
+	.sa-welcome-grid-item-bottom-img-wrap{
+	    width: 100%;
+	}
+	.sa-welcome-grid-item-top-img,
+	.sa-welcome-grid-item-top-des,
+	.sa-welcome-grid-item-bottom-img,
+	.sa-welcome-grid-item-bottom-des{
+		max-width: 680px;
+	    width: 100%;
+	    margin: 0 auto;
+	    margin-bottom: 20px;
+	}
+	.sa-welcome-grid-item-top-des,
+	.sa-welcome-grid-item-bottom-des{
+		background: #f4f5f9;
+	}
+	.sa-welcome-grid-item-top-des-img {
+	    left: 15%;
+	}
+	.sa-welcome-grid-item-bottom-des-img{
+	    left: 10%;
+	}
+	
+}
+
+@media(max-width: 767px){
+	.hide-sm{
+		display: none!important;
+	}
+	.show-sm{
+		display: block!important;
+	}
+}
+
+@media(max-width: 575px){
+	.hide-xs{
+		display: none!important;
+	}
+	.show-xs{
+		display: block!important;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
