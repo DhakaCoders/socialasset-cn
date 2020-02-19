@@ -468,6 +468,10 @@ span.hm-wc-social-assets-top-shape {
 .hm-testimonials-slider{
 	position: relative;
 	z-index: 4;
+	border-radius: 20px;
+	-webkit-box-shadow: 1px 1px 26px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 26px -9px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 26px -9px rgba(0,0,0,0.75);
 }
 .hm-testimonials-slider-item{
 	min-height: 315px;
