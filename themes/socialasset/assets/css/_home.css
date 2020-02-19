@@ -469,9 +469,9 @@ span.hm-wc-social-assets-top-shape {
 	position: relative;
 	z-index: 4;
 	border-radius: 20px;
-	-webkit-box-shadow: 1px 1px 26px -9px rgba(0,0,0,0.75);
-	-moz-box-shadow: 1px 1px 26px -9px rgba(0,0,0,0.75);
-	box-shadow: 1px 1px 26px -9px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 1px 10px 26px -19px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 10px 26px -19px rgba(0,0,0,0.75);
+	box-shadow: 1px 10px 26px -19px rgba(0,0,0,0.75);
 }
 .hm-testimonials-slider-item{
 	min-height: 315px;
@@ -923,12 +923,15 @@ span.btm-q-icon{
 	.hm-user-support-rgt-des {
 	    position: static;
 	    max-width: initial;
-	    padding: 65px 40px 80px;
+	    padding: 50px 40px 65px;
 	    text-align: center;
 	    margin-top: -30px;
 	    width: 85%;
 	    margin: auto;
 	    margin-top: -50px;
+	}
+	.hm-user-support-rgt-des p {
+	    margin-bottom: 20px;
 	}
 	.hm-explore-campaigns-des strong {
 	    font-size: 28px;
@@ -1064,7 +1067,16 @@ span.btm-q-icon{
 	.hm-testimonials-slider-item {
 	    min-height: initial;
 	    padding: 50px 30px;
+	    text-align: center;
 	}
+/* 	.hm-testimonials-slider-item {
+	    min-height: 315px;
+	    padding: 80px 110px 42px 282px;
+	    position: relative;
+	    background: #fff;
+	    border-radius: 20px;
+	    text-align: center;
+	} */
 	span.top-q-icon,
 	span.btm-q-icon {
 	    display: none;
