@@ -378,7 +378,10 @@ $('div.fl-tabs button').click(function(){
     $("#"+tab_id).addClass('current');
 });
 
-
+$('.humberger-menu-btn').on('click', function(){
+  $(this).toggleClass('humber-menu-expend');
+  $('.humberger-menu').slideToggle(300);
+});
 
     //new WOW().init();
 
