@@ -44,7 +44,7 @@
             <!-- 
               If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
              -->
-            <div class="hdr-rgt logged-menu">
+            <div class="hdr-rgt">
               <nav class="main-nav logout-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
@@ -145,28 +145,73 @@
       <div class="login-form-lft-col">
         <div class="fl-login-form">
           <div class="fl-tabs clearfix text-center">
-            <button class="tab-link" data-tab="tab-1"><span>REGISTER</span></button>
-            <button class="tab-link current" data-tab="tab-2"><span>Log in</span></button>
+            <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
+            <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
           </div>
-          <div id="tab-1" class="fl-tab-content">
+          <div id="tab-1" class="fl-tab-content current">
             <div class="tab-con-inr">
               <form>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Email *</label>
-                    <input type="email" name="" placeholder="Your Email">
+                <div class="register-hdr-con">
+                  <strong>Create your free online account</strong>
+                  <span>Already have an account? <a href="#">Sign in here</a></span>
+                </div>
+                <div class="register-type-btn">
+                  <button class="register-ngo-btn">
+                    I’m NGO - <span>BeSupported</span>
+                  </button>
+                  <button class="register-supporter-btn">I’m Supporter</button>
+                </div>
+                <div class="register-type-con">
+                    <div class="register-type-select">
+                      <div class="sa-selctpicker-ctlr">
+                        <select class="selectpicker">
+                            <option selected="selected">I am a NGO</option>
+                            <option>I’m Supporter</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="fl-input-field-row sa-input">
+                      <label>NGO Name *</label>
+                      <input type="text" name="" placeholder="Example Co.">
+                    </div>
+                    <div class="fl-input-field-row sa-input">
+                      <label>Email *</label>
+                      <input type="email" name="" placeholder="Your Email">
+                    </div>
+                    <div class="fl-input-field-row-grd clearfix">
+                      <div class="fl-input-field-row sa-input">
+                        <label>Create a password *</label>
+                        <input type="password" name="" placeholder="Password">
+                      </div>
+                      <div class="fl-input-field-row sa-input">
+                        <label>Confirm password *</label>
+                        <input type="password" name="" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="agree-checkmark">
+                      <div class="filter-check-row clearfix">
+                        <input type="checkbox" id="agree" name="agree" value="YES">
+                        <span class="checkmark"></span> 
+                        <label for="agree"> I have read & agree to Terms of Service</label>
+                      </div>
+                    </div>
+                    <div class="fl-submit-btn w-full">
+                      <input type="submit" value="Create Account">
+                    </div>
+                    <div class="fl-or-text">
+                      <span>Or</span>
+                    </div>
+                    <div class="fl-sign-in-another">
+                      <a class="gogle-login-btn" href="#">
+                        <i class="fab fa-google"></i>
+                        Sign In with Google
+                      </a>
+                    </div>
                   </div>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Password *</label>
-                    <input type="password" name="" placeholder="Password">
-                  </div>
-                  <div class="fl-submit-btn w-full">
-                    <input type="submit" value="Sign In">
-                  </div>
-                  
                 </form>
             </div>
           </div>
-          <div id="tab-2" class="fl-tab-content current">
+          <div id="tab-2" class="fl-tab-content">
             <div class="tab-con-inr">
               <div class="login-form">
                 <form>

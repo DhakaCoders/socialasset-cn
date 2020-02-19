@@ -393,6 +393,13 @@ $('.hdr-login-profile').on('click', function(){
   $('.hdr-login-profile ul').slideToggle(300);
 });
 
+$('.register-type-btn button').on('click', function(){
+  $('.register-type-con').show(300);
+  $('.register-type-btn').fadeOut(300);
+});
+
+
+
 
     //new WOW().init();
 

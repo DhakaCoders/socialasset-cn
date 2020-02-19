@@ -1031,6 +1031,7 @@ span.status-published-title.color-red{
     -webkit-box-shadow: 0px 3px 15px 0px rgba(212,220,227,1);
     -moz-box-shadow: 0px 3px 15px 0px rgba(212,220,227,1);
     box-shadow: 0px 3px 15px 0px rgba(212,220,227,1);
+    border-radius: 5px;
 }
 
 .search-by-name button{
@@ -1430,4 +1431,9 @@ span.status-published-title.color-red{
 	color: #fff;
 	margin-right: 22px;	
 	cursor: pointer;
+}
+
+
+.register-type-con{
+	display: none;
 }
