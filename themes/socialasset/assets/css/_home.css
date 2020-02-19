@@ -571,6 +571,33 @@ span.btm-q-icon{
 .join-journey-section.hm-join-journey-sec .jjsg-des-bottom {
     background: #0000;
 }
+.hm-join-journey-sec .jjsg-des-top,
+.hm-join-journey-sec .jjsg-des-bottom{
+	position: relative;
+}
+.hm-join-journey-sec .jjsg-des-top > span {
+	display: inline-block;
+	vertical-align: baseline;
+	position: absolute;
+	top: 30px;
+	left: 88px;
+	max-width: 184px;
+	z-index: -1;
+}
+.hm-join-journey-sec .jjsg-des-bottom > span {
+	display: inline-block;
+	vertical-align: baseline;
+	position: absolute;
+	top: 13px;
+	left: 50px;
+	max-width: 184px;
+	z-index: -1;
+}
+.hm-join-journey-sec .jjsg-des-top > span img,
+.hm-join-journey-sec .jjsg-des-bottom > span img{
+	width: 100%;
+}
+
 .hm-banner-slider .slick-dots {
     position: absolute;
     bottom: initial;
