@@ -269,14 +269,14 @@
 .sa-welcome-grid-item-top-des-inner h3,
 .sa-welcome-grid-item-bottom-des-inner h3{
 	margin: 0;
-	padding-bottom: 30px;
+	padding-bottom: 18px;
 	font-weight: 500;
 }
 .sa-welcome-grid-item-top-des-inner p,
 .sa-welcome-grid-item-bottom-des-inner p{
 	font-size: 15px;
 	line-height: 25px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 .sa-welcome-grid-item-top-des-inner a,
 .sa-welcome-grid-item-bottom-des-inner a{
@@ -315,7 +315,7 @@
 .sa-welcome-grid-item-top-des-img{
 	position: absolute;
 	top: 0;
-	left: 12%;
+	left: 10%;
 	z-index: 6;
 }
 .sa-welcome-grid-item-bottom-des-img{
@@ -827,7 +827,70 @@
 	.sa-welcome-grid-item-bottom-des-img{
 	    left: 10%;
 	}
-	
+	.sa-user-section {
+	    padding-top: 40px;
+	    padding-bottom: 100px;
+	}
+	.sa-user-right {
+	    max-width: 300px;
+	}
+	.sa-usr-rgt-des h3 {
+		font-size: 28px;
+	    padding-bottom: 10px;
+	}
+	.sa-usr-rgt-des p {
+	    font-size: 12px;
+	    line-height: 20px;
+	    padding-bottom: 8px;
+	}
+	.sa-campaigns-grid-section {
+	    padding-bottom: 100px;
+	}
+	.sa-cam-sec-link {
+	    padding-top: 35px;
+	}
+	.sa-cam-grd-item-des h3 {
+	    font-size: 25px;
+	    line-height: 28px;
+	}
+	.sa-testimonial-section {
+	    padding-top: 40px;
+	    padding-bottom: 100px;
+	}
+	.sa-testimonial-sec-top h4 {
+	    line-height: 35px;
+	    padding-bottom: 10px;
+	}
+	.sa-testimonial-sec-top p {
+	    line-height: 18px;
+	    padding-bottom: 20px;
+	}
+	.sa-testimonial-sec-wrap {
+	    padding: 32px 0 70px 0;
+	}
+	.sa-testimonial-sec-blockquot-inner {
+	    padding: 35px 90px 0 50px;
+	}
+	.sa-testimonial-sec-blockquot-inner p {
+	    padding-bottom: 20px;
+	}
+	.sa-companies-section {
+	    padding-top: 55px;
+	    padding-bottom: 60px;
+	}
+	.sa-companies-sec-inner h4 {
+	    padding-bottom: 50px;
+	}
+	.sa-blog-section {
+	    padding-top: 90px;
+	    padding-bottom: 110px;
+	}
+	.sa-blog-sec-hdr h4 {
+	    padding-bottom: 10px;
+	}
+	.sa-blog-sec-hdr p {
+	    padding-bottom: 35px;
+	}
 }
 
 @media(max-width: 767px){
