@@ -31,7 +31,7 @@
 
 </head>
 <body>
-<header class="header">
+<header class="header hdr-has-shadow">
   <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -41,28 +41,63 @@
                 <a href="#"><img src="assets/images/logo.png"></a>
               </div>
             </div>
+            <!-- 
+              If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
+             -->
             <div class="hdr-rgt">
-              <nav class="main-nav">
-                <ul class="clearfix ulc">
-                  <li><a href="#">What We Do</a></li>
-                  <li class="current-menu-item"><a href="#">For NGOs</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">For Businesses</a>
-                    <ul class="sub-menu">
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
+              <nav class="main-nav logout-main-nav">
+                <div class="main-nav-menu">
+                  <ul class="clearfix ulc">
+                    <li><a href="#">What We Do</a></li>
+                    <li class="current-menu-item"><a href="#">For NGOs</a></li>
+                    <li class="menu-item-has-children">
+                      <a href="#">For Businesses</a>
+                      <ul class="sub-menu">
+                        <li><a href="#">sub menu item</a></li>
+                        <li><a href="#">sub menu item</a></li>
+                        <li><a href="#">sub menu item</a></li>
+                        <li><a href="#">sub menu item</a></li>
+                        <li><a href="#">sub menu item</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Campaigns</a></li>
+                  </ul>
+                </div>
+                <div class="hdr-btns clearfix">
+                  <div class="login-btn">
+                    <button>LOGIN</button>
+                    <ul class="ulc">
+                      <li><a href="#">For <strong>NGOs</strong></a></li>
+                      <li><a href="#">For <strong>USERs</strong></a></li>
                     </ul>
-                  </li>
-                  <li><a href="#">Campaigns</a></li>
-                </ul>
+                  </div>
+                  <button class="campaign-btn">Start a Campaign</button>
+                </div>
               </nav>
-              <div class="hdr-btns clearfix">
-                <button class="login-btn">LOGIN</button>
-                <button class="campaign-btn">Start a Campaign</button>
-              </div>
+              <nav class="main-nav logged-main-nav">
+                <div class="main-nav-menu">
+                  <ul class="clearfix ulc">
+                    <li><a href="#">What We Do</a></li>
+                    <li class="current-menu-item"><a href="#">How it Works</a></li>
+                    <li><a href="#">Support a Campaign</a></li>
+                  </ul>
+                </div>
+                <div class="hdr-login-profile">
+                  <div class="hdr-login-profile-img">
+                    <img src="assets/images/hdr-login-profile-img.png">
+                  </div>
+                  <strong>Georgio</strong>
+                  <ul class="ulc clearfix">
+                    <li><a href="#">My Contributions</a></li>
+                    <li><a href="#">My Profile</a></li>
+                    <li>
+                      <i class="fas fa-sign-out-alt"></i>
+                      <a href="#">Log out</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              
               <div class="humberger-menu-btn">
                 <strong>MENU</strong>
                 <div class="humberger-menu-btn-lines">
@@ -72,9 +107,30 @@
                 </div>
               </div>
               
-              
-              
-              
+            </div>
+            <div class="humberger-menu">
+              <ul class="clearfix ulc">
+                <li><a href="#">Humanity</a></li>
+                <li><a href="#">Animals</a></li>
+                <li><a href="#">Environment</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Education</a></li>
+              </ul>
+              <ul class="clearfix ulc">
+                <li><a href="#">What We Do</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+              <div class="languages-area">
+                <label>Languages:</label>
+                <div class="site-lang-holder clearfix">
+                  <div class="site-lang">
+                    <a href="#" class="active">En <span class="ede-down-angle"></span></a>
+                    <a href="#">Gr</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
