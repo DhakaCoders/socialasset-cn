@@ -380,3 +380,8 @@ min-height: 42px;
 	font-style: initial;
 	font-size: 12px;
 }
+
+.campaigns-slect-filters-lft .search-by-name{
+	width: 100%;
+	max-width: 503px;
+}
