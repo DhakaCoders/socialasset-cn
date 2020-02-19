@@ -169,6 +169,7 @@ nav.main-nav ul li:hover a{
 .humberger-menu-btn{
 	text-align: center;
 	cursor: pointer;
+	height: 61px;
 }
 .humberger-menu-btn strong{
 	padding-bottom: 10px;
@@ -179,7 +180,10 @@ nav.main-nav ul li:hover a{
 	display: block;
 }
 .hdr-btns{
-	padding-right: 20px;
+	padding-right: 8px;
+}
+.humberger-menu-btn{
+	padding-left: 12px;
 }
 .login-btn{
 	background: #EAEAEA;
@@ -230,6 +234,50 @@ nav.main-nav ul li:hover a{
 	top: 16px;
 }
 
+.humber-menu-expend span:nth-child(1){
+  top: 44%;
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-bottom: 0;
+  width: 100%;
+}
+.humber-menu-expend span:nth-child(2){
+	opacity: 0;
+}
+.humber-menu-expend span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100%;
+}
+.humberger-menu-btn.humber-menu-expend{
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 71px;
+	height: 71px;
+	margin-top: -11px;
+	padding-top: 25px;
+}
+.humberger-menu-btn.humber-menu-expend .humberger-menu-btn-lines{
+	width: 100%;
+}
+.humberger-menu-btn.humber-menu-expend strong{
+	display: none;
+}
+.humber-menu-expend{
+	background: #000000;
+}
+.humber-menu-expend strong{
+	opacity: 0;
+}
+.humber-menu-expend span{
+	background: #fff;
+}
+
 
 .humberger-menu-btn,
 .hdr-btns,
@@ -237,5 +285,113 @@ nav.main-nav ul li:hover a{
 	display: inline-block;
 	vertical-align: baseline;
 }
+.header-inr{
+	position: relative;
+}
+.humberger-menu{
+	background: #0055FF;
+	width: 231px;
+	position: absolute;
+	top: 100%;
+	margin-top: -12px;
+	color: #fff;
+	right: 0;
+	padding: 40px 35px 25px 30px;
+	z-index: 15;
+	text-align: right;
+	display: none;
+}
+.humberger-menu ul{
+	border-bottom: 1px solid #3174F8;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+}
+.humberger-menu ul li{
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 700;
+	padding-bottom: 17px;
+}
+.humberger-menu ul li a{
+	display: inline-block;
+	vertical-align: baseline;
+	color: #fff;
+}
+.languages-area{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.languages-area label{
+	font-size: 13px;
+	font-weight: 300;
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
 
 
+.site-lang-holder {
+    padding-top: 1px;
+    float: right;
+    position: relative;
+    width: 45px;
+    min-height: 15px;
+}
+.site-lang {
+    position: absolute;
+    padding: 11px 14px 5px 10px;
+    transition: all 0.3s;
+    z-index: 1;
+    border-radius: 3px;
+    margin-top: -10px;
+    text-transform: capitalize;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+/*.site-lang:hover{
+    -ms-box-shadow: 0px 0px 10px 3px #eee;
+    -webkit-box-shadow: 0px 0px 10px 3px #eee;
+    box-shadow: 0px 0px 10px 3px #eee;
+}*/
+.site-lang:hover a{
+	display: block;
+}
+.site-lang a{
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    height: 14px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.site-lang a {
+	display: none;
+	text-decoration: none;
+}
+.site-lang a.active{
+	display: block;
+}
+.site-lang .ede-down-angle{
+	position: relative;
+}
+
+.site-lang .ede-down-angle:after {
+    content: "\f0d7";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 12px;
+    position: absolute;
+    top: 2px;
+    right: -13px;
+    color: #fff!important;
+}
+.site-lang:hover .ede-down-angle:after{
+	content: "\f0d8";
+	top: 1px;
+}
