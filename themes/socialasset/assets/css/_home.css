@@ -728,7 +728,7 @@ span.btm-q-icon{
 	    padding-top: 100px;
 	}
 	.hm-banner-design-1 .hm-banner-slider-item-rgt-des {
-	    padding: 90px 40px 0 20px;
+	    padding: 90px 50px 0 20px;
 	}
 	.hm-banner-design-2 .hm-banner-slider-item-innr {
 	    padding-left: 40px;
@@ -860,11 +860,11 @@ span.btm-q-icon{
 	}
 	.hm-banner-design-1 .hm-banner-slider-item-rgt-des {
 	    width: 100%;
-	    float: left;
-	    padding: 25px 0 20px;
-	    max-width: 650px;
+	    padding: 25px 40px 20px;
+	    max-width: 550px;
 	    float: none;
 	    margin: auto;
+	    text-align: center;
 	}
 
 }
