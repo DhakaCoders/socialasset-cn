@@ -85,3 +85,6 @@ New fix
 
 8. https://www.screencast.com/t/ovY4duQ2oXq
 	hover a transition lagbe maybe
+
+9. https://www.screencast.com/t/wrR5F0f543
+	ai wave ta missing
