@@ -23,20 +23,20 @@ header.header{
 .logo a img{
 	width: 100%;
 }
-.main-nav > ul{
+.main-nav-menu > ul{
 	padding-top: 15px;
 	padding-right: 20px;
 }
-.main-nav ul li{
+.main-nav-menu ul li{
 	display: inline-block;
 	vertical-align: baseline;
 	padding: 0 15px;
 	position: relative;
 }
-.main-nav > ul > li{
+.main-nav-menu > ul > li{
 	
 }
-.main-nav > ul > li > a{
+.main-nav-menu > ul > li > a{
 	color: #000000;
 	font-size: 14px;
 	font-weight: 700;
@@ -47,16 +47,16 @@ header.header{
 	padding-left: 2px;
 	padding-right: 2px;
 }
-.main-nav > ul > li > a:hover{
+.main-nav-menu > ul > li > a:hover{
 	color: #0055FF;
 }
-.main-nav > ul > li:nth-child(1){
+.main-nav-menu > ul > li:nth-child(1){
 	padding-right: 20px;
 }
-.main-nav ul li:nth-child(2){
+.main-nav-menu ul li:nth-child(2){
 	padding-left: 20px;
 }
-.main-nav > ul > li:nth-child(1):after{
+.main-nav-menu > ul > li:nth-child(1):after{
 	content: "";
 	height: 25px;
 	width: 1px;
@@ -65,7 +65,7 @@ header.header{
 	right: 0;
 	top: -4px;
 }
-.main-nav > ul > li > a:after{
+.main-nav-menu > ul > li > a:after{
     border-bottom: 4px solid #0055FF;
     content: "";
     display: block;
@@ -80,11 +80,11 @@ header.header{
     transition: all 0.15s ease-out 0s;
     width: 100%;
 }
-.main-nav > ul > li > a:hover:after{
+.main-nav-menu > ul > li > a:hover:after{
     transform: scale(1, 1);
 }
 
-.main-nav > ul > li.menu-item-has-children:after{
+.main-nav-menu > ul > li.menu-item-has-children:after{
     content: "\f107";
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
@@ -96,11 +96,11 @@ header.header{
     top: 3px;
     right: 0;
 }
-.main-nav > ul > li.menu-item-has-children:hover:after{
+.main-nav-menu > ul > li.menu-item-has-children:hover:after{
 	content: "\f106";
 }
 
-nav.main-nav > ul > li.menu-item-has-children > ul.sub-menu{
+.main-nav-menu > ul > li.menu-item-has-children > ul.sub-menu{
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -122,26 +122,26 @@ nav.main-nav > ul > li.menu-item-has-children > ul.sub-menu{
     -webkit-transform-origin: top;
     opacity: 0;
 }
-nav.main-nav > ul > li.menu-item-has-children:hover > ul.sub-menu{
+.main-nav-menu > ul > li.menu-item-has-children:hover > ul.sub-menu{
     transform: scale3d(1,1,1);
     -ms-transform: scale3d(1,1,1);
     -webkit-transform: scale3d(1,1,1);
     opacity: 1;
 }
-nav.main-nav ul.sub-menu li{
+.main-nav-menu ul.sub-menu li{
 	padding: 0 0 0 0;
 	display: block;
 	position: relative;
 	border-bottom: 1px solid #eee;
 }
-nav.main-nav ul.sub-menu li a{
+.main-nav-menu ul.sub-menu li a{
 	color: #9e9ea1;
 	font-size: 14px;
 	display: block;
 	padding: 10px 20px;
 }
 
-nav.main-nav ul.sub-menu li:before {
+.main-nav-menu ul.sub-menu li:before {
     position: absolute;
     content: '';
     top: 0;
@@ -155,14 +155,14 @@ nav.main-nav ul.sub-menu li:before {
     -o-transition: all .3s;
     transition: all .3s;
 }
-nav.main-nav ul.sub-menu li:hover:before {
+.main-nav-menu ul.sub-menu li:hover:before {
     height: 100%;
 }
 
-nav.main-nav ul li:hover a{
+.main-nav-menu ul li:hover a{
 	color: #0055FF;
 }
-.main-nav > ul > li.current-menu-item > a:after{
+.main-nav-menu > ul > li.current-menu-item > a:after{
 	transform: scale(1, 1);
 }
 
@@ -178,6 +178,7 @@ nav.main-nav ul li:hover a{
 	text-transform: uppercase;
 	font-weight: 500;
 	display: block;
+	padding-top: 6px;
 }
 .hdr-btns{
 	padding-right: 8px;
@@ -186,6 +187,49 @@ nav.main-nav ul li:hover a{
 	padding-left: 12px;
 }
 .login-btn{
+	padding: 3px 4px 3px;
+	display: inline-block;
+	vertical-align: baseline;
+	position: relative;
+	margin-right: 15px;
+}
+.login-btn.login-btn-expend button{
+	background: #0055FF;
+}
+.login-btn ul{
+	display: none;
+	width: 100%;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	padding: 25px 10px 0;
+}
+.login-btn.login-btn-expend{
+	border-radius: 1px 1px 0 0;
+}
+.login-btn.login-btn-expend button{
+	background: #0055FF;
+	color: #fff;
+}
+.login-btn.login-btn-expend ul{
+	border-radius: 0 0 1px 1px;
+
+}
+.login-btn ul li{
+	padding-bottom: 30px;
+	font-size: 13px;
+	line-height: 16px;
+	text-align: center;
+}
+.login-btn ul li a{
+	color: #000;
+}
+.login-btn ul li a strong{
+	font-weight: 700;
+}
+.login-btn button{
 	background: #EAEAEA;
 	width: 110px;
 	height: 50px;
@@ -198,7 +242,6 @@ nav.main-nav ul li:hover a{
 	cursor: pointer;
 	display: inline-block;
 	vertical-align: baseline;
-	margin-right: 15px;
 }
 .campaign-btn{
 	background: #0055FF;
@@ -255,8 +298,9 @@ nav.main-nav ul li:hover a{
   width: 100%;
 }
 .humberger-menu-btn.humber-menu-expend{
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 20px!important;
+	padding-right: 20px!important;
+	padding-top: 25px!important;
 	width: 71px;
 	height: 71px;
 	margin-top: -11px;
@@ -394,4 +438,134 @@ nav.main-nav ul li:hover a{
 .site-lang:hover .ede-down-angle:after{
 	content: "\f0d8";
 	top: 1px;
+}
+.logged-menu .humberger-menu-btn strong{
+	display: none;
+}
+.logged-menu .humberger-menu-btn{
+	padding-top: 18px;
+}
+.logout-main-nav-menu{
+	display: flex;
+}
+.logged-main-nav-menu{
+	display: none;
+}
+
+.logged-menu .main-nav.logout-main-nav{
+	display: none;
+}
+.logged-menu .main-nav.logged-main-nav{
+	display: flex;
+}
+
+.main-nav{
+	display: flex;
+}
+.logged-main-nav{
+	display: none;
+}
+
+.hdr-login-profile {
+	display: flex;
+	padding: 0 15px 0 22px;
+	position: relative;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.hdr-login-profile strong{
+	font-size: 14px;
+	line-height: 16px;
+	color: #0055FF;
+	padding-top: 19px;
+	padding-left: 10px;
+}
+.hdr-login-profile-img{
+	width: 37px;
+	height: 37px;
+	border-radius: 100% 100%;
+	margin-top: 8px;
+}
+.hdr-login-profile-img img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100% 100%;
+}
+
+.logged-menu .main-nav-menu > ul > li:nth-child(1):after{
+    content: none;
+}
+.hdr-login-profile:before {
+    content: "";
+    height: 25px;
+    width: 1px;
+    background: #bcbcbc;
+    position: absolute;
+    left: -1px;
+    top: 13px;
+}
+.logged-menu .main-nav-menu > ul{
+	padding-right: 5px;
+}
+
+
+.hdr-login-profile:after {
+    content: "\f107";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 14px;
+    position: absolute;
+    top: 19px;
+    right: 0;
+}
+
+.hdr-login-profile ul{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: #E9EAEF;
+	border-radius: 5px;
+	padding: 25px 15px 0;
+	margin-top: -17px;
+	z-index: 15;
+	display: none;
+}
+.hdr-login-profile ul li{
+	font-size: 13px;
+	line-height: 16px;
+	padding-bottom: 25px;
+}
+.hdr-login-profile ul li a{
+	color: #000;
+}
+.hdr-login-profile ul li:last-child{
+	border-top: 1px solid #BCBCBC;
+	padding-top: 15px;
+}
+.hdr-login-profile ul li:last-child i{
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 100% 100%;
+	display: inline-block;
+	text-align: center;
+	background: #0055FF;
+	font-size: 10px;
+	position: relative;
+	color: #fff;
+}
+.hdr-login-profile ul li:last-child{
+	display: flex;
+	align-items: center;
+}
+.hdr-login-profile ul li:last-child i:before{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
 }
