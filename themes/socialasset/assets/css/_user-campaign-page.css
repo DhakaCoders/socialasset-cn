@@ -260,7 +260,7 @@ span.miraclePlanthumbSlider-item img{
   max-width: 705px;
   width: 100%;
 }
-.user-story-cmpaign-con h2{
+.user-story-cmpaign-con h3{
   font-size: 30px;
   font-weight: 300;
   color: #0055FF;
@@ -362,7 +362,7 @@ span.miraclePlanthumbSlider-item img{
     padding-left: 0;
     max-width: initial;
   }
-  .user-story-cmpaign-con h2 {
+  .user-story-cmpaign-con h3 {
     margin-bottom: 30px;
   }
   .user-story-gallery {
@@ -376,8 +376,18 @@ span.miraclePlanthumbSlider-item img{
   }
   .user-story-gallery {
     padding: 20px 0;
+  } 
+  h3{
+    font-size: 28px;
   }
-
+  .miracle-plan-des-wrp h3 {
+    font-size: 27px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+  .user-story-cmpaign-con h3 {
+    font-size: 27px;
+  }
 }
 
 @media(max-width: 479px){
@@ -391,7 +401,7 @@ span.miraclePlanthumbSlider-item img{
   .miracle-plan-progress-link-wrp {
     padding-right: 70px;
   }
-  .user-story-cmpaign-con h2 {
+  .user-story-cmpaign-con h3 {
     margin-bottom: 20px;
   }
 }

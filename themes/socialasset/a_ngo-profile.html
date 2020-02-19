@@ -556,12 +556,76 @@
               <div id="tab-3" class="fl-tab-content current">
                 <div class="tab-con-inr">
                   <div class="ngo-create-campaign-con">
-                    <p>Fill the following steps and create a new Campaign!</p>
+                    <div class="ngo-create-campaign-con-des-hdr">
+                      <p>Fill the following steps and create a new Campaign!</p>
+                    </div>
                     <form>
                       <div class="width-425">
                         <div class="ncc-input-fields-row ncc-input-title-fields-row">
                           <label>Title</label>
                           <input type="text" name="" placeholder="Type a Title here">
+                        </div>
+                        <div class="ncc-input-fields-row">
+                          <div class="sa-selctpicker-ctlr">
+                            <select class="selectpicker">
+                                <option selected="selected">Choose Category</option>
+                                <option>Category 1</option>
+                                <option>Category 2</option>
+                                <option>Category 3</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="ncc-input-fields-row  ncc-input-fields-row-col clearfix">
+                          <label>Date</label>
+                          <div class="ncc-input-fields-col">
+                            <div class="date-field">
+                              <label>From:</label>
+                              <div class="date-input">
+                                <input type="date" name="">
+                                <img src="assets/images/calender.png">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ncc-input-fields-col">
+                            <div class="date-field">
+                              <label>To:</label>
+                              <div class="date-input">
+                                <input type="date" name="">
+                                <img src="assets/images/calender.png">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ncc-input-fields-row ngo-upload-cover-photo">
+                          <div class="ngo-upload-cover-photo-inr">
+                            <input type="file" name="" placeholder="Upload a cover Image">
+                            <span>Upload a cover Image</span>
+                            <i><img src="assets/images/plus-black.png"></i>
+                          </div>
+                        </div>
+                        <div class="ncc-campaign-gallery">
+                          <label><strong>Campaign Gallery</strong> (Upload more images and videos)</label>
+                          <div class="ncc-campaign-gallery-list" >
+                            <ul class="ulc clearfix">
+                              <li>
+                                <div class="ncc-campaign-gallery-add-img">
+                                  <input type="file" name="">
+                                  <i><img src="assets/images/plus-black.png"></i>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pr-190">
+                        <div class="ncc-text-editor">
+                          <label>Text</label>
+                            <div>
+                              <textarea style="min-height: 640px; background: #fff; border-radius: 6px; background: #fff; width: 100%; border: none;"></textarea>
+                            </div>
+                        </div>
+                        <div class="ncc-add-tag">
+                          
                         </div>
                       </div>
                     </form>
