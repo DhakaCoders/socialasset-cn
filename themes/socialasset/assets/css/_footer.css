@@ -49,25 +49,30 @@
 }
 .nl-from-wrp input{
   width: 100%;
-  border:1px solid #fff;
+  border:1px solid #343434;
   border-radius: 30px;
   padding: 23px 70px 25px 33px;
-  font-style: italic;
   font-size: 15px;
   background: #0000;
   color: #fff;
 }
+.nl-from-wrp input:focus{
+  border:1px solid #fff;
+}
 .nl-from-wrp ::-webkit-input-placeholder {
   color: #fff;
   opacity: 1;
+  font-style: italic;
 }
 .nl-from-wrp :-ms-input-placeholder {
   color: #fff;
   opacity: 1;
+  font-style: italic;
 }
 .nl-from-wrp ::placeholder {
   color: #fff;
   opacity: 1;
+  font-style: italic;
 }
 .nl-from-wrp button{
   position: absolute;

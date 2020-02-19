@@ -10,6 +10,18 @@
 	position: relative;
 	z-index: 1;
 }
+.hm-banner-slider .hm-banner-slider-item{
+	display: none !important;
+}
+.hm-banner-slider .hm-banner-slider-item:first-child{
+	display: block !important;
+}
+.hm-banner-slider.slick-initialized .hm-banner-slider-item{
+	display: block !important;
+}
+
+
+
 .hm-banner-slider-item span.hm-banner-slider-overlay{
 	display: inline-block;
 	vertical-align: baseline;
@@ -60,8 +72,7 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 6px 10px;
-	background: #000;
-	opacity: .8;
+	background: rgb(0, 0, 0, .8);
 	margin-bottom: 8px;
 	border-radius: 4px;
 }
@@ -72,6 +83,10 @@
 	line-height: 35px;
 	margin-bottom: 18px;
 }
+
+
+
+
 .hm-banner-design-1 p{
 	font-size: 16px;
 	font-weight:500;
@@ -85,11 +100,12 @@
 	font-size: 12px;
 	font-weight:900;
 	line-height: 15px;
-	padding: 16px 80px;
+	padding: 16px 75px 16px;
 	color: #fff;
 	background: #0055FF;
 	border:  2px solid #0055FF;
 	border-radius: 60px;
+	letter-spacing: 1.5px;
 }
 .hm-banner-design-1 a:hover{
 	background: #fff;
@@ -111,6 +127,29 @@
 	text-transform: uppercase;
 	font-weight: 700;
 	line-height: 56px;
+}
+.hm-banner-design-2 h2 span{
+	position: relative;
+}
+.hm-banner-design-2 h2 span.bus::after{
+	content: "";
+	position: absolute;
+	height: 14px;
+	right: 0;
+	bottom: 5px;
+	left: 20px;
+	background: #03D39B;
+	z-index: -1
+}
+.hm-banner-design-2 h2 span.soc::after{
+	content: "";
+	position: absolute;
+	height: 14px;
+	right: 6px;
+	bottom: 5px;
+	left: -9px;
+	background: #0055FF;
+	z-index: -1
 }
 .hm-banner-design-2 a{
 	display: inline-block;
@@ -143,22 +182,23 @@
 	position: relative;
 	z-index: 5
 }
-.hm-wc-social-assets-top h3{
+.hm-wc-social-assets-top h1{
 	font-weight: 700;
 	color: #0055FF;
 	margin-bottom: 25px;
+	font-size: 32px;
 }
 .hm-wc-social-assets-top p{
 	font-size: 20px;
 	color: #000;
 	margin-bottom: 15px;
+	line-height: 31px;
 }
 .hm-wc-social-assets-top p strong{
 	font-style: italic;
 	font-size: 26px;
 	color: #7E7E7E;
 	font-weight: 400;
-	line-height: 31px;
 }
 .hm-wc-social-assets-top a{
 	display: inline-block;
@@ -236,7 +276,7 @@ span.hm-wc-social-assets-top-shape {
 .hm-user-support-rgt-des a::after{
 	content: "";
 	position: absolute;
-	top: 3px;
+	top: 1px;
 	right: 0;
 	opacity: 1;
 	width: 17px;	
@@ -249,6 +289,48 @@ span.hm-wc-social-assets-top-shape {
 	opacity: .8;
 	padding-right: 30px;
 }
+
+
+
+
+.upcoming-campaigns-sec{
+	padding: 100px 0 150px;
+	background: #F4F5F9;
+}
+
+
+.upcoming-campaigns-head h4{
+	color: #0054FD;
+	margin-bottom: 20px;
+	
+}
+.upcoming-campaigns-head p{
+	font-size: 16px;
+	margin-bottom: 12px;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .hm-explore-campaigns-sec{
 	padding: 108px 0 130px;
 }
@@ -391,7 +473,19 @@ span.hm-wc-social-assets-top-shape {
 	position: relative;
 	background: #fff;
 	border-radius: 20px;
+	text-align: left;
 }
+.hm-testimonials-slider .hm-testimonials-slider-item{
+	display: none !important;
+}
+.hm-testimonials-slider .hm-testimonials-slider-item:first-child{
+	display: block !important;
+}
+.hm-testimonials-slider.slick-initialized .hm-testimonials-slider-item{
+	display: block !important;
+}
+
+
 .hm-testimonials-slider-item i{
 	display: inline-block;
 	vertical-align: baseline;
@@ -500,13 +594,19 @@ span.btm-q-icon{
 	 border-radius: 8px
 }
 .hm-blog-grid-item-innr:hover{
-	-webkit-box-shadow: 1px 1px 26px -10px rgba(0,0,0,0.75);
-	-moz-box-shadow: 1px 1px 26px -10px rgba(0,0,0,0.75);
-	box-shadow: 1px 1px 26px -10px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 1px 1px 20px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 20px -10px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 20px -10px rgba(0,0,0,0.75);
 }
 .hm-blog-grid-bg{
 	overflow: hidden;
 	border-radius: 8px;
+	-webkit-transition: all .5s ease;
+	 -o-transition: all .5s ease;
+	 transition: all .5s ease; 
+}
+.hm-blog-grid-item-innr:hover .hm-blog-grid-bg {
+    border-radius: 8px 8px 0 0;
 }
 .hm-blog-grid-bg-main{
 	min-height: 360px;
@@ -525,8 +625,8 @@ span.btm-q-icon{
 	transform: scale(1.05);
 }
 .hm-blog-grid-des{
-	font-family: 'Roboto Condensed', sans-serif;
-	padding: 30px 22px 10px 16px;
+	/* font-family: 'Roboto Condensed', sans-serif; */
+	padding: 30px 17px 10px 16px;
 }
 .hm-blog-grid-des h6{
 	font-size: 15px;
@@ -575,12 +675,22 @@ span.btm-q-icon{
 .hm-join-journey-sec .jjsg-des-bottom{
 	position: relative;
 }
+.join-journey-section.hm-join-journey-sec .jjsg-des-top .jjsg-des{
+	padding-right: 15px;
+    padding-top: 48px;
+}
+.join-journey-section.hm-join-journey-sec .jjsg-des-bottom .jjsg-des{
+	padding-top: 40px;
+	padding-right: 30px;
+}
+
+
 .hm-join-journey-sec .jjsg-des-top > span {
 	display: inline-block;
 	vertical-align: baseline;
 	position: absolute;
-	top: 30px;
-	left: 88px;
+	top: 45px;
+	left: 80px;
 	max-width: 184px;
 	z-index: -1;
 }
@@ -589,13 +699,38 @@ span.btm-q-icon{
 	vertical-align: baseline;
 	position: absolute;
 	top: 13px;
-	left: 50px;
+	left: 30px;
 	max-width: 184px;
 	z-index: -1;
 }
 .hm-join-journey-sec .jjsg-des-top > span img,
 .hm-join-journey-sec .jjsg-des-bottom > span img{
 	width: 100%;
+}
+.hm-join-journey-sec .jjsg-des > a{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 12px;
+	font-weight: 900;
+	color: #0055FF;
+	position: relative;
+	padding-right: 28px;
+}
+.hm-join-journey-sec .jjsg-des > a:hover{
+	opacity: .8;
+	padding-right: 33px;
+}
+.hm-join-journey-sec .jjsg-des > a::after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 17px;
+	height: 12px;
+	background: url(../images/jjsg-rgt-arrow.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
 }
 
 .hm-banner-slider .slick-dots {
@@ -719,7 +854,16 @@ span.btm-q-icon{
 	vertical-align: middle!important;
 }
 
+.hm-partner-slider.dft-slider-dot-con .slick-dots li button {
+    border: 1px solid #5BCBCA;
+}
+.hm-partner-slider.dft-slider-dot-con .slick-dots li button:hover {
+    background: #5BCBCA;
+}
 
+.hm-partner-slider.dft-slider-dot-con .slick-dots li.slick-active button {
+    background: #5BCBCA;
+}
 
 
 
@@ -957,6 +1101,9 @@ span.btm-q-icon{
 	.hm-banner-design-2 .hm-banner-slider-item-innr {
 	    padding-left: 20px;
 	    padding-right: 20px;
+	}
+	.hm-wc-social-assets-top h1{
+		font-size: 28px;
 	}
 }
 
