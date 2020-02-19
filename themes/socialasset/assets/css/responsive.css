@@ -27,7 +27,24 @@
 	.show-md{
 		display: block!important;
 	}
-	
+	h1{ 
+		font-size: 45px; 
+	}
+	h2{ 
+		font-size: 40px;
+	}
+	h3{
+		font-size: 32px;
+	}
+	h4{
+		font-size: 30px;
+	}
+	h5{
+		font-size: 25px;
+	}
+	h6{
+		font-size: 20px;
+	}
 }
 
 @media(max-width: 767px){
@@ -37,6 +54,24 @@
 	.show-sm{
 		display: block!important;
 	}
+	h1{ 
+		font-size: 40px; 
+	}
+	h2{ 
+		font-size: 36px;
+	}
+	h3{
+		font-size: 32px;
+	}
+	h4{
+		font-size: 30px;
+	}
+	h5{
+		font-size: 25px;
+	}
+	h6{
+		font-size: 20px;
+	}
 }
 
 @media(max-width: 575px){
@@ -45,6 +80,24 @@
 	}
 	.show-xs{
 		display: block!important;
+	}
+	h1{ 
+		font-size: 36px; 
+	}
+	h2{ 
+		font-size: 32px;
+	}
+	h3{
+		font-size: 28px;
+	}
+	h4{
+		font-size: 25px;
+	}
+	h5{
+		font-size: 22px;
+	}
+	h6{
+		font-size: 20px;
 	}
 
 }
