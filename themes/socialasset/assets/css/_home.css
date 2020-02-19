@@ -221,7 +221,7 @@ span.hm-wc-social-assets-top-shape {
 .hm-user-support-rgt-des p{
 	font-size: 15px;
 	line-height: 25px;
-	padding-bottom: 18px;
+	margin-bottom: 32px;
 	opacity: 1;
 }
 .hm-user-support-rgt-des a{
@@ -800,6 +800,10 @@ span.btm-q-icon{
 	.hm-banner-slider-item {
 	    min-height: 600px;
 	}
+	.hm-banner-design-2 h2 {
+	    margin-bottom: 30px;
+	    line-height: 48px;
+	}
 }
 
 @media(max-width: 767px){
@@ -866,6 +870,10 @@ span.btm-q-icon{
 	    margin: auto;
 	    text-align: center;
 	}
+	.hm-banner-design-2 h2 {
+	    margin-bottom: 28px;
+	    line-height: 42px;
+	}
 
 }
 @media(max-width: 639px){
@@ -911,10 +919,31 @@ span.btm-q-icon{
 	    margin: 0 auto 25px;
 	    float: none;
 	}
+	.hm-banner-design-1 h4 {
+	    font-size: 25px;
+	    line-height: 30px;
+	    margin-bottom: 10px;
+	}
+	.hm-banner-design-2 h2 {
+	    line-height: 38px;
+	}
+	.hm-banner-design-2 .hm-banner-slider-item-innr {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
 }
 
 @media(max-width: 479px){
-
+	.hm-banner-design-1 .hm-banner-slider-item-rgt-des {
+	    padding: 25px 25px 20px;
+	}
+	.hm-wc-social-assets-top a {
+	    margin-top: 30px;
+	}
+	.hm-testimonials-slider-item {
+	    min-height: initial;
+	    padding: 50px 20px;
+	}
 
 }
 
