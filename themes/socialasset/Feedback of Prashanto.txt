@@ -3,10 +3,10 @@ Home
 Desktop--->
 
 1. https://www.screencast.com/t/fq4Pdupw
-	missing --done
+	missing --done <---Ok
 
 2. https://www.screencast.com/t/fZyPTRi1K1nC
-	rgba() bg hobe.  ata daw --done
+	rgba() bg hobe.  ata daw --done  <---Ok 
 
 3. https://www.screencast.com/t/sQ2Rc2oYc87
 	https://www.screencast.com/t/bImNHu25oY
@@ -60,4 +60,18 @@ Footer
 3. https://www.screencast.com/t/H2QMYYsM7gnN
 	'a' tag ar vitore 'i' tag niye font-awesome class gulo daw  --done
 
-4. 
+
+
+New fix
+----------
+1. https://www.screencast.com/t/lqFh4EVoWq
+	br hobe
+
+2. https://www.screencast.com/t/SzEAZqL61lH
+	rgba() ar "a" missing. 
+
+3. ager 3. iii)
+
+4. ager 4.  ---reload dile nicher slider gulo brk dische akhono
+
+5. 
