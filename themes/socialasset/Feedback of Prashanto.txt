@@ -52,39 +52,79 @@ Desktop--->
 Footer
 ------------------
 1. https://www.screencast.com/t/EL49mL5seyKW
-	just placeholder ta italic hobe. but kichu likhle italic hobena --done
+	just placeholder ta italic hobe. but kichu likhle italic hobena --done  <----ok
 
 2. https://www.screencast.com/t/hPMYaYQlBKr
-	border color mileni . #343434 ata hobe. check kore dekhe nio --done
+	border color mileni . #343434 ata hobe. check kore dekhe nio --done <----ok
 
 3. https://www.screencast.com/t/H2QMYYsM7gnN
-	'a' tag ar vitore 'i' tag niye font-awesome class gulo daw  --done
+	'a' tag ar vitore 'i' tag niye font-awesome class gulo daw  --done <----ok
 
 
 
 New fix
 ----------
 1. https://www.screencast.com/t/lqFh4EVoWq
-	br hobe
+	br hobe --done  <----ok
 
 2. https://www.screencast.com/t/SzEAZqL61lH
-	rgba() ar "a" missing. 
+	rgba() ar "a" missing.  --done  <----ok
 
-3. ager 3. iii)
+3. ager 3. iii) --done  <----ok
 
-4. ager 4.  ---reload dile nicher slider gulo brk dische akhono
+4. ager 4.  ---reload dile nicher slider gulo brk dische akhono --done <----ok
 
 5. https://www.screencast.com/t/9VjlsxCvh
-	jokhon next kora hoy tokhon slide item ar corner gulo buja jay.
+	jokhon next kora hoy tokhon slide item ar corner gulo buja jay. --done  <----ok
 
 6. https://www.screencast.com/t/mzi2fW0lu
-	aita r aktu niche nambe. ai borabor hobe
+	aita r aktu niche nambe. ai borabor hobe --done  <----ok
 
 7. https://www.screencast.com/t/YWtvhgpI0
-	arrow missing
+	arrow missing --done   <----ok
 
 8. https://www.screencast.com/t/ovY4duQ2oXq
-	hover a transition lagbe maybe
+	hover a transition lagbe maybe --done   <----ok
 
 9. https://www.screencast.com/t/wrR5F0f543
-	ai wave ta missing
+	ai wave ta missing --done   <----ok
+
+
+------------------------------
+Responsive -------------->
+
+1. https://www.screencast.com/t/dnR4kb2koDm
+	radius missing ai media te
+
+2. https://www.screencast.com/t/oeYaAmrS
+	767px a amon koro 
+
+3. https://www.screencast.com/t/Ygaqr8CUABe
+	ai content ta always vertically and horizontally center a thakbe.
+
+4. https://www.screencast.com/t/fggxXaV9u
+	1199px a ai gap ta besi hoye geche.. jemonta 320px pojonto jeno valo dekhay temon kore rkahte hobe
+
+5. https://www.screencast.com/t/x8uRpwgXAHB1
+	upore uthe geche always aikhane thakbe
+
+6. https://www.screencast.com/t/YZIceVTljVA6
+	blockquote gulo lagbe 320px pojonto.
+
+7. https://www.screencast.com/t/gWM4W8Jvh
+	img kokhono lege jete pare. onno img use korle. tai desktop thake 
+	left and right a amader k gap diye rkahte hobe. 5px dite paro left, right a
+
+8. https://www.screencast.com/t/vMOWdPggR
+	img ar height 991px a 260px daw 
+
+9. https://www.screencast.com/t/rpjtAuWOJx
+	767px a  amon rakho, center.
+
+10. https://www.screencast.com/t/bWuseh08
+	atar center a copyright text ta always thakbe
+
+
+
+
+
