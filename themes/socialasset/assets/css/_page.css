@@ -98,7 +98,6 @@ Start sitemap
 	left:58px;
 	z-index: 99;
 	max-width: 572px;
-	width: 100%;
 	background: #fff;
 	padding: 35px 36px 38px 48px;
 	-webkit-box-shadow: 1px 1px 28px -11px rgba(0,0,0,0.30);
@@ -144,7 +143,6 @@ Start sitemap
 
 
 
-
 @media(max-width: 1499px){
 
 }
@@ -178,8 +176,6 @@ Start sitemap
 		left:15px;
 		right: 15px;
 		bottom: 70px;
-		max-width: initial;
-		width: 100%;
 	}
 }
 
