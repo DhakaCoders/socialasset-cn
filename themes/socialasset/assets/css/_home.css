@@ -72,7 +72,7 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 6px 10px;
-	background: rgb(0, 0, 0, .8);
+	background: rgba(0, 0, 0, .8);
 	margin-bottom: 8px;
 	border-radius: 4px;
 }
@@ -296,6 +296,7 @@ span.hm-wc-social-assets-top-shape {
 .upcoming-campaigns-sec{
 	padding: 100px 0 150px;
 	background: #F4F5F9;
+	position: relative;
 }
 
 .upcoming-campaigns-head{
@@ -334,7 +335,7 @@ span.hm-wc-social-assets-top-shape {
 
 
 .hm-explore-campaigns-sec{
-	padding: 108px 0 130px;
+	padding-bottom: 130px;
 }
 .hm-explore-campaigns-innr ul{
 	margin-left: -8px;
@@ -521,7 +522,7 @@ span.btm-q-icon{
 	max-width: 36px;
 	position: absolute;
 	display: inline-block;
-	bottom: 85px;
+	bottom: 78px;
 	right: 50px;
 }
 .hm-testimonials-ftr {
