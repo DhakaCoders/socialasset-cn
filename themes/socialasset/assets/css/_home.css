@@ -1267,7 +1267,9 @@ span.btm-q-icon{
 	    min-height: initial;
 	    padding: 50px 20px;
 	}
-
+	.upcoming-campaigns-sec span.hm-wc-social-assets-top-shape {
+	    height: 70px;
+	}
 	span.top-q-icon {
 	    top: 170px;
 	    left: 20px;
