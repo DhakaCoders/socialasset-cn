@@ -394,17 +394,25 @@ $('.hdr-login-profile').on('click', function(){
 });
 
 $('.register-type-btn a').on('click', function(){
-  $('.register-type-con').show(300);
-  $('.register-type-btn').fadeOut(300);
+  $('.register-type-con').show();
+  $('.register-type-btn').hide();
 });
 
 $('.profile-submit-btn a').on('click', function(){
-  $('.register-type-con').show(300);
-  $('.register-type-btn').fadeOut(300);
+  $('.register-type-con').show();
+  $('.register-type-btn').hide();
 });
 
 
+$('.edit-profile-btn').on('click', function(){
+  $('.profile-edit-step-1').hide();
+  $('.profile-edit-step-2').show();
+});
 
+$('#edit-profile-cancle-btn').on('click', function(){
+  $('.profile-edit-step-1').show();
+  $('.profile-edit-step-2').hide();
+});
 
     //new WOW().init();
 
