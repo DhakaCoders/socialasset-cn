@@ -130,7 +130,7 @@
   padding: 75px 0 30px;
 }
 .footer-wrp .ftr-btm-lft {
-  padding-top: 10px;
+  padding-top: 3px;
 }
 .footer-wrp .ftr-btm-lft span{
   display: inline-block;
@@ -205,16 +205,28 @@
   .footer-wrp .ftr-btm {
     padding: 30px 0 30px;
   }
+  .ftr-col-1 {
+    max-width: initial;
+    text-align: center;
+  }
+  .ftr-social {
+    padding-top: 20px;
+  }
   .ftr-col-2 {
     max-width: initial;
     float: none;
     padding-top: 45px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
   }
-  .ftr-col-1 {
-    max-width: initial;
+  .ftr-col-2 ul{
+    display: table;
+    margin: 0 auto;
   }
-  .ftr-social {
-    padding-top: 20px;
+  .nl-from-wrp {
+    position: relative;
+    margin-bottom: 35px;
   }
 }
 
