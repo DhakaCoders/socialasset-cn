@@ -244,5 +244,9 @@ form .dropdown-menu li a{
 	background-color: #0054FD;
 }
 
+.bootstrap-select .dropdown-toggle:focus{
+	outline: none!important;
+}
+
 
 
