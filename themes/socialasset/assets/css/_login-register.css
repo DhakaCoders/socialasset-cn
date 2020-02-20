@@ -123,6 +123,40 @@ button.tab-link.current:after{
   color: #727272;
   opacity: 1;
 }
+
+.sa-input textarea{
+	min-height: 167px;
+	background: #f7f7f7;
+	width: 100%;
+	resize: none;
+	padding: 15px;
+	font-size: 13px;
+	line-height: 16px;
+	border: none;
+}
+
+.sa-input textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #727272;
+  opacity: 1;
+  font-style: italic;
+}
+.sa-input textarea::-moz-placeholder { /* Firefox 19+ */
+  color: #727272;
+  opacity: 1;
+  font-style: italic;
+}
+.sa-input textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #727272;
+  opacity: 1;
+  font-style: italic;
+}
+.sa-input textarea:-moz-placeholder { /* Firefox 18- */
+  color: #727272;
+  opacity: 1;
+  font-style: italic;
+}
+
+
 .fl-input-field-row label{
 	font-weight: 400;
 	font-size: 16px;
@@ -529,7 +563,6 @@ a.linkedin-login-btn:hover{
 	font-weight: 400;
 }
 .profile-basic-info-bx-cntlr span{
-	display: block;
 	font-size: 14px;
 	line-height: 16px;
 	margin-bottom: 10px;
@@ -545,10 +578,33 @@ a.linkedin-login-btn:hover{
 	border: 4px solid #fff;
 	background: #e9eaef;
 }
+.profile-img.branding-logo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+}
+
+span.file-up-instruction-txt {
+    position: absolute;
+    left: -12px;
+    right: 0;
+    width: 60px;
+    bottom: -29px;
+    font-size: 9px!important;
+    font-style: italic;
+    color: #A7AAB4;
+    margin-bottom: 0;
+    line-height: 12px!important;
+}
+.profile-img.branding-logo img{
+	width: auto;
+	height: auto;
+	border-radius: 0;
+}
 .profile-img-step-1,
 .profile-img-step-2{
 	padding-bottom: 25px;
-	min-height: 118px;
 }
 .username-filed{
 	min-height: 70px;
@@ -562,11 +618,18 @@ a.linkedin-login-btn:hover{
 	height: 93px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 25px;
 	box-shadow: 0 0 25px #e6e3e3;
 	border: 4px solid #fff;
 	background: #e9eaef;
 	position: relative;
+}
+.ngo-profile-sec .profile-img-edit,
+.ngo-profile-sec .profile-img,
+.business-profile-sec .profile-img,
+.business-profile-sec .profile-img-edit{
+	width: 130px;
+	height: 130px;
+	margin-bottom: 0;
 }
 
 .profile-img-edit input {
@@ -935,7 +998,6 @@ a.linkedin-login-btn:hover{
 }
 
 span.status-published-title{
-	display: block;
 	color: #39CBB1!important;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -1509,4 +1571,9 @@ span.status-published-title.color-red{
 }
 .profile-edit-step-2.profile-submit-btn #edit-profile-cancle-btn{
 	float: right;
+}
+
+
+#ui-datepicker-div{
+	z-index: 50!important;
 }
