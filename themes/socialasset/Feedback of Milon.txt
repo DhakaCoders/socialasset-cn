@@ -1,0 +1,28 @@
+Contact 
+--------------- 
+Desktop--->
+
+1. https://www.screencast.com/t/gsm9joSYG
+	cursor pointer hobe
+
+2. https://www.screencast.com/t/Sst4llcx
+	ai font-family ta tule daw. ata dile psd ar moto milena
+
+3. https://www.screencast.com/t/ZnsdsiMWjmy
+	icon payni font-awesome 5 ar class dite hobe. 
+
+
+
+
+Responsive------->
+
+1. https://www.screencast.com/t/VTbxtn4cB
+	575px a ai font-size ta daw
+
+2. https://www.screencast.com/t/nZA93NSG
+	i) 991px a box tar max width uporer form ar width borabor rakho
+	ii) border radius ta thakbe
+	iii) text gulo center a rakho
+	iv) https://www.screencast.com/t/aRL7evnfIUa
+		320px projonto left and right 15px; gap rakho. lagay diona. niche box ta map ar uporei thakbe
+	
