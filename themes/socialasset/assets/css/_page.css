@@ -30,3 +30,60 @@ box-shadow: 0px 14px 23px 0px rgba(227,228,232,1);
 .modal-login-form .fl-submit-btn input[type="submit"]{
 	border-radius: 28px;
 }
+
+
+
+
+
+
+/*=====================
+	cokie design
+=====================*/
+
+.cookie-wrp{
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cookie-inner{
+	max-width: 572px;
+	width: 100%;
+	font-size: 15px;
+	background: #fff;
+	padding: 35px 36px 38px 48px;
+	-webkit-box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+}
+.cookie-wrp h6{
+	font-size: 19px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 12px;
+	color: #0055FF;
+}
+.cookie-wrp p{
+	font-size: 16px;
+	color: #515A5F;
+	margin-bottom: 23px;
+}
+.cookie-wrp button.agree-btn{
+	font-size: 13px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	width: 162px;
+	height: 52px;
+	border: 2px solid #0055FF;
+	color: #fff;
+	background: #0055FF;
+	cursor: pointer;
+}
+.cookie-wrp button.agree-btn:hover{
+	color: #0055FF;
+	background: #fff;
+}
