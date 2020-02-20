@@ -1,5 +1,5 @@
 Home 
----------------
+--------------- 
 Desktop--->
 
 1. https://www.screencast.com/t/fq4Pdupw
@@ -132,10 +132,10 @@ Desktop and responsive--->
 
 1. https://www.screencast.com/t/OWxQlfym
 	https://www.screencast.com/t/rVb1wr2b
-	font-size mileni
+	font-size mileni --done
 
 2. https://www.screencast.com/t/9JL93cp1y5
-	767px a akta akta kore daw
+	767px a akta akta kore daw --done
 
 
 
@@ -143,21 +143,16 @@ User campaign page
 ---------------
 Desktop and responsive --->
 
-1. button ar latter-space gulo tomar sob page a fix koro
+1. button ar latter-space gulo tomar sob page a fix koro --done
 
 2. https://www.screencast.com/t/RWhDYd7b5
-	575px ai height ta daw
+	575px ai height ta daw --done
 
 3.https://www.screencast.com/t/9d6z0dSTI8k
- 	575px ata daw
+ 	575px ata daw --done
 
 4. https://www.screencast.com/t/aDggw7Fz8v
 	320px pojonto ak line a rakha jay kina try kore dekho
 
 5. https://www.screencast.com/t/sNlGQFQf5
-	lege jasche
-
-
-
-
-
+	lege jasche --done

@@ -92,38 +92,36 @@ Start sitemap
 	cokie design
 =====================*/
 
-.cookie-wrp{
+.social-cookie-bar{
 	position: fixed;
 	bottom: 70px;
-	left: 0;
-	right: 0;
-	z-index: 20;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-.cookie-inner{
+	left:58px;
+	z-index: 99;
 	max-width: 572px;
 	width: 100%;
-	font-size: 15px;
 	background: #fff;
 	padding: 35px 36px 38px 48px;
-	-webkit-box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
-	-moz-box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
-	box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 1px 1px 28px -11px rgba(0,0,0,0.30);
+	-moz-box-shadow: 1px 1px 28px -11px rgba(0,0,0,0.30);
+	box-shadow: 1px 1px 28px -11px rgba(0,0,0,0.30);
 }
-.cookie-wrp h6{
+.social-cookie-bar h6{
 	font-size: 19px;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 12px;
 	color: #0055FF;
 }
-.cookie-wrp p{
+.social-cookie-bar p{
 	font-size: 16px;
 	color: #515A5F;
 	margin-bottom: 23px;
 }
-.cookie-wrp button.agree-btn{
+.social-cookie-btn{
+	display: inline-block;
+	vertical-align: baseline;
+}
+.social-cookie-btn button{
 	font-size: 13px;
 	font-weight: 700;
 	text-align: center;
@@ -135,7 +133,7 @@ Start sitemap
 	background: #0055FF;
 	cursor: pointer;
 }
-.cookie-wrp button.agree-btn:hover{
+.social-cookie-btn button:hover{
 	color: #0055FF;
 	background: #fff;
 }
@@ -170,13 +168,26 @@ Start sitemap
 
 @media(max-width: 767px){
 
+	.social-cookie-bar{
+		left:15px;
+	}
+}
+
+@media(max-width: 639px){
+	.social-cookie-bar{
+		left:15px;
+		right: 15px;
+		bottom: 70px;
+		max-width: initial;
+		width: 100%;
+	}
 }
 
 @media(max-width: 575px){
-	.cookie-inner {
+	.social-cookie-bar{
 	    padding: 30px 20px 35px;
 	}
-	.cookie-wrp button.agree-btn {
+	.social-cookie-btn button{
 	    width: 130px;
 	    height: 45px;
 	}
