@@ -18,6 +18,7 @@
   <link rel="stylesheet" type="text/css" href="assets/fancybox3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" type="text/css" href="assets/slick.slider/slick-theme.css">
   <link rel="stylesheet" type="text/css" href="assets/slick.slider/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="assets/fonts/custom-fonts.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
@@ -146,11 +147,11 @@
             <div class="business-profile-sec-iner width-1115">
               <div class="user-profile-sec-tab">
                 <div class="fl-tabs clearfix">
-                  <button class="tab-link" data-tab="tab-1"><span>My ACCONT</span></button>
-                  <button class="tab-link current" data-tab="tab-2"><span>Supported campaigns</span></button>
+                  <button class="tab-link current" data-tab="tab-1"><span>My ACCONT</span></button>
+                  <button class="tab-link" data-tab="tab-2"><span>Supported campaigns</span></button>
                 </div>
               </div>
-              <div id="tab-1" class="fl-tab-content">
+              <div id="tab-1" class="fl-tab-content current">
                 <div class="tab-con-inr">
                   <div class="tab-con-title">
                     <strong>My Account</strong>
@@ -159,15 +160,35 @@
                     <div class="clearfix tab-con-col-row">
                       <div class="tab-con-col-4">
                         <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
-                          <div class="profile-img">
-                            <img src="assets/images/ngo-logo.png">
+                          <div class="profile-edit-step-1 profile-img-step-1">
+                            <div class="profile-img branding-logo">
+                              <img src="assets/images/ngo-logo.png">
+                            </div>
+                          </div>
+                          <div class="profile-edit-step-2 profile-img-step-2">
+                            <div class="profile-img-edit">
+                              <input type="file" name="" value="" id="choose-file">
+                              <label for="choose-file">
+                                <i><img src="assets/images/plus-icon-2.png"></i>
+                                <span class="file-up-instruction-txt">CLICK TO ADD<br> YOUR LOGO</span>
+                              </label>
+                            </div>
                           </div>
                           <strong>Web Flow</strong>
-                          <span>info@webflow.gr</span>
+                          <span style="display: block;">info@webflow.gr</span>
                           <span class="status-published-title">STATUS: PUBLISHED</span>
-                          <hr>
-                          <div class="profile-submit-btn flx-btn-center">
-                            <input type="submit" name="" value="Edit Profile">
+                          <div style="height: 1px"></div>
+                          <hr class="clearfix">
+                          <div class="plr-30">
+                            <div class="profile-submit-btn profile-edit-step-1 flx-btn-center">
+                              <!-- <input type="submit" name="" value="Edit Profile"> -->
+                              <a class="edit-profile-btn" href="javascript:void(0)">Edit Profile</a>
+                            </div>
+                            <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
+                              <input type="submit" name="" value="Save Changes">
+                              <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
+                              <a href="javascript:void(0)" id="edit-profile-cancle-btn" href="#">Cancel</a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -239,7 +260,7 @@
                   </form>
                 </div>
               </div>
-              <div id="tab-2" class="fl-tab-content current">
+              <div id="tab-2" class="fl-tab-content">
                 <div class="tab-con-inr">
                   <div class="supported-campaigns-tab-hdr clearfix">
                     <strong>Your Campaigns</strong>
@@ -376,6 +397,7 @@
 <script src="assets/js/app.js"></script>
 
 <script src="assets/js/nav.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
 <script src="assets/js/masonry.pkgd.min.js"></script>
 <script src="assets/js/main.js"></script>
 

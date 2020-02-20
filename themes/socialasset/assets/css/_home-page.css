@@ -437,6 +437,10 @@
 	background-position: center center !important;
 	min-height: 315px;
 	border-radius: 5px;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	transition: 0.5s ease-in-out;
+	-webkit-transition: 0.5s ease-in-out;
 }
 .sa-cam-grd-item-des-wrap{
 	display: flex;
@@ -460,6 +464,14 @@
 	font-size: 13px;
 	color: #fff;
 	font-weight: 700;
+}
+.sa-cam-grd-item{
+	overflow: hidden;
+	position: relative;
+}
+.sa-cam-grd-item:hover .sa-cam-grd-item-img{
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
 }
 
 .sa-cam-sec-link{
@@ -607,25 +619,58 @@
     right: -13%;
 }
 
-.sa-testimonial-section .slick-dots li button:before {
-    font-family: 'slick';
-    font-size: 16px;
-    line-height: 20px;
+.sa-testimonial-section .slick-dots {
     position: absolute;
-    top: 70px;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    content: '•';
+    bottom: initial;
+    display: block;
+    width: 130px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     text-align: center;
-    opacity: .25;
-    color: #fbf2f2;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.sa-testimonial-section .slick-dots li.slick-active button:before{
-    opacity: .75;
-    color: #fbf2f2;
+.sa-testimonial-section .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 3px 10px;
+    padding: 0;
+    cursor: pointer;
+    float: initial;
+}
+.sa-testimonial-section .slick-dots li button::before {
+    content: none;
+}
+.sa-testimonial-section .slick-dots li button {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    outline: none;
+    background: #0000;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.sa-testimonial-section .slick-dots li button:hover {
+    background: #fff;
+}
+.sa-testimonial-section .slick-dots li.slick-active button {
+    background: #fff;
+}
+
+.sa-testimonial-section.slick-dotted{
+    margin-bottom: 0!important;
+}
+
+.sa-testimonial-section .slick-dotted.slick-slider {
+    margin-bottom: 0px;
 }
 
 
@@ -664,6 +709,7 @@
 .sa-blog-section{
 	padding-top: 115px;
 	padding-bottom: 130px;
+	background: #f2f2f2;
 }
 .sa-blog-sec-inner{
 	max-width: 1130px;
@@ -696,6 +742,10 @@
 	padding-right: 12px;
 }
 
+.sa-blog-grd-item-img-wrap{
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
 .sa-blog-grd-item-img-ctlr{
 	overflow: hidden;
 }
@@ -714,6 +764,15 @@
 	transform: scale(1.05);
 	-webkit-transform: scale(1.05);
 }
+.sa-blog-grid-item:hover .sa-blog-grd-item-img-wrap{
+	background: #fff !important;
+	border: 1px solid #fff !important;
+}
+.sa-blog-grid{
+	margin-bottom: 20px;
+}
+
+
 
 .sa-blog-grd-item-des{
 	padding: 30px 25px 0 15px;
@@ -733,6 +792,9 @@
 	font-weight: 400;
 	padding-bottom: 35px;
 }
+.hmc{
+	height: 175px;
+}
 
 .sa-blog-link{
 	text-align: center;
@@ -745,7 +807,8 @@
 	background: #0055FF;
 	border-radius: 35px;
 	font-weight: 900;
-	border: 1px solid #0055FF
+	border: 1px solid #0055FF;
+	display: inline-block;
 }
 .sa-blog-link a:hover{
 	background: transparent;

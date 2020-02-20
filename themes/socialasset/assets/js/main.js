@@ -352,25 +352,27 @@ if (windowWidth > 767) {
 }
 }
 
-$('#scrollToAarea').onePageNav({
-  changeHash: false,
-  scrollSpeed: 500,
-  scrollThreshold: 0.5,
-  filter: '',
-  easing: 'swing',
-});
+if( $('#scrollToAarea').length ){
+  $('#scrollToAarea').onePageNav({
+    changeHash: false,
+    scrollSpeed: 500,
+    scrollThreshold: 0.5,
+    filter: '',
+    easing: 'swing',
+  });
+}
 
 
+if( $('.masonry').length ){
+  $('.masonry').masonry({
+    // options
+    itemSelector: 'ul.masonry li',
+    columnWidth: '.campaigns-list-item-wrp',
+    percentPosition: true,
+    fitWidth: true
 
-$('.masonry').masonry({
-  // options
-  itemSelector: 'ul.masonry li',
-  columnWidth: '.campaigns-list-item-wrp',
-  percentPosition: true,
-  fitWidth: true
-
-});
-
+  });
+}
 
 $('div.fl-tabs button').click(function(){
     var tab_id = $(this).attr('data-tab');
@@ -418,6 +420,15 @@ $('#edit-profile-cancle-btn').on('click', function(){
   $('.profile-edit-step-2').hide();
 });
 
+if( $('#datepicker').length ){
+  $('#datepicker').datepicker();
+}
+if( $('#datepicker2').length ){
+  $('#datepicker2').datepicker();
+}
+if( $('#datepicker3').length ){
+  $('#datepicker3').datepicker();
+}
     //new WOW().init();
 
 })(jQuery);
