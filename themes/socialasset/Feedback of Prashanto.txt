@@ -70,12 +70,12 @@ New fix
 2. https://www.screencast.com/t/SzEAZqL61lH
 	rgba() ar "a" missing.  --done
 
-3. ager 3. iii) red
+3. ager 3. iii) --done
 
-4. ager 4.  ---reload dile nicher slider gulo brk dische akhono red
+4. ager 4.  ---reload dile nicher slider gulo brk dische akhono --done
 
 5. https://www.screencast.com/t/9VjlsxCvh
-	jokhon next kora hoy tokhon slide item ar corner gulo buja jay. red
+	jokhon next kora hoy tokhon slide item ar corner gulo buja jay. --done
 
 6. https://www.screencast.com/t/mzi2fW0lu
 	aita r aktu niche nambe. ai borabor hobe --done
