@@ -320,7 +320,11 @@ if( $('.miraclePlanthumbSlider').length ){
 
 }
 
-
+if ($('#socialCookie').length) {
+  $('#socialCookie').on('click', function(){
+  $('#social-cookie-bar').hide('slow');
+  });
+}
 
 
 
