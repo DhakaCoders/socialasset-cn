@@ -126,5 +126,32 @@ Responsive -------------->
 
 
 
+About 
+---------------
+Desktop and responsive--->
+
+1. https://www.screencast.com/t/OWxQlfym
+	https://www.screencast.com/t/rVb1wr2b
+	font-size mileni
+
+2. https://www.screencast.com/t/9JL93cp1y5
+	767px a akta akta kore daw
+
+
+
+User campaign page
+---------------
+Desktop and responsive --->
+
+1. button ar latter-space gulo tomar sob page a fix koro
+
+2. https://www.screencast.com/t/RWhDYd7b5
+	575px ai height ta daw
+
+3.https://www.screencast.com/t/9d6z0dSTI8k
+ 	575px ata daw
+
+
+
 
 
