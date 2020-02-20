@@ -124,6 +124,14 @@ button.tab-link.current:after{
   opacity: 1;
 }
 
+.sa-input input[type="text"]:focus,
+.sa-input input[type="email"]:focus,
+.sa-input input[type="number"]:focus,
+.sa-input input[type="password"]:focus{
+	background: #e5e2e2;
+}
+
+
 .sa-input textarea{
 	min-height: 167px;
 	background: #f7f7f7;
@@ -488,8 +496,15 @@ a.linkedin-login-btn:hover{
 	cursor: pointer;
 	margin: 0;
 	text-decoration: underline;
+		transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
-
+.filter-check-row > label:hover,
+.register-hdr-con span a:hover,
+.fl-forget-row a:hover{
+	color: #0055FF;
+}
 .filter-check-row input[type="checkbox"],
 .filter-check-row input[type="radio"]{
 	display: inline-block;

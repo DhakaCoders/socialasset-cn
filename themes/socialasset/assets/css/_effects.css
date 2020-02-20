@@ -13,6 +13,18 @@ a,input,img,textarea,button{
 	-o-transform: scale(1.1);
 }
 
+.flx-btn-center input[type="submit"]:hover, 
+.flx-btn-center a:hover,
+.profile-submit-btn input[type="submit"]:hover, 
+.profile-submit-btn a:hover{
+    background: #024bdd;
+}
+#edit-profile-cancle-btn:hover,
+.profile-submit-btn input[type="reset"]:hover, 
+.profile-submit-btn #edit-profile-cancle-btn:hover{
+    background: #999797;
+    color: #fff;
+}
 /**
 All Hovers
 */

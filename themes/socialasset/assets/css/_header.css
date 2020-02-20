@@ -230,6 +230,9 @@ header.header{
 .login-btn ul li a{
 	color: #000;
 }
+.login-btn ul li a:hover{
+	color: #0055FF;
+}
 .login-btn ul li a strong{
 	font-weight: 700;
 }
@@ -249,6 +252,10 @@ header.header{
 	position: relative;
 	z-index: 11;
 }
+.login-btn button:hover{
+	background: #0055FF;
+	color: #fff;
+}
 .campaign-btn{
 	background: #0055FF;
 	width: 190px;
@@ -262,7 +269,9 @@ header.header{
 	display: inline-block;
 	vertical-align: baseline;	
 }
-
+.campaign-btn:hover{
+	background: #0450ea;
+}
 .humberger-menu-btn-lines{
 	width: 33px;
 	position: relative;
