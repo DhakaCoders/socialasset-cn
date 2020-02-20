@@ -290,7 +290,7 @@ header.header{
 	opacity: 0;
 }
 .humber-menu-expend span:nth-child(3) {
-  top: 10px;
+  top: 9px;
   transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -461,9 +461,14 @@ header.header{
 
 .main-nav{
 	display: flex;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;	
 }
+
 .logged-main-nav{
 	display: none;
+
 }
 
 .hdr-login-profile {
@@ -504,6 +509,7 @@ header.header{
     left: -1px;
     top: 13px;
 }
+
 .logged-menu .main-nav-menu > ul{
 	padding-right: 5px;
 }
@@ -520,7 +526,9 @@ header.header{
     top: 19px;
     right: 0;
 }
-
+.hdr-login-profile.login-btn-expend:after{
+	content: "\f106"
+}
 .hdr-login-profile ul{
 	position: absolute;
 	top: 100%;
