@@ -30,3 +30,164 @@ box-shadow: 0px 14px 23px 0px rgba(227,228,232,1);
 .modal-login-form .fl-submit-btn input[type="submit"]{
 	border-radius: 28px;
 }
+
+
+
+/* 
+----------------- 
+Start sitemap
+-----------------
+*/   
+.sitemap{
+  max-width: 800px;
+  margin: 0 auto;
+  padding:100px 0;
+}
+.sitemap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitemap ul ul {
+   margin-left: 30px;
+  padding-top: 12px;
+}
+
+.sitemap ul li {
+  padding: 5px 0;
+  margin-bottom: 0;
+}
+
+.sitemap ul li a {
+  display: inline-block;
+  vertical-align: baseline;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  position: relative;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.sitemap ul li a:hover{
+  color: #0055FF;
+}
+.sitemap ul li a:focus{
+  text-decoration: underline;
+}
+.sitemap h2 {
+  margin: 0;
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  color: #0055FF;
+}
+
+
+
+
+/*=====================
+	cokie design
+=====================*/
+
+.cookie-wrp{
+	position: fixed;
+	bottom: 70px;
+	left: 0;
+	right: 0;
+	z-index: 20;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.cookie-inner{
+	max-width: 572px;
+	width: 100%;
+	font-size: 15px;
+	background: #fff;
+	padding: 35px 36px 38px 48px;
+	-webkit-box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 30px -13px rgba(0,0,0,0.75);
+}
+.cookie-wrp h6{
+	font-size: 19px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 12px;
+	color: #0055FF;
+}
+.cookie-wrp p{
+	font-size: 16px;
+	color: #515A5F;
+	margin-bottom: 23px;
+}
+.cookie-wrp button.agree-btn{
+	font-size: 13px;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	width: 162px;
+	height: 52px;
+	border: 2px solid #0055FF;
+	color: #fff;
+	background: #0055FF;
+	cursor: pointer;
+}
+.cookie-wrp button.agree-btn:hover{
+	color: #0055FF;
+	background: #fff;
+}
+
+
+
+
+
+
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+
+
+}
+
+@media(max-width: 991px){
+
+}
+
+@media(max-width: 767px){
+
+}
+
+@media(max-width: 575px){
+	.cookie-inner {
+	    padding: 30px 20px 35px;
+	}
+	.cookie-wrp button.agree-btn {
+	    width: 130px;
+	    height: 45px;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+} 

@@ -541,10 +541,17 @@ a.linkedin-login-btn:hover{
 	height: 93px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 25px;
 	box-shadow: 0 0 25px #e6e3e3;
 	border: 4px solid #fff;
 	background: #e9eaef;
+}
+.profile-img-step-1,
+.profile-img-step-2{
+	padding-bottom: 25px;
+	min-height: 118px;
+}
+.username-filed{
+	min-height: 70px;
 }
 .profile-img img{
 	border-radius: 100% 100%;
@@ -592,7 +599,7 @@ a.linkedin-login-btn:hover{
 
 .profile-basic-info-bx-cntlr hr{
 	border-top: 1px solid #d1d1d1;
-	margin-top: 60px;
+	margin-top: 40px;
 	margin-bottom: 28px;
 }
 
@@ -601,7 +608,7 @@ a.linkedin-login-btn:hover{
 	background: #0055FF;
 	border-radius: 5px;
 	height: 50px;
-	width: 195px;
+	width: 185px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -616,7 +623,17 @@ a.linkedin-login-btn:hover{
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.profile-submit-btn-center input[type="submit"]{
+	margin-left: auto;
+	margin-right: auto;
+}
+.submit-btn-lrg{
+	padding-top: 15px;
+}
+.submit-btn-lrg input[type="submit"]{
+	max-width: 270px;
+	width: 100%;
+}
 .profile-rgt-info-bx-title{
 	font-size: 16px;
 	line-height: 18px;
@@ -650,7 +667,8 @@ a.linkedin-login-btn:hover{
 	display: flex;
 }
 
-.profile-submit-btn input[type="reset"]{
+.profile-submit-btn input[type="reset"],
+.profile-submit-btn #edit-profile-cancle-btn{
 	background: #F4F5F9;
     border-radius: 5px;
     height: 50px;
@@ -884,7 +902,8 @@ a.linkedin-login-btn:hover{
 	display: flex;
 }
 
-.user-profile-edit-sec .fl-input-field-row label{
+.user-profile-edit-sec .fl-input-field-row label,
+.username-filed label{
 	font-size: 13px;
 }
 
@@ -1477,4 +1496,17 @@ span.status-published-title.color-red{
 
 .register-type-con{
 	display: none;
+}
+.profile-edit-step-1,
+.profile-edit-step-2{
+
+}
+.profile-edit-step-2{
+	display: none;
+}
+.profile-edit-step-2.profile-submit-btn input:first-child{
+	float: left;
+}
+.profile-edit-step-2.profile-submit-btn #edit-profile-cancle-btn{
+	float: right;
 }

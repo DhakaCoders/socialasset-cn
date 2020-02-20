@@ -94,35 +94,68 @@ New fix
 Responsive -------------->
 
 1. https://www.screencast.com/t/dnR4kb2koDm
-	radius missing ai media te
+	radius missing ai media te --done
 
 2. https://www.screencast.com/t/oeYaAmrS
-	767px a amon koro 
+	767px a amon koro -done
 
 3. https://www.screencast.com/t/Ygaqr8CUABe
-	ai content ta always vertically and horizontally center a thakbe.
+	ai content ta always vertically and horizontally center a thakbe. -done
 
 4. https://www.screencast.com/t/fggxXaV9u
-	1199px a ai gap ta besi hoye geche.. jemonta 320px pojonto jeno valo dekhay temon kore rkahte hobe
+	1199px a ai gap ta besi hoye geche.. jemonta 320px pojonto jeno valo dekhay temon kore rkahte hobe --done
 
 5. https://www.screencast.com/t/x8uRpwgXAHB1
-	upore uthe geche always aikhane thakbe
+	upore uthe geche always aikhane thakbe --done
 
 6. https://www.screencast.com/t/YZIceVTljVA6
-	blockquote gulo lagbe 320px pojonto.
+	blockquote gulo lagbe 320px pojonto. --done
 
 7. https://www.screencast.com/t/gWM4W8Jvh
 	img kokhono lege jete pare. onno img use korle. tai desktop thake 
-	left and right a amader k gap diye rkahte hobe. 5px dite paro left, right a
+	left and right a amader k gap diye rkahte hobe. 5px dite paro left, right a --done
 
 8. https://www.screencast.com/t/vMOWdPggR
-	img ar height 991px a 260px daw 
+	img ar height 991px a 260px daw  --done
 
 9. https://www.screencast.com/t/rpjtAuWOJx
-	767px a  amon rakho, center.
+	767px a  amon rakho, center. --done
 
 10. https://www.screencast.com/t/bWuseh08
-	atar center a copyright text ta always thakbe
+	atar center a copyright text ta always thakbe --done
+
+
+
+About 
+---------------
+Desktop and responsive--->
+
+1. https://www.screencast.com/t/OWxQlfym
+	https://www.screencast.com/t/rVb1wr2b
+	font-size mileni
+
+2. https://www.screencast.com/t/9JL93cp1y5
+	767px a akta akta kore daw
+
+
+
+User campaign page
+---------------
+Desktop and responsive --->
+
+1. button ar latter-space gulo tomar sob page a fix koro
+
+2. https://www.screencast.com/t/RWhDYd7b5
+	575px ai height ta daw
+
+3.https://www.screencast.com/t/9d6z0dSTI8k
+ 	575px ata daw
+
+4. https://www.screencast.com/t/aDggw7Fz8v
+	320px pojonto ak line a rakha jay kina try kore dekho
+
+5. https://www.screencast.com/t/sNlGQFQf5
+	lege jasche
 
 
 
