@@ -108,6 +108,7 @@
 	background: #0055FF;
 	border:  2px solid #0055FF;
 	border-radius: 60px;
+	text-align: center;
 }
 .hm-banner-design-1 a:hover{
 	background: #fff;
@@ -219,6 +220,7 @@
 	border-radius: 60px;
 	margin-top: 55px;
 	position: relative;
+	text-align: center;
 }
 .hm-wc-social-assets-top a:hover{
 	background: #fff;
@@ -424,6 +426,7 @@ span.hm-wc-social-assets-top-shape {
 	border-radius: 60px;
 	position: relative;
 	margin-bottom: 22px;
+	text-align: center;
 }
 .hm-explore-campaigns-innr a.hm-explore-btn:hover{
 	background: #fff;
@@ -674,6 +677,7 @@ span.btm-q-icon{
 	border:  2px solid #0055FF;
 	border-radius: 60px;
 	position: relative;
+	text-align: center;
 }
 .hm-blog-load-more a:hover{
 	background: #fff;
