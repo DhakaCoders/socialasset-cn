@@ -311,7 +311,8 @@ a.linkedin-login-btn:hover{
 	text-decoration: underline;
 }
 
-.register-type-btn button{
+.register-type-btn button,
+.register-type-btn a{
 	border: 1px solid #0055FF;
 	display: block;
 	margin-bottom: 15px;
@@ -330,10 +331,10 @@ a.linkedin-login-btn:hover{
 	cursor: pointer;
 }
 
-.register-type-btn button:last-child{
+.register-type-btn a:last-child{
 	margin-bottom: 0;
 }
-.register-type-btn button span{
+.register-type-btn a span{
 	font-weight: 400;
 }
 
@@ -412,7 +413,7 @@ a.linkedin-login-btn:hover{
     height: 19px;
     width: 19px;
     background-color: #fff;
-    border: 1px solid #d5d5d5;
+    border: 1px solid #707070;
     border-radius: 3px;
 }
 .checkmark:after{
