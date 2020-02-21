@@ -70,6 +70,12 @@ box-shadow: 0px 7px 17px 0px rgba(223,226,232,1);
 	position: relative;
 	cursor: pointer;
 }
+.hh-accordion-tab-row:last-child .hh-accordion-title{
+	border-bottom: 1px solid #ccd1d4;
+}
+.hh-accordion-title.hh-accordion-active{
+	border-bottom: none!important;
+}
 .hh-accordion-title:after{
 	content: "";
 	position: absolute;
@@ -146,7 +152,6 @@ box-shadow: 0px 7px 17px 0px rgba(223,226,232,1);
 	transform: translate(-50%,-50%);
 	-ms-transform: translate(-50%,-50%);
 	-webkit-transform: translate(-50%,-50%);
-	background-color: rgba(114,125,132,.6);
 	background-image: url(../images/vdo-play-icon.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -154,4 +159,34 @@ box-shadow: 0px 7px 17px 0px rgba(223,226,232,1);
 	height: 100px;
 	opacity: 1;
 	border-radius: 100% 100%;
+}
+
+
+@media(max-width: 1199px){
+	.faq-page-sec-cntlr{
+		padding: 100px 0 200px;
+	}
+
+}
+
+@media(max-width: 991px){
+
+}
+
+@media(max-width: 767px){
+
+}
+
+@media(max-width: 575px){
+
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
