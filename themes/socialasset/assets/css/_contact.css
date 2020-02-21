@@ -124,6 +124,7 @@ sa-contact-form-sec-wrp
 	-webkit-transition: all 0.5s;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	cursor: pointer;
 }
 .sa-form-submit-btn input[type="submit"]:hover{
 	background: #074ace;
@@ -193,7 +194,6 @@ sa-google-map-sec-wrp
 }
 .addr-box-inner ul li a{
 	color: #000;
-	font-family: 'Roboto Condensed', sans-serif;
 }
 .addr-box-inner ul li a:hover{
 	color: #0168f0;
@@ -287,14 +287,25 @@ sa-google-map-sec-wrp
 	    padding-top: 70px;
 	    padding-bottom: 100px;
 	}
-
+	.map-address {
+	    position: relative;
+	    z-index: 2;
+	    margin-left: 15px;
+	    margin-right: 15px;
+	}
 	.addr-box {
-	    max-width: 100%;
+	    max-width: 665px;
 	    width: 100%;
 	    padding: 40px 35px 35px;
 	    position: static;
 	    transform: initial;
-	    border-radius: 0;
+	    margin: 0 auto;
+	    text-align: center;
+	    margin-bottom: -20px;
+	    text-align: center;
+	}
+	.map-date{
+		margin: 0 auto;
 	}
 	#googlemap {
 	    height: 610px;
@@ -338,6 +349,10 @@ sa-google-map-sec-wrp
 	.sa-contact-form-sec-wrp {
 	    padding-top: 50px;
 	    padding-bottom: 80px;
+	}
+	.sa-form-submit-text p{
+		font-size: 13px;
+		line-height: 15px;
 	}
 }
 
