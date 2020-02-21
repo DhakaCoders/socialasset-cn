@@ -16,13 +16,19 @@ a,input,img,textarea,button{
 .flx-btn-center input[type="submit"]:hover, 
 .flx-btn-center a:hover,
 .profile-submit-btn input[type="submit"]:hover, 
-.profile-submit-btn a:hover{
+.profile-submit-btn a:hover,
+.ncc-submit-btns input[type="submit"]:hover{
     background: #024bdd;
 }
 #edit-profile-cancle-btn:hover,
 .profile-submit-btn input[type="reset"]:hover, 
 .profile-submit-btn #edit-profile-cancle-btn:hover{
     background: #999797;
+    color: #fff;
+}
+.ncc-submit-btns button:hover{
+    background: #0055FF;
+    border-color: #0055FF;
     color: #fff;
 }
 /**

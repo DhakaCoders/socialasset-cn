@@ -153,12 +153,13 @@ box-shadow: 0px 7px 17px 0px rgba(223,226,232,1);
 	-ms-transform: translate(-50%,-50%);
 	-webkit-transform: translate(-50%,-50%);
 	background-image: url(../images/vdo-play-icon.png);
+	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: center center;
-	width: 100px;
-	height: 100px;
+	width: 55px;
+	height: 70px;
 	opacity: 1;
-	border-radius: 100% 100%;
+	
 }
 
 
@@ -174,11 +175,22 @@ box-shadow: 0px 7px 17px 0px rgba(223,226,232,1);
 }
 
 @media(max-width: 767px){
-
+	.hh-accordion-title, .hh-accordion-des {
+	    padding-left: 30px;
+	    padding-right: 35px;
+	}
+	.hh-accordion-title:after{
+		right: 30px;
+	}
+	.video-play a:after{
+		width: 40px;
+	}
 }
 
 @media(max-width: 575px){
-
+	.video-play a:after{
+		width: 30px;
+	}
 
 }
 
