@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ngo – Profile</title>
+	<title> User Profile</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -140,105 +140,128 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <section class="ngo-profile-sec">
+  <section class="user-profile-sec">
     <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="ngo-profile-sec-iner width-1115">
+            <div class="user-profile-sec-iner width-1115">
               <div class="user-profile-sec-tab">
                 <div class="fl-tabs clearfix">
-                  <button onclick="window.location.href = 'b_ngo-01-profile.html';"  class="tab-link"><span>MY NGO’S PROFILE</span></button>
-                  <button onclick="window.location.href = 'b_ngo-02-profile-campaings.html';"  class="tab-link"><span>MY CAMPAIGNS</span></button>
-                  <button onclick="window.location.href = 'b_ngo-03-profile-create-campaing.html';"  class="tab-link current"><span>CREATE A CAMPAIGN</span></button>
+                  <button onclick="window.location.href = 'b_user-profile-01-contributions.html';"  class="tab-link current"><span>My ACCONT</span></button>
+                  <button onclick="window.location.href = 'b_user-profile-02-my-account.html';"  class="tab-link"><span>Contributions</span></button>
                 </div>
               </div>
-              <div id="tab-3" class="">
+              <div id="tab-1" class="">
                 <div class="tab-con-inr">
-                  <div class="ngo-create-campaign-con">
-                    <div class="ngo-create-campaign-con-des-hdr">
-                      <p>Fill the following steps and create a new Campaign!</p>
-                    </div>
-                    <form>
-                      <div class="width-425">
-                        <div class="ncc-input-fields-row ncc-input-title-fields-row">
-                          <label>Title</label>
-                          <input type="text" name="" placeholder="Type a Title here">
-                        </div>
-                        <div class="ncc-input-fields-row">
-                          <div class="sa-selctpicker-ctlr">
-                            <select class="selectpicker">
-                                <option selected="selected">Choose Category</option>
-                                <option>Category 1</option>
-                                <option>Category 2</option>
-                                <option>Category 3</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="ncc-input-fields-row  ncc-input-fields-row-col clearfix">
-                          <label>Date</label>
-                          <div class="ncc-input-fields-col">
-                            <div class="date-field">
-                              <label>From:</label>
-                              <div class="date-input">
-                                <input type="text" name="" id="datepicker2">
-                                <img src="assets/images/calender.png">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="ncc-input-fields-col">
-                            <div class="date-field">
-                              <label>To:</label>
-                              <div class="date-input">
-                                <input type="text" name="" id="datepicker3">
-                                <img src="assets/images/calender.png">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="ncc-input-fields-row ngo-upload-cover-photo">
-                          <div class="ngo-upload-cover-photo-inr">
-                            <input type="file" name="" placeholder="Upload a cover Image">
-                            <span>Upload a cover Image</span>
-                            <i><img src="assets/images/plus-black.png"></i>
-                          </div>
-                        </div>
-                        <div class="ncc-campaign-gallery">
-                          <label><strong>Campaign Gallery</strong> (Upload more images and videos)</label>
-                          <div class="ncc-campaign-gallery-list" >
-                            <ul class="ulc clearfix">
-                              <li>
-                                <div class="ncc-campaign-gallery-add-img">
-                                  <input type="file" name="">
-                                  <i><img src="assets/images/plus-black.png"></i>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pr-190">
-                        <div class="ncc-text-editor">
-                          <label>Text</label>
-                            <div>
-                              <textarea style="min-height: 640px; background: #fff; border-radius: 6px; background: #fff; width: 100%; border: none;"></textarea>
-                            </div>
-                        </div>
-                        <div class="ncc-add-tag">
-                          <label>Add Tags</label>
-                          <div>
-                            <input type="text" name="" placeholder="Add comma between tags. (e.g: sea, turtle, pollution)">
-                          </div>
-                        </div>
-                        <div class="ncc-submit-btns">
-                          <button>PREVIEW</button>
-                          <input type="submit" name="" value="Submit">
-                        </div>
-                      </div>
-                    </form>
+                  <div class="tab-con-title">
+                    <strong>My Account</strong>
                   </div>
+                  <form>
+                    <div class="clearfix tab-con-col-row">
+                      <div class="tab-con-col-4">
+                        <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
+                          <div class="profile-edit-step-1 profile-img-step-1">
+                            <div class="profile-img">
+                              <img src="assets/images/img_avatar.png">
+                            </div>
+                          </div>
+                          <div class="profile-edit-step-2 profile-img-step-2">
+                            <div class="profile-img-edit">
+                              <input type="file" name="" value="" id="choose-file">
+                              <label for="choose-file">
+                                <i><img src="assets/images/plus-icon-2.png"></i>
+                              </label>
+                            </div>
+                          </div>
+                          <strong id="set_username">George Malamatlis</strong>
+                          <span>George@webflow.gr</span>
+                          <div class="fl-input-field-row profile-edit-step-2 clearfix sa-input plr-30 text-left username-filed">
+                            <label>Username</label>
+                            <input id="get_username" type="text" name="">
+                          </div>
+                          <div style="height: 1px"></div>
+                          <hr class="clearfix">
+                          <div class="plr-30">
+                            <div class="profile-submit-btn profile-edit-step-1 flx-btn-center">
+                              <!-- <input type="submit" name="" value="Edit Profile"> -->
+                              <a class="edit-profile-btn" href="javascript:void(0)">Edit Profile</a>
+                            </div>
+                            <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
+                              <input type="submit" name="" value="Save Changes">
+                              <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
+                              <a href="javascript:void(0)" id="edit-profile-cancle-btn" href="#">Cancel</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-con-col-8">
+                        <div class="has-bx-shadow profile-rgt-info-bx-cntlr">
+                          <strong class="profile-rgt-info-bx-title prib-plr">Change Password</strong>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>Current Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>New Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>Confirm New Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="fl-forget-row prib-plr">
+                            <a href="#">Forgot your password?</a>
+                          </div>
+                          <div class="prib-plr">
+                            <div class="prib-btns profile-submit-btn clearfix">
+                              <input type="submit" name="" value="Change Password">
+                              <input type="reset" name="" value="Cancel">
+                            </div>
+                          </div>
+                          <hr>
+                          <strong class="profile-rgt-info-bx-title prib-plr">Notification Settings</strong>
+                          <div class="switch-checkbox-con prib-plr">
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" checked id="checkbox-switch1">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch1">I would like to receive notification through Email</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch2">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch2">Newsletters</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch3">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch3">Emails for new campaigns</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch4">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch4">Lorem ipsum</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

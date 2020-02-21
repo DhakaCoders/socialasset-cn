@@ -33,7 +33,8 @@ z-index: 5;
 	border-bottom: 3px solid #D6DAE0;
 }
 
-button.tab-link{
+button.tab-link,
+a.tab-link{
 	padding: 0 15px 10px;
 	position: relative;
 	color: #000000;
@@ -46,14 +47,18 @@ button.tab-link{
 	margin-right: 35px;
 	font-size: 16px;
 }
-button.tab-link:last-child{
+button.tab-link:last-child,
+a.tab-link:last-child{
 	margin-right: 0;
 }
 button.tab-link:hover,
-button.tab-link.current{
+button.tab-link.current,
+a.tab-link:hover,
+a.tab-link.current{
 	color: #0054FD;
 }
-button.tab-link:after{
+button.tab-link:after,
+a.tab-link:after{
 	content: "";
 	background: #0055FF;
 	position: absolute;
@@ -556,7 +561,8 @@ a.linkedin-login-btn:hover{
 	padding: 50px 0 105px;
 }
 
-.user-profile-sec-tab button.tab-link{
+.user-profile-sec-tab button.tab-link,
+.user-profile-sec-tab a.tab-link{
 	padding-left: 0;
 	padding-right: 0;
 }
