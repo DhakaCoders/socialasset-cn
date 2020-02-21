@@ -111,17 +111,19 @@
 .ftr-col-2 ul li a:hover{
   color: #0055FF;
 }
-
 .ftr-social{
-  padding-top: 48px;
-  
+  padding-top: 48px;  
 }
 .ftr-social a{
   display: inline-block;
   vertical-align: baseline;
   font-size: 20px;
-  color: #fff;
+  color: #969392;
   margin-right: 20px;
+  position: relative;
+}
+.ftr-social a:last-child{
+  top: 2px;
 }
 .ftr-social a:hover{
   color: #0055FF;

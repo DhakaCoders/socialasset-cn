@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Ngo – Profile</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,7 +45,7 @@
             <!-- 
               If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
              -->
-            <div class="hdr-rgt">
+            <div class="hdr-rgt logged-menu">
               <nav class="main-nav logout-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
@@ -140,123 +140,109 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <span class="fl-login-clip"><img src="assets/images/form-clip.png"></span>
-  <section class="fl-login">
-    <div class="login-form-cntlr clearfix">
-      <div class="login-form-lft-col">
-        <div class="fl-login-form">
-          <div class="fl-tabs clearfix text-center">
-            <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
-            <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
-          </div>
-          <div id="tab-1" class="fl-tab-content current">
-            <div class="tab-con-inr">
-              <form>
-                <div class="register-hdr-con">
-                  <strong>Create your free online account</strong>
-                  <span>Already have an account? <a href="#">Sign in here</a></span>
+  <section class="ngo-profile-sec">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="ngo-profile-sec-iner width-1115">
+              <div class="user-profile-sec-tab">
+                <div class="fl-tabs clearfix">
+                  <button onclick="window.location.href = 'b_ngo-profile-01-my-account.html';"  class="tab-link current"><span>MY NGO’S PROFILE</span></button>
+                  <button onclick="window.location.href = 'b_ngo-profile-02-campaings.html';"  class="tab-link"><span>MY CAMPAIGNS</span></button>
+                  <button onclick="window.location.href = 'b_ngo-profile-03-create-campaing.html';"  class="tab-link"><span>CREATE A CAMPAIGN</span></button>
                 </div>
-                <div class="register-type-btn">
-                  <a href="javascript:void(0)" class="register-ngo-btn">
-                    I’m NGO - <span>BeSupported</span>
-                  </a>
-                  <a href="javascript:void(0)" class="register-supporter-btn">I’m Supporter</a>
-                </div>
-                <div class="register-type-con">
-                    <div class="register-type-select">
-                      <div class="sa-selctpicker-ctlr">
-                        <select class="selectpicker" id="user-type-selection">
-                            <option selected="" value="Ngo">I am a NGO</option>
-                            <option selected="" value="User">I’m Supporter</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="fl-input-field-row sa-input ngo-name showCntrl" id="showNgo">
-                      <label>NGO Name *</label>
-                      <input type="text" name="" placeholder="Example Co.">
-                    </div>
-                    <div class="fl-input-field-row sa-input user-name showCntrl" id="showUser">
-                      <label>Your Name *</label>
-                      <input type="text" name="" placeholder="Your Name">
-                    </div>
-                    <div class="fl-input-field-row sa-input">
-                      <label>Email *</label>
-                      <input type="email" name="" placeholder="Your Email">
-                    </div>
-                    <div class="fl-input-field-row-grd clearfix">
-                      <div class="fl-input-field-row sa-input">
-                        <label>Create a password *</label>
-                        <input type="password" name="" placeholder="Password">
-                      </div>
-                      <div class="fl-input-field-row sa-input">
-                        <label>Confirm password *</label>
-                        <input type="password" name="" placeholder="Password">
-                      </div>
-                    </div>
-                    <div class="agree-checkmark">
-                      <div class="filter-check-row clearfix">
-                        <input type="checkbox" id="agree" name="agree" value="YES">
-                        <span class="checkmark"></span> 
-                        <label for="agree"> I have read & agree to Terms of Service</label>
-                      </div>
-                    </div>
-                    <div class="fl-submit-btn w-full">
-                      <input type="submit" value="Create Account">
-                    </div>
-                    <div class="fl-or-text">
-                      <span>Or</span>
-                    </div>
-                    <div class="fl-sign-in-another">
-                      <a class="gogle-login-btn" href="#">
-                        <i class="fab fa-google"></i>
-                        Sign In with Google
-                      </a>
-                    </div>
-                  </div>
-                </form>
-            </div>
-          </div>
-          <div id="tab-2" class="fl-tab-content">
-            <div class="tab-con-inr">
-              <div class="login-form">
-                <form>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Email *</label>
-                    <input type="email" name="" placeholder="Your Email">
-                  </div>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Password *</label>
-                    <input type="password" name="" placeholder="Password">
-                  </div>
-                  <div class="fl-forget-row">
-                    <a href="#">Forgot your password?</a>
-                  </div>
-                  <div class="fl-submit-btn w-full">
-                    <input type="submit" value="Sign In">
-                  </div>
-                  <div class="fl-or-text">
-                    <span>Or</span>
-                  </div>
-                  <div class="fl-sign-in-another">
-                    <a class="gogle-login-btn" href="#">
-                      <i class="fab fa-google"></i>
-                      Sign In with Google
-                    </a>
-                    <a class="facebook-login-btn" href="#">
-                      <i class="fab fa-facebook-square"></i>
-                      Sign In with Facebook
-                    </a>
-                  </div>
-                </form>
               </div>
+              <div id="tab-3" class="">
+                <div class="tab-con-inr">
+                  <div class="ngo-create-campaign-con">
+                    <div class="ngo-create-campaign-con-des-hdr">
+                      <p>Fill the following steps and create a new Campaign!</p>
+                    </div>
+                    <form>
+                      <div class="width-425">
+                        <div class="ncc-input-fields-row ncc-input-title-fields-row">
+                          <label>Title</label>
+                          <input type="text" name="" placeholder="Type a Title here">
+                        </div>
+                        <div class="ncc-input-fields-row">
+                          <div class="sa-selctpicker-ctlr">
+                            <select class="selectpicker">
+                                <option selected="selected">Choose Category</option>
+                                <option>Category 1</option>
+                                <option>Category 2</option>
+                                <option>Category 3</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="ncc-input-fields-row  ncc-input-fields-row-col clearfix">
+                          <label>Date</label>
+                          <div class="ncc-input-fields-col">
+                            <div class="date-field">
+                              <label>From:</label>
+                              <div class="date-input">
+                                <input type="text" name="" id="datepicker2">
+                                <img src="assets/images/calender.png">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ncc-input-fields-col">
+                            <div class="date-field">
+                              <label>To:</label>
+                              <div class="date-input">
+                                <input type="text" name="" id="datepicker3">
+                                <img src="assets/images/calender.png">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ncc-input-fields-row ngo-upload-cover-photo">
+                          <div class="ngo-upload-cover-photo-inr">
+                            <input type="file" name="" placeholder="Upload a cover Image">
+                            <span>Upload a cover Image</span>
+                            <i><img src="assets/images/plus-black.png"></i>
+                          </div>
+                        </div>
+                        <div class="ncc-campaign-gallery">
+                          <label><strong>Campaign Gallery</strong> (Upload more images and videos)</label>
+                          <div class="ncc-campaign-gallery-list" >
+                            <ul class="ulc clearfix">
+                              <li>
+                                <div class="ncc-campaign-gallery-add-img">
+                                  <input type="file" name="">
+                                  <i><img src="assets/images/plus-black.png"></i>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pr-190">
+                        <div class="ncc-text-editor">
+                          <label>Text</label>
+                            <div>
+                              <textarea style="min-height: 640px; background: #fff; border-radius: 6px; background: #fff; width: 100%; border: none;"></textarea>
+                            </div>
+                        </div>
+                        <div class="ncc-add-tag">
+                          <label>Add Tags</label>
+                          <div>
+                            <input type="text" name="" placeholder="Add comma between tags. (e.g: sea, turtle, pollution)">
+                          </div>
+                        </div>
+                        <div class="ncc-submit-btns">
+                          <button>PREVIEW</button>
+                          <input type="submit" name="" value="Submit">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-      </div>
-      <div class="login-page-rgt-fea-img" style="background: url(assets/images/login-page-rgt-fea-img.png);">
-        
-      </div>
-    </div>
+    </div>    
   </section>
 </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Business Profile</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,7 +45,7 @@
             <!-- 
               If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
              -->
-            <div class="hdr-rgt">
+            <div class="hdr-rgt logged-menu">
               <nav class="main-nav logout-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
@@ -140,123 +140,130 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <span class="fl-login-clip"><img src="assets/images/form-clip.png"></span>
-  <section class="fl-login">
-    <div class="login-form-cntlr clearfix">
-      <div class="login-form-lft-col">
-        <div class="fl-login-form">
-          <div class="fl-tabs clearfix text-center">
-            <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
-            <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
-          </div>
-          <div id="tab-1" class="fl-tab-content current">
-            <div class="tab-con-inr">
-              <form>
-                <div class="register-hdr-con">
-                  <strong>Create your free online account</strong>
-                  <span>Already have an account? <a href="#">Sign in here</a></span>
+  <section class="business-profile-sec">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="business-profile-sec-iner width-1115">
+              <div class="user-profile-sec-tab">
+                <div class="fl-tabs clearfix">
+                  <button onclick="window.location.href = 'b_business-profile-01-my-account.html';"  class="tab-link current"><span>My ACCONT</span></button>
+                  <button onclick="window.location.href = 'b_business-profile-02-supported-campaigns.html';"  class="tab-link"><span>Supported campaigns</span></button>
                 </div>
-                <div class="register-type-btn">
-                  <a href="javascript:void(0)" class="register-ngo-btn">
-                    I’m NGO - <span>BeSupported</span>
-                  </a>
-                  <a href="javascript:void(0)" class="register-supporter-btn">I’m Supporter</a>
+              </div>
+              <div id="tab-1" class="">
+                <div class="tab-con-inr">
+                  <div class="tab-con-title">
+                    <strong>My Account</strong>
+                  </div>
+                  <form>
+                    <div class="clearfix tab-con-col-row">
+                      <div class="tab-con-col-4">
+                        <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
+                          <div class="profile-edit-step-1 profile-img-step-1">
+                            <div class="profile-img branding-logo">
+                              <img src="assets/images/ngo-logo.png">
+                            </div>
+                          </div>
+                          <div class="profile-edit-step-2 profile-img-step-2">
+                            <div class="profile-img-edit">
+                              <input type="file" name="" value="" id="choose-file">
+                              <label for="choose-file">
+                                <i><img src="assets/images/plus-icon-2.png"></i>
+                                <span class="file-up-instruction-txt">CLICK TO ADD<br> YOUR LOGO</span>
+                              </label>
+                            </div>
+                          </div>
+                          <strong>Web Flow</strong>
+                          <span style="display: block;">info@webflow.gr</span>
+                          <span class="status-published-title">STATUS: PUBLISHED</span>
+                          <div style="height: 1px"></div>
+                          <hr class="clearfix">
+                          <div class="plr-30">
+                            <div class="profile-submit-btn profile-edit-step-1 flx-btn-center">
+                              <!-- <input type="submit" name="" value="Edit Profile"> -->
+                              <a class="edit-profile-btn" href="javascript:void(0)">Edit Profile</a>
+                            </div>
+                            <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
+                              <input type="submit" name="" value="Save Changes">
+                              <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
+                              <a href="javascript:void(0)" id="edit-profile-cancle-btn" href="#">Cancel</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-con-col-8">
+                        <div class="has-bx-shadow profile-rgt-info-bx-cntlr">
+                          <strong class="profile-rgt-info-bx-title prib-plr">Change Password</strong>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>Current Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>New Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="prib-plr profile-rgt-info-bx-input-fields">
+                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
+                              <label>Confirm New Password</label>
+                              <input type="password" name="">
+                            </div>
+                          </div>
+                          <div class="fl-forget-row prib-plr">
+                            <a href="#">Forgot your password?</a>
+                          </div>
+                          <div class="prib-plr">
+                            <div class="prib-btns profile-submit-btn clearfix">
+                              <input type="submit" name="" value="Change Password">
+                              <input type="reset" name="" value="Cancel">
+                            </div>
+                          </div>
+                          <hr>
+                          <strong class="profile-rgt-info-bx-title prib-plr">Notification Settings</strong>
+                          <div class="switch-checkbox-con prib-plr">
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" checked id="checkbox-switch1">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch1">I would like to receive notification through Email</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch2">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch2">Newsletters</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch3">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch3">Emails for new campaigns</label>
+                            </div>
+                            <div class="switch-item">
+                              <div class="switch-checkbox">
+                                <input type="checkbox" id="checkbox-switch4">
+                                <span class="checkbox-slider"></span>
+                              </div>
+                              <label for="checkbox-switch4">Lorem ipsum</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-                <div class="register-type-con">
-                    <div class="register-type-select">
-                      <div class="sa-selctpicker-ctlr">
-                        <select class="selectpicker" id="user-type-selection">
-                            <option selected="" value="Ngo">I am a NGO</option>
-                            <option selected="" value="User">I’m Supporter</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="fl-input-field-row sa-input ngo-name showCntrl" id="showNgo">
-                      <label>NGO Name *</label>
-                      <input type="text" name="" placeholder="Example Co.">
-                    </div>
-                    <div class="fl-input-field-row sa-input user-name showCntrl" id="showUser">
-                      <label>Your Name *</label>
-                      <input type="text" name="" placeholder="Your Name">
-                    </div>
-                    <div class="fl-input-field-row sa-input">
-                      <label>Email *</label>
-                      <input type="email" name="" placeholder="Your Email">
-                    </div>
-                    <div class="fl-input-field-row-grd clearfix">
-                      <div class="fl-input-field-row sa-input">
-                        <label>Create a password *</label>
-                        <input type="password" name="" placeholder="Password">
-                      </div>
-                      <div class="fl-input-field-row sa-input">
-                        <label>Confirm password *</label>
-                        <input type="password" name="" placeholder="Password">
-                      </div>
-                    </div>
-                    <div class="agree-checkmark">
-                      <div class="filter-check-row clearfix">
-                        <input type="checkbox" id="agree" name="agree" value="YES">
-                        <span class="checkmark"></span> 
-                        <label for="agree"> I have read & agree to Terms of Service</label>
-                      </div>
-                    </div>
-                    <div class="fl-submit-btn w-full">
-                      <input type="submit" value="Create Account">
-                    </div>
-                    <div class="fl-or-text">
-                      <span>Or</span>
-                    </div>
-                    <div class="fl-sign-in-another">
-                      <a class="gogle-login-btn" href="#">
-                        <i class="fab fa-google"></i>
-                        Sign In with Google
-                      </a>
-                    </div>
-                  </div>
-                </form>
-            </div>
-          </div>
-          <div id="tab-2" class="fl-tab-content">
-            <div class="tab-con-inr">
-              <div class="login-form">
-                <form>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Email *</label>
-                    <input type="email" name="" placeholder="Your Email">
-                  </div>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Password *</label>
-                    <input type="password" name="" placeholder="Password">
-                  </div>
-                  <div class="fl-forget-row">
-                    <a href="#">Forgot your password?</a>
-                  </div>
-                  <div class="fl-submit-btn w-full">
-                    <input type="submit" value="Sign In">
-                  </div>
-                  <div class="fl-or-text">
-                    <span>Or</span>
-                  </div>
-                  <div class="fl-sign-in-another">
-                    <a class="gogle-login-btn" href="#">
-                      <i class="fab fa-google"></i>
-                      Sign In with Google
-                    </a>
-                    <a class="facebook-login-btn" href="#">
-                      <i class="fab fa-facebook-square"></i>
-                      Sign In with Facebook
-                    </a>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="login-page-rgt-fea-img" style="background: url(assets/images/login-page-rgt-fea-img.png);">
-        
-      </div>
-    </div>
+    </div>    
   </section>
 </div>
 

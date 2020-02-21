@@ -412,61 +412,22 @@ if( $('.masonry').length ){
   });
 }
 
-$('div.fl-tabs button').click(function(){
-    var tab_id = $(this).attr('data-tab');
-
-    $('div.fl-tabs button').removeClass('current');
-    $('.fl-tab-content').removeClass('current');
-
-    $(this).addClass('current');
-    $("#"+tab_id).addClass('current');
-});
 
 $('.humberger-menu-btn').on('click', function(){
   $(this).toggleClass('humber-menu-expend');
   $('.humberger-menu').slideToggle(300);
 });
 
-$('.login-btn').on('click', function(){
-  $(this).toggleClass('login-btn-expend');
-  $('.login-btn ul').slideToggle(300);
-});
-
-$('.hdr-login-profile').on('click', function(){
-  $(this).toggleClass('login-btn-expend');
-  $('.hdr-login-profile ul').slideToggle(300);
-});
-
-$('.register-type-btn a').on('click', function(){
-  $('.register-type-con').show();
-  $('.register-type-btn').hide();
-});
-
-$('.profile-submit-btn a').on('click', function(){
-  $('.register-type-con').show();
-  $('.register-type-btn').hide();
-});
 
 
-$('.edit-profile-btn').on('click', function(){
-  $('.profile-edit-step-1').hide();
-  $('.profile-edit-step-2').show();
-});
 
-$('#edit-profile-cancle-btn').on('click', function(){
-  $('.profile-edit-step-1').show();
-  $('.profile-edit-step-2').hide();
-});
 
-if( $('#datepicker').length ){
-  $('#datepicker').datepicker();
-}
-if( $('#datepicker2').length ){
-  $('#datepicker2').datepicker();
-}
-if( $('#datepicker3').length ){
-  $('#datepicker3').datepicker();
-}
+
+
+
+
+
+
     //new WOW().init();
 
 })(jQuery);

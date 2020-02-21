@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> User Profile</title>
+	<title>Ngo – Profile</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -140,29 +140,34 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <section class="user-profile-sec">
+  <section class="ngo-profile-sec">
     <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="user-profile-sec-iner width-1115">
+            <div class="ngo-profile-sec-iner width-1115">
               <div class="user-profile-sec-tab">
                 <div class="fl-tabs clearfix">
-                  <button class="tab-link current" data-tab="tab-1"><span>My ACCONT</span></button>
-                  <button class="tab-link" data-tab="tab-2"><span>Contributions</span></button>
+                  <button onclick="window.location.href = 'b_ngo-profile-01-my-account.html';"  class="tab-link current"><span>MY NGO’S PROFILE</span></button>
+                  <button onclick="window.location.href = 'b_ngo-profile-02-campaings.html';"  class="tab-link"><span>MY CAMPAIGNS</span></button>
+                  <button onclick="window.location.href = 'b_ngo-profile-03-create-campaing.html';"  class="tab-link"><span>CREATE A CAMPAIGN</span></button>
                 </div>
               </div>
-              <div id="tab-1" class="fl-tab-content current">
+              <div id="tab-1" class="">
                 <div class="tab-con-inr">
+                  <div class="profile-is-draft">
+                    <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
+                    <i class="fas fa-times"></i>
+                  </div>
                   <div class="tab-con-title">
-                    <strong>My Account</strong>
+                    <strong>Account Details</strong>
                   </div>
                   <form>
                     <div class="clearfix tab-con-col-row">
                       <div class="tab-con-col-4">
                         <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
                           <div class="profile-edit-step-1 profile-img-step-1">
-                            <div class="profile-img">
-                              <img src="assets/images/img_avatar.png">
+                            <div class="profile-img branding-logo">
+                              <img src="assets/images/ngo-logo.png">
                             </div>
                           </div>
                           <div class="profile-edit-step-2 profile-img-step-2">
@@ -170,14 +175,24 @@
                               <input type="file" name="" value="" id="choose-file">
                               <label for="choose-file">
                                 <i><img src="assets/images/plus-icon-2.png"></i>
+                                <span class="file-up-instruction-txt">CLICK TO ADD<br> YOUR LOGO</span>
                               </label>
                             </div>
                           </div>
-                          <strong id="set_username">George Malamatlis</strong>
-                          <span>George@webflow.gr</span>
-                          <div class="fl-input-field-row profile-edit-step-2 clearfix sa-input plr-30 text-left username-filed">
-                            <label>Username</label>
-                            <input id="get_username" type="text" name="">
+                          <strong>ACTIONAID</strong>
+                          <span style="display: block;">management@actionaid.gr</span>
+                          <span class="status-published-title color-red profile-edit-step-1">STATUS: DRAFT</span>
+                          <span class="status-published-title profile-edit-step-2">STATUS: PUBLISHED</span>
+
+                          <div class="plr-30 profile-edit-step-2">
+                              <div class="fl-input-field-row clearfix sa-input text-left username-filed">
+                              <label>Username</label>
+                              <input id="get_username" type="text" name="">
+                            </div>
+                            <div class="fl-input-field-row clearfix sa-input text-left username-filed">
+                              <label>About Your NGO</label>
+                              <textarea placeholder="Type a brief about your NGO"></textarea>
+                            </div>
                           </div>
                           <div style="height: 1px"></div>
                           <hr class="clearfix">
@@ -256,147 +271,18 @@
                               <label for="checkbox-switch4">Lorem ipsum</label>
                             </div>
                           </div>
+                          <div style="height: 15px;"></div>
+                          <hr>
+                          <div class="prib-plr">
+                            <div class="profile-submit-btn submit-btn-lrg profile-submit-btn-center clearfix">
+                              <input type="submit" name="" value="SUBMIT">
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
                   </form>
-                </div>
-              </div>
-              <div id="tab-2" class="fl-tab-content">
-                <div class="tab-con-inr">
-                  <div class="user-profile-1-hdr clearfix">
-                    <strong>Contributions</strong>
-                    <span>3 Contributions</span>
-                  </div>
-                  <div class="dfp-tbl-wrap">
-                    <div class="table-dsc">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th><span>Date </span></th>
-                            <th><span> Category</span></th>
-                            <th><span>Campaign</span></th>
-                            <th><span>Status</span></th>
-                            <th><span>NGO</span></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="tbl-td">
-                                <span class="tbl-date">2/11/2020</span>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <strong class="tbl-cat-name">HUMAN</strong>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <div class="tbl-campaign-des">
-                                  <div class="tbl-campaign-img">
-                                    <img src="assets/images/tbl-campaign-img.png">
-                                  </div>
-                                  <div>
-                                    <strong>The miracle recovery plan for our planet</strong>
-                                    <p>Traumatic events can create persistent mental and physical stress. We have 6 year …</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <span class="status-btn status-btn-active">ACTIVE</span>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <div class="ngo-logo">
-                                  <img src="assets/images/ngo-logo.png">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="tbl-td">
-                                <span class="tbl-date">2/11/2020</span>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <strong class="tbl-cat-name">HUMAN</strong>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <div class="tbl-campaign-des">
-                                  <div class="tbl-campaign-img">
-                                    <img src="assets/images/tbl-campaign-img.png">
-                                  </div>
-                                  <div>
-                                    <strong>The miracle recovery plan for our planet</strong>
-                                    <p>Traumatic events can create persistent mental and physical stress. We have 6 year …</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <span class="status-btn status-btn-inactive">INACTIVE</span>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <div class="ngo-logo">
-                                  <img src="assets/images/ngo-logo.png">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="tbl-td">
-                                <span class="tbl-date">2/11/2020</span>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <strong class="tbl-cat-name">HUMAN</strong>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <div class="tbl-campaign-des">
-                                  <div class="tbl-campaign-img">
-                                    <img src="assets/images/tbl-campaign-img.png">
-                                  </div>
-                                  <div>
-                                    <strong>The miracle recovery plan for our planet</strong>
-                                    <p>Traumatic events can create persistent mental and physical stress. We have 6 year …</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <span class="status-btn status-btn-active">ACTIVE</span>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="tbl-td">
-                                <div class="ngo-logo">
-                                  <img src="assets/images/ngo-logo.png">
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Business Profile</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,7 +45,7 @@
             <!-- 
               If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
              -->
-            <div class="hdr-rgt">
+            <div class="hdr-rgt logged-menu">
               <nav class="main-nav logout-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
@@ -140,123 +140,134 @@
 </header>
 
 <div class="content-center-cntlr gray-bg">
-  <span class="fl-login-clip"><img src="assets/images/form-clip.png"></span>
-  <section class="fl-login">
-    <div class="login-form-cntlr clearfix">
-      <div class="login-form-lft-col">
-        <div class="fl-login-form">
-          <div class="fl-tabs clearfix text-center">
-            <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
-            <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
-          </div>
-          <div id="tab-1" class="fl-tab-content current">
-            <div class="tab-con-inr">
-              <form>
-                <div class="register-hdr-con">
-                  <strong>Create your free online account</strong>
-                  <span>Already have an account? <a href="#">Sign in here</a></span>
+  <section class="business-profile-sec">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="business-profile-sec-iner width-1115">
+              <div class="user-profile-sec-tab">
+                <div class="fl-tabs clearfix">
+                  <button onclick="window.location.href = 'b_business-profile-01-my-account.html';"  class="tab-link"><span>My ACCONT</span></button>
+                  <button onclick="window.location.href = 'b_business-profile-02-supported-campaigns.html';"  class="tab-link current"><span>Supported campaigns</span></button>
                 </div>
-                <div class="register-type-btn">
-                  <a href="javascript:void(0)" class="register-ngo-btn">
-                    I’m NGO - <span>BeSupported</span>
-                  </a>
-                  <a href="javascript:void(0)" class="register-supporter-btn">I’m Supporter</a>
-                </div>
-                <div class="register-type-con">
-                    <div class="register-type-select">
+              </div>
+              <div id="tab-2" class="">
+                <div class="tab-con-inr">
+                  <div class="supported-campaigns-tab-hdr clearfix">
+                    <strong>Your Campaigns</strong>
+                    <div class="sort-by clearfix">
+                      <label>Sort by</label>
                       <div class="sa-selctpicker-ctlr">
-                        <select class="selectpicker" id="user-type-selection">
-                            <option selected="" value="Ngo">I am a NGO</option>
-                            <option selected="" value="User">I’m Supporter</option>
+                        <select class="selectpicker">
+                            <option selected="selected">Old Campaigns</option>
+                            <option>New Campaigns</option>
                         </select>
                       </div>
                     </div>
-                    <div class="fl-input-field-row sa-input ngo-name showCntrl" id="showNgo">
-                      <label>NGO Name *</label>
-                      <input type="text" name="" placeholder="Example Co.">
-                    </div>
-                    <div class="fl-input-field-row sa-input user-name showCntrl" id="showUser">
-                      <label>Your Name *</label>
-                      <input type="text" name="" placeholder="Your Name">
-                    </div>
-                    <div class="fl-input-field-row sa-input">
-                      <label>Email *</label>
-                      <input type="email" name="" placeholder="Your Email">
-                    </div>
-                    <div class="fl-input-field-row-grd clearfix">
-                      <div class="fl-input-field-row sa-input">
-                        <label>Create a password *</label>
-                        <input type="password" name="" placeholder="Password">
-                      </div>
-                      <div class="fl-input-field-row sa-input">
-                        <label>Confirm password *</label>
-                        <input type="password" name="" placeholder="Password">
-                      </div>
-                    </div>
-                    <div class="agree-checkmark">
-                      <div class="filter-check-row clearfix">
-                        <input type="checkbox" id="agree" name="agree" value="YES">
-                        <span class="checkmark"></span> 
-                        <label for="agree"> I have read & agree to Terms of Service</label>
-                      </div>
-                    </div>
-                    <div class="fl-submit-btn w-full">
-                      <input type="submit" value="Create Account">
-                    </div>
-                    <div class="fl-or-text">
-                      <span>Or</span>
-                    </div>
-                    <div class="fl-sign-in-another">
-                      <a class="gogle-login-btn" href="#">
-                        <i class="fab fa-google"></i>
-                        Sign In with Google
-                      </a>
-                    </div>
                   </div>
-                </form>
-            </div>
-          </div>
-          <div id="tab-2" class="fl-tab-content">
-            <div class="tab-con-inr">
-              <div class="login-form">
-                <form>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Email *</label>
-                    <input type="email" name="" placeholder="Your Email">
+                  <div class="supported-campaigns-tab-items">
+                    <ul class="clearfix ulc">
+                      <li class="campaigns-list-item-wrp">
+                        <div class="campaigns-list-item">
+                          <div class="campaigns-item-img" style="background: url(assets/images/user-campaign-list-img-02.png);"></div>
+                          <div class="campaigns-item-des">
+                            <div class="campaigns-item-des-inr">
+                              <div class="campaigns-item-cat-name">
+                                <strong>environment</strong>
+                              </div>
+                              <div class="campaigns-item-des-btm">
+                                <div>
+                                  <h6>Τree planting - Athens</h6>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                                </div>
+                                <div class="campaigns-vote-percentage-bar clearfix">
+                                    <div class="campaigns-vote-percentage-number"><span>80%</span></div>
+                                    <div class="campaigns-vote-percentage">
+                                      <div>
+                                        <span style="width: 80%"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="months-left">
+                                    <i class="far fa-clock"></i>
+                                    <span>3 months left</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                      <li class="campaigns-list-item-wrp">
+                        <div class="campaigns-list-item">
+                          <div class="campaigns-item-img" style="background: url(assets/images/user-campaign-list-img-02.png);"></div>
+                          <div class="campaigns-item-des">
+                            <div class="campaigns-item-des-inr">
+                              <div class="campaigns-item-cat-name">
+                                <strong>environment</strong>
+                              </div>
+                              <div class="campaigns-item-des-btm">
+                                <div>
+                                  <h6>Τree planting - Athens</h6>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                                </div>
+                                <div class="campaigns-vote-percentage-bar clearfix">
+                                    <div class="campaigns-vote-percentage-number"><span>80%</span></div>
+                                    <div class="campaigns-vote-percentage">
+                                      <div>
+                                        <span style="width: 80%"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="months-left">
+                                    <i class="far fa-clock"></i>
+                                    <span>3 months left</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                      <li class="campaigns-list-item-wrp">
+                        <div class="campaigns-list-item">
+                          <div class="campaigns-item-img" style="background: url(assets/images/user-campaign-list-img-02.png);"></div>
+                          <div class="campaigns-item-des">
+                            <div class="campaigns-item-des-inr">
+                              <div class="campaigns-item-cat-name">
+                                <strong>environment</strong>
+                              </div>
+                              <div class="campaigns-item-des-btm">
+                                <div>
+                                  <h6>Τree planting - Athens</h6>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                                </div>
+                                <div class="campaigns-vote-percentage-bar clearfix">
+                                    <div class="campaigns-vote-percentage-number"><span>80%</span></div>
+                                    <div class="campaigns-vote-percentage">
+                                      <div>
+                                        <span style="width: 80%"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="months-left">
+                                    <i class="far fa-clock"></i>
+                                    <span>3 months left</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Password *</label>
-                    <input type="password" name="" placeholder="Password">
-                  </div>
-                  <div class="fl-forget-row">
-                    <a href="#">Forgot your password?</a>
-                  </div>
-                  <div class="fl-submit-btn w-full">
-                    <input type="submit" value="Sign In">
-                  </div>
-                  <div class="fl-or-text">
-                    <span>Or</span>
-                  </div>
-                  <div class="fl-sign-in-another">
-                    <a class="gogle-login-btn" href="#">
-                      <i class="fab fa-google"></i>
-                      Sign In with Google
-                    </a>
-                    <a class="facebook-login-btn" href="#">
-                      <i class="fab fa-facebook-square"></i>
-                      Sign In with Facebook
-                    </a>
-                  </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="login-page-rgt-fea-img" style="background: url(assets/images/login-page-rgt-fea-img.png);">
-        
-      </div>
-    </div>
+    </div>    
   </section>
 </div>
 
