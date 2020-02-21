@@ -6,33 +6,21 @@
   width: 60.5%;
   float: left;
 }
+.miraclePlanBigSlider .miraclePlanBigSlider-item{
+  display: none !important;
+}
+.miraclePlanBigSlider .miraclePlanBigSlider-item:first-child{
+  display: block !important;
+}
+.miraclePlanBigSlider.slick-initialized .miraclePlanBigSlider-item{
+  display: block !important;
+}
 .miraclePlanBigSlider-item {
   position: relative;
   min-height: 480px;
   text-align: center;
+  overflow: hidden;
 }
-.miraclePlanBigSlider-item::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f00e";
-  color: #fff;
-  font-size: 25px;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 5;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -webkit-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  transition: all .3s ease;
-}
-.miraclePlanBigSlider-item:hover::before {
-  opacity: 1;
-}
-
-
 .miraclePlanBigSlider-item-bg{
   position: absolute;
   left: 0;
@@ -44,15 +32,57 @@
   background-position: center center!important;
   background-size: cover!important;
 }
-.miraclePlanBigSlider-item-bg > span{
-  display: none;
-  max-width: 750px;
+.fancybox-container{
+  z-index: 999999;
+}
+.miraclePlanBigSlider-item a{
+  display: block;
+} 
+.miraclePlanBigSlider-item a .miracle-plan-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-size: cover!important;
+  background-position: center center!important;
+  background-repeat: no-repeat!important;
+  -webkit-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+} 
+.miraclePlanBigSlider-item .img-zoom:hover .miracle-plan-video-bg{
+  transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+}
+.miraclePlanBigSlider-item a > span{
   display: inline-block;
   vertical-align: baseline;
-}
-.miraclePlanBigSlider-item-bg > span img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  z-index: 4;
+  max-width: 390px;
   width: 100%;
-  height: auto; 
+}
+.miraclePlanBigSlider-item a i {
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 55px;
+}
+.miraclePlanBigSlider-item a i img{
+  width: 100%;
+}
+.miraclePlanBigSlider-item a{
+  cursor: pointer;
+  display: block;
+  overflow:hidden;
 }
 .miraclePlanthumbSlider{
   text-align: center;
@@ -70,6 +100,9 @@ span.miraclePlanthumbSlider-item{
 span.miraclePlanthumbSlider-item img{
   width: 100%;
 }
+
+
+
 
 .miracle-plan-des-wrp{
   width: 39.5%;
@@ -174,17 +207,19 @@ span.miraclePlanthumbSlider-item img{
   color: #000;
   display: inline-block;
   vertical-align: baseline;
-  padding-left: 25px;
+  padding-left: 23px;
   position: relative;
 }
 .miracle-plan-progress-btm-des span::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f017";
-  color: #000;
-  font-size: 15px;
+  content: "";
   position: absolute;
   top:0;
   left: 0;
+  background: url('../images/miracle-plan-icon-1.png');
+  background-position: center center;
+  background-size: 100% 100%;
+  width: 14px;
+  height: 16px;
 }
 .miracle-plan-progress-main{
   background: #D1D1D1;
@@ -222,7 +257,22 @@ span.miraclePlanthumbSlider-item img{
   border: 2px solid #0055ff;
   border-radius: 30px;
   text-align: left;
+  position: relative
 }
+.miracle-plan-progress-link-wrp .support-btn i{
+  position: absolute;
+  left: 28px;
+  top: 16px;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.miracle-plan-progress-link-wrp .support-btn:hover i{
+  color: #0055FF;
+}
+
 .miracle-plan-progress-link-wrp .support-btn:hover{
   color: #0055FF;
   background: #0000;
@@ -244,18 +294,30 @@ span.miraclePlanthumbSlider-item img{
   margin-left: 9px;
   width: 30px;
   height: 30px;
+  border: 1px solid #0000;
   text-align: center;
   border-radius: 100%;
   background: #E2E2E2;
   padding-top: 7px;
   color: #000;
   font-size: 15px;
+  position: relative;
+}
+.miracle-plan-progress-link-wrp .share-btn a::after{
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  background: url('../images/miracle-plan-icon-3.png');
+  background-position: center center;
+  background-size: 100% 100%;
+  width: 14px;
+  height: 17px;
 }
 .miracle-plan-progress-link-wrp .share-btn a:hover{
-  background: #0055FF ;
-  color: #fff;
+  background: #fff;
+  border: 1px solid #0055ff;
 }
-
 .user-story-cmpaign-sec{
   padding-top: 45px;
   padding-bottom: 145px;
@@ -294,7 +356,6 @@ span.miraclePlanthumbSlider-item img{
   background-size: cover!important;
   padding-left: 10px;
   padding-right: 10px;
-
 }
 
 
@@ -325,9 +386,14 @@ span.miraclePlanthumbSlider-item img{
   .miraclePlanBigSlider-item {
     min-height: 430px;
   }
+
   .miracle-plan-progress-link-wrp .support-btn {
     padding: 17px 10px 17px 48px;
     letter-spacing: 1px;
+  }
+  .miracle-plan-progress-link-wrp .support-btn i {
+    left: 18px;
+    top: 15px;
   }
 }
 
@@ -340,16 +406,6 @@ span.miraclePlanthumbSlider-item img{
     float: left;
     padding: 0;
     padding-top: 30px;
-  }
-  .miraclePlanBigSlider-item{
-    min-height: initial;
-  }
-  .miraclePlanBigSlider-item-bg{
-    position: static;
-    background: none!important;
-  }
-  .miraclePlanBigSlider-item-bg > span{
-    display: inline-block;
   }
   .miracle-plan-des-innr{
     max-width: 550px;
@@ -383,6 +439,12 @@ span.miraclePlanthumbSlider-item img{
 }
 
 @media(max-width: 575px){
+  .miraclePlanBigSlider-item {
+    min-height: 350px;
+  }
+  .miraclePlanBigSlider-item a i {
+    max-width: 40px;
+  }
   .user-story-gallery-item {
     width:100%;
   }
@@ -409,17 +471,18 @@ span.miraclePlanthumbSlider-item img{
 }
 
 @media(max-width: 479px){
+  .miraclePlanBigSlider-item {
+    min-height: 250px;
+  }
   .miracle-plan-des-wrp {
     padding-top: 15px;
   }
-
   .miracle-plan-progress-link-wrp {
     padding-right: 90px;
   }
   .user-story-cmpaign-con h3 {
     margin-bottom: 20px;
   }
-
   .miracle-plan-progress-link-wrp .support-btn {
     font-size: 11px;
     padding: 17px 10px 17px 48px;
