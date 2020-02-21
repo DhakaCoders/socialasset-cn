@@ -165,15 +165,19 @@
                 <div class="register-type-con">
                     <div class="register-type-select">
                       <div class="sa-selctpicker-ctlr">
-                        <select class="selectpicker">
-                            <option selected="selected">I am a NGO</option>
-                            <option>I’m Supporter</option>
+                        <select class="selectpicker" id="user-type-selection">
+                            <option selected="" value="Ngo">I am a NGO</option>
+                            <option selected="" value="User">I’m Supporter</option>
                         </select>
                       </div>
                     </div>
-                    <div class="fl-input-field-row sa-input">
+                    <div class="fl-input-field-row sa-input ngo-name showCntrl" id="showNgo">
                       <label>NGO Name *</label>
                       <input type="text" name="" placeholder="Example Co.">
+                    </div>
+                    <div class="fl-input-field-row sa-input user-name showCntrl" id="showUser">
+                      <label>Your Name *</label>
+                      <input type="text" name="" placeholder="Your Name">
                     </div>
                     <div class="fl-input-field-row sa-input">
                       <label>Email *</label>
@@ -275,6 +279,7 @@
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/jquery-ui.js"></script>
 <script src="assets/js/masonry.pkgd.min.js"></script>
+<script src="assets/js/account.js"></script>
 <script src="assets/js/main.js"></script>
 
 </body>

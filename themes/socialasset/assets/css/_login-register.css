@@ -266,7 +266,12 @@ button.tab-link.current:after{
 .fl-sign-in-another a:hover i{
 	color: #fff;
 }
-
+a.facebook-login-btn i{
+	color: #365699;
+}
+a.facebook-login-btn:hover i{
+	color: #fff;
+}
 a.facebook-login-btn:hover{
 	background: #365699;
 	color: #fff;
@@ -1743,4 +1748,8 @@ a.ui-datepicker-next:after {
 }
 .ui-datepicker-title{
 	padding: 10px!important;
+}
+
+.showCntrl{
+	display: none;
 }
