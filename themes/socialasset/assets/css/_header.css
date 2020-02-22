@@ -177,7 +177,8 @@ header.header{
 .humberger-menu-btn{
 	text-align: center;
 	cursor: pointer;
-	height: 61px;
+	padding-top: 4px;
+	margin-top: 2px;
 }
 .humberger-menu-btn strong{
 	padding-bottom: 10px;
@@ -186,13 +187,13 @@ header.header{
 	text-transform: uppercase;
 	font-weight: 500;
 	display: block;
-	padding-top: 6px;
+	padding-top: 0;
 }
 .hdr-btns{
 	padding-right: 8px;
 }
 .humberger-menu-btn{
-	padding-left: 12px;
+	padding-left: 15px;
 }
 .login-btn{
 	padding: 3px 4px 3px;
@@ -285,6 +286,8 @@ header.header{
 	width: 33px;
 	position: relative;
 	height: 20px;
+	margin-right: 0;
+	margin-left: auto;
 }
 .humberger-menu-btn-lines span{
 	position: absolute;
@@ -321,14 +324,14 @@ header.header{
   -webkit-transform: rotate(-45deg);
   width: 100%;
 }
-.humberger-menu-btn.humber-menu-expend{
-	padding-left: 20px!important;
-	padding-right: 20px!important;
-	padding-top: 25px!important;
-	width: 71px;
-	height: 71px;
-	margin-top: -11px;
-	padding-top: 25px;
+.humberger-menu-btn{
+	width: 50px;
+	height: 50px;
+}
+.humberger-menu-btn.humber-menu-expend {
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    padding-top: 16px!important;
 }
 .humberger-menu-btn.humber-menu-expend .humberger-menu-btn-lines{
 	width: 100%;
@@ -467,7 +470,7 @@ header.header{
 	display: none;
 }
 .logged-menu .humberger-menu-btn{
-	padding-top: 18px;
+	padding-top: 15px;
 }
 .logout-main-nav-menu{
 	display: flex;
@@ -668,21 +671,13 @@ header.header{
 	.login-btn{
 		margin-right: 5px;
 	}
-	.humberger-menu-btn.humber-menu-expend {
-	    padding-left: 20px!important;
-	    padding-right: 20px!important;
-	    padding-top: 25px!important;
-	    width: 60px;
-	    height: 60px;
-	    margin-top: 0;
-	    padding-top: 25px;
-	}
+
 	.login-btn button,
 	.campaign-btn{
 		height: 45px;
 	}
-	.humberger-menu-btn strong{
-		padding-top: 5px;
+	.humberger-menu-btn {
+	    padding-left: 10px;
 	}
 	.main-nav-menu > ul > li > a{
 		padding-bottom: 35px;
@@ -691,15 +686,16 @@ header.header{
 	    margin-top: -14px;
 	}
 	.humberger-menu-btn {
-	    padding-left: 6px;
+	    width: 45px;
+	    height: 45px;
+	}
+	.humberger-menu-btn strong{
+		padding-bottom: 6px;
 	}
 	.humberger-menu-btn.humber-menu-expend{
-		margin-top: -4px;
-		padding-top: 21px!important;
+		padding-top: 14px!important;
 	}
-	.humberger-menu-btn.humber-menu-expend{
 
-	}
 }
 
 @media(max-width: 991px){
