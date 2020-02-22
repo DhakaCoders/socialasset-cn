@@ -66,7 +66,9 @@ function business_create_account(){
 				}
 				add_user_meta ( $new_user_id, '_user_agree', 'Business', true );
 				add_user_meta( $new_user_id, '_user_login_status', '0', true );
-				$user = get_user_by( 'email', sanitize_email($_POST["email"]) );
+				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
+					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
+				}
 	            $data['bsignup_success'] = 'Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.';
             	$data['buser_status'] = 'success';
 			}else{

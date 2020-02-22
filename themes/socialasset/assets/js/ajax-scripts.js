@@ -161,7 +161,7 @@ function BusinessSubmitLoginFormData(){
                   jQuery('#login-password').val('');
                   jQuery('#success-login').text(data['login_success']);
                   function redirect_page(){
-                    window.location.href = ajax_business_login_object.redirecturl+data.user_name;
+                    window.location.href = ajax_business_login_object.redirecturl;
                   }
                   setTimeout(redirect_page,5000);
                 }
@@ -209,7 +209,7 @@ function SubmitLoginFormData(){
                   jQuery('#login-password').val('');
                   jQuery('#success-login').text(data['login_success']);
                   function redirect_page(){
-                    window.location.href = ajax_user_ngo_login_object.redirecturl+data.user_name;
+                    window.location.href = ajax_user_ngo_login_object.redirecturl;
                   }
                   setTimeout(redirect_page,5000);
                 }

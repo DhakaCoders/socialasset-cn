@@ -110,7 +110,9 @@ function ngo_user_create_account(){
 					update_user_meta ( $new_user_id, '_user_agree', $agree );
 				}
 				add_user_meta( $new_user_id, '_user_login_status', '0', true );
-				
+				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
+					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
+				}
 				/*
 				$user = get_user_by( 'email', sanitize_email($_POST["email"]) );
 				ob_start();

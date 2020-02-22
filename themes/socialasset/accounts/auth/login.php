@@ -13,7 +13,7 @@ function ajax_business_login_init(){
 
     wp_localize_script( 'ajax-business-login-script', 'ajax_business_login_object', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'redirecturl' => site_url() . '/author/',
+        'redirecturl' => site_url() . '/myaccount/',
     ));
     // Enable the user with no privileges to run ajax_login() in AJAX
 }
@@ -86,7 +86,7 @@ function ajax_user_ngo_login_init(){
 
     wp_localize_script( 'ajax-user-ngo-login-script', 'ajax_user_ngo_login_object', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'redirecturl' => site_url() . '/author/',
+        'redirecturl' => site_url() . '/myaccount/',
     ));
     // Enable the user with no privileges to run ajax_login() in AJAX
 }
