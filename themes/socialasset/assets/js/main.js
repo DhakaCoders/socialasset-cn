@@ -179,8 +179,8 @@ $('.sa-testimonial-slider').slick({
 });
 
 
-if( $('.sa-company-name-slide').length ){
-  $('.sa-company-name-slide').slick({
+if( $('.sa-company-name').length ){
+  $('.sa-company-name').slick({
       dots: true,
       arrows: false,
       infinite: false,
