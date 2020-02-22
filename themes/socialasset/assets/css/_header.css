@@ -646,7 +646,60 @@ header.header{
 }
 
 @media(max-width: 1199px){
+	.hdr-lft {
+	    width: 18%;
+	}
+	.hdr-rgt{
+		width: 82%;
+	}
+	.main-nav-menu ul li{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.main-nav-menu > ul > li:nth-child(1) {
+	    padding-right: 15px;
+	}
+	.main-nav-menu > ul > li:nth-child(2) {
+	    padding-left: 15px;
+	}
+	.main-nav-menu > ul{
+		padding-right: 5px;
+	}
+	.login-btn{
+		margin-right: 5px;
+	}
+	.humberger-menu-btn.humber-menu-expend {
+	    padding-left: 20px!important;
+	    padding-right: 20px!important;
+	    padding-top: 25px!important;
+	    width: 60px;
+	    height: 60px;
+	    margin-top: 0;
+	    padding-top: 25px;
+	}
+	.login-btn button,
+	.campaign-btn{
+		height: 45px;
+	}
+	.humberger-menu-btn strong{
+		padding-top: 5px;
+	}
+	.main-nav-menu > ul > li > a{
+		padding-bottom: 35px;
+	}
+	.humberger-menu {
+	    margin-top: -14px;
+	}
+	.humberger-menu-btn {
+	    padding-left: 6px;
+	}
+	.humberger-menu-btn.humber-menu-expend{
+		margin-top: -4px;
+		padding-top: 21px!important;
+	}
+	.humberger-menu-btn.humber-menu-expend{
 
+	}
 }
 
 @media(max-width: 991px){
