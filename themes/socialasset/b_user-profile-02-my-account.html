@@ -147,122 +147,11 @@
             <div class="user-profile-sec-iner width-1115">
               <div class="user-profile-sec-tab">
                 <div class="fl-tabs clearfix">
-                  <button class="tab-link current" data-tab="tab-1"><span>My ACCONT</span></button>
-                  <button class="tab-link" data-tab="tab-2"><span>Contributions</span></button>
+                  <button onclick="window.location.href = 'b_user-profile-01-contributions.html';"  class="tab-link"><span>My ACCONT</span></button>
+                  <button onclick="window.location.href = 'b_user-profile-02-my-account.html';"  class="tab-link current"><span>Contributions</span></button>
                 </div>
               </div>
-              <div id="tab-1" class="fl-tab-content current">
-                <div class="tab-con-inr">
-                  <div class="tab-con-title">
-                    <strong>My Account</strong>
-                  </div>
-                  <form>
-                    <div class="clearfix tab-con-col-row">
-                      <div class="tab-con-col-4">
-                        <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
-                          <div class="profile-edit-step-1 profile-img-step-1">
-                            <div class="profile-img">
-                              <img src="assets/images/img_avatar.png">
-                            </div>
-                          </div>
-                          <div class="profile-edit-step-2 profile-img-step-2">
-                            <div class="profile-img-edit">
-                              <input type="file" name="" value="" id="choose-file">
-                              <label for="choose-file">
-                                <i><img src="assets/images/plus-icon-2.png"></i>
-                              </label>
-                            </div>
-                          </div>
-                          <strong id="set_username">George Malamatlis</strong>
-                          <span>George@webflow.gr</span>
-                          <div class="fl-input-field-row profile-edit-step-2 clearfix sa-input plr-30 text-left username-filed">
-                            <label>Username</label>
-                            <input id="get_username" type="text" name="">
-                          </div>
-                          <div style="height: 1px"></div>
-                          <hr class="clearfix">
-                          <div class="plr-30">
-                            <div class="profile-submit-btn profile-edit-step-1 flx-btn-center">
-                              <!-- <input type="submit" name="" value="Edit Profile"> -->
-                              <a class="edit-profile-btn" href="javascript:void(0)">Edit Profile</a>
-                            </div>
-                            <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
-                              <input type="submit" name="" value="Save Changes">
-                              <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
-                              <a href="javascript:void(0)" id="edit-profile-cancle-btn" href="#">Cancel</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-con-col-8">
-                        <div class="has-bx-shadow profile-rgt-info-bx-cntlr">
-                          <strong class="profile-rgt-info-bx-title prib-plr">Change Password</strong>
-                          <div class="prib-plr profile-rgt-info-bx-input-fields">
-                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
-                              <label>Current Password</label>
-                              <input type="password" name="">
-                            </div>
-                          </div>
-                          <div class="prib-plr profile-rgt-info-bx-input-fields">
-                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
-                              <label>New Password</label>
-                              <input type="password" name="">
-                            </div>
-                          </div>
-                          <div class="prib-plr profile-rgt-info-bx-input-fields">
-                            <div class="sa-input clearfix pro-rgt-info-bx-input-fields-row">
-                              <label>Confirm New Password</label>
-                              <input type="password" name="">
-                            </div>
-                          </div>
-                          <div class="fl-forget-row prib-plr">
-                            <a href="#">Forgot your password?</a>
-                          </div>
-                          <div class="prib-plr">
-                            <div class="prib-btns profile-submit-btn clearfix">
-                              <input type="submit" name="" value="Change Password">
-                              <input type="reset" name="" value="Cancel">
-                            </div>
-                          </div>
-                          <hr>
-                          <strong class="profile-rgt-info-bx-title prib-plr">Notification Settings</strong>
-                          <div class="switch-checkbox-con prib-plr">
-                            <div class="switch-item">
-                              <div class="switch-checkbox">
-                                <input type="checkbox" checked id="checkbox-switch1">
-                                <span class="checkbox-slider"></span>
-                              </div>
-                              <label for="checkbox-switch1">I would like to receive notification through Email</label>
-                            </div>
-                            <div class="switch-item">
-                              <div class="switch-checkbox">
-                                <input type="checkbox" id="checkbox-switch2">
-                                <span class="checkbox-slider"></span>
-                              </div>
-                              <label for="checkbox-switch2">Newsletters</label>
-                            </div>
-                            <div class="switch-item">
-                              <div class="switch-checkbox">
-                                <input type="checkbox" id="checkbox-switch3">
-                                <span class="checkbox-slider"></span>
-                              </div>
-                              <label for="checkbox-switch3">Emails for new campaigns</label>
-                            </div>
-                            <div class="switch-item">
-                              <div class="switch-checkbox">
-                                <input type="checkbox" id="checkbox-switch4">
-                                <span class="checkbox-slider"></span>
-                              </div>
-                              <label for="checkbox-switch4">Lorem ipsum</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div id="tab-2" class="fl-tab-content">
+              <div id="tab-2" class="">
                 <div class="tab-con-inr">
                   <div class="user-profile-1-hdr clearfix">
                     <strong>Contributions</strong>
@@ -284,21 +173,24 @@
                           <tr>
                             <td>
                               <div class="tbl-td">
+                                <strong>Date</strong>
                                 <span class="tbl-date">2/11/2020</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Category</strong>
                                 <span class="tbl-cat-name">HUMAN</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Campaign</strong>
                                 <div class="tbl-campaign-des">
                                   <div class="tbl-campaign-img">
                                     <img src="assets/images/tbl-campaign-img.png">
                                   </div>
-                                  <div>
+                                  <div class="tbl-campaign-des-inr">
                                     <strong>The miracle recovery plan for our planet</strong>
                                     <p>Traumatic events can create persistent mental and physical stress. We have 6 year …</p>
                                   </div>
@@ -307,11 +199,13 @@
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Status</strong>
                                 <span class="status-btn status-btn-active">ACTIVE</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>NGO</strong>
                                 <div class="ngo-logo">
                                   <img src="assets/images/ngo-logo.png">
                                 </div>
@@ -321,21 +215,24 @@
                           <tr>
                             <td>
                               <div class="tbl-td">
+                                <strong>Date</strong>
                                 <span class="tbl-date">2/11/2020</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Category</strong>
                                 <span class="tbl-cat-name">HUMAN</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Campaign</strong>
                                 <div class="tbl-campaign-des">
                                   <div class="tbl-campaign-img">
                                     <img src="assets/images/tbl-campaign-img.png">
                                   </div>
-                                  <div>
+                                  <div class="tbl-campaign-des-inr">
                                     <strong>The miracle recovery plan for our planet</strong>
                                     <p>Traumatic events can create persistent mental and physical stress. We have 6 year …</p>
                                   </div>
@@ -344,11 +241,13 @@
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Status</strong>
                                 <span class="status-btn status-btn-inactive">INACTIVE</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>NGO</strong>
                                 <div class="ngo-logo">
                                   <img src="assets/images/ngo-logo.png">
                                 </div>
@@ -358,21 +257,24 @@
                           <tr>
                             <td>
                               <div class="tbl-td">
+                                <strong>Date</strong>
                                 <span class="tbl-date">2/11/2020</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Category</strong>
                                 <span class="tbl-cat-name">HUMAN</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Campaign</strong>
                                 <div class="tbl-campaign-des">
                                   <div class="tbl-campaign-img">
                                     <img src="assets/images/tbl-campaign-img.png">
                                   </div>
-                                  <div>
+                                  <div class="tbl-campaign-des-inr">
                                     <strong>The miracle recovery plan for our planet</strong>
                                     <p>Traumatic events can create persistent mental and physical stress. We have 6 year …</p>
                                   </div>
@@ -381,11 +283,13 @@
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>Status</strong>
                                 <span class="status-btn status-btn-active">ACTIVE</span>
                               </div>
                             </td>
                             <td>
                               <div class="tbl-td">
+                                <strong>NGO</strong>
                                 <div class="ngo-logo">
                                   <img src="assets/images/ngo-logo.png">
                                 </div>

@@ -48,7 +48,8 @@ z-index: 5;
 	border-bottom: 3px solid #D6DAE0;
 }
 
-button.tab-link{
+button.tab-link,
+a.tab-link{
 	padding: 0 15px 10px;
 	position: relative;
 	color: #000000;
@@ -61,14 +62,18 @@ button.tab-link{
 	margin-right: 35px;
 	font-size: 16px;
 }
-button.tab-link:last-child{
+button.tab-link:last-child,
+a.tab-link:last-child{
 	margin-right: 0;
 }
 button.tab-link:hover,
-button.tab-link.current{
+button.tab-link.current,
+a.tab-link:hover,
+a.tab-link.current{
 	color: #0054FD;
 }
-button.tab-link:after{
+button.tab-link:after,
+a.tab-link:after{
 	content: "";
 	background: #0055FF;
 	position: absolute;
@@ -301,7 +306,6 @@ a.facebook-login-btn:hover{
 	bottom: -105px;
 	top: auto;
 	max-width: 460px;
-	height: 280px;
 }
 .login-form-clip img{
 	width: 100%;
@@ -571,7 +575,8 @@ a.linkedin-login-btn:hover{
 	padding: 50px 0 105px;
 }
 
-.user-profile-sec-tab button.tab-link{
+.user-profile-sec-tab button.tab-link,
+.user-profile-sec-tab a.tab-link{
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -1023,7 +1028,7 @@ span.file-up-instruction-txt {
 .tbl-campaign-des{
 	display: flex;
 	align-items: center;
-	padding-right: 133px;
+	padding-right: 127px;
 }
 .tbl-campaign-img{
 	max-width: 113px;
@@ -1767,4 +1772,206 @@ a.ui-datepicker-next:after {
 
 .showCntrl{
 	display: none;
+}
+
+.tbl-td > strong{
+	display: none;
+}
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.tbl-campaign-des{
+		padding-right: 80px;
+	}
+	.table-dsc table thead tr th:nth-child(3), .table-dsc table tbody tr td:nth-child(3) {
+	    width: 42%;
+	}
+	.table-dsc table thead tr th:nth-child(2), .table-dsc table tbody tr td:nth-child(2) {
+	    width: 15%;
+	}
+	.prib-plr {
+	    padding-left: 40px;
+	    padding-right: 40px;
+	}
+	.pro-rgt-info-bx-input-fields-row label{
+		width: 260px;
+	}
+	.profile-submit-btn input[type="submit"], .profile-submit-btn a{
+		width: 150px;
+	}
+	.plr-30 {
+	    padding-left: 20px!important;
+	    padding-right: 20px!important;
+	}
+	.xs-center-width{
+
+	}
+	.tab-con-col-4{
+		margin-bottom: 20px;
+	}
+	.tab-con-col-4,
+	.tab-con-col-8{
+	    width: 100%;
+	}
+	.tab-con-inr.xs-center-width{
+		max-width: 650px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media(max-width: 991px){
+	.table-dsc table thead{
+		display: none;
+	}
+	.user-profile-1-hdr{
+		background: #fff;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 8px;
+	}
+	.tbl-td{
+		display: flex;
+		align-items: center;
+	}
+	.tbl-td span,
+	.tbl-td div{
+		margin-left: auto;
+	}
+	.tbl-td > strong{
+		display: inline-block;
+		vertical-align: baseline;
+		padding-right: 30px;
+		padding-left: 0;
+		position: relative;
+	} 
+	.table-dsc table tbody tr td:nth-child(1),
+	.table-dsc table tbody tr td:nth-child(2),
+	.table-dsc table tbody tr td:nth-child(3),
+	.table-dsc table tbody tr td:nth-child(4),
+	.table-dsc table tbody tr td:nth-child(5),
+	.table-dsc table thead tr th:nth-child(1),
+	.table-dsc table thead tr th:nth-child(2),
+	.table-dsc table thead tr th:nth-child(3),
+	.table-dsc table thead tr th:nth-child(4),
+	.table-dsc table thead tr th:nth-child(5),
+	.xs-width-full{
+	    width: 100%!important;
+	    display: block;
+	}
+	.table-dsc table tbody tr td{
+		padding-left: 20px!important;
+		padding-right: 20px!important;
+	}
+	.tbl-campaign-des{
+		padding-right: 0;
+	}
+	.table-dsc table tbody tr td:last-child{
+		padding-bottom: 40px;
+	}
+	.dfp-tbl-wrap{
+		max-width: 650px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.table-dsc table tbody tr{
+		display: flex;
+		flex-direction: column;
+	}
+	.table-dsc table tbody tr td:nth-child(1){
+		order: 2;
+	}
+	.table-dsc table tbody tr td:nth-child(2){
+		order: 3;
+	}
+	.table-dsc table tbody tr td:nth-child(3){
+		order: 1;
+	}
+	.table-dsc table tbody tr td:nth-child(4){
+		order: 4;
+	}
+	.table-dsc table tbody tr td:nth-child(5){
+		order: 5;
+	}
+	.table-dsc table tbody tr td:nth-child(3) .tbl-td > strong{
+		display: none;
+	}
+	.tbl-campaign-des{
+		margin-left: 0!important;
+	}
+	.tbl-campaign-des{
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+	.tbl-campaign-des-inr{
+		width: 100%;
+		
+	}
+	.tbl-campaign-des{
+		position: relative;
+	}
+	.tbl-campaign-img{
+		padding-bottom: 10px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+@media(max-width: 767px){
+	.login-businesses-form-cntlr{
+		padding-top: 70px;
+	}
+
+}
+
+@media(max-width: 575px){
+	.login-businesses-form{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.fl-sign-in-another a{
+		font-size: 16px;
+		padding-right: 10px;
+	}
+	.login-form-clip{
+		display: none;
+	}
+	.login-businesses-form-hdr{
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	.login-businesses-form-hdr p{
+		line-height: 20px;
+	}
+
+}
+
+@media(max-width: 479px){
+
+	.table-dsc table tbody tr td {
+	    padding-left: 0px!important;
+	    padding-right: 00px!important;
+	}
+}
+
+@media(max-width: 359px){
+
 }

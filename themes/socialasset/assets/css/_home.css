@@ -532,15 +532,15 @@ span.top-q-icon{
 	max-width: 36px;
 	position: absolute;
 	display: inline-block;
-	top: 42px;
+	top: 40px;
 	left: 215px;
 }
-span.btm-q-icon{
-	max-width: 36px;
-	position: absolute;
-	display: inline-block;
-	bottom: 78px;
-	right: 50px;
+span.btm-q-icon {
+    max-width: 36px;
+    position: absolute;
+    display: inline-block;
+    bottom: 63px;
+    right: 50px;
 }
 .hm-testimonials-ftr {
 	padding-top: 22px;	
@@ -1026,7 +1026,7 @@ span.btm-q-icon{
 	    left: 206px;
 	}
 	span.btm-q-icon {
-	    bottom: 42px;
+	    bottom: 23px;
 	    right: 41px;
 	}
 	.dft-slider-dot-con .slick-dots {
@@ -1166,7 +1166,6 @@ span.btm-q-icon{
 	.hm-partner-slider .hm-partner-slider-item:nth-child(6){
 		display: none !important;
 	}
-
 }
 
 @media(max-width: 639px){
@@ -1182,19 +1181,17 @@ span.btm-q-icon{
 	    padding: 50px 50px;
 	    text-align: center;
 	}
-
 	span.top-q-icon {
 	    top: 170px;
 	    left: 20px;
 	}
 	span.btm-q-icon {
-	    bottom: 42px;
+	    bottom: 30px;
 	    right: 20px;
 	}
 	.hm-testimonials-ftr {
 	    padding-top: 5px;
 	}
-
 }
 
 @media(max-width: 575px){
@@ -1278,8 +1275,8 @@ span.btm-q-icon{
 	}
 	span.btm-q-icon {
 	    max-width: 25px;
-	    bottom: 48px;
-    	right: 20px;
+	    bottom: 37px;
+	    right: 20px;
 	}
 }
 
