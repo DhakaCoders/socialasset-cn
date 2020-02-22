@@ -135,25 +135,25 @@
 .hm-banner-design-2 h2 span{
 	position: relative;
 }
-.hm-banner-design-2 h2 span.bus::after{
-	content: "";
-	position: absolute;
-	height: 14px;
-	right: 0;
-	bottom: 5px;
-	left: 20px;
-	background: #03D39B;
-	z-index: -1
+.hm-banner-design-2 h2 span.bus::after {
+    content: "";
+    position: absolute;
+    height: 14px;
+    right: 4px;
+    bottom: 5px;
+    left: 0;
+    background: #03D39B;
+    z-index: -1;
 }
-.hm-banner-design-2 h2 span.soc::after{
-	content: "";
-	position: absolute;
-	height: 14px;
-	right: 6px;
-	bottom: 5px;
-	left: -9px;
-	background: #0055FF;
-	z-index: -1
+.hm-banner-design-2 h2 span.soc::after {
+    content: "";
+    position: absolute;
+    height: 14px;
+    right: -1px;
+    bottom: 5px;
+    left: 1px;
+    background: #0055FF;
+    z-index: -1;
 }
 .hm-banner-design-2 a{
 	display: inline-block;
@@ -297,51 +297,22 @@ span.hm-wc-social-assets-top-shape {
 	opacity: .8;
 	padding-right: 30px;
 }
-
-
-
-
 .upcoming-campaigns-sec{
 	padding: 100px 0 150px;
 	background: #F4F5F9;
 	position: relative;
 }
-
 .upcoming-campaigns-head{
 	padding-bottom: 92px;
 }
 .upcoming-campaigns-head h4{
 	color: #0054FD;
-	margin-bottom: 20px;
-	
+	margin-bottom: 20px;	
 }
 .upcoming-campaigns-head p{
 	font-size: 16px;
 	margin-bottom: 12px;	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hm-explore-campaigns-sec{
 	padding-bottom: 130px;
 }
@@ -508,8 +479,6 @@ span.hm-wc-social-assets-top-shape {
 .hm-testimonials-slider.slick-initialized .hm-testimonials-slider-item{
 	display: block !important;
 }
-
-
 .hm-testimonials-slider-item i{
 	display: inline-block;
 	vertical-align: baseline;
@@ -707,8 +676,6 @@ span.btm-q-icon {
 	padding-top: 40px;
 	padding-right: 30px;
 }
-
-
 .hm-join-journey-sec .jjsg-des-top > span {
 	display: inline-block;
 	vertical-align: baseline;
@@ -757,7 +724,6 @@ span.btm-q-icon {
 	background-position: center center;
 	background-size: 100% 100%;
 }
-
 .hm-banner-slider .slick-dots {
     position: absolute;
     bottom: initial;
@@ -884,9 +850,6 @@ span.btm-q-icon {
 	display: inline-block!important;
 	vertical-align: middle!important;
 }
-
-
-
 .hm-partner-slider .hm-partner-slider-item{
 	display: none !important;
 	width: 16.666%;
@@ -1165,6 +1128,10 @@ span.btm-q-icon {
 	}
 	.hm-partner-slider .hm-partner-slider-item:nth-child(6){
 		display: none !important;
+	}
+	.hm-banner-design-2 h2 span.bus::after,
+	.hm-banner-design-2 h2 span.soc::after {
+	    content: none;
 	}
 }
 
