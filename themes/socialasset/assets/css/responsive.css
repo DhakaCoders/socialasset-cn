@@ -1,3 +1,12 @@
+
+@media(min-width: 1921px){
+	.container-fluid{
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
+
+
 @media(max-width: 1499px){
 
 }

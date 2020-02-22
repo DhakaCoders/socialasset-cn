@@ -1,9 +1,17 @@
 header.header{
-	padding: 25px 0 0;
 	position: relative;
 	z-index: 10;
 }
-
+.header-inr{
+	display: flex;
+	align-items: center;
+}
+.hdr-rgt{
+	padding-top: 25px;
+}
+.hdr-lft{
+	height: 100%;
+}
 .hdr-lft{
 	float: left;
 	width: 30%;
@@ -18,7 +26,7 @@ header.header{
 .logo a{
 	display: inline-block;
 	vertical-align: baseline;
-	width: 278px;
+	max-width: 278px;
 }
 .logo a img{
 	width: 100%;
@@ -252,7 +260,8 @@ header.header{
 	position: relative;
 	z-index: 11;
 }
-.login-btn button:hover{
+.login-btn button:hover,
+.login-btn button.login-menu-expend{
 	background: #0055FF;
 	color: #fff;
 }
@@ -352,7 +361,7 @@ header.header{
 	width: 231px;
 	position: absolute;
 	top: 100%;
-	margin-top: -12px;
+	margin-top: -15px;
 	color: #fff;
 	right: 0;
 	padding: 40px 35px 25px 30px;
@@ -591,4 +600,126 @@ header.header{
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
+}
+
+
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+	.campaign-btn{
+		width: 150px;
+	}
+
+	.container-fluid{
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: 0;
+		margin-right: 0;
+	  	width: auto;
+	}
+	.container-fluid .row{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.container-fluid .row .col-lg-1, .container-fluid .row .col-lg-10, .container-fluid .row .col-lg-11, .container-fluid .row .col-lg-12, .container-fluid .row .col-lg-2, .container-fluid .row .col-lg-3, .container-fluid .row .col-lg-4, .container-fluid .row .col-lg-5, .container-fluid .row .col-lg-6, .container-fluid .row .col-lg-7, .container-fluid .row .col-lg-8, .container-fluid .row .col-lg-9, 
+	.container-fluid .row .col-md-1, .container-fluid .row .col-md-10, .container-fluid .row .col-md-11, .container-fluid .row .col-md-12, .container-fluid .row .col-md-2, .container-fluid .row .col-md-3, .container-fluid .row .col-md-4, .container-fluid .row .col-md-5, .container-fluid .row .col-md-6, .container-fluid .row .col-md-7, .container-fluid .row .col-md-8, .container-fluid .row .col-md-9, 
+	.container-fluid .row .col-sm-1, .container-fluid .row .col-sm-10, .container-fluid .row .col-sm-11, .container-fluid .row .col-sm-12, .container-fluid .row .col-sm-2, .container-fluid .row .col-sm-3, .container-fluid .row .col-sm-4, .container-fluid .row .col-sm-5, .container-fluid .row .col-sm-6, .container-fluid .row .col-sm-7, .container-fluid .row .col-sm-8, .container-fluid .row .col-sm-9, 
+	.container-fluid .row .col-xs-1, .container-fluid .row .col-xs-10, .container-fluid .row .col-xs-11, .container-fluid .row .col-xs-12, .container-fluid .row .col-xs-2, .container-fluid .row .col-xs-3, .container-fluid .row .col-xs-4, .container-fluid .row .col-xs-5, .container-fluid .row .col-xs-6, .container-fluid .row .col-xs-7, .container-fluid .row .col-xs-8, .container-fluid .row .col-xs-9{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.hdr-lft {
+	    width: 20%;
+	}
+	.hdr-rgt{
+		width: 80%;
+	}
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.hdr-lft {
+	    width: 18%;
+	}
+	.hdr-rgt{
+		width: 82%;
+	}
+	.main-nav-menu ul li{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.main-nav-menu > ul > li:nth-child(1) {
+	    padding-right: 15px;
+	}
+	.main-nav-menu > ul > li:nth-child(2) {
+	    padding-left: 15px;
+	}
+	.main-nav-menu > ul{
+		padding-right: 5px;
+	}
+	.login-btn{
+		margin-right: 5px;
+	}
+	.humberger-menu-btn.humber-menu-expend {
+	    padding-left: 20px!important;
+	    padding-right: 20px!important;
+	    padding-top: 25px!important;
+	    width: 60px;
+	    height: 60px;
+	    margin-top: 0;
+	    padding-top: 25px;
+	}
+	.login-btn button,
+	.campaign-btn{
+		height: 45px;
+	}
+	.humberger-menu-btn strong{
+		padding-top: 5px;
+	}
+	.main-nav-menu > ul > li > a{
+		padding-bottom: 35px;
+	}
+	.humberger-menu {
+	    margin-top: -14px;
+	}
+	.humberger-menu-btn {
+	    padding-left: 6px;
+	}
+	.humberger-menu-btn.humber-menu-expend{
+		margin-top: -4px;
+		padding-top: 21px!important;
+	}
+	.humberger-menu-btn.humber-menu-expend{
+
+	}
+}
+
+@media(max-width: 991px){
+
+}
+
+@media(max-width: 767px){
+
+}
+
+@media(max-width: 575px){
+
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
