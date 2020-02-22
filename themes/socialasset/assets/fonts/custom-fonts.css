@@ -18,10 +18,5 @@
 		url("NeutrafaceTextBold/NeutrafaceTextBold.woff") format("woff"),
 		url("NeutrafaceTextBold/NeutrafaceTextBold.ttf") format("truetype"),
 		url("NeutrafaceTextBold/NeutrafaceTextBold.svg#Neutraface Text Bold") format("svg");
+    font-weight: normal;
 }
-
-/* 
-
-font-family: 'Roboto Condensed', sans-serif; 
-
-*/
