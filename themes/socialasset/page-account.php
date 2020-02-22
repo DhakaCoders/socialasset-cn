@@ -3,11 +3,10 @@
   Template Name: Account
 */
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+  <title>Login</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +33,7 @@
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->	
+  <![endif]-->  
 <?php wp_head(); ?>
 </head>
 <body>
@@ -150,61 +149,112 @@
   <section class="fl-login">
     <div class="login-form-cntlr clearfix">
       <div class="login-form-lft-col">
+
         <div class="fl-login-form">
-          <div class="fl-tabs clearfix text-center">
-            <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
-            <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
-          </div>
-          <div id="tab-1" class="fl-tab-content current">
-            <div class="tab-con-inr">
-              <form id="user-ngo-signup" accept-charset="utf-8" data-toggle="validator" onsubmit="SubmitSignupFormData(); return false">
-                <div class="register-hdr-con">
-                  <strong>Create your free online account</strong>
-                  <span>Already have an account? <a href="#">Sign in here</a></span>
-                </div>
-                <div class="register-type-btn">
-                  <a href="javascript:void(0)" class="register-ngo-btn">
-                    I’m NGO - <span>BeSupported</span>
-                  </a>
-                  <a href="javascript:void(0)" class="register-supporter-btn">I’m Supporter</a>
-                </div>
-                <div class="register-type-con">
-                    <div class="register-type-select">
-                      <div class="sa-selctpicker-ctlr">
-                        <select id="user-type" class="selectpicker">
-                            <option selected="selected" value="ngo">I am a NGO</option>
-                            <option value="user">I’m Supporter</option>
-                        </select>
+          <span id="success-signup" class="success-signup"></span>
+          <div id="after-signup-hide">
+            <div class="fl-tabs clearfix text-center">
+              <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
+              <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
+            </div>
+            <div id="tab-1" class="fl-tab-content current">
+              <div class="tab-con-inr">
+                <form id="user-signup" onsubmit="SubmitSignupFormData(); return false">
+                  <input type="hidden" name="action" value="ngo_user_create_account">
+                  <div class="register-hdr-con">
+                    <strong>Create your free online account</strong>
+                    <span>Already have an account? <a href="#">Sign in here</a></span>
+                  </div>
+                  <div class="register-type-btn">
+                    <a href="javascript:void(0)" class="register-ngo-btn">
+                      I’m NGO - <span>BeSupported</span>
+                    </a>
+                    <a href="javascript:void(0)" class="register-supporter-btn">I’m Supporter</a>
+                  </div>
+                  <div class="register-type-con">
+                      <div class="register-type-select">
+                        <div class="sa-selctpicker-ctlr">
+                          <select name="usertype" class="selectpicker" id="user-type-selection">
+                              <option selected="" value="Ngo">I am a NGO</option>
+                              <option selected="" value="User">I’m Supporter</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="fl-input-field-row sa-input ngo-name showCntrl" id="showNgo">
+                        <label>NGO Name *</label>
+                        <input type="text" name="ngo_name" placeholder="Example Co.">
+                        <span class="ngo_error error-msg"></span>
+                      </div>
+                      <div class="fl-input-field-row sa-input user-name showCntrl" id="showUser">
+                        <label>Your Name *</label>
+                        <input type="text" name="your_name" placeholder="Your Name">
+                        <span class="name_error error-msg"></span>
+                      </div>
+                      <div class="fl-input-field-row sa-input">
+                        <label>Email *</label>
+                        <input type="email" name="email" placeholder="Your Email">
+                        <span class="email_error error-msg"></span>
+                      </div>
+                      <div class="fl-input-field-row-grd clearfix">
+                        <div class="fl-input-field-row sa-input">
+                          <label>Create a password *</label>
+                          <input type="password" name="user_password" id="password" placeholder="Password">
+                          <span class="pass_error error-msg"></span>
+                        </div>
+                        <div class="fl-input-field-row sa-input">
+                          <label>Confirm password *</label>
+                          <input type="password" name="confirm_password" id="confirm_password" placeholder="Password">
+                          <span class="conpass_error error-msg"></span>
+                        </div>
+                        <span class="pass_match_error error-msg"></span>
+                      </div>
+                      <div class="agree-checkmark">
+                        <div class="filter-check-row clearfix">
+                          <input type="checkbox" id="agree" name="agree" value="yes" required="required">
+                          <span class="checkmark"></span> 
+                          <label for="agree"> I have read & agree to Terms of Service</label>
+                        </div>
+                      </div>
+                      <div class="fl-submit-btn w-full">
+                        <input type="hidden" name="user_ngo_register_nonce" value="<?php echo wp_create_nonce('user-ngo-register-nonce'); ?>"/>
+                        <input type="submit" id="usersignup" value="Create Account">
+                      </div>
+                      <div class="fl-or-text">
+                        <span>Or</span>
+                      </div>
+                      <div class="fl-sign-in-another">
+                        <a class="gogle-login-btn" href="#">
+                          <i class="fab fa-google"></i>
+                          Sign In with Google
+                        </a>
                       </div>
                     </div>
-                    <div class="fl-input-field-row sa-input">
-                      <label>NGO Name *</label>
-                      <input type="text" id="owner-name" placeholder="Example Co.">
-                    </div>
+                  </form>
+              </div>
+            </div>
+            <div id="tab-2" class="fl-tab-content">
+              <div class="tab-con-inr">
+                <div class="login-form">
+                  <span id="loginerror" class="login-error"></span>
+                  <span id="success-login" class="success-login"></span>
+                  <form id="user-login" onsubmit="SubmitLoginFormData(); return false">
+                    <input type="hidden" name="action" value="ngo_user_login_account">
                     <div class="fl-input-field-row sa-input">
                       <label>Email *</label>
-                      <input type="email" id="email" placeholder="Your Email">
+                      <input type="email" name="email" id="login_user" placeholder="Your Email">
+                      <span class="loginemail_error error-msg"></span>
                     </div>
-                    <div class="fl-input-field-row-grd clearfix">
-                      <div class="fl-input-field-row sa-input">
-                        <label>Create a password *</label>
-                        <input type="password" id="password" placeholder="Password">
-                      </div>
-                      <div class="fl-input-field-row sa-input">
-                        <label>Confirm password *</label>
-                        <input type="password" id="confirm-password" placeholder="Password">
-                      </div>
+                    <div class="fl-input-field-row sa-input">
+                      <label>Password *</label>
+                      <input type="password" name="password" id="login-password" placeholder="Password">
+                      <span class="loginpass_error error-msg"></span>
                     </div>
-                    <div class="agree-checkmark">
-                      <div class="filter-check-row clearfix">
-                        <input type="checkbox" id="agree" value="YES" required="required">
-                        <span class="checkmark"></span> 
-                        <label for="agree"> I have read & agree to Terms of Service</label>
-                      </div>
+                    <div class="fl-forget-row">
+                      <a href="#">Forgot your password?</a>
                     </div>
                     <div class="fl-submit-btn w-full">
-                      <input type="hidden" name="user_ngo_register_nonce" value="<?php echo wp_create_nonce('user-ngo-register-nonce'); ?>"/>
-                      <input type="submit" value="Create Account">
+                      <input type="hidden" name="user_ngo_login_nonce" value="<?php echo wp_create_nonce('user-ngo-login-nonce'); ?>"/>
+                      <input type="submit" value="Sign In">
                     </div>
                     <div class="fl-or-text">
                       <span>Or</span>
@@ -214,43 +264,13 @@
                         <i class="fab fa-google"></i>
                         Sign In with Google
                       </a>
+                      <a class="facebook-login-btn" href="#">
+                        <i class="fab fa-facebook-square"></i>
+                        Sign In with Facebook
+                      </a>
                     </div>
-                  </div>
-                </form>
-            </div>
-          </div>
-          <div id="tab-2" class="fl-tab-content">
-            <div class="tab-con-inr">
-              <div class="login-form">
-                <form>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Email *</label>
-                    <input type="email" name="" placeholder="Your Email">
-                  </div>
-                  <div class="fl-input-field-row sa-input">
-                    <label>Password *</label>
-                    <input type="password" name="" placeholder="Password">
-                  </div>
-                  <div class="fl-forget-row">
-                    <a href="#">Forgot your password?</a>
-                  </div>
-                  <div class="fl-submit-btn w-full">
-                    <input type="submit" value="Sign In">
-                  </div>
-                  <div class="fl-or-text">
-                    <span>Or</span>
-                  </div>
-                  <div class="fl-sign-in-another">
-                    <a class="gogle-login-btn" href="#">
-                      <i class="fab fa-google"></i>
-                      Sign In with Google
-                    </a>
-                    <a class="linkedin-login-btn" href="#">
-                      <i class="fab fa-linkedin-in"></i>
-                      Sign In with LinkedIn
-                    </a>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -263,7 +283,7 @@
   </section>
 </div>
 
- 
+
 <script src="<?php echo THEME_URI; ?>/assets/js/popper.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/bootstrap-select.min.js"></script>
@@ -278,8 +298,9 @@
 <script src="<?php echo THEME_URI; ?>/assets/js/nav.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/jquery-ui.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/masonry.pkgd.min.js"></script>
+<script src="<?php echo THEME_URI; ?>/assets/js/account.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/main.js"></script>
-
+<?php wp_footer(); ?>
 </body>
 </html>
 

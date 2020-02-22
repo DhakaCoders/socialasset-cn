@@ -1,3 +1,4 @@
+(function($) {
 $('div.fl-tabs button').click(function(){
     var tab_id = $(this).attr('data-tab');
 
@@ -82,3 +83,4 @@ $('.register-ngo-btn').on('change', function(){
 $('.register-supporter-btn').on('change', function(){ 
     $('#user-type-selection option[value=User]').attr('selected','selected'); 
 });
+})(jQuery);

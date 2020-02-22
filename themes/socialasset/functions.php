@@ -59,7 +59,7 @@ function cbv_theme_scripts(){
 	include_once( THEME_DIR . '/enq-scripts/theme.default.php' );
 }
 
-add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
+//add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
 
 /**
 Includes->>

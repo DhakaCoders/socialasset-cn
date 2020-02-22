@@ -160,7 +160,11 @@ img{
 	bottom: 0;
 	z-index: 10;
 }
-
+span.error-msg {
+    color: red;
+    padding: 8px 0;
+    display: block;
+}
 
 /**
 Selects
