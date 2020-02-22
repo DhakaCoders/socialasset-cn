@@ -1175,7 +1175,7 @@ span.status-published-title.color-red{
 	color: #fff;
 	font-size: 14px;
 	line-height: 16px;
-	padding: 19px 25px;
+	padding: 19px 40px 19px 25px;
 	margin-bottom: 15px;
 	position: relative;
 }
@@ -1414,7 +1414,7 @@ span.status-published-title.color-red{
 .ngo-create-campaign-con-des-hdr p{
 	margin-bottom: 0;
 	font-size: 19px;
-	line-height: 21px;
+	line-height: 24px;
 }
 
 .ncc-input-title-fields-row input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -1802,8 +1802,8 @@ a.ui-datepicker-next:after {
 	    width: 15%;
 	}
 	.prib-plr {
-	    padding-left: 40px;
-	    padding-right: 40px;
+	    padding-left: 20px;
+	    padding-right: 20px;
 	}
 	.pro-rgt-info-bx-input-fields-row label{
 		width: 260px;
@@ -1932,14 +1932,61 @@ a.ui-datepicker-next:after {
 		margin-left: auto;
 		margin-right: auto;
 	}
-
+	.pr-190 {
+	    padding-right: 0;
+	}
+	.ngo-campaigns-tab-hdr,
+	.supported-campaigns-tab-hdr{
+		background: #cfcfcf;
+		padding: 20px;
+		border-radius: 8px;
+	}
+	.supported-campaigns-tab-items .campaigns-item-des h6{
+		font-size: 18px;
+	}
+	.supported-campaigns-tab-items .campaigns-item-img{
+		height: 200px;
+	}
 }
 
 @media(max-width: 767px){
 	.login-businesses-form-cntlr{
 		padding-top: 70px;
 	}
+	.ngo-campaigns-tab-hdr {
+	    display: block;
+	    text-align: center;
+	}
+	.ngo-campaigns-tab-hdr strong{
+		padding-bottom: 20px;
+		display: block;
+	}
+	.ngo-campaigns-tab-hdr-rgt{
+		justify-content: center;
+	}
+	.supported-campaigns-tab-items ul li{
+		width: 50%;
+		padding-bottom: 20px;
+	}
 
+}
+
+@media(max-width: 639px){
+	.pro-rgt-info-bx-input-fields-row{
+		display: block;
+	}
+	.prib-btns{
+		padding-left: 0;
+	}
+	.supported-campaigns-tab-items ul li{
+		width: 100%;
+	}
+	.supported-campaigns-tab-items ul li .campaigns-list-item{
+		max-width: 350px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 @media(max-width: 575px){
@@ -1961,7 +2008,72 @@ a.ui-datepicker-next:after {
 	.login-businesses-form-hdr p{
 		line-height: 20px;
 	}
+	.ngo-create-campaign-con-des-hdr p{
+		text-align: center;
+		font-size: 17px;
+	}
+	.ncc-input-fields-col{
+		width: 100%;
+		padding-bottom: 20px;
+	}
+	.ncc-input-fields-col:last-child{
+		padding-bottom: 0;
+	}
+	.ncc-submit-btns input[type="submit"]{
+		margin-right: 0;
+	}
+	.ngo-profile-sec-iner .user-profile-sec-tab{
+		text-align: center;
 
+	}
+	.ngo-profile-sec-iner .user-profile-sec-tab button.tab-link, 
+	.ngo-profile-sec-iner .user-profile-sec-tab a.tab-link{
+		margin-right: 20px!important;
+		margin-left: 20px!important;
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+	.ngo-campaigns-tab-hdr-rgt{
+		display: block;
+	}
+	.ngo-campaigns-tab-hdr-rgt form {
+	    flex-direction: column;
+	    justify-content: center;
+	}
+	.ngo-archive{
+		padding-right: 0;
+		margin-bottom: 15px;
+	}
+	.search-by-name{
+		width: 100%;
+	}
+	.pagi-select-area,
+	.supported-campaigns-tab-hdr{
+		flex-direction: column;
+	}
+	.supported-campaigns-tab-hdr{
+		justify-content: center;
+	}
+	.showing-page-select{
+		float: none;
+		margin-left: 0;
+	}
+	.fl-pagi-pagi-ctlr{
+		margin-bottom: 20px;
+	}
+	.profile-is-draft{
+		padding-left: 20px;
+	}
+	.supported-campaigns-tab-hdr strong{
+		margin-bottom: 15px;
+		display: block;
+	}
+	.sort-by{
+		margin-left: 0
+	}
+	button.tab-link, a.tab-link{
+		margin-top: 15px;
+	}
 }
 
 @media(max-width: 479px){
@@ -1969,6 +2081,10 @@ a.ui-datepicker-next:after {
 	.table-dsc table tbody tr td {
 	    padding-left: 0px!important;
 	    padding-right: 00px!important;
+	}
+	.profile-submit-btn input[type="reset"], 
+	.profile-submit-btn #edit-profile-cancle-btn{
+		width: 83px;
 	}
 }
 

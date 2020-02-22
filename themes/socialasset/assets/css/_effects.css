@@ -31,6 +31,11 @@ a,input,img,textarea,button{
     border-color: #0055FF;
     color: #fff;
 }
+.ncc-input-fields-row input[type="text"]:focus,
+.ncc-add-tag input[type="text"]:focus{
+    background: #e8e6e6;
+}
+
 /**
 All Hovers
 */
