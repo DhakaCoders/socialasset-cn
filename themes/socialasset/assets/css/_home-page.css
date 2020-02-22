@@ -30,8 +30,8 @@
 .sa-page-banner-des-inner span.bsn:before{
 	content: "";
 	position: absolute;
-	bottom: 5%;
-	left: 5%;
+	bottom: 4%;
+	left: 5.5%;
 	background: #03D39B;
 	width: 207px;
 	height: 16px;
@@ -210,7 +210,8 @@
 	font-size: 32px;
 	color: #0055FF;
 	line-height: 39px;
-	padding-bottom: 30px;
+	padding-bottom: 25px;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 }
 .social-asset-welcome-section-inner em{
@@ -218,7 +219,7 @@
 	font-size: 26px;
 	color: #7E7E7E;
 	line-height: 31px;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	font-style: italic;
 }
 .social-asset-welcome-section-inner p{
@@ -276,7 +277,7 @@
 .sa-welcome-grid-item-top-des-inner h3,
 .sa-welcome-grid-item-bottom-des-inner h3{
 	margin: 0;
-	padding-bottom: 25px;
+	padding-bottom: 18px;
 	font-weight: 500;
 }
 .sa-welcome-grid-item-top-des-inner p,
@@ -284,6 +285,7 @@
 	font-size: 15px;
 	line-height: 25px;
 	margin-bottom: 22px;
+	font-family: 'Roboto Condensed';
 }
 .sa-welcome-grid-item-top-des-inner a,
 .sa-welcome-grid-item-bottom-des-inner a{
@@ -305,7 +307,7 @@
 .sa-welcome-grid-item-bottom-des-inner a:after{
 	content: "";
 	position: absolute;
-	top: 3px;
+	top: 1px;
 	right: 0;
 	background: url('../images/sa-righ-arrow.png');
 	background-repeat: no-repeat;
@@ -321,14 +323,14 @@
 
 .sa-welcome-grid-item-top-des-img{
 	position: absolute;
-	top: 20px;
-    left: 13%;
+	top: 24%;
+    left: 22%;
 	z-index: 6;
 }
 .sa-welcome-grid-item-bottom-des-img{
 	position: absolute;
-	top: 0;
-	left: 6%;
+	top: 18%;
+    left: 15%;
 	z-index: 6;
 }
 .sa-welcome-grid-item-top-des-inner,
@@ -338,7 +340,7 @@
 }
 .sa-welcome-grid-section{
 	position: relative;
-	margin-top: -95px;
+	margin-top: -102px;
 	z-index: 8;
 }
 .sa-welcome-grd-top-bg{
@@ -383,14 +385,15 @@
 .sa-usr-rgt-des h3{
 	margin: 0;
 	color: #fff;
-	padding-bottom: 20px;
+	padding-bottom: 18px;
 	font-weight: 500;
 }
 .sa-usr-rgt-des p{
 	font-size: 15px;
 	line-height: 25px;
 	color: #fff;
-	padding-bottom: 25px;
+	margin-bottom: 30px;
+	font-family: 'Roboto Condensed';
 }
 .sa-usr-rgt-des a{
 	font-size: 12px;
@@ -428,13 +431,16 @@
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center !important;
-	min-height: 141px;
+	min-height: 262px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	margin-top: -141px;
+	margin-top: -256px;
 }
+
+
+
 .fw-50{
 	float: left !important;
 	width: 50% !important;
@@ -460,8 +466,18 @@
 	-webkit-transform: scale(1);
 	transition: 0.5s ease-in-out;
 	-webkit-transition: 0.5s ease-in-out;
+	position: relative;
+}
+
+.sa-cam-grd-item{
+	position: relative;
 }
 .sa-cam-grd-item-des-wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -484,13 +500,15 @@
 	color: #fff;
 	font-weight: 700;
 }
-.sa-cam-grd-item{
+.sa-cam-grd-item-img-ctlr{
 	overflow: hidden;
 	position: relative;
 }
+
 .sa-cam-grd-item:hover .sa-cam-grd-item-img{
 	transform: scale(1.05);
 	-webkit-transform: scale(1.05);
+	border-radius: 5px !important;
 }
 
 .sa-cam-sec-link{
@@ -706,6 +724,7 @@
 	padding-bottom: 60px;
 }
 
+
 .sa-company-name ul li{
 	display: inline-block;
 	padding-left: 27px;
@@ -718,7 +737,6 @@
 	padding-right: 0;
 }
 .sa-company-name ul li a{
-	max-width: 120px;
 	display: inline-block;
 }
 .sa-company-name ul li a img{
@@ -784,7 +802,6 @@
 .sa-blog-section{
 	padding-top: 115px;
 	padding-bottom: 130px;
-	background: #f2f2f2;
 }
 .sa-blog-sec-inner{
 	max-width: 1130px;
@@ -823,6 +840,8 @@
 }
 .sa-blog-grd-item-img-ctlr{
 	overflow: hidden;
+	transition: 0.5s ease-in-out;
+	-webkit-transition: 0.5s ease-in-out;
 }
 .sa-blog-grd-item-img{
 	background-repeat: no-repeat !important;
@@ -840,8 +859,12 @@
 	-webkit-transform: scale(1.05);
 }
 .sa-blog-grid-item:hover .sa-blog-grd-item-img-wrap{
-	background: #fff !important;
-	border: 1px solid #fff !important;
+	-webkit-box-shadow: 1px 1px 20px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 20px -10px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 20px -10px rgba(0,0,0,0.75);
+}
+.sa-blog-grid-item:hover .sa-blog-grd-item-img-ctlr{
+	border-radius: 8px 8px 0 0;
 }
 .sa-blog-grid{
 	margin-bottom: 20px;
