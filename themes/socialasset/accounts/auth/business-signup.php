@@ -64,8 +64,10 @@ function business_create_account(){
 				if(isset($user_email) && !empty($user_email)){
 					update_user_meta ( $new_user_id, '_user_email', $user_email );
 				}
-				add_user_meta ( $new_user_id, '_user_agree', 'Business', true );
-				add_user_meta( $new_user_id, '_user_login_status', '0', true );
+				add_user_meta ( $new_user_id, '_user_type', 'Business', true );
+				add_user_meta ( $new_user_id, '_show_my_profile', 'true', true );
+				add_user_meta ( $new_user_id, '_show_my_campaigns', 'true', true );
+				add_user_meta( $new_user_id, '_user_account_status', 'draft', true );
 				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
 					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
 				}
