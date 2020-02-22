@@ -360,6 +360,9 @@ h1.abt-page-title span::after {
   h1.abt-page-title span::after {
     content: none;
   }
+  h1.abt-page-title br{
+    display: none;
+  }
 }
 
 @media(max-width: 575px){
