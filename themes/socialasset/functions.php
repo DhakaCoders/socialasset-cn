@@ -3,6 +3,7 @@
 Constants->>
 */
 defined('THEME_NAME') or define('THEME_NAME', 'feestverf');
+defined( 'ACCOUNT_DIR' ) or define( 'ACCOUNT_DIR', get_template_directory().'/accounts' );
 defined( 'THEME_DIR' ) or define( 'THEME_DIR', get_template_directory() );
 defined( 'THEME_URI' ) or define( 'THEME_URI', get_template_directory_uri() );
 
