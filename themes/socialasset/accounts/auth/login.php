@@ -42,12 +42,8 @@ function business_login_account(){
 		// this returns the user ID and other info from the user name
 		if($user){
 			$author_meta = get_user_meta($user->ID);
-		    $active = $author_meta['_user_login_status'][0]; 
 		    
-	 		if( $active ){
-	 			$data['loging_error'] = 'Your account is currently inactive. Please contact authority';
-	 			$success = false;
-	 		}elseif(!$user || !wp_check_password($password, $user->user_pass, $user->ID) || ($active == 1) || ($user->roles[0] != 'business') ) {
+	 		if(!$user || !wp_check_password($password, $user->user_pass, $user->ID) || ($user->roles[0] != 'business') ) {
 				// if the user name doesn't exist
 				$data['loging_error'] = 'Invalid username Or Password';
 				$success = false;
@@ -117,14 +113,10 @@ function ngo_user_login_account(){
 		// this returns the user ID and other info from the user name
 		if($user){
 			$author_meta = get_user_meta($user->ID);
-		    $active = $author_meta['_user_login_status'][0]; 
 		    
-	 		if( $active ){
-	 			$data['loging_error'] = 'Your account is currently inactive. Please contact authority';
-	 			$success = false;
-	 		}elseif(!$user || !wp_check_password($password, $user->user_pass, $user->ID) || ($active == 1) || ($user->roles[0] == 'business') ) {
+	 		if(!$user || !wp_check_password($password, $user->user_pass, $user->ID) || ($user->roles[0] == 'business') ) {
 				// if the user name doesn't exist
-				$data['loging_error'] = 'Invalid username Or Password 1';
+				$data['loging_error'] = 'Invalid username Or Password';
 				$success = false;
 			}
 			if($success){

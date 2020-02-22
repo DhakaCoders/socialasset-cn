@@ -3,7 +3,7 @@
   min-height: 495px;
   padding-top: 88px;
   padding-bottom: 220px;
-}  
+}   
 .about-story-des-main{
   max-width: 800px;
   margin: 0 auto;
@@ -221,7 +221,19 @@
   display: block;
 }
 
-
+h1.abt-page-title span{
+  position: relative;
+}
+h1.abt-page-title span::after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    right: 2px;
+    bottom: 5px;
+    left: 3px;
+    background: #0055FF;
+    z-index: -1;
+}
 
 
 
@@ -321,7 +333,7 @@
   .about-story-bg-1-main {
     width: 88%;
     margin-bottom: 25px!important;    
-  }
+  } 
   .abt-social-asset-sec {
     padding: 50px 0 100px;
   }
@@ -344,6 +356,12 @@
   }
   .core-value-head {
     padding-bottom: 35px;
+  }
+  h1.abt-page-title span::after {
+    content: none;
+  }
+  h1.abt-page-title br{
+    display: none;
   }
 }
 

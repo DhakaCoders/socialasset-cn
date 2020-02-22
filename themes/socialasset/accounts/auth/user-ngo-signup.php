@@ -107,26 +107,20 @@ function ngo_user_create_account(){
 					update_user_meta ( $new_user_id, '_user_type', $usertype );
 				}
 				if(isset($agree) && !empty($agree)){
-					update_user_meta ( $new_user_id, '_user_agree', $agree );
+					update_user_meta( $new_user_id, '_user_agree', $agree );
 				}
-				add_user_meta( $new_user_id, '_user_login_status', '0', true );
+				if($usertype == 'Ngo'){
+					add_user_meta( $new_user_id, '_show_my_profile', 'true', true );
+					add_user_meta( $new_user_id, '_show_my_campaigns', 'true', true );
+					add_user_meta( $new_user_id, '_show_create_campaign', 'true', true );
+				}else{
+					add_user_meta( $new_user_id, '_show_my_profile', 'true', true );
+					add_user_meta( $new_user_id, '_show_my_campaigns', 'true', true );
+				}
+				add_user_meta( $new_user_id, '_user_account_status', 'draft', true );
 				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
 					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
 				}
-				/*
-				$user = get_user_by( 'email', sanitize_email($_POST["email"]) );
-				ob_start();
-	            wp_set_current_user( $user->ID, $user->user_login ); 
-	            do_action( 'wp_login', $user->user_login );
-	            if ( is_user_logged_in() ){
-	            	$data['login_success'] = 'Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.';
-	            	$data['user_name'] = $user_login;
-	            	$data['user_status'] = 'success';
-	                echo json_encode($data);
-        			wp_die();
-	            }else{
-	            	$data['user_status'] = 'success';
-	            }*/
 	            $data['signup_success'] = 'Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.';
             	$data['user_status'] = 'success';
 			}else{

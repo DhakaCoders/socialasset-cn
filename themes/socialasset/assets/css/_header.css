@@ -1,9 +1,17 @@
 header.header{
-	padding: 25px 0 0;
 	position: relative;
 	z-index: 10;
 }
-
+.header-inr{
+	display: flex;
+	align-items: center;
+}
+.hdr-rgt{
+	padding-top: 25px;
+}
+.hdr-lft{
+	height: 100%;
+}
 .hdr-lft{
 	float: left;
 	width: 30%;
@@ -18,7 +26,7 @@ header.header{
 .logo a{
 	display: inline-block;
 	vertical-align: baseline;
-	width: 278px;
+	max-width: 278px;
 }
 .logo a img{
 	width: 100%;
@@ -169,7 +177,8 @@ header.header{
 .humberger-menu-btn{
 	text-align: center;
 	cursor: pointer;
-	height: 61px;
+	padding-top: 4px;
+	margin-top: 2px;
 }
 .humberger-menu-btn strong{
 	padding-bottom: 10px;
@@ -178,13 +187,13 @@ header.header{
 	text-transform: uppercase;
 	font-weight: 500;
 	display: block;
-	padding-top: 6px;
+	padding-top: 0;
 }
 .hdr-btns{
 	padding-right: 8px;
 }
 .humberger-menu-btn{
-	padding-left: 12px;
+	padding-left: 15px;
 }
 .login-btn{
 	padding: 3px 4px 3px;
@@ -252,7 +261,8 @@ header.header{
 	position: relative;
 	z-index: 11;
 }
-.login-btn button:hover{
+.login-btn button:hover,
+.login-btn button.login-menu-expend{
 	background: #0055FF;
 	color: #fff;
 }
@@ -276,6 +286,8 @@ header.header{
 	width: 33px;
 	position: relative;
 	height: 20px;
+	margin-right: 0;
+	margin-left: auto;
 }
 .humberger-menu-btn-lines span{
 	position: absolute;
@@ -312,14 +324,14 @@ header.header{
   -webkit-transform: rotate(-45deg);
   width: 100%;
 }
-.humberger-menu-btn.humber-menu-expend{
-	padding-left: 20px!important;
-	padding-right: 20px!important;
-	padding-top: 25px!important;
-	width: 71px;
-	height: 71px;
-	margin-top: -11px;
-	padding-top: 25px;
+.humberger-menu-btn{
+	width: 50px;
+	height: 50px;
+}
+.humberger-menu-btn.humber-menu-expend {
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    padding-top: 16px!important;
 }
 .humberger-menu-btn.humber-menu-expend .humberger-menu-btn-lines{
 	width: 100%;
@@ -352,7 +364,7 @@ header.header{
 	width: 231px;
 	position: absolute;
 	top: 100%;
-	margin-top: -12px;
+	margin-top: -15px;
 	color: #fff;
 	right: 0;
 	padding: 40px 35px 25px 30px;
@@ -458,7 +470,7 @@ header.header{
 	display: none;
 }
 .logged-menu .humberger-menu-btn{
-	padding-top: 18px;
+	padding-top: 15px;
 }
 .logout-main-nav-menu{
 	display: flex;
@@ -591,4 +603,119 @@ header.header{
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
+}
+
+
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+	.campaign-btn{
+		width: 150px;
+	}
+
+	.container-fluid{
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: 0;
+		margin-right: 0;
+	  	width: auto;
+	}
+	.container-fluid .row{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.container-fluid .row .col-lg-1, .container-fluid .row .col-lg-10, .container-fluid .row .col-lg-11, .container-fluid .row .col-lg-12, .container-fluid .row .col-lg-2, .container-fluid .row .col-lg-3, .container-fluid .row .col-lg-4, .container-fluid .row .col-lg-5, .container-fluid .row .col-lg-6, .container-fluid .row .col-lg-7, .container-fluid .row .col-lg-8, .container-fluid .row .col-lg-9, 
+	.container-fluid .row .col-md-1, .container-fluid .row .col-md-10, .container-fluid .row .col-md-11, .container-fluid .row .col-md-12, .container-fluid .row .col-md-2, .container-fluid .row .col-md-3, .container-fluid .row .col-md-4, .container-fluid .row .col-md-5, .container-fluid .row .col-md-6, .container-fluid .row .col-md-7, .container-fluid .row .col-md-8, .container-fluid .row .col-md-9, 
+	.container-fluid .row .col-sm-1, .container-fluid .row .col-sm-10, .container-fluid .row .col-sm-11, .container-fluid .row .col-sm-12, .container-fluid .row .col-sm-2, .container-fluid .row .col-sm-3, .container-fluid .row .col-sm-4, .container-fluid .row .col-sm-5, .container-fluid .row .col-sm-6, .container-fluid .row .col-sm-7, .container-fluid .row .col-sm-8, .container-fluid .row .col-sm-9, 
+	.container-fluid .row .col-xs-1, .container-fluid .row .col-xs-10, .container-fluid .row .col-xs-11, .container-fluid .row .col-xs-12, .container-fluid .row .col-xs-2, .container-fluid .row .col-xs-3, .container-fluid .row .col-xs-4, .container-fluid .row .col-xs-5, .container-fluid .row .col-xs-6, .container-fluid .row .col-xs-7, .container-fluid .row .col-xs-8, .container-fluid .row .col-xs-9{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.hdr-lft {
+	    width: 20%;
+	}
+	.hdr-rgt{
+		width: 80%;
+	}
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.hdr-lft {
+	    width: 18%;
+	}
+	.hdr-rgt{
+		width: 82%;
+	}
+	.main-nav-menu ul li{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.main-nav-menu > ul > li:nth-child(1) {
+	    padding-right: 15px;
+	}
+	.main-nav-menu > ul > li:nth-child(2) {
+	    padding-left: 15px;
+	}
+	.main-nav-menu > ul{
+		padding-right: 5px;
+	}
+	.login-btn{
+		margin-right: 5px;
+	}
+
+	.login-btn button,
+	.campaign-btn{
+		height: 45px;
+	}
+	.humberger-menu-btn {
+	    padding-left: 10px;
+	}
+	.main-nav-menu > ul > li > a{
+		padding-bottom: 35px;
+	}
+	.humberger-menu {
+	    margin-top: -14px;
+	}
+	.humberger-menu-btn {
+	    width: 45px;
+	    height: 45px;
+	}
+	.humberger-menu-btn strong{
+		padding-bottom: 6px;
+	}
+	.humberger-menu-btn.humber-menu-expend{
+		padding-top: 14px!important;
+	}
+
+}
+
+@media(max-width: 991px){
+
+}
+
+@media(max-width: 767px){
+
+}
+
+@media(max-width: 575px){
+
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }

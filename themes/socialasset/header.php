@@ -92,7 +92,22 @@
                     <li><a href="#">My Profile</a></li>
                     <li>
                       <i class="fas fa-sign-out-alt"></i>
-                      <a href="#">Log out</a>
+                      <?php 
+                      $user = wp_get_current_user();
+                      if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
+                      ?>
+                      <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
+                      <?php
+                      }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
+                      ?>
+                      <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
+                      <?php
+                      }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
+                      ?>
+                      <a href="<?php get_ao_custom_logout('business-login'); ?>">Log out</a>
+                      <?php
+                      }
+                      ?>
                     </li>
                   </ul>
                 </div>
