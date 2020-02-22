@@ -10,21 +10,21 @@ function get_ao_custom_logout($page_link = ''){
 
 add_action('admin_init', 'redirect_user_frontend_dashboard');
 function redirect_user_frontend_dashboard(){
-   $user = wp_get_current_user();
-   if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
+  $user = wp_get_current_user();
+  if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
     if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
-		exit;
-	}
-   }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
-   	if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
-		exit;
-	}
+	    exit;
+    }
+  }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
+    if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
+  	 exit;
+  	}
       
-   }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
+  }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
     if ( wp_safe_redirect( site_url() . '/myaccount/') ) {
-		exit;
-	}
-   }
+  		exit;
+  	}
+  }
    return false;
 }
 
