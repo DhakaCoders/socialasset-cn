@@ -1,3 +1,10 @@
+.pass-error-new {
+    padding-left: 178px;
+}
+.media-frame-actions-heading.screen-reader-text,
+.screen-reader-text {
+    display: none;
+}
 .miracle-plan-sec{
   background: #F4F5F9;
   padding: 135px 0 90px;
