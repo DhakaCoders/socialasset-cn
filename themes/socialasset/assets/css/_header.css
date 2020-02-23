@@ -177,8 +177,12 @@ header.header{
 .humberger-menu-btn{
 	text-align: center;
 	cursor: pointer;
-	padding-top: 4px;
+	padding: 5px 30px 0 15px;
 	margin-top: 2px;
+	width: 71px;
+	height: 71px;
+	margin-right: -30px;
+
 }
 .humberger-menu-btn strong{
 	padding-bottom: 10px;
@@ -188,12 +192,10 @@ header.header{
 	font-weight: 500;
 	display: block;
 	padding-top: 0;
+	padding-left: 1px;
 }
 .hdr-btns{
 	padding-right: 8px;
-}
-.humberger-menu-btn{
-	padding-left: 15px;
 }
 .login-btn{
 	padding: 3px 4px 3px;
@@ -324,14 +326,12 @@ header.header{
   -webkit-transform: rotate(-45deg);
   width: 100%;
 }
-.humberger-menu-btn{
-	width: 50px;
-	height: 50px;
-}
+
 .humberger-menu-btn.humber-menu-expend {
-    padding-left: 10px!important;
-    padding-right: 10px!important;
-    padding-top: 16px!important;
+    padding-left: 15px!important;
+    padding-right: 15px!important;
+    padding-top: 25px!important;
+    margin-top: -8px;
 }
 .humberger-menu-btn.humber-menu-expend .humberger-menu-btn-lines{
 	width: 100%;
@@ -366,9 +366,9 @@ header.header{
 	top: 100%;
 	margin-top: -15px;
 	color: #fff;
-	right: 0;
+	right: -30px;
 	padding: 40px 35px 25px 30px;
-	z-index: 15;
+	z-index: 50;
 	text-align: right;
 	display: none;
 }
@@ -547,7 +547,7 @@ header.header{
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
     text-decoration: inherit;
-    color: #000;
+    color: #0055FF;
     font-size: 14px;
     position: absolute;
     top: 19px;
@@ -567,6 +567,7 @@ header.header{
 	margin-top: -17px;
 	z-index: 15;
 	display: none;
+	width: 157px;
 }
 .hdr-login-profile ul li{
 	font-size: 13px;
@@ -587,10 +588,9 @@ header.header{
 	border-radius: 100% 100%;
 	display: inline-block;
 	text-align: center;
-	background: #0055FF;
-	font-size: 10px;
+	font-size: 16px;
 	position: relative;
-	color: #fff;
+	color: #000;
 }
 .hdr-login-profile ul li:last-child{
 	display: flex;
@@ -642,6 +642,15 @@ header.header{
 	.hdr-rgt{
 		width: 80%;
 	}
+	.humberger-menu-btn{
+		margin-right: -15px;
+	}
+	.humberger-menu{
+		right: -15px;
+	}
+	.humberger-menu-btn{
+		padding-right: 15px;
+	}
 }
 
 @media(max-width: 1299px){
@@ -671,34 +680,200 @@ header.header{
 	.login-btn{
 		margin-right: 5px;
 	}
-
+	.main-nav-menu > ul > li > a{
+		padding-bottom: 35px;
+	}
 	.login-btn button,
 	.campaign-btn{
 		height: 45px;
 	}
-	.humberger-menu-btn {
-	    padding-left: 10px;
-	}
-	.main-nav-menu > ul > li > a{
-		padding-bottom: 35px;
+	
+	.humberger-menu-btn strong{
+		padding-left: 2px;
 	}
 	.humberger-menu {
 	    margin-top: -14px;
 	}
 	.humberger-menu-btn {
-	    width: 45px;
-	    height: 45px;
+	    padding-left: 10px;
+	}
+	.humberger-menu-btn {
+	    width: 60px;
+	    height: 60px;
 	}
 	.humberger-menu-btn strong{
 		padding-bottom: 6px;
 	}
 	.humberger-menu-btn.humber-menu-expend{
-		padding-top: 14px!important;
+		padding-top: 22px!important;
 	}
-
+	.humberger-menu-btn.humber-menu-expend{
+		margin-top: -4px;
+	}
 }
 
 @media(max-width: 991px){
+	.main-nav-menu,.hdr-btns {
+		display: none;
+	}
+	.humberger-menu-btn.humber-menu-expend {
+	    margin-top: 0;
+	}
+	.humberger-menu {
+	    margin-top: 0;
+	}
+	.humberger-menu-btn{
+		margin-top: 0!important;
+		padding-top: 13px;
+	}
+	.hdr-rgt{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.humberger-menu-items{
+		border-bottom: 1px solid #3174F8;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+	}
+	.humberger-menu-items ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-bottom: none;
+	}
+	.humberger-menu-items > ul{
+		float: left;
+		width: 33.3333%;
+	}
+	.humberger-menu-items > ul > li > ul {
+	    padding: 15px 0 0 20px;
+	    display: none;
+	}
+	.humberger-menu-items > ul > li > ul li{
+		padding-bottom: 10px;
+		font-size: 15px;
+	}
+	.humberger-menu-items > ul > li > ul li:last-child{
+		padding-bottom: 0;
+	}
+	.humberger-menu-items > ul > li.menu-item-has-children > a{
+		position: relative;
+		padding-right: 20px;
+	}
+	.humberger-menu-items > ul > li.menu-item-has-children > a:after{
+		content: "\f107";
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 600;
+		text-decoration: inherit;
+		color: #fff;
+		font-size: 14px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.humberger-menu-items > ul > li.menu-item-has-children > a.xs-sub-menu-expend:after{
+		content: "\f106";
+	}
+	.humberger-menu-xs{
+		
+		max-width: 500px;
+		width: 100%;
+		text-align: left;
+	}
+	.xs-login-area div a{
+		color: #fff;
+		font-size: 14px;
+		display: inline-block;
+		vertical-align: baseline;
+		margin-right: 10px;
+		margin-left: 10px;
+		position: relative;
+	}
+	.xs-login-area div a:first-child{
+		margin-left: 0;
+	}
+	.xs-login-area div a:after {
+	    content: "";
+	    position: absolute;
+	    top: -2px;
+	    right: -13px;
+	    width: 2px;
+	    height: 18px;
+	    background: #3174F8;
+	}
+	.xs-login-area div a:last-child:after{
+		content: none;
+	}
+	.xs-menu-footer{
+		display: flex;
+		align-items: center;
+
+	}
+	.languages-area{
+		margin-left: auto;
+	}
+	.hdr-lft,
+	.hdr-rgt {
+	    width: 50%;
+	}
+	.logged-menu .xs-login-area,
+	.xs-hdr-login-profile,
+	.xs-logged-inner-menu,
+	.logged-menu .xs-logout-inner-menu{
+		display: none;
+	}
+	.logged-menu .xs-hdr-login-profile{
+		display: inline-block;
+	}
+	.logged-menu .xs-logged-inner-menu{
+		display: block;
+	}
+
+	.hdr-login-profile{
+		display: inline-block;
+		vertical-align: baseline;
+		padding-left: 0;
+	}
+	.hdr-login-profile div{
+		display: flex;
+		align-items: center;
+	}
+	.hdr-login-profile ul{
+		position: static;
+		margin-top: 10px;
+	}
+	.hdr-login-profile:before{
+		content: none;
+	}
+	.hdr-login-profile-img{
+		margin-top: 0;
+	}
+	.hdr-login-profile strong{
+		color: #fff;
+		padding-top: 0;
+		position: relative;
+		padding-right: 15px;
+	}
+	.hdr-login-profile:after{
+		content: none!important;
+	}
+	.hdr-login-profile strong:after {
+	    content: "\f107";
+	    font-family: 'Font Awesome 5 Free';
+	    font-weight: 600;
+	    text-decoration: inherit;
+	    color: #fff;
+	    font-size: 14px;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	}
+	.hdr-login-profile.login-btn-expend strong:after {
+	    content: "\f106";
+	}
+	.humberger-menu-xs{
+		display: block!important;
+	}
 
 }
 
@@ -706,14 +881,43 @@ header.header{
 
 }
 
+@media(max-width: 639px){
+	.humberger-menu-items > ul {
+	    width: 100%;
+	}
+	.humberger-menu-xs {
+	    max-width: initial;
+	    width: auto;
+	    text-align: left;
+	    left: -15px;
+	    right: -15px;
+	}
+	.humberger-menu-items > ul{
+		border-bottom: 1px solid #3174F8;
+		margin-bottom: 20px;
+	}
+	.humberger-menu-items{
+		border-bottom: none;
+	}
+}
+
 @media(max-width: 575px){
-
-
+	.humberger-menu{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.xs-login-area div a{
+		font-size: 13px;
+	}
 }
 
 @media(max-width: 479px){
-
-
+	.hdr-lft{
+		width: 60%;
+	}
+	.hdr-rgt{
+		width: 40%;
+	}
 }
 
 @media(max-width: 359px){
