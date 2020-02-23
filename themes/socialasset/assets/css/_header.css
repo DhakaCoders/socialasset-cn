@@ -651,6 +651,9 @@ header.header{
 	.humberger-menu-btn{
 		padding-right: 15px;
 	}
+	.humberger-menu-btn strong{
+		padding-left: 7px;
+	}
 }
 
 @media(max-width: 1299px){
@@ -775,8 +778,7 @@ header.header{
 		content: "\f106";
 	}
 	.humberger-menu-xs{
-		
-		max-width: 500px;
+		max-width: 600px;
 		width: 100%;
 		text-align: left;
 	}
@@ -870,9 +872,6 @@ header.header{
 	}
 	.hdr-login-profile.login-btn-expend strong:after {
 	    content: "\f106";
-	}
-	.humberger-menu-xs{
-		display: block!important;
 	}
 
 }

@@ -258,6 +258,7 @@ min-height: 42px;
 	-ms-transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
 	color: #F84574;
+	font-size: 20px;
 }
 .campaigns-list-item-wrp.campaigns-list-item-50 .campaigns-item-cat-name span{
 	color: #fff;
@@ -314,6 +315,11 @@ min-height: 42px;
 }
 .campaigns-list-item-wrp.no-image .campaigns-list-item:hover .campaigns-item-cat-name strong{
 	background: #0145cc;
+}
+.campaigns-list-item-wrp{
+	grid-template-columns: repeat(auto-fill);
+	-ms-grid-template-columns: repeat(auto-fill);
+	-webkit-grid-template-columns: repeat(auto-fill);
 }
 
 .campaigns-item-des h6{
