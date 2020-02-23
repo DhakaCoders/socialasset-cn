@@ -170,6 +170,7 @@ min-height: 42px;
 
 .user-campaign-list-cntlr ul{
 	margin: 0 -10px 70px;
+
 }
 
 .user-campaign-list-cntlr ul li{
@@ -491,4 +492,10 @@ min-height: 42px;
 .campaigns-slect-filters-lft .search-by-name{
 	width: 100%;
 	max-width: 503px;
+}
+
+@media(max-width: 991px){
+	.user-campaign-list-cntlr ul li{
+		width: 50%;
+	}
 }
