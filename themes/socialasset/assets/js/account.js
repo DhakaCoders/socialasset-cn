@@ -73,4 +73,10 @@ $('.register-ngo-btn').on('change', function(){
 $('.register-supporter-btn').on('change', function(){ 
     $('#user-type-selection option[value=User]').attr('selected','selected'); 
 });
+
+$('input[type="checkbox"]').change(function(){
+    this.value = (Number(this.checked));
+});
+
+
 })(jQuery);

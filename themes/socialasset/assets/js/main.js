@@ -404,7 +404,7 @@ if( $('#scrollToAarea').length ){
 if( $('.masonry').length ){
   $('.masonry').masonry({
     // options
-    itemSelector: 'ul.masonry li',
+    //itemSelector: 'ul.masonry li',
     columnWidth: '.campaigns-list-item-wrp',
     percentPosition: true,
     fitWidth: true
