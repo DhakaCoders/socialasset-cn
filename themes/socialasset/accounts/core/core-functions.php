@@ -11,27 +11,40 @@ function get_ao_custom_logout($page_link = ''){
 //add_filter('secure_auth_redirect', 'redirect_user_frontend_dashboard');
 function redirect_user_frontend_dashboard(){
   $user = wp_get_current_user();
-  if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
-    if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
-	    exit;
+  if( is_admin() ){
+    if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
+      if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
+  	    exit;
+      }
+    }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
+      if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
+    	 exit;
+    	}
+        
+    }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
+      if ( wp_safe_redirect( site_url() . '/myaccount/') ) {
+    		exit;
+    	}
     }
-  }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
-    if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
-  	 exit;
-  	}
-      
-  }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
-    if ( wp_safe_redirect( site_url() . '/myaccount/') ) {
-  		exit;
-  	}
   }
    return false;
 }
 
 function custom_rewrite_rule() {
-    add_rewrite_rule('^mycam/?([^/]*)/?','index.php?page_id=5&food=$matches[1]','top');
+    //add_rewrite_rule('^myaccount/([^/]*)/([^/]*)/?','index.php?pagename=myaccount&country=$matches[1]&region=$matches[2]','top');
+    //add_rewrite_rule('^([^/]*)/([^/]*)/?','index.php?pagename=myaccount&country=$matches[1]&region=$matches[2]','top');
+    add_rewrite_rule('^([^/]*)/([^/]*)/?','index.php?pagename=myaccount&mycampaigns=$matches[1]','top');
+    add_rewrite_rule('^([^/]*)/([^/]*)/?','index.php?pagename=myaccount&edit-campaign=$matches[1]','top');
 }
-add_action('init', 'custom_rewrite_rule', 10, 0);
+function register_custom_query_vars($vars){
+  array_push($vars, 'edit-campaign');
+  array_push($vars, 'mycampaigns');
+  array_push($vars, 'region');
+  array_push($vars, 'country');
+  return $vars;
+}
+add_action('init', 'custom_rewrite_rule');
+add_filter('query_vars', 'register_custom_query_vars', 1);
 
 
 
