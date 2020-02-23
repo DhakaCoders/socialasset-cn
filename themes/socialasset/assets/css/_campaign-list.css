@@ -32,6 +32,36 @@
 	padding: 10px 5px;
 	width: 25%;
 }
+.campaigns-main-cat-item{
+	height: 108px;
+	position: relative;
+}
+
+li.cat-active .campaigns-main-cat-item,
+.campaigns-main-cat-item:hover{
+	position: relative;
+}
+
+
+
+li.cat-active .campaigns-main-cat-item:after,
+.campaigns-main-cat-item:hover:after{
+	content: "";
+	background: #0054FD;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 1px;
+	height: 10px;
+	border-radius: 0 0 5px 5px;
+}
+li.cat-active .campaigns-main-cat-bg,
+.campaigns-main-cat-item:hover .campaigns-main-cat-bg{
+	top: 0;
+	bottom: 0;
+}
+
+
 .campaigns-main-cat-bg{
 	display: flex;
 	align-items: center;
@@ -42,7 +72,14 @@
 	background-repeat: no-repeat!important;
 	min-height: 88px;
 	border-radius: 5px;
-	position: relative;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
 }
 .campaigns-main-cat-bg h6{
 	margin-bottom: 0;
