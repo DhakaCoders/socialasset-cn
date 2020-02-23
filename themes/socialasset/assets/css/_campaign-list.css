@@ -474,6 +474,12 @@ min-height: 42px;
 	font-weight: 900;
 	font-size: 12px;
 	line-height: 14px;
+	border: 2px solid #0055FF;
+}
+.show-more-btn a:hover{
+	background: #fff;
+	border-color: #0055FF;
+	color: #0055FF;
 }
 .show-more-btn span{
 	display: block;
