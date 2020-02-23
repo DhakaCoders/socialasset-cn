@@ -10,16 +10,6 @@ $('div.fl-tabs button').click(function(){
 });
 
 
-$('.login-btn').on('click', function(){
-  $(this).toggleClass('login-btn-expend');
-  $('.login-btn ul').slideToggle(300);
-});
-
-$('.hdr-login-profile').on('click', function(){
-  $(this).toggleClass('login-btn-expend');
-  $('.hdr-login-profile ul').slideToggle(300);
-});
-
 $('.register-type-btn a').on('click', function(){
   $('.register-type-con').show();
   $('.register-type-btn').hide();

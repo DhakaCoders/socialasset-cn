@@ -32,6 +32,36 @@
 	padding: 10px 5px;
 	width: 25%;
 }
+.campaigns-main-cat-item{
+	height: 108px;
+	position: relative;
+}
+
+li.cat-active .campaigns-main-cat-item,
+.campaigns-main-cat-item:hover{
+	position: relative;
+}
+
+
+
+li.cat-active .campaigns-main-cat-item:after,
+.campaigns-main-cat-item:hover:after{
+	content: "";
+	background: #0054FD;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 1px;
+	height: 10px;
+	border-radius: 0 0 5px 5px;
+}
+li.cat-active .campaigns-main-cat-bg,
+.campaigns-main-cat-item:hover .campaigns-main-cat-bg{
+	top: 0;
+	bottom: 0;
+}
+
+
 .campaigns-main-cat-bg{
 	display: flex;
 	align-items: center;
@@ -42,7 +72,14 @@
 	background-repeat: no-repeat!important;
 	min-height: 88px;
 	border-radius: 5px;
-	position: relative;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
 }
 .campaigns-main-cat-bg h6{
 	margin-bottom: 0;
@@ -220,7 +257,65 @@ min-height: 42px;
 	transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
+	color: #F84574;
 }
+.campaigns-list-item-wrp.campaigns-list-item-50 .campaigns-item-cat-name span{
+	color: #fff;
+}
+.campaigns-list-item-des-hover .campaigns-item-cat-name span{
+	color: #fff!important;
+}
+
+.campaigns-list-item-wrp.no-image .campaigns-list-item{
+	min-height: 430px;
+}
+.campaigns-list-item-wrp.no-image .campaigns-list-item{
+	position: relative;
+	background: #016083;
+	border-radius: 5px;
+}
+.campaigns-list-item-wrp.no-image .campaigns-item-des{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: transparent;
+	color: #fff;
+}
+.campaigns-list-item-wrp.no-image .campaigns-vote-percentage-number span{
+	color: #fff;
+}
+.campaigns-list-item-wrp.no-image .campaigns-item-cat-name span{
+	color: #fff;
+}
+.campaigns-list-item-wrp.no-image .campaigns-item-cat-name strong{
+	background: #014c69;
+}
+.campaigns-list-item-wrp.no-image .campaigns-item-des-inr{
+	height: 100%;
+	position: relative;
+}
+
+.campaigns-list-item-wrp.no-image .campaigns-vote-info{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.campaigns-list-item-wrp.no-image .campaigns-item-des{
+	background-image: url(../images/round-for-sky-bg.png);
+    background-repeat: no-repeat;
+    background-position: right 20px bottom 70px;
+}
+
+.campaigns-list-item-wrp.no-image .campaigns-item-img{
+	display: none;
+}
+.campaigns-list-item-wrp.no-image .campaigns-list-item:hover .campaigns-item-cat-name strong{
+	background: #0145cc;
+}
+
 .campaigns-item-des h6{
 	margin-bottom: 15px;
 }
