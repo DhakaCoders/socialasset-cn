@@ -8,7 +8,7 @@ function get_ao_custom_logout($page_link = ''){
     
 }
 
-add_action('admin_init', 'redirect_user_frontend_dashboard');
+//add_filter('secure_auth_redirect', 'redirect_user_frontend_dashboard');
 function redirect_user_frontend_dashboard(){
   $user = wp_get_current_user();
   if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
@@ -27,6 +27,13 @@ function redirect_user_frontend_dashboard(){
   }
    return false;
 }
+
+function custom_rewrite_rule() {
+    add_rewrite_rule('^mycam/?([^/]*)/?','index.php?page_id=5&food=$matches[1]','top');
+}
+add_action('init', 'custom_rewrite_rule', 10, 0);
+
+
 
 add_action('admin_init', 'activate_page_action');
 
@@ -51,26 +58,39 @@ add_action('admin_init', 'add_custom_role');
 function add_custom_role(){
   if(!get_role( 'ngo' )){
   	add_role('ngo', __(
-     'NGO'),
-     	   array(
-         'read'            => true, // Allows a user to read
-         'create_posts'      => true, // Allows user to create new posts
-         'edit_posts'        => true, // Allows user to edit their own posts
-         'edit_others_posts' => true, // Allows user to edit others posts too
-         'publish_posts' => true, // Allows the user to publish posts
-         'manage_categories' => true, // Allows user to manage post categories
-         )
+     'NGO')
   	);
   }
   if(!get_role( 'business' )){
   	add_role('business', __(
-  		'Business'),
-  		array(
-  		'read' => true, // Allows a user to read
-  		'create_posts' => true, // Allows user to create new posts
-  		'edit_posts' => true, // Allows user to edit their own posts
-  		)
+  		'Business')
   	);
   }
 
 }
+//add_action('admin_init', 'wpremove_role');
+function wpremove_role(){
+remove_role( 'business' );
+remove_role( 'ngo' );
+}
+
+add_action('init', 'allow_ngo_uploads');
+if(!function_exists('allow_ngo_uploads')){
+  function allow_ngo_uploads() {
+    $ngo_role = get_role('ngo');
+    $ngo_role->add_cap('read');
+    $ngo_role->add_cap('upload_files');
+
+
+
+    $b_role = get_role('business');
+    $b_role->add_cap('read');
+    $b_role->add_cap('upload_files');
+
+
+    $sb_role = get_role('subscriber');
+    $sb_role->add_cap('upload_files');
+  }
+}
+
+
