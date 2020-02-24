@@ -452,9 +452,9 @@ $('.humberger-menu-items > ul > li.menu-item-has-children > a').on('click', func
   $(this).parent().find('.sub-menu').slideToggle(300);
 });
 
-
-
-
+$('.site-lang a.active').on('click', function(e){
+  e.preventDefault();
+});
 
 
 

@@ -1786,6 +1786,13 @@ a.ui-datepicker-next:after {
 	overflow-y: scroll;
 	height: 100vh;
 }*/
+.content-center-cntlr{
+	overflow: hidden;
+}
+.content-center-cntlr .fl-login,
+.content-center-cntlr .login-form-cntlr{
+	height: 100%;
+}
 
 @media(max-width: 1499px){
 
