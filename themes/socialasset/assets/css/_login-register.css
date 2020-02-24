@@ -1599,6 +1599,17 @@ span.status-published-title.color-red{
 	display: inline-block;
 	vertical-align: baseline;
 	padding: 0 20px 10px 0;
+	position: relative;
+}
+.ncc-campaign-gallery-list ul li .removeGallery {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    opacity: 0;
+    color: red;
+}
+.ncc-campaign-gallery-list ul li:hover .removeGallery{
+	opacity: 1;
 }
 .pr-190{
 	padding-right: 190px;
@@ -1786,6 +1797,13 @@ a.ui-datepicker-next:after {
 	overflow-y: scroll;
 	height: 100vh;
 }*/
+.content-center-cntlr{
+	overflow: hidden;
+}
+.content-center-cntlr .fl-login,
+.content-center-cntlr .login-form-cntlr{
+	height: 100%;
+}
 
 @media(max-width: 1499px){
 

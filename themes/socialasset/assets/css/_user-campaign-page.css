@@ -1,3 +1,6 @@
+.wp-editor-container textarea.wp-editor-area {
+    visibility: visible !important;
+}
 .pass-error-new {
     padding-left: 178px;
 }

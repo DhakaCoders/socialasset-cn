@@ -56,7 +56,7 @@
 }
 .wwd-desc-sct-inner p{
 	text-align: center;
-	padding-bottom: 45px;
+	margin-bottom: 45px;
 	line-height: 30px;
 	font-size: 20px;
 	color: #000000;
@@ -143,6 +143,7 @@
     line-height: 25px;
     padding-bottom: 0px;
     margin: 0;
+    font-family: 'Roboto Condensed';
 }
 
 .wwd-user-sec-wrap{
@@ -167,7 +168,7 @@
 
 .wwd-user-sec-rgt{
 	position: absolute;
-	right: 38px;
+	right: 53px;
     bottom: 23px;
     top: 27px;
 	background: rgba(0,85,255,0.92);
@@ -190,7 +191,7 @@
 	font-size: 15px;
 	line-height: 25px;
 	color: #fff;
-	padding-bottom: 25px;
+	margin-bottom: 35px;
 }
 .wwd-user-sec-rgt-des a{
 	font-size: 12px;
@@ -274,7 +275,7 @@
 	    padding-bottom: 85px;
 	}
 	.wwd-desc-sct-inner p {
-	    padding-bottom: 35px;
+	    margin-bottom: 35px;
 	}
 	.join-journey-sct-title h3 {
 	    padding-bottom: 35px;
@@ -292,7 +293,7 @@
 	    padding-bottom: 12px;
 	}
 	.wwd-user-sec-rgt-des p {
-	    padding-bottom: 12px;
+	    margin-bottom: 22px;
 	}
 	.wwd-campaigns-sec {
 	    padding-top: 100px;
@@ -326,7 +327,7 @@
 		display: none;
 	}
 	.wwd-desc-sct-inner p {
-	    padding-bottom: 25px;
+	    margin-bottom: 25px;
 	}
 	.join-journey-sct-title h3 {
 	    padding-bottom: 25px;
@@ -356,7 +357,7 @@
 	    padding-bottom: 8px;
 	}
 	.wwd-user-sec-rgt-des p {
-	    padding-bottom: 8px;
+	    margin-bottom: 18px;
 	}
 	.wwd-campaigns-sec {
 	    padding-top: 75px;
@@ -392,8 +393,14 @@
 	.show-sm{
 		display: block!important;
 	}
+	.page-banner-controller {
+	    min-height: 443px;
+	}
 	.wwd-campaigns-grid-item ul li{
 		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-bottom: 20px;
 	}
 	.wwd-campaigns-grid-item-des{
 		padding: 0 75px;
@@ -408,6 +415,10 @@
 	.wwd-user-sec-img{
 		position: relative;
 		z-index: 11;
+	}
+	.wwd-user-sec-wrap {
+	    margin-left: 0px;
+	    margin-right: 0px;
 	}
 	.wwd-user-sec-rgt{
 		position: relative;
@@ -462,11 +473,25 @@
 	.jjsg-media-icon img{
 		max-width: 40px;
 	}
+	.wwd-campaigns-sec {
+	    padding-bottom: 55px;
+	}
 }
 
 @media(max-width: 575px){
 	.hide-xs{
 		display: none!important;
+	}
+	.page-banner-controller {
+	    min-height: 343px;
+	}
+	.wwd-des-section {
+	    padding-top: 45px;
+	    padding-bottom: 35px;
+	}
+	.wwd-desc-sct-inner p {
+	    line-height: 26px;
+	    font-size: 18px;
 	}
 	.show-xs{
 		display: block!important;
@@ -477,23 +502,42 @@
 	.jjsg-des {
 	    padding: 0 20px 0 0;
 	}
-	.jjsg-des-top, .jjsg-des-bottom {
-	    padding: 130px 0 50px 50px;
+	.jjsg-des-top, 
+	.jjsg-des-bottom {
+	    padding: 70px 0 50px 50px;
+	}
+	.jjsg-des-top, 
+	.jjsg-des-bottom{
+		min-height: 0;
+	}
+	.join-journey-sct-grid-img-top, 
+	.join-journey-sct-grid-img-bottom{
+	    min-height: 275px;
+	}
+	.wwd-campaigns-sec {
+	    padding-bottom: 35px;
+	}
+	.wwd-user-sec-rgt-inner {
+	    min-height: 227px;
+	    padding: 50px 40px 50px 40px;
 	}
 
 }
 
 @media(max-width: 479px){
-	.jjsg-des-bottom,
-	.jjsg-des-top{
-		display: block;
-   		padding: 160px 50px;
+	.jjsg-des-bottom, 
+	.jjsg-des-top {
+	    display: block;
+	    padding: 80px 30px;
 	}
 	.wwd-campaigns-grid-item-des {
 	    padding: 0 40px;
 	}
 	.wwd-user-sec-rgt-des p br{
 	    display: none;
+	}
+	.jjsg-des {
+	    padding: 0;
 	}
 
 }
@@ -505,8 +549,7 @@
 	.wwd-user-sec-rgt-des p {
 	    font-size: 12px;
 	    line-height: 20px;
-	    padding-bottom: 25px;
-	    margin-bottom: 10px;
+	    margin-bottom: 25px;
 	}
 	.wwd-user-sec-rgt-des a {
 	    font-size: 10px;

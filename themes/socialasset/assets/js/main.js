@@ -412,11 +412,13 @@ if( $('#scrollToAarea').length ){
   });
 }*/
 
-$('.masonry').packery({
-  // options
-  itemSelector: '.campaigns-list-item-wrp',
-});
+if( $('.masonry').length ){
+  $('.masonry').packery({
+    // options
+    itemSelector: '.campaigns-list-item-wrp',
+  });
 
+}
 
 
 if (windowWidth > 991) {
@@ -450,9 +452,9 @@ $('.humberger-menu-items > ul > li.menu-item-has-children > a').on('click', func
   $(this).parent().find('.sub-menu').slideToggle(300);
 });
 
-
-
-
+$('.site-lang a.active').on('click', function(e){
+  e.preventDefault();
+});
 
 
 
