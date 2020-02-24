@@ -1599,6 +1599,17 @@ span.status-published-title.color-red{
 	display: inline-block;
 	vertical-align: baseline;
 	padding: 0 20px 10px 0;
+	position: relative;
+}
+.ncc-campaign-gallery-list ul li .removeGallery {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    opacity: 0;
+    color: red;
+}
+.ncc-campaign-gallery-list ul li:hover .removeGallery{
+	opacity: 1;
 }
 .pr-190{
 	padding-right: 190px;

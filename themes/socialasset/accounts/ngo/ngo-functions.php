@@ -8,7 +8,7 @@ function ngo_campaign_action_hook(){
 	
 }
 function ngo_campaign_create(){
-	global $msg;
+	global $msg, $wpdb;;
 	if (isset( $_POST["add_campaign"] ) && wp_verify_nonce($_POST['ngo_add_campaign_nonce'], 'ngo-add-campaign-nonce')) {
 		$user = wp_get_current_user();
 		if(isset($_POST['campaign']) && $_POST['campaign'] == '-1'){
@@ -16,6 +16,7 @@ function ngo_campaign_create(){
 		}else{
 			$campaigncat = $_POST['campaign'];
 		}
+
 		if(empty($msg)){
 			$post_information = array(
 				'post_author' => $user->ID,
@@ -26,10 +27,8 @@ function ngo_campaign_create(){
 			);
 			 
 			$pid = wp_insert_post($post_information);
-
+			$object_id = (int) $pid;
 			if(!empty($campaigncat)){
-				global $wpdb;
-				$object_id = (int) $pid;
 				$cat_id = (int) $campaigncat;
 				$wpdb->insert(
 		            $wpdb->term_relationships,
@@ -39,28 +38,52 @@ function ngo_campaign_create(){
 		            )
 		        );
 			}
-			/*$campaign_tag = (isset($_POST['campaign_tag']) && !empty($_POST['campaign_tag']))? trim($_POST['campaign_tag']): '';
-			if(!empty($campaign_tag)){
-				global $wpdb;
-				$object_id = (int) $pid;
-				$spacial_offer_id = (int) $campaign_tag;
-				$wpdb->insert(
-		            $wpdb->term_relationships,
-		            array(
-		                'object_id'        => $object_id,
-		                'term_taxonomy_id' => $spacial_offer_id,
-		            )
-		        );
-			}*/
-			/*if(isset($_POST['attachment_id_array']) && !empty($_POST['attachment_id_array'])){
-				$thumbnail_ids = implode(',', $_POST['attachment_id_array']);
-				if ( ! add_post_meta( $pid, '_thumbnail_ids', $thumbnail_ids, true ) ) { 
-				   update_post_meta ( $pid, 'thumbnail_ids', $thumbnail_ids );
+			if(isset($_POST['campaign_tags']) && !empty($_POST['campaign_tags'])){
+				$tag_exp = explode(',', $_POST['campaign_tags']);
+				foreach ($tag_exp as $key => $tag_v) {
+					$tag_name = ucwords($tag_v);
+					$tag = get_term_by('name', $tag_v, 'campaign_tag');
+
+					if($tag && $tag->name == $tag_name){
+						$camp_tag_id = (int) $tag->term_id;
+						$wpdb->insert(
+				            $wpdb->term_relationships,
+				            array(
+				                'object_id'        => $object_id,
+				                'term_taxonomy_id' => $camp_tag_id,
+				            )
+				        );
+					}else{
+						$current_tag = wp_insert_term($tag_name, 'campaign_tag');
+						//var_dump();
+						if($current_tag && !isset($current_tag->errors['term_exists'])){
+							$camp_tag_id = (int) $current_tag['term_id'];
+							$wpdb->insert(
+					            $wpdb->term_relationships,
+					            array(
+					                'object_id'        => $object_id,
+					                'term_taxonomy_id' => $camp_tag_id,
+					            )
+					        );
+						}
+					}
 				}
 			}
+			if(isset($_POST['attachment_id_array']) && !empty($_POST['attachment_id_array'])){
+				$gallery_ids = array();
+				foreach( $_POST['attachment_id_array'] as $attach_id ) {
+					$gallery_ids[] = $attach_id;
+								
+				}
+				//$gallary_serialized = serialize($gallery_ids);
+				if ( ! add_post_meta( $pid, 'campaign_gallery', $gallery_ids, true ) ) { 
+				   update_post_meta ( $pid, 'campaign_gallery', $gallery_ids );
+				}
+			}
+			
 			if(isset($_POST['_thumbnail_id'])){
 				set_post_thumbnail( $pid, $_POST['_thumbnail_id'] );
-			}*/
+			}
 			if(!empty($_POST['fromt_date']) && !empty($_POST['to_date'])){
 				add_post_meta( $pid, 'capmpaign_from_date', $_POST['fromt_date'], true );
 				add_post_meta( $pid, 'capmpaign_to_date', $_POST['to_date'], true );

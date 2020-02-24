@@ -46,18 +46,21 @@
           </div>
           <div class="ncc-input-fields-row ngo-upload-cover-photo">
             <div class="ngo-upload-cover-photo-inr">
-              <input type="file" name="featured_image" placeholder="Upload a cover Image">
+              <div id="featured_image">
               <span>Upload a cover Image</span>
               <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-black.png"></i>
+              </div>
+              <input type="hidden" id="_featured_picture" name="_thumbnail_id" value="">
+              <div id="featured-picture-priview" class="featured-picture clearfix"></div>
             </div>
           </div>
           <div class="ncc-campaign-gallery">
             <label><strong>Campaign Gallery</strong> (Upload more images and videos)</label>
             <div class="ncc-campaign-gallery-list" >
-              <ul class="ulc clearfix">
+              <ul class="ulc clearfix" id="myplugin-placeholder">
                 <li>
-                  <div class="ncc-campaign-gallery-add-img">
-                    <input type="file" name="campaign_gallery">
+                  <div class="ncc-campaign-gallery-add-img" id="campaign_gallery">
+                    <!-- <input type="file" name="campaign_gallery"> -->
                     <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-black.png"></i>
                   </div>
                 </li>
@@ -76,7 +79,7 @@
           <div class="ncc-add-tag">
             <label>Add Tags</label>
             <div>
-              <input type="text" name="campaign_tag" placeholder="Add comma between tags. (e.g: sea, turtle, pollution)">
+              <input type="text" name="campaign_tags" id="singleFieldTags2" value="" placeholder="Add comma between tags. (e.g: sea, turtle, pollution)">
             </div>
           </div>
           <input type="hidden" name="ngo_add_campaign_nonce" value="<?php echo wp_create_nonce('ngo-add-campaign-nonce'); ?>"/>
