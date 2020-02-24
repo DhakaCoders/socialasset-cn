@@ -1,4 +1,5 @@
 (function($) {
+  var windowWidth = $(window).width();
 $('div.fl-tabs button').click(function(){
     var tab_id = $(this).attr('data-tab');
 
@@ -116,12 +117,19 @@ $('input[type="checkbox"]').change(function(){
 });
 
 
-var windowHeight = $(window).height();
+if( windowWidth > 767 ){
+  var windowHeight = $(window).height();
 
-var headerHeight = $('header.header').height();
-var contentCenterConHeight = ( windowHeight -headerHeight );
+  var headerHeight = $('header.header').height();
+  var loginFormLftColHeight = $('.login-form-lft-col').outerHeight();
+  var contentCenterConHeight = ( loginFormLftColHeight - headerHeight );
+   var finalWindowHeight = (contentCenterConHeight - headerHeight );
 
-//$('.content-center-cntlr').css("height", contentCenterConHeight);
+  if ( windowHeight > 650 ){
+    $('.content-center-cntlr').css("height", finalWindowHeight);
+  }
+
+}
 
 
 
