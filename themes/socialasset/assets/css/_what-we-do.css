@@ -207,7 +207,7 @@
 	right: 0;
 }
 .wwd-user-sec-rgt-des a:hover{
-	color: #000000;
+	opacity: 0.8;
 	padding-right: 30px;
 }
 
