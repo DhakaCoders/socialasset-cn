@@ -123,4 +123,59 @@ var contentCenterConHeight = ( windowHeight -headerHeight );
 
 //$('.content-center-cntlr').css("height", contentCenterConHeight);
 
+
+
+
+
+/*shorting */
+
+/*
+if( $('.mixContainer').length ){
+var sortOrder = 'asc';
+var container = $('#MixContainer');
+var toggleSort = document.querySelector('.toggle-sort');
+
+  var config = document.querySelector('.mixContainer');
+  var $sortSelect = $('#itemSort');
+  var mixer = mixitup(config);
+  
+  $sortSelect.on('change', function(){
+    mixer.sort(this.value);
+  });
+
+container.mixItUp({
+    animation: {
+        effects: 'fade',
+        duration: 300, 
+    },
+    layout:{
+        display:'table-row'
+    },
+});
+
+toggleSort.addEventListener('click', function() {
+  switch (sortOrder) {
+    case 'asc':
+      sortOrder = 'desc';
+    break;
+    case 'desc':
+      sortOrder = 'asc';
+    break;
+  }
+
+  container.mixItUp('sort', 'name:' + sortOrder);
+});
+}
+*/
+
+if( $('.mixContainer').length ){
+  var config = document.querySelector('.mixContainer');
+  var $sortSelect = $('#itemSort');
+  var mixer = mixitup(config);
+  
+  $sortSelect.on('change', function(){
+    mixer.sort(this.value);
+  });
+}
+
 })(jQuery);

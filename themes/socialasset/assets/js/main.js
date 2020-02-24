@@ -412,11 +412,13 @@ if( $('#scrollToAarea').length ){
   });
 }*/
 
-$('.masonry').packery({
-  // options
-  itemSelector: '.campaigns-list-item-wrp',
-});
+if( $('.masonry').length ){
+  $('.masonry').packery({
+    // options
+    itemSelector: '.campaigns-list-item-wrp',
+  });
 
+}
 
 
 if (windowWidth > 991) {
