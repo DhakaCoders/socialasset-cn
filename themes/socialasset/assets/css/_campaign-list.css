@@ -150,11 +150,12 @@ min-height: 42px;
 	color: #5D5D5D;
 }
 .campaigns-tags ul{
-	padding-bottom: 25px;
+	padding-bottom: 18px;
 }
 .campaigns-tags ul li{
 	display: inline-block;
 	vertical-align: baseline;
+	padding-bottom: 8px;
 }
 .campaigns-tags ul li a{
 	display: inline-block;
@@ -494,8 +495,122 @@ min-height: 42px;
 	max-width: 503px;
 }
 
+
+.only-des .campaigns-item-des p{
+	height: 36px;
+	overflow: hidden;
+}
+.only-des  .campaigns-list-item-des-hover .campaigns-item-cat-name{
+	margin-bottom: 12px;
+}
+.only-des .campaigns-list-item-des-hover-des p{
+	padding-left: 0;
+	height: 36px;
+	overflow: hidden;
+}
 @media(max-width: 991px){
 	.user-campaign-list-cntlr ul li{
 		width: 50%;
 	}
+}
+.campaigns-main-cat-bg h6 {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+@media(min-width: 1921px){
+	.container-fluid{
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
+
+
+
+
+@media(max-width: 1199px){
+
+}
+
+@media(max-width: 991px){
+	.campaigns-main-cat-bg h6 {
+	    font-size: 18px;
+	    line-height: 1;
+	}
+	.page-entry-hdr{
+		padding-top: 70px;
+	}
+	.campaigns-slect-filters-lft{
+		padding-right: 25px;
+	}
+	.sa-selctpicker-ctlr label{
+		padding-right: 10px;
+	}
+	.show-more-btn{
+		padding-bottom: 150px;
+	}
+}
+
+@media(max-width: 767px){
+	.campaigns-main-category ul{
+		display: block;
+		text-align: center;
+	}
+	.campaigns-main-category ul li{
+		width: 210px;
+		display: inline-block;
+		vertical-align: baseline;
+	}
+	.page-entry-hdr{
+		padding-bottom: 30px;
+	}
+	.campaigns-slect-filters-lft{
+		width: 100%;
+		padding-right: 0;
+		padding-bottom: 20px;
+	}
+	.campaigns-slect-filters-lft .search-by-name{
+		max-width: 100%;
+	}
+	.campaigns-slect-filters-rgt{
+		width: 100%;
+		float: left;
+	}
+	.campaigns-slect-filters-rgt .sa-selctpicker-ctlr{
+		float: left;
+	}
+	.show-more-btn{
+		padding-bottom: 100px;
+	}
+	.user-campaign-list-cntlr ul{
+		margin-bottom: 50px;
+	}
+}
+
+@media(max-width: 575px){
+	.campaigns-main-category ul li{
+		float: left;
+		width: 50%;
+	}
+	.user-campaign-list-cntlr ul li{
+	    width: 100%!important;
+	}
+	.campaigns-list-item{
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
