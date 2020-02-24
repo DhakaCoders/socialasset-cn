@@ -14,6 +14,10 @@
 <script src="<?php echo THEME_URI; ?>/assets/js/masonry.pkgd.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/account.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/main.js"></script>
+
+<script type='text/javascript' src='http://localhost/2020/02/socialasset/wp-includes/js/tinymce/tinymce.min.js?ver=4960-20190918'></script>
+<script src="http://localhost/2020/02/socialasset/wp-admin/js/editor.min.js?ver=5.3.2"></script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

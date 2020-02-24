@@ -31,22 +31,29 @@ function redirect_user_frontend_dashboard(){
 }
 
 function custom_rewrite_rule() {
-    //add_rewrite_rule('^myaccount/([^/]*)/([^/]*)/?','index.php?pagename=myaccount&country=$matches[1]&region=$matches[2]','top');
-    //add_rewrite_rule('^([^/]*)/([^/]*)/?','index.php?pagename=myaccount&country=$matches[1]&region=$matches[2]','top');
-    add_rewrite_rule('^([^/]*)/([^/]*)/?','index.php?pagename=myaccount&mycampaigns=$matches[1]','top');
-    add_rewrite_rule('^([^/]*)/([^/]*)/?','index.php?pagename=myaccount&edit-campaign=$matches[1]','top');
+    add_rewrite_rule('^myaccount/([^/]*)/([^/]*)/?','index.php?pagename=myaccount&action=$matches[1]&string=$matches[2]','top');
 }
-function register_custom_query_vars($vars){
-  array_push($vars, 'edit-campaign');
-  array_push($vars, 'mycampaigns');
-  array_push($vars, 'region');
-  array_push($vars, 'country');
-  return $vars;
+
+function custom_rewrite_tag() {
+  add_rewrite_tag('%action%', '([^&]+)');
+  add_rewrite_tag('%string%', '([^&]+)');
 }
-add_action('init', 'custom_rewrite_rule');
-add_filter('query_vars', 'register_custom_query_vars', 1);
+add_action('init', 'custom_rewrite_tag', 10, 0);
+add_filter('init', 'custom_rewrite_rule');
 
-
+/*add_action('init', function(){
+   add_rewrite_rule( 
+      '^myaccount/([^/]+)([/]?)(.*)', 
+      //!IMPORTANT! THIS MUST BE IN SINGLE QUOTES!:
+      'index.php?pagename=myaccount&action=$matches[1]', 
+      'top'
+   ); 
+});
+add_filter('query_vars', function( $vars ){
+    $vars[] = 'pagename'; 
+    $vars[] = 'action'; 
+    return $vars;
+});*/
 
 add_action('admin_init', 'activate_page_action');
 
@@ -104,6 +111,48 @@ if(!function_exists('allow_ngo_uploads')){
     $sb_role = get_role('subscriber');
     $sb_role->add_cap('upload_files');
   }
+}
+
+if(!function_exists('get_custom_post_taxnomy_dropdown')){
+  function get_custom_post_taxnomy_dropdown($tax = 'campaign', $value = ''){
+    $args = array(
+          'show_option_all'    => '',
+          'show_option_none'  => 'Choose Category',
+          'orderby'      => 'name',
+          'tab_index'          => 2,
+          'hide_empty'         => false,
+          'name'               => $tax,
+          'class'              => 'selectpicker',
+          'taxonomy'           => $tax,
+          'selected'          => isset( $value ) ? (int) $value : -1,
+          'hide_if_empty'      => false,
+          'value_field'        => 'term_id',
+          'hierarchical' => true,
+          'depth' => 2,
+          'required'=> true
+      );
+    wp_dropdown_categories( $args );
+  }
+}
+
+function get_custom_content_editor($editor, $content = NULL){
+  $editor = isset($editor)? $editor: 'post_content';
+  $content = isset($content)? $content:'';
+  $editor_id = $editor;
+  $settings =   array(
+      'wpautop' => true,
+      'media_buttons' => true,
+      'textarea_name' => $editor_id, 
+      'textarea_rows' =>get_option('default_post_edit_rows', 10), 
+      'tabindex' => '',
+      'editor_css' => '', 
+      'editor_class' => '',
+      'teeny' => false,
+      'dfw' => false,
+      'tinymce' => true,
+      'quicktags' => true 
+      );
+  wp_editor( $content, $editor_id, $settings); 
 }
 
 
