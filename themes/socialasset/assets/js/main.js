@@ -401,7 +401,7 @@ if( $('#scrollToAarea').length ){
 }
 
 
-if( $('.masonry').length ){
+/*if( $('.masonry').length ){
   $('.masonry').masonry({
     // options
     //itemSelector: 'ul.masonry li',
@@ -410,7 +410,14 @@ if( $('.masonry').length ){
     fitWidth: true
 
   });
-}
+}*/
+
+$('.masonry').packery({
+  // options
+  itemSelector: '.campaigns-list-item-wrp',
+});
+
+
 
 if (windowWidth > 991) {
   $('.humberger-menu-btn').on('click', function(){

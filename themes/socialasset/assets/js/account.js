@@ -116,4 +116,11 @@ $('input[type="checkbox"]').change(function(){
 });
 
 
+var windowHeight = $(window).height();
+
+var headerHeight = $('header.header').height();
+var contentCenterConHeight = ( windowHeight -headerHeight );
+
+//$('.content-center-cntlr').css("height", contentCenterConHeight);
+
 })(jQuery);
