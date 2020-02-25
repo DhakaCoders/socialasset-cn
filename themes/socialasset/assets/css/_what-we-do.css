@@ -396,6 +396,15 @@
 	.page-banner-controller {
 	    min-height: 443px;
 	}
+	.jjsg-des {
+	    padding: 0 0px;
+	}
+	.jjsg-des-top, 
+	.jjsg-des-bottom {
+	    padding: 70px 0 60px 15px;
+	    display: block;
+	    min-height: auto;
+	}
 	.wwd-campaigns-grid-item ul li{
 		width: 100%;
 		padding-left: 0px;
@@ -453,11 +462,6 @@
 		width: 100%;
 		margin: 0 auto;
 		min-height: 350px;
-	}
-	.jjsg-des-top,
-	.jjsg-des-bottom{
-		padding: 110px 0 50px 50px;
-		display: block;
 	}
 	.wwd-user-section {
 	    margin-top: 27px;
