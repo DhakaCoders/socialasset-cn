@@ -213,6 +213,84 @@
 
 
 
+
+
+.sa-main-slider .slick-current .sa-main-slider-des-inner strong{
+    -webkit-animation-name: fadeInUpShort;
+    animation-name: fadeInUpShort;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+.sa-main-slider .slick-current .sa-main-slider-des-inner a{
+    -webkit-animation-name: fadeInUpShort;
+    animation-name: fadeInUpShort;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 1.7s;
+    animation-delay: 1.7s;	
+}
+
+.sa-main-slider .slick-current .sa-main-slider-cam-img{
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.sa-main-slider .slick-current .sa-main-slider-cam-des span{
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+.sa-main-slider .slick-current .sa-main-slider-cam-des strong{
+    -webkit-animation-name: fadeInUpShort;
+    animation-name: fadeInUpShort;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+.sa-main-slider .slick-current .sa-main-slider-cam-des p{
+    -webkit-animation-name: fadeInUpShort;
+    animation-name: fadeInUpShort;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.sa-main-slider .slick-current .sa-main-slider-cam-des a{
+    -webkit-animation-name: fadeInUpShort;
+    animation-name: fadeInUpShort;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+}
+
+
+
 .social-asset-welcome-section{
 	padding-top: 80px;
 	padding-bottom: 95px;
@@ -341,13 +419,13 @@
 .sa-welcome-grid-item-top-des-img{
 	position: absolute;
 	top: 25%;
-    left: 7.5%;
+    left: 9%;
 	z-index: 6;
 }
 .sa-welcome-grid-item-bottom-des-img{
 	position: absolute;
 	top: 22%;
-    left: 6%;
+    left: 7.5%;
 	z-index: 6;
 }
 .sa-welcome-grid-item-top-des-inner,
@@ -889,6 +967,7 @@
 .sa-blog-grd-item-img-wrap{
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
+	border-radius: 8px;
 }
 .sa-blog-grd-item-img-ctlr{
 	overflow: hidden;
@@ -985,7 +1064,14 @@
 	    left: 1%;
 	}
 	.sa-user-right {
-	    max-width: 350px;
+	    max-width: 400px;
+	}
+	.sa-welcome-grid-item-top-des-img,
+	.sa-welcome-grid-item-bottom-des-img{
+		display: none;
+	}
+	.sa-campaigns-grid-section {
+	    padding-bottom: 80px;
 	}
 
 }
@@ -1029,7 +1115,7 @@
 		display: none;
 	}
 	.social-asset-welcome-section{
-	    padding-top: 70px;
+	    padding-top: 80px;
 	    padding-bottom: 80px;
 	}
 	.social-asset-welcome-section-inner em{
@@ -1040,7 +1126,6 @@
 	.social-asset-welcome-section-inner p{
 	    font-size: 18px;
 	    line-height: 31px;
-	    padding-bottom: 45px;
 	}
 	.more-btn a {
 	    padding: 17px 67px 17px 67px;
@@ -1073,9 +1158,7 @@
 	    margin: auto;
 	    margin-top: -105px;
 	}
-	.hmc{
-		height: 230px;
-	}
+	
 	.sa-usr-rgt-des h3 {
 	    padding-bottom: 10px;
 	}
@@ -1086,7 +1169,7 @@
 	    margin-bottom: 20px;
 	}
 	.sa-campaigns-grid-section {
-	    padding-bottom: 100px;
+	    padding-bottom: 70px;
 	}
 	.sa-cam-sec-link {
 	    padding-top: 35px;
@@ -1096,7 +1179,10 @@
 	}
 	.sa-testimonial-section {
 	    padding-top: 50px;
-	    padding-bottom: 100px;
+	    padding-bottom: 90px;
+	}
+	.sa-testimonial-section .slick-dots {
+	    bottom: -65%;
 	}
 	.sa-testimonial-sec-top h4 {
 	    line-height: 35px;
@@ -1132,7 +1218,7 @@
 	    padding-bottom: 10px;
 	}
 	.sa-blog-sec-hdr p {
-	    padding-bottom: 35px;
+	    margin-bottom: 50px;
 	}
 }
 
@@ -1142,6 +1228,10 @@
 	}
 	.show-sm{
 		display: block!important;
+	}
+	.sa-main-slider-wrap .slick-dots {
+	    width: 100%;
+	    top: 90%;
 	}
 	.sa-main-slider-cam-img{
 		display: none;
@@ -1159,6 +1249,9 @@
 	.sa-main-slider-cam-des a.campaign {
 	    padding: 21px 60px;
 	}
+	.social-asset-welcome-section {
+	    padding-top: 50px;
+	}
 	.sa-welcome-grid-item-top-img-wrap, 
 	.sa-welcome-grid-item-bottom-des-wrap {
 	    width: 100%;
@@ -1175,12 +1268,20 @@
 		width: 100%;
 		margin: 0 auto;
 	}
+	.sa-welcome-grid-item-top-des,
+	.sa-welcome-grid-item-bottom-des{
+		min-height: auto;
+		padding: 60px 15px 60px 15px;
+	}
+	.sa-user-right {
+	    left: 1%;
+	}
 	.sa-welcome-grid-item{
 		margin-bottom: 20px;
 	}
 	
 	.sa-welcome-grid-section {
-	    margin-top: 20px;
+	    margin-top: -85px;
 	}
 	.sa-welcome-grd-top-bg{
 		display: none;
@@ -1194,11 +1295,6 @@
 	    line-height: 24px;
 	    padding-bottom: 15px;
 	}
-	.social-asset-welcome-section-inner p {
-	    font-size: 13px;
-	    line-height: 24px;
-	    padding-bottom: 36px;
-	}
 	.sa-welcome-grid-item-top-des-img {
 	    left: 1%;
 	}
@@ -1209,12 +1305,6 @@
 	    font-size: 30px;
 	    line-height: 44px;
 	    padding-bottom: 35px;
-	}
-	.sa-page-banner-des-inner span.bsn:before {
-	    width: 135px;
-	}
-	.sa-page-banner-des-inner span.scl:after {
-	    width: 110px;
 	}
 	.sa-page-banner-des-inner a {
 	    padding: 18px 45px 18px 45px;
@@ -1248,31 +1338,19 @@
 	    padding-bottom: 12px;
 	}
 	.sa-campaigns-section-inner ul li{
-	    width: 100%;
-	    padding-left: 0px;
-	    padding-right: 0px;
-	    padding-bottom: 15px;
-	}
-	.fw-50{
-	    width: 100% !important;
-	}
-	.sa-cam-grd-item{
-		max-width: 450px;
-		width: 100%;
-		margin: 0 auto;
+	    width: 50%;
 	}
 	.sa-cam-sec-link {
-	    padding-top: 20px;
+	    padding-top: 15px;
 	}
 	.sa-cam-sec-link button {
 	    padding: 18px 38px;
 	}
 	.sa-campaigns-grid-section {
-	    padding-bottom: 70px;
+	    padding-bottom: 50px;
 	}
-	.sa-testimonial-section {
-	    padding-top: 30px;
-	    padding-bottom: 90px;
+	.sa-testimonial-sec-blockquot-inner{
+		text-align: center;
 	}
 	
 	.sa-testimonial-sec-wrap {
@@ -1292,29 +1370,30 @@
 	.sa-testimonial-sec-blockquot-inner {
 	    padding: 45px 90px 0 60px;
 	}
-	.sa-testimonial-sec-blockquot-inner p {
-	    padding-bottom: 20px;
-	}
 	.sa-testimonial-sec-blockquot-inner:before {
 	    top: -30px;
 	    left: 15px;
 	}
 	.sa-testimonial-sec-blockquot-inner:after {
-	    bottom: -25px;
+	    bottom: -20px;
 	    right: 50px;
 	}
 	.sa-testimonial-section .slick-dots {
 	    bottom: -38%;
 	}
-	.sa-blog-grid ul li {
-	    width: 100%;
-	    padding-left: 0px;
-	    padding-right: 0px;
+	.sa-companies-section {
+	    padding-top: 50px;
+	    padding-bottom: 50px;
 	}
-	.sa-blog-grid-item{
-		max-width: 450px;
-	    width: 100%;
-	    margin: 0 auto;
+	.sa-companies-section .slick-dots {
+	    top: 140%;
+	}
+	.sa-blog-section {
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+	}
+	.sa-blog-grid ul li {
+	    width: 50%;
 	}
 	.sa-blog-link a {
 	    padding: 18px 55px;
