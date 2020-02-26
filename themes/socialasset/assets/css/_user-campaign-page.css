@@ -365,7 +365,7 @@ span.miraclePlanthumbSlider-item img{
   padding-right: 10px;
 }
 #ngo-preview-sec{
-  padding-top: 0;
+  padding-top: 95px;
 }
 #ngo-preview-sec .ngo-alert-box.alert-info {
   color: #fff;
@@ -586,6 +586,9 @@ span.miraclePlanthumbSlider-item img{
   }
   .user-story-cmpaign-sec {
     padding-bottom: 60px;
+  }
+  #ngo-preview-sec {
+    padding-top: 60px;
   }
 }
 
