@@ -218,10 +218,12 @@ if( $('#googlemap').length ){
 
 if( $('.hm-banner-slider').length ){
   $('.hm-banner-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
       dots: true,
       arrows: false,
-      infinite: false,
-      speed: 300,
+      infinite: true,
+      speed: 700,
       slidesToShow: 1,
       slidesToScroll: 1
   });
