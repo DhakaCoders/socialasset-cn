@@ -1,7 +1,7 @@
 .hm-banner-slider-sec{
 	overflow: hidden;
 	position: relative;
-}
+} 
 .hm-banner-slider-item{
 	background-position: center center!important;
 	background-size: cover!important;
@@ -295,12 +295,12 @@ span.hm-wc-social-assets-top-shape {
 	padding-right: 30px;
 }
 .upcoming-campaigns-sec{
-	padding: 100px 0 150px;
+	padding: 102px 0 150px;
 	background: #F4F5F9;
 	position: relative;
 }
 .upcoming-campaigns-head{
-	padding-bottom: 92px;
+	padding-bottom: 82px;
 }
 .upcoming-campaigns-head h4{
 	color: #0054FD;
@@ -310,6 +310,16 @@ span.hm-wc-social-assets-top-shape {
 	font-size: 16px;
 	margin-bottom: 12px;	
 }
+.upcoming-campaigns-sec .show-more-btn {
+    padding-bottom: 40px!important;
+}
+.upcoming-campaigns-sec .user-campaign-list-cntlr ul {
+    margin: 0 -10px 37px!important;
+}
+
+
+
+
 .hm-explore-campaigns-sec{
 	padding-bottom: 130px;
 }
@@ -951,7 +961,12 @@ span.btm-q-icon {
 	.hm-join-journey-sec .jjsg-des-bottom > span {
 		display: none;
 	}
-
+	.upcoming-campaigns-sec {
+	    padding: 80px 0 70px;
+	}
+	.upcoming-campaigns-sec span.hm-wc-social-assets-top-shape {
+    	height: 90px;
+	}
 }
 
 @media(max-width: 991px){
@@ -1020,7 +1035,10 @@ span.btm-q-icon {
 	    line-height: 48px;
 	}
 	.upcoming-campaigns-sec span.hm-wc-social-assets-top-shape {
-	    height: 90px;
+	    height: 65px;
+	}
+	.upcoming-campaigns-head {
+	    padding-bottom: 45px;
 	}
 
 }
@@ -1129,6 +1147,26 @@ span.btm-q-icon {
 	.hm-banner-design-2 h2 span.soc::after {
 	    content: none;
 	}
+	.upcoming-campaigns-sec {
+	    padding: 50px 0 70px;
+	}
+	.join-journey-section.hm-join-journey-sec .jjsg-des-top .jjsg-des {
+	    padding-right: 0;
+	    padding-top: 0;
+	}
+	.join-journey-section.hm-join-journey-sec .jjsg-des-bottom .jjsg-des {
+	    padding-top: 0;
+	    padding-right: 0;
+	}
+	.join-journey-section.hm-join-journey-sec {
+	    padding-bottom: 10px;
+	}
+	.hm-wc-social-assets-top p {
+	    font-size: 18px;
+	    color: #000;
+	    margin-bottom: 11px;
+	    line-height: 28px;
+	}
 }
 
 @media(max-width: 639px){
@@ -1215,6 +1253,12 @@ span.btm-q-icon {
 	.hm-partner-slider .hm-partner-slider-item:nth-child(6){
 		display: none !important;
 	}
+	.upcoming-campaigns-sec .show-more-btn {
+	    padding-bottom: 20px !important;
+	}
+	.upcoming-campaigns-head h4 {
+	    margin-bottom: 10px;
+	}
 }
 
 @media(max-width: 479px){
@@ -1240,6 +1284,9 @@ span.btm-q-icon {
 	    max-width: 25px;
 	    bottom: 37px;
 	    right: 20px;
+	}
+	.hm-wc-social-assets-top a {
+	    margin-top: 30px;
 	}
 }
 
