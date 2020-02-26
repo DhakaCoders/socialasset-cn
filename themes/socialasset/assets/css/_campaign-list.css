@@ -43,9 +43,7 @@ li.cat-active .campaigns-main-cat-item,
 }
 
 
-
-li.cat-active .campaigns-main-cat-item:after,
-.campaigns-main-cat-item:hover:after{
+.campaigns-main-cat-item:after{
 	content: "";
 	background: #0054FD;
 	position: absolute;
@@ -54,6 +52,14 @@ li.cat-active .campaigns-main-cat-item:after,
 	bottom: 1px;
 	height: 10px;
 	border-radius: 0 0 5px 5px;
+	opacity: 0;	
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+li.cat-active .campaigns-main-cat-item:after,
+.campaigns-main-cat-item:hover:after{
+	opacity: 1;
 }
 li.cat-active .campaigns-main-cat-bg,
 .campaigns-main-cat-item:hover .campaigns-main-cat-bg{
@@ -199,14 +205,14 @@ min-height: 42px;
 	padding-left: 30px;
 	padding-right: 30px;
 }
-.campaigns-list-item-50 .campaigns-item-cat-name{
+/*.campaigns-list-item-50 .campaigns-item-cat-name{
 	margin-left: -17px;
 	margin-right: -10px;
-}
-.campaigns-list-item-50 .campaigns-list-item:hover .campaigns-item-cat-name{
+}*/
+/*.campaigns-list-item-50 .campaigns-list-item:hover .campaigns-item-cat-name{
 	margin-left: 0;
 	margin-right: 0;
-}
+}*/
 .campaigns-list-item-50 .campaigns-item-cat-name strong{
 	background: #4b4c46;
 }
