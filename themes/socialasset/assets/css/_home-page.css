@@ -1197,9 +1197,6 @@
 	.sa-testimonial-sec-blockquot-inner {
 	    padding: 35px 90px 0 50px;
 	}
-	.sa-testimonial-sec-blockquot-inner p {
-	    padding-bottom: 20px;
-	}
 	.sa-testimonial-icon{
 		display: none;
 	}
@@ -1228,6 +1225,12 @@
 	}
 	.show-sm{
 		display: block!important;
+	}
+	.sa-main-slider-bg{
+		min-height: 742px !important;
+	}
+	.sa-main-slider-des-inner {
+	    padding-top: 310px;
 	}
 	.sa-main-slider-wrap .slick-dots {
 	    width: 100%;
@@ -1295,6 +1298,9 @@
 	    line-height: 24px;
 	    padding-bottom: 15px;
 	}
+	.social-asset-welcome-section-inner p br{
+	    display: none;
+	}
 	.sa-welcome-grid-item-top-des-img {
 	    left: 1%;
 	}
@@ -1330,7 +1336,6 @@
 	.sa-welcome-grid-item-top-des-inner p, 
 	.sa-welcome-grid-item-bottom-des-inner p {
 	    line-height: 22px;
-	    padding-bottom: 10px;
 	    margin-bottom: 10px;
 	}
 	.sa-welcome-grid-item-top-des-inner h3, 
@@ -1407,6 +1412,12 @@
 	.show-xs{
 		display: block!important;
 	}
+	.sa-main-slider-bg{
+		min-height: 642px !important;
+	}
+	.sa-main-slider-des-inner {
+	    padding-top: 275px;
+	}
 	.sa-main-slider-des-inner strong {
 	    font-size: 30px;
 	    line-height: 38px;
@@ -1425,14 +1436,12 @@
 	    padding-bottom: 15px;
 	}
 	.social-asset-welcome-section-inner em {
-	    font-size: 15px;
-	    line-height: 20px;
-	    padding-bottom: 10px;
+	    font-size: 18px;
+	    line-height: 26px;
 	}
 	.social-asset-welcome-section-inner p {
-	    font-size: 12px;
-	    line-height: 16px;
-	    padding-bottom: 25px;
+	    font-size: 20px;
+	    line-height: 31px;
 	}
 	.social-asset-welcome-section-inner p br{
 		display: none;
@@ -1440,28 +1449,76 @@
 	.sa-welcome-grid-item-top-des-img {
 	    left: -9%;
 	}
+	.sa-welcome-grid-item-top-des-inner, 
+	.sa-welcome-grid-item-bottom-des-inner {
+	    padding: 0 0px;
+	}
+	.sa-welcome-grid-item-top-des-inner, 
+	.sa-welcome-grid-item-bottom-des-inner {
+	    margin-top: 0px;
+	}
+	.sa-welcome-grid-item-top-img, 
+	.sa-welcome-grid-item-bottom-img {
+	    min-height: 275px;
+	}
+	.sa-welcome-grid-item-top-des, 
+	.sa-welcome-grid-item-bottom-des {
+	    min-height: auto;
+	    padding: 100px 15px 80px 50px;
+	}
 	.sa-blog-sec-hdr p {
-	    font-size: 12px;
+	    font-size: 16px;
 	    line-height: 20px;
-	    padding-bottom: 15px;
 	}
 	.sa-testimonial-sec-blockquot-inner p {
-	    padding-bottom: 11px;
 	    font-size: 12px;
     	line-height: 20px;
 	}
 	.sa-testimonial-sec-top p {
-	    line-height: 15px;
-	    font-size: 12px;
+	    line-height: 20px;
+	    font-size: 16px;
 	}
 	.sa-user-right {
 	    padding: 30px 40px 35px;
 	    left: 0%;
 	}
+	.sa-campaigns-section-inner ul li {
+	    width: 100%;
+	    padding-left: 0px;
+    	padding-right: 0px;
+	}
+	.fw-50 {
+	    width: 100% !important;
+	}
+	.sa-cam-grd-item-wrap{
+		max-width: 400px;
+		width: 100%;
+		margin: 0 auto;
+		min-height: 260px;
+	}
+	.sa-cam-grd-item-img{
+		min-height: 260px;
+	}
+	.sa-blog-grid ul li {
+	    width: 100%;
+	    padding-left: 0px;
+    	padding-right: 0px;
+	}
+	.sa-blog-grd-item-img-wrap{
+		max-width: 400px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.sa-blog-grd-item-img-ctlr{
+		border-radius: 8px;
+	}
 
 }
 
 @media(max-width: 479px){
+	.social-asset-welcome-section-inner h1 {
+	    font-size: 28px;
+	}
 	.page-banner .banner-icon {
 	    right: -13px;
 	    bottom: 15px;
@@ -1508,6 +1565,10 @@
 	.sa-main-slider-des-inner span.scl:after {
 	    width: 76px;
 	    height: 10px;
+	}
+	.sa-welcome-grid-item-top-des, 
+	.sa-welcome-grid-item-bottom-des {
+	    padding: 145px 15px 80px 50px;
 	}
 
 }
