@@ -167,6 +167,18 @@ span.miraclePlanthumbSlider-item img{
   display: inline-block;
   vertical-align: middle;
   margin-right: 16px;
+  position: relative;
+}  
+.miracle-plan-progress-camp ul li i:first-child {
+  max-width: 42px;
+}  
+.miracle-plan-progress-camp ul li i:last-child {
+  max-width: 105px;
+  top: -2px;
+} 
+
+.miracle-plan-progress-camp ul li i img{
+  width: 100%;
 }
 .miracle-plan-progress-camp ul li:last-child {
   padding-left: 16px;
@@ -669,6 +681,22 @@ span.miraclePlanthumbSlider-item img{
   #ngo-preview-sec .ngo-alert-box.alert-info strong {
     font-size: 11px;
   }
+
+.miracle-plan-progress-camp ul li i:first-child {
+  max-width: 35px;
+}
+.miracle-plan-progress-camp ul li i:last-child {
+  max-width: 95px;
+} 
+.miracle-plan-progress-camp ul li i {
+  margin-right: 15px;
+}
+.miracle-plan-progress-camp ul li:last-child {
+    padding-left: 15px;
+}
+.miracle-plan-progress-camp ul li:last-child span {
+  padding-top: 14px;
+}
 }
 
 
