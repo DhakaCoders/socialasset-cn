@@ -13,23 +13,19 @@ include('header.php');
               <?php 
               include('menu.php');
               $action = $wp_query->get( 'action' );
-              $string = $wp_query->get( 'string' );
-              if( isset($action) && !empty($action) && isset($string) && !empty($string)) {
-                  if($action == 'action' && $string == 'mycampaigns'){
-                    include('ngo-campaigns.php');
-                  }elseif( ($action == 'action' && $string == 'add-campaign')  ){
-                    include('ngo-new-campaign.php');
-                  }else{
-                    include('ngo-profile.php');
-                  }
-              }elseif(isset($action) && !empty($action)){
-                if($action == 'mycampaigns'){
-                    include('ngo-campaigns.php');
-                  }elseif( ($action == 'add-campaign')  ){
-                    include('ngo-new-campaign.php');
-                  }else{
-                    include('ngo-profile.php');
-                  }
+              $id = $wp_query->get( 'id' );
+              if( isset($action) && !empty($action) ){
+                if( $action == 'mycampaigns'){
+                  include('ngo-campaigns.php');
+                }elseif($action == 'add-campaign'){
+                  include('ngo-new-campaign.php');
+                }elseif( $action == 'edit-campaign' && !empty($id)){
+                  include('ngo-edit-campaign.php');
+                }elseif($action == 'edit-campaign'){
+                  include('ngo-profile.php');
+                }else{
+                  include('ngo-profile.php');
+                }
               }else{
                 include('ngo-profile.php');
               }

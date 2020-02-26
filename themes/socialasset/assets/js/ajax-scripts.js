@@ -1,5 +1,5 @@
-/*jQuery(document).ready(function($) {
-    if($('#business-signup').length){
+jQuery(document).ready(function($) {
+   /* if($('#business-signup').length){
         $('#business-signup').on('click', function(e){
              e.preventDefault();
             //$('#login p.status').show().text(ajax_user_signup_object.loadingmessage);
@@ -37,8 +37,32 @@
                 }
             });
         });
-    }
-});*/
+    }*/
+
+    $(document).on( 'click', '.delete-capm', function() {
+        var id = $(this).data('id');
+        var nonce = $(this).data('nonce');
+        var post = $(this).parents('#camppost_'+id);
+        $.ajax({
+            type: 'post',
+            url: ajax_delete_camp_object.ajaxurl,
+            data: {
+                action: 'my_delete_capm',
+                nonce: nonce,
+                id: id
+            },
+            success: function( result ) {
+                if( result == 'success' ) {
+                    post.fadeOut( function(){
+                        post.remove();
+                    });
+                }
+            }
+        })
+        return false;
+    })
+
+});
 
 function SubmitSignupFormData(){
     var error = false;

@@ -1,4 +1,3 @@
-
 .has-shadow{
 	background: #f4f5f9;
 		-webkit-box-shadow: inset 0px 20px 92px -21px rgba(232,233,233,1);
@@ -513,6 +512,21 @@ min-height: 42px;
 	padding-left: 0;
 	height: 36px;
 	overflow: hidden;
+}
+.tbl-campaign-des-inr {
+    position: relative;
+}
+.campaign-action {
+    position: absolute;
+    bottom: -38px;
+    left: 0px;
+    display: none;
+}
+.campaign-action a {
+    font-size: 16px;
+}
+.edit-action:hover .campaign-action {
+    display: block;
 }
 @media(max-width: 991px){
 	.user-campaign-list-cntlr ul li{

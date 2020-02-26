@@ -31,12 +31,13 @@ function redirect_user_frontend_dashboard(){
 }
 
 function custom_rewrite_rule() {
-    add_rewrite_rule('^myaccount/([^/]*)/([^/]*)/?','index.php?pagename=myaccount&action=$matches[1]&string=$matches[2]','top');
+    add_rewrite_rule('^myaccount/([^/]+)([/]?)(.*)','index.php?pagename=myaccount&action=$matches[1]&id=$matches[3]','top');
+
 }
 
 function custom_rewrite_tag() {
   add_rewrite_tag('%action%', '([^&]+)');
-  add_rewrite_tag('%string%', '([^&]+)');
+  add_rewrite_tag('%id%', '([^&]+)');
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 add_filter('init', 'custom_rewrite_rule');
@@ -156,3 +157,57 @@ function get_custom_content_editor($editor, $content = NULL){
 }
 
 
+function get_campaign_tags(){
+  $camp_tags = get_terms( array(
+      'taxonomy' => 'campaign_tag',
+      'hide_empty' => false
+  ) );
+  $imp_ctags = '';
+  if ( !empty( $camp_tags ) && !is_wp_error( $camp_tags ) ) {
+    $ctags = array();
+    foreach ($camp_tags as $camp_tags) {
+      $ctags[] = $camp_tags->name;
+    }
+    $imp_ctags = implode('", "', $ctags);
+  }
+  if( isset($imp_ctags) && !empty($imp_ctags) ){
+    return $imp_ctags;
+  }else{
+    return false;
+  }
+  
+}
+
+function camp_excerpt($limit = 13, $dot = ' ...') {
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).$dot;
+  } else {
+    $excerpt = implode(" ",$excerpt).$dot;
+  } 
+  $excerpt = preg_replace('`\[[^\]]*\]`',$dot,$excerpt);
+  return $excerpt;
+}
+
+function camp_expire_date($expiredate){
+
+  if( !empty($expiredate) ){
+    $expire = strtotime($expiredate);
+    $today = strtotime("today midnight"); 
+    if( $today >= $expire ){
+      return true;
+    }
+    return false;
+  }else{
+    return false;
+  }
+
+}
+
+function camp_is_date($date){
+  if( preg_match("/\d{2}\-\d{2}-\d{4}/", $date) ) {
+    return true;
+  }
+  return false;
+}

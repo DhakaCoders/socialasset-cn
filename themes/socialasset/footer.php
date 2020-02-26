@@ -18,34 +18,10 @@
 
 <script type='text/javascript' src='http://localhost/2020/02/socialasset/wp-includes/js/tinymce/tinymce.min.js?ver=4960-20190918'></script>
 <script src="http://localhost/2020/02/socialasset/wp-admin/js/editor.min.js?ver=5.3.2"></script>
-<?php 
-function tag_echo(){
-	$camp_tags = get_terms( array(
-	    'taxonomy' => 'campaign_tag',
-	    'hide_empty' => false
-	) );
-	$imp_ctags = '';
-	if ( !empty( $camp_tags ) && !is_wp_error( $camp_tags ) ) {
-		$ctags = array();
-		foreach ($camp_tags as $camp_tags) {
-			$ctags[] = $camp_tags->name;
-		}
-		$imp_ctags = implode('", "', $ctags);
-	}
-	if( isset($imp_ctags) && !empty($imp_ctags) ){
-		return $imp_ctags;
-	}else{
-		return false;
-	}
-	
-}
-
-?>
-
 <?php wp_footer(); ?>
     <script>
         jQuery(function(){
-            var sampleTags = ["<?php echo tag_echo();?>"];
+            var sampleTags = ["<?php echo get_campaign_tags();?>"];
             // singleFieldTags2 is an INPUT element, rather than a UL as in the other 
             // examples, so it automatically defaults to singleField.
             jQuery('#singleFieldTags2').tagit({
