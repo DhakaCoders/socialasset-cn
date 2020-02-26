@@ -163,7 +163,7 @@
   min-height: 125px;
   margin-bottom: 3px;
   border-radius: 100px;
-  background: #0000;
+  background: transparent;
   -webkit-transition: all .5s ease;
   -ms-transition: all .5s ease;
   transition: all .5s ease;

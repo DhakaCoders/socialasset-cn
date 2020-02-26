@@ -167,6 +167,18 @@ span.miraclePlanthumbSlider-item img{
   display: inline-block;
   vertical-align: middle;
   margin-right: 16px;
+  position: relative;
+}  
+.miracle-plan-progress-camp ul li i:first-child {
+  max-width: 42px;
+}  
+.miracle-plan-progress-camp ul li i:last-child {
+  max-width: 105px;
+  top: -2px;
+} 
+
+.miracle-plan-progress-camp ul li i img{
+  width: 100%;
 }
 .miracle-plan-progress-camp ul li:last-child {
   padding-left: 16px;
@@ -282,7 +294,7 @@ span.miraclePlanthumbSlider-item img{
 
 .miracle-plan-progress-link-wrp .support-btn:hover{
   color: #0055FF;
-  background: #0000;
+  background: transparent;
 }
 .miracle-plan-progress-link-wrp .share-btn{
   display: inline-block;
@@ -301,7 +313,7 @@ span.miraclePlanthumbSlider-item img{
   margin-left: 9px;
   width: 30px;
   height: 30px;
-  border: 1px solid #0000;
+  border: 1px solid transparent;
   text-align: center;
   border-radius: 100%;
   background: #E2E2E2;
@@ -365,7 +377,7 @@ span.miraclePlanthumbSlider-item img{
   padding-right: 10px;
 }
 #ngo-preview-sec{
-  padding-top: 0;
+  padding-top: 95px;
 }
 #ngo-preview-sec .ngo-alert-box.alert-info {
   color: #fff;
@@ -453,12 +465,36 @@ span.miraclePlanthumbSlider-item img{
   -webkit-transition: all 0.5s;
 }
 
+.user-rel-camp-sec {
+  background: #F4F5F9;
+  padding: 82px 0 50px;
+}
+
+.user-rel-camp-sec .user-campaign-list-cntlr > ul > li{
+  float: left;
+}
+.user-rel-camp-sec .campaigns-vote-percentage span {
+  left: -6px;
+}
 
 
-
-
-
-
+.user-rel-camp-head{
+  padding-bottom: 48px;
+}
+.user-rel-camp-head h4{
+  color: #0054FD;
+  margin-bottom: 11px;  
+}
+.user-rel-camp-head p{
+  font-size: 16px;
+  margin-bottom: 12px;  
+}
+.user-rel-camp-sec .show-more-btn {
+  padding-bottom: 105px!important;
+}
+.user-rel-camp-sec .user-campaign-list-cntlr ul {
+  margin: 0 -10px 40px!important;
+}
 
 
 
@@ -510,6 +546,9 @@ span.miraclePlanthumbSlider-item img{
     left: 18px;
     top: 15px;
   }
+  .user-story-cmpaign-sec {
+    padding-bottom: 100px;
+  }
 }
 
 @media(max-width: 991px){
@@ -531,6 +570,9 @@ span.miraclePlanthumbSlider-item img{
     max-width: 705px;
     width: 100%;
   }
+  .user-rel-camp-sec .show-more-btn {
+    padding-bottom: 60px!important;
+  }
 }
 
 @media(max-width: 767px){
@@ -550,6 +592,15 @@ span.miraclePlanthumbSlider-item img{
   }
   .miracle-plan-progress-camp {
     padding-right: 0;
+  }
+  .user-rel-camp-sec .show-more-btn {
+    padding-bottom: 20px !important;
+  }
+  .user-story-cmpaign-sec {
+    padding-bottom: 60px;
+  }
+  #ngo-preview-sec {
+    padding-top: 60px;
   }
 }
 
@@ -630,6 +681,22 @@ span.miraclePlanthumbSlider-item img{
   #ngo-preview-sec .ngo-alert-box.alert-info strong {
     font-size: 11px;
   }
+
+.miracle-plan-progress-camp ul li i:first-child {
+  max-width: 35px;
+}
+.miracle-plan-progress-camp ul li i:last-child {
+  max-width: 95px;
+} 
+.miracle-plan-progress-camp ul li i {
+  margin-right: 15px;
+}
+.miracle-plan-progress-camp ul li:last-child {
+    padding-left: 15px;
+}
+.miracle-plan-progress-camp ul li:last-child span {
+  padding-top: 14px;
+}
 }
 
 
