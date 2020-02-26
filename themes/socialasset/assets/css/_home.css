@@ -336,9 +336,6 @@ span.hm-wc-social-assets-top-shape {
 }
 .hm-explore-campaigns-con{
 	min-height: 315px;
-/* 	display: flex;
-	align-items: center;
-	justify-content: center; */
 	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
@@ -367,19 +364,20 @@ span.hm-wc-social-assets-top-shape {
 .hm-explore-campaigns-link{
 	padding-top: 45px;
 }
-.hm-explore-campaigns-des{
-	max-width: 200px;
-	min-height: 105px;
-	text-align: center;
-	color: #fff;
+.hm-explore-campaigns-des-wrp{
 	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+}
+.hm-explore-campaigns-des{
+	color: #fff;
+	position: relative;
 	z-index: 3;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
 }
 .hm-explore-campaigns-des strong{
 	display: block;
