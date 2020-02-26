@@ -294,7 +294,7 @@ span.miraclePlanthumbSlider-item img{
 
 .miracle-plan-progress-link-wrp .support-btn:hover{
   color: #0055FF;
-  background: #0000;
+  background: transparent;
 }
 .miracle-plan-progress-link-wrp .share-btn{
   display: inline-block;
@@ -313,7 +313,7 @@ span.miraclePlanthumbSlider-item img{
   margin-left: 9px;
   width: 30px;
   height: 30px;
-  border: 1px solid #0000;
+  border: 1px solid transparent;
   text-align: center;
   border-radius: 100%;
   background: #E2E2E2;
