@@ -457,10 +457,43 @@ $('.site-lang a.active').on('click', function(e){
 });
 
 
+mycampaigns_url = '';
+if( $('#all_campaign').length ){
+  var mycampaigns_url = $('#all_campaign').data('campurl');
+}
 
+$('.archive_date').change(function(){               
+  var userDate = $(this).val();
+  var datearr = userDate.split('/');
+  var date_string = datearr[0]+'-'+datearr[1]+'-'+datearr[2];
+  window.location.href = mycampaigns_url+date_string;
+  //$('#archive_form').submit();
+});
 
+$('#keyword_form').click(function(event){  
+  event.preventDefault();             
+  var keyWord = $('#keyword').val();
+  window.location.href = mycampaigns_url+keyWord;
+});
 
+$('#perpage_set').on('change', function(){ 
+  var pageNum = $(this).val();
+  setCookie('per_page', pageNum, 1);              
+  window.location.href = location.href;
+});
+
+if( $('#active_camp_count').length ){
+  var ActiveCampCount = $('#active_camp_count').data('active_capm');
+  $('#total_active_camp').text(ActiveCampCount)
+}
 
     //new WOW().init();
 
 })(jQuery);
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}

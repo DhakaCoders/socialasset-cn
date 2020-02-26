@@ -49,7 +49,7 @@ jQuery(document).ready( function($){
            mattachment = mediaUploader.state().get('selection').first().toJSON(); 
         $('#_featured_picture').val(mattachment.id);
         //$('#profile-picture-priview').css('background-image', 'url(' + attachment.url + ')');
-        $('#featured-picture-priview').prepend($('<img>',{id:'set-post-thumb',src:mattachment.url}));
+        $('#featured-picture-priview').html($('<img>',{id:'set-post-thumb',src:mattachment.sizes.medium.url}));
         })
         
         mediaUploader.open();
@@ -78,14 +78,14 @@ jQuery(document).ready( function($){
 
               var attachments = multiMediaUploader.state().get('selection').map( 
 
-                  function( attachment ) {
+                  function( attachments ) {
 
-                      attachment.toJSON();
-                      return attachment;
+                      attachments.toJSON();
+                      return attachments;
 
               });
 
-              //loop through the array and do things with each attachment
+              //loop through the array and do things with each attachments
 
              var i;
 
@@ -95,7 +95,7 @@ jQuery(document).ready( function($){
                   //sample function 1: add image preview
                   $('#myplugin-placeholder').prepend('<li id="myplugin-image-li' + 
                     attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><img src="' + 
-                    attachments[i].attributes.url + '" ><input id="myplugin-image-input' + 
+                    attachments[i].attributes.sizes.thumbnail.url + '" ><input id="myplugin-image-input' + 
                     attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 
                     attachments[i].id + '"><div class="removeGallery" onclick="DeleteGalleryImage('+attachments[i].id+'); return false"><i class="fa fa-trash"></i></div></div></li>');
 

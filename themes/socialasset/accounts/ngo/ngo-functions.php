@@ -4,6 +4,8 @@ add_action('init', 'ngo_campaign_action_hook');
 function ngo_campaign_action_hook(){
 	if(is_user_logged_in()){
 		ngo_campaign_create();
+		ngo_campaign_update();
+		ajax_my_delete_capm_init();
 	}
 	
 }
@@ -41,7 +43,7 @@ function ngo_campaign_create(){
 			if(isset($_POST['campaign_tags']) && !empty($_POST['campaign_tags'])){
 				$tag_exp = explode(',', $_POST['campaign_tags']);
 				foreach ($tag_exp as $key => $tag_v) {
-					$tag_name = ucwords($tag_v);
+					$tag_name = ucwords(sanitize_text_field( $tag_v ));
 					$tag = get_term_by('name', $tag_v, 'campaign_tag');
 
 					if($tag && $tag->name == $tag_name){
@@ -88,10 +90,14 @@ function ngo_campaign_create(){
 				add_post_meta( $pid, 'capmpaign_from_date', $_POST['fromt_date'], true );
 				add_post_meta( $pid, 'capmpaign_to_date', $_POST['to_date'], true );
 			}
+			if(!empty($_POST['target_supporters']) && !empty($_POST['target_supporters'])){
+				add_post_meta( $pid, 'target_supporters', $_POST['target_supporters'], true );
+			}
 			add_post_meta( $pid, '_capmpaign_status', 'draft', true );
 			add_post_meta( $pid, '_supported_count', '0', true );
 			add_post_meta( $pid, '_supporter_ids', '', true );
-			$msg['success'] = 'Campaign saved successfully';
+			wp_redirect( home_url('myaccount/edit-campaign/'.$pid) );
+			exit();
 		}else{
 			$msg['error'] = 'Could not save';
 		}
@@ -99,3 +105,153 @@ function ngo_campaign_create(){
 	}
 	return false;
 }
+
+function ngo_campaign_update(){
+	global $msg, $wpdb;;
+	if (isset( $_POST["update_campaign"] ) && wp_verify_nonce($_POST['ngo_update_campaign_nonce'], 'ngo-update-campaign-nonce')) {
+		$user = wp_get_current_user();
+		if(isset($_POST['campaign']) && $_POST['campaign'] == '-1'){
+			$campaigncat = '';
+		}else{
+			$campaigncat = $_POST['campaign'];
+		}
+
+		if(empty($msg)){
+			$post_information = array(
+				'ID' =>  $_POST['capm_id'],
+				'post_author' => $user->ID,
+			    'post_title' => wp_strip_all_tags( $_POST['post_title'] ),
+			    'post_content' => $_POST['capmaign_content'],
+			    'post_type' => 'campaigns',
+			    'post_status' => 'publish'
+			);
+			 
+			$pid = wp_update_post($post_information);
+			$object_id = (int) $pid;
+			if(!empty($campaigncat)){
+				$cat_id = (int) $campaigncat;
+		        wp_set_object_terms( $object_id, $cat_id, 'campaign' );
+
+			}
+
+					
+
+			if(isset($_POST['campaign_tags']) && !empty($_POST['campaign_tags'])){
+				$tag_exp = explode(',', $_POST['campaign_tags']);
+
+				$post_tags = wp_get_post_terms( $object_id, 'campaign_tag', array( 'fields' => 'names' ) );
+					if(isset($post_tags) && !empty($post_tags) && $post_tags){
+						foreach ($post_tags as $p_tag) {
+							if( !in_array($p_tag, $tag_exp) ){
+								$d_tag = get_term_by('name', $p_tag, 'campaign_tag');
+								$dter_id = (int) $d_tag->term_id; 
+								$wpdb->delete(
+						        $wpdb->term_relationships,
+						            array(
+								        'object_id'        => $object_id,
+								        'term_taxonomy_id' => $dter_id
+								    ) 
+						        );
+							}
+						}
+					}
+
+				foreach ($tag_exp as $key => $tag_v) {
+					$tag_name = ucwords(sanitize_text_field($tag_v));
+					if( in_array($tag_name, $post_tags) ){
+
+					}else{
+
+						$tag = get_term_by('name', $tag_v, 'campaign_tag');
+						if($tag && $tag->name == $tag_name){
+							$camp_tag_id = (int) $tag->term_id;
+							$wpdb->insert(
+					            $wpdb->term_relationships,
+					            array(
+					                'object_id'        => $object_id,
+					                'term_taxonomy_id' => $camp_tag_id,
+					            )
+					        );
+						}else{
+							$current_tag = wp_insert_term($tag_name, 'campaign_tag');
+							if($current_tag && !isset($current_tag->errors['term_exists'])){
+								$camp_tag_id = (int) $current_tag['term_id'];
+								$wpdb->insert(
+						            $wpdb->term_relationships,
+						            array(
+						                'object_id'        => $object_id,
+						                'term_taxonomy_id' => $camp_tag_id,
+						            )
+						        );
+							}
+						}
+					}
+				}
+			}
+			if(isset($_POST['attachment_id_array']) && !empty($_POST['attachment_id_array'])){
+				$gallery_ids = array();
+				foreach( $_POST['attachment_id_array'] as $attach_id ) {
+					$gallery_ids[] = $attach_id;
+								
+				}
+				//$gallary_serialized = serialize($gallery_ids);
+				update_post_meta ( $pid, 'campaign_gallery', $gallery_ids );
+			}
+			
+			if(isset($_POST['_thumbnail_id'])){
+				set_post_thumbnail( $pid, $_POST['_thumbnail_id'] );
+			}
+			if(!empty($_POST['fromt_date']) && !empty($_POST['to_date'])){
+				update_post_meta( $pid, 'capmpaign_from_date', $_POST['fromt_date']);
+				update_post_meta( $pid, 'capmpaign_to_date', $_POST['to_date']);
+			}
+			if(!empty($_POST['target_supporters']) && !empty($_POST['target_supporters'])){
+				update_post_meta( $pid, 'target_supporters', $_POST['target_supporters']);
+			}
+			$msg['success'] = 'Campaign updated successfully';
+		}else{
+			$msg['error'] = 'Could not update';
+		}
+		return $msg;
+	}
+	return false;
+}
+
+function get_edit_campaign_post_data( $id ){
+	if( empty($id) ) return;
+
+	$get_post = get_post((int)$id);
+	if( $get_post ){
+		return $get_post;
+	}else{
+		return false;
+	}
+
+}
+
+function ajax_my_delete_capm_init(){
+    wp_register_script('ajax-delete-camp-script', get_stylesheet_directory_uri(). '/assets/js/ajax-scripts.js', array('jquery') );
+    wp_enqueue_script('ajax-delete-camp-script');
+
+    wp_localize_script( 'ajax-delete-camp-script', 'ajax_delete_camp_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+}
+add_action('wp_ajax_my_delete_capm', 'my_delete_capm');
+
+function my_delete_capm(){
+ 
+    $permission = check_ajax_referer( 'my_delete_camp_nonce', 'nonce', false );
+    if( $permission == false ) {
+        echo 'error';
+    }
+    else {
+        wp_delete_post( $_REQUEST['id'] );
+        echo 'success';
+    }
+ 
+    die();
+ 
+}
+

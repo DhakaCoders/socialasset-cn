@@ -44,6 +44,10 @@
               </div>
             </div>
           </div>
+          <div class="ncc-input-fields-row ncc-input-title-fields-row">
+            <label>Target supporters</label>
+            <input type="number" name="target_supporters" placeholder="Enter number" min="1" pattern="\d*" required="required">
+          </div>
           <div class="ncc-input-fields-row ngo-upload-cover-photo">
             <div class="ngo-upload-cover-photo-inr">
               <div id="featured_image">
