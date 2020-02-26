@@ -340,6 +340,7 @@ if( $('.miraclePlanBigSlider').length ){
     speed: 700,
     dots: false,
     arrows: false,
+    fade: true,
     asNavFor: '.miraclePlanthumbSlider',
   });
 }

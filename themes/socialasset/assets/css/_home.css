@@ -124,6 +124,9 @@
 	text-transform: uppercase;
 	font-weight: 700;
 	line-height: 56px;
+	-webkit-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
 }
 .hm-banner-design-2 h2 span{
 	position: relative;

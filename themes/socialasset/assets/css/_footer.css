@@ -233,7 +233,9 @@
 }
 
 @media(max-width: 575px){
-
+  .nl-from-wrp input {
+    padding: 15px 70px 18px 24px;
+  }
 
 }
 
