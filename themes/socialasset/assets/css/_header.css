@@ -177,7 +177,7 @@ header.header{
 .humberger-menu-btn{
 	text-align: center;
 	cursor: pointer;
-	padding: 5px 30px 0 15px;
+	padding: 5px 30px 0 8px;
 	margin-top: 2px;
 	width: 71px;
 	height: 71px;
@@ -192,10 +192,10 @@ header.header{
 	font-weight: 500;
 	display: block;
 	padding-top: 0;
-	padding-left: 1px;
+	padding-left: 0;
 }
 .hdr-btns{
-	padding-right: 8px;
+	padding-right: 13px;
 }
 .login-btn{
 	padding: 3px 4px 3px;

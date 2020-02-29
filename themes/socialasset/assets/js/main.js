@@ -59,50 +59,6 @@ Responsive on 767px
 
 
 
-// http://codepen.io/norman_pixelkings/pen/NNbqgG
-// https://stackoverflow.com/questions/38686650/slick-slides-on-pagination-hover
-
-
-/**
-Slick slider
-*/
-if( $('.responsive-slider').length ){
-    $('.responsive-slider').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
-    });
-}
 
 
 
@@ -137,8 +93,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 }
 
-
-/*Shoriful*/
 
 $('.sa-main-slider').slick({
       pauseOnHover: false,
@@ -219,10 +173,6 @@ if( $('.sa-company-name').length ){
 
 
 
-
-
-/*Milon*/
-
 /*
 -----------------------
 Start Contact Google Map ->> 
@@ -262,20 +212,18 @@ if( $('#googlemap').length ){
 }
 
 
-
-
-
-/*Prashanto*/
 /*
  Product Details Slider
 */
 
 if( $('.hm-banner-slider').length ){
   $('.hm-banner-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 4000,
       dots: true,
       arrows: false,
-      infinite: false,
-      speed: 300,
+      infinite: true,
+      speed: 700,
       slidesToShow: 1,
       slidesToScroll: 1
   });
@@ -365,9 +313,6 @@ if ($('#socialCookie').length) {
   });
 }
 
-
-
-/*Rannojit*/
 
 var allPanels = $('.hh-accordion-des').hide();
 $('.hh-accordion-tab-row').removeClass('remove-border');
