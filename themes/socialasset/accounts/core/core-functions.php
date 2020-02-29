@@ -31,13 +31,15 @@ function redirect_user_frontend_dashboard(){
 }
 
 function custom_rewrite_rule() {
-    add_rewrite_rule('^myaccount/([^/]+)([/]?)(.*)','index.php?pagename=myaccount&action=$matches[1]&id=$matches[3]','top');
+    add_rewrite_rule('^myaccount/([^/]+)([/]?)(.*)','index.php?pagename=myaccount&var1=$matches[1]&var2=$matches[3]&var3=$matches[5]&var4=$matches[7]','top');
 
 }
 
 function custom_rewrite_tag() {
-  add_rewrite_tag('%action%', '([^&]+)');
-  add_rewrite_tag('%id%', '([^&]+)');
+  add_rewrite_tag('%var1%', '([^&]+)');
+  add_rewrite_tag('%var2%', '([^&]+)');
+  add_rewrite_tag('%var3%', '([^&]+)');
+  add_rewrite_tag('%var4%', '([^&]+)');
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 add_filter('init', 'custom_rewrite_rule');
@@ -101,7 +103,7 @@ if(!function_exists('allow_ngo_uploads')){
     $ngo_role = get_role('ngo');
     $ngo_role->add_cap('read');
     $ngo_role->add_cap('upload_files');
-
+    //$ngo_role->add_cap('edit_posts');
 
 
     $b_role = get_role('business');
@@ -203,6 +205,55 @@ function camp_expire_date($expiredate){
     return false;
   }
 
+}
+
+function date_remaining($expire){
+  $diff = false;
+  $time = new DateTime($expire);
+  $timediff = $time->diff(new DateTime());
+  if(!empty($timediff)):
+    if( $timediff->y >=2){
+      $diff = $timediff->format('%y years left');
+    }
+    elseif($timediff->y == 1  ){
+      $diff = $timediff->format('%y year left');
+    }
+    elseif($timediff->m >=2){
+      $diff = $timediff->format('%m months left');
+    }
+    elseif($timediff->m == 1){
+      $diff = $timediff->format('%m month left');
+    }
+    elseif($timediff->d >= 2){
+      $diff = $timediff->format('%d days left');
+    }
+    elseif( ($timediff->d == 1)){
+      $diff = $timediff->format('%d day left');
+    }
+    elseif( ($timediff->h >= 0) ){
+      $diff = $timediff->format('1 day left');
+    }
+  endif;
+  return $diff;
+}
+
+function get_camp_video_url($video_id){
+  if( empty($video_id) ) return;
+  $video_url = wp_get_attachment_url($video_id);
+  if( !empty($video_url) )
+    return $video_url;
+  else
+    return false;
+  
+}
+function is_capm_video( $video_id ){
+  if( empty($video_id) ) return;
+
+  $isVedio = wp_attachment_is('video', $video_id );
+  if( $isVedio )
+    return true;
+  else
+    return false;
 }
 
 function camp_is_date($date){

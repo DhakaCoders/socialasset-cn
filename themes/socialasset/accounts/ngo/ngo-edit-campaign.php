@@ -1,8 +1,8 @@
 <?php 
-$id = $wp_query->get( 'id' );
-$camp_data = get_edit_campaign_post_data($id);
-//var_dump($camp_data);
-if($camp_data){
+$var2 = $wp_query->get( 'var2' );
+$camp_data = get_edit_campaign_post_data($var2);
+//printr($camp_data);
+if($camp_data && isset($var2) && !empty($var2)){
   $content = isset($camp_data->post_content)? $camp_data->post_content: '';
   $target_supporters = get_field('target_supporters', $camp_data->ID);
   $target_support = '';
@@ -66,7 +66,7 @@ if($camp_data){
               <div class="date-field">
                 <label>From:</label>
                 <div class="date-input">
-                  <input type="text" name="fromt_date" id="datepicker2" value="<?php echo $fromdate; ?>" required="required">
+                  <input type="text" name="fromt_date" id="datepicker2" value="<?php echo $fromdate; ?>" required="required" autocomplete="off">
                   <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
                 </div>
               </div>
@@ -75,7 +75,7 @@ if($camp_data){
               <div class="date-field">
                 <label>To:</label>
                 <div class="date-input">
-                  <input type="text" name="to_date" value="<?php echo $todate; ?>" id="datepicker3" required="required">
+                  <input type="text" name="to_date" value="<?php echo $todate; ?>" id="datepicker3" required="required" autocomplete="off">
                   <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
                 </div>
               </div>
@@ -110,9 +110,7 @@ if($camp_data){
               <ul class="ulc clearfix" id="myplugin-placeholder">
                 <?php 
                   if($cam_galleries){
-                    //var_dump($cam_galleries);
                     foreach( $cam_galleries as $gallery_id ):
-
                       if(isset($gallery_id['id']) && !empty($gallery_id['id'])){
                         $g_id = $gallery_id['id'];
                       }elseif(isset($gallery_id) && !empty($gallery_id)){
@@ -124,7 +122,13 @@ if($camp_data){
                 ?>
                 <li id="myplugin-image-li<?php echo $g_id; ?>">
                   <div class="ncc-campaign-gallery-add-img">
-                    <?php echo $gallery_image; ?>
+                    <?php if(is_capm_video($g_id)): ?>
+                      <video width="100" height="100" controls>
+                        <source src="<?php echo get_camp_video_url( $g_id ); ?>" type="video/mp4">
+                      </video>
+                    <?php else: ?>
+                    <?php echo $gallery_image;?>
+                    <?php endif;?>
                     <input id="myplugin-image-input<?php echo $g_id; ?>" type="hidden" name="attachment_id_array[]" value="<?php echo $g_id; ?>">
                     <div class="removeGallery" onclick="DeleteGalleryImage(<?php echo $g_id; ?>); return false">
                       <i class="fa fa-trash"></i>
@@ -158,7 +162,11 @@ if($camp_data){
           </div>
           <input type="hidden" name="ngo_update_campaign_nonce" value="<?php echo wp_create_nonce('ngo-update-campaign-nonce'); ?>"/>
           <div class="ncc-submit-btns">
-            <button>PREVIEW</button>
+                    <?php $preview_url = $camp_data->post_type.'/'.
+                      $camp_data->post_name.'/?preview_id='.
+                      $camp_data->ID.'&preview=true'; 
+                    ?>
+            <a href="<?php echo esc_url(home_url($preview_url));?>">PREVIEW</a>
             <input type="submit" name="update_campaign" value="Submit">
           </div>
         </div>

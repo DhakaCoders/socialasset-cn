@@ -117,7 +117,8 @@ function ngo_user_create_account(){
 					add_user_meta( $new_user_id, '_show_my_profile', 'true', true );
 					add_user_meta( $new_user_id, '_show_my_campaigns', 'true', true );
 				}
-				add_user_meta( $new_user_id, '_get_newsletters', 'no', true );
+				add_user_meta( $new_user_id, '_get_newsletters', '0', true );
+				add_user_meta( $new_user_id, '_support_camp_ids', '', true );
 				add_user_meta( $new_user_id, '_user_account_status', 'draft', true );
 				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
 					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );

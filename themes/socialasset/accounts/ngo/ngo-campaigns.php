@@ -1,26 +1,30 @@
 <?php 
-$active_camp = 0;
-$var_2 = $wp_query->get( 'id' );
 $date_arg = $keyword = '';
 $per_page = 3;
-if(isset($var_2) && !empty($var_2)){
-  if(camp_is_date($var_2)){
-    $exp_date = explode('-', $var_2);
-    $date_arg = array(
-         'year'  => $exp_date[2],
-         'month' => $exp_date[0],
-         'day'   => $exp_date[1],
-        );
-  }else{
-    $keyword = $var_2;
-  }
+if(isset($_GET['search']) && !empty($_GET['search'])){
+  $keyword = $_GET['search'];
+}elseif(isset($_GET['archive']) && !empty($_GET['archive'])){
+  $exp_date = explode('-', $_GET['archive']);
+  $date_arg = array(
+       'year'  => $exp_date[2],
+       'month' => $exp_date[0],
+       'day'   => $exp_date[1],
+      );
+
 }
+
+
 
 if(isset($_COOKIE['per_page']) && !empty($_COOKIE['per_page'])) {
   $per_page = $_COOKIE['per_page'];
 }
+$var2 = $wp_query->get( 'var2' );
+if( isset($var2) && !empty($var2) )
+  $var2_int = (int) filter_var($var2, FILTER_SANITIZE_NUMBER_INT);
+else
+  $var2_int = '';
 
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = (!empty($var2_int)) ? $var2_int : 1;
 $Query = new WP_Query(array( 
     'post_type'=> 'campaigns',
     'post_status' => array('publish', 'draft', 'pending'),
@@ -37,7 +41,7 @@ $Query = new WP_Query(array(
 <div id="tab-2" class="">
   <div class="tab-con-inr">
     <div class="ngo-campaigns-tab-hdr clearfix">
-      <strong><span id="total_active_camp">0</span> Active Campaigns</strong>
+      <strong><span id="total_active_camp"><?php echo get_count_posts_by_author('campaigns', $user->ID); ?></span> Active Campaigns</strong>
       <div class="ngo-campaigns-tab-hdr-rgt">
         <form id="archive_form">
           <div class="ngo-archive">
@@ -48,10 +52,10 @@ $Query = new WP_Query(array(
             </div>
           </div>
         </form>
-          <form>
+          <form action="" method="get">
           <div class="search-by-name">
-            <input type="search" id="keyword" value="<?php echo $keyword; ?>">
-            <button id="keyword_form"><i class="fas fa-search"></i></button>
+            <input type="search" name="search" value="<?php echo $keyword; ?>">
+            <button><i class="fas fa-search"></i></button>
           </div>
         </form>
       </div>
@@ -71,7 +75,6 @@ $Query = new WP_Query(array(
           </thead>
           <tbody>
           <?php 
-            $i = 1;
             while($Query->have_posts()): $Query->the_post(); 
             $attach_id = get_post_thumbnail_id(get_the_ID());
             if( !empty($attach_id) ){
@@ -87,6 +90,8 @@ $Query = new WP_Query(array(
                    $term_name = $category->name; 
                 }
             }
+            $SupportLimit = get_post_meta( get_the_ID() , 'target_supporters', true );
+            $totalSupport = get_post_meta( get_the_ID() , '_supported_count', true );
             $camp_data = get_edit_campaign_post_data(get_the_ID());
             $expire_date = get_field('capmpaign_to_date', get_the_ID());
             $expire ='';
@@ -102,7 +107,9 @@ $Query = new WP_Query(array(
               <td>
                 <div class="tbl-td">
                   <strong>Category</strong>
+                  <?php if( !empty($term_name) ): ?>
                   <span class="tbl-cat-name"><?php echo $term_name; ?></span>
+                  <?php endif; ?>
                 </div>
               </td>
               <td>
@@ -120,6 +127,7 @@ $Query = new WP_Query(array(
                         <?php if( !camp_expire_date($expire) ){ ?>
                         | <a href="<?php echo esc_url(home_url('myaccount/mycampaigns/'.get_the_ID()));?>" onclick="return confirm('Are you sure you want to delete at this campaign: <?php echo get_the_title() ?>?')" style="color: red;" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('my_delete_camp_nonce') ?>" class="delete-capm">Delete</a> 
                         <?php } ?>
+                        | <a href="<?php the_permalink(); ?>" target="_blank">View</a> 
                       </div>
                     </div>
                   </div>
@@ -133,7 +141,6 @@ $Query = new WP_Query(array(
                       echo '<span class="status-btn status-btn-expired">EXPIRED</span>';
                     }elseif($camp_data->post_status == 'publish'){
                       echo '<span class="status-btn status-btn-active">ACTIVE</span>';
-                      $active_camp += $i;
                     }elseif($camp_data->post_status == 'pending'){
                       echo '<span class="status-btn status-btn-pending">PENDING</span>';
                     }else{
@@ -144,10 +151,15 @@ $Query = new WP_Query(array(
                 </div>
               </td>
               <td>
+                <?php 
+                  $percentange = camp_progress_bar($SupportLimit, $totalSupport);
+                  $prog_value = 0;
+                  if( $percentange ) $prog_value = $percentange;
+                ?>
                 <div class="tbl-td">
                   <strong>Progress</strong>
                   <div class="ngo-td-progress">
-                    <span>20%</span>
+                    <span><?php echo $prog_value; ?>%</span>
                   </div>
                 </div>
               </td>
@@ -168,7 +180,7 @@ $Query = new WP_Query(array(
             echo paginate_links( array(
               'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
               'format' => '?paged=%#%',
-              'current' => max( 1, get_query_var('paged') ),
+              'current' => max( 1, $var2_int ),
               'total' => $Query->max_num_pages,
               'type'  => 'list',
               'show_all' => true,
@@ -198,6 +210,5 @@ $Query = new WP_Query(array(
     </div>
     <?php else: ?>
     <?php endif; wp_reset_postdata();?>
-    <span id="active_camp_count" data-active_capm="<?php echo $active_camp; ?>" style="display: none;"></span>
   </div>
 </div>

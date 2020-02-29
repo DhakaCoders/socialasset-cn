@@ -112,9 +112,9 @@ $('#change_pass_form').submit(function(){
 });
 
 
-$('input[type="checkbox"]').change(function(){
+/*$('input[type="checkbox"]').change(function(){
     this.value = (Number(this.checked));
-});
+});*/
 
 
 if( windowWidth > 767 ){

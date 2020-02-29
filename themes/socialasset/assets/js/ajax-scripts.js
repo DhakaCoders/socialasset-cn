@@ -60,10 +60,32 @@ jQuery(document).ready(function($) {
             }
         })
         return false;
-    })
+    });
 
 });
-
+function UserAddSupport(id){
+    jQuery.ajax({
+        type: 'post',
+        dataType: 'JSON',
+        url: ajax_support_camp_object.ajaxurl,
+        data: {
+            action: 'my_support_capm',
+            nonce: 'nonce',
+            id: id
+        },
+        success: function( result ) {
+            console.log(result);
+            if( typeof(result['success']) != "undefined" &&  result['success'].length != 0 && result['success'] == 'success' ) {
+                alert('supported successfully');
+            }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
+                alert('supported already');
+            }else{
+                alert('Something wrong please try again');
+            }
+        }
+    })
+    return false;
+}
 function SubmitSignupFormData(){
     var error = false;
     var serialized = jQuery( '#user-signup' ).serialize();

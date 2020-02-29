@@ -1673,7 +1673,8 @@ span.status-published-title.color-red{
 	justify-content: flex-end;
 }
 
-.ncc-submit-btns button{
+.ncc-submit-btns button,
+.ncc-submit-btns a{
 	width: 130px;
 	height: 52px;
 	font-size: 12px;
@@ -1685,6 +1686,9 @@ span.status-published-title.color-red{
 	color: #868686;
 	margin-right: 22px;
 	cursor: pointer;
+}
+.ncc-submit-btns a{
+	line-height: 52px;
 }
 .ncc-submit-btns input[type="submit"]{
 	width: 195px;
@@ -1809,7 +1813,10 @@ a.ui-datepicker-next:after {
 .content-center-cntlr .login-form-cntlr{
 	height: 100%;
 }
-
+.ncc-campaign-gallery-add-img video {
+    width: 100px;
+    height: 100px;
+}
 @media(max-width: 1499px){
 
 }

@@ -73,3 +73,49 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+function get_camp_header(){
+    if( is_user_logged_in() ){
+        get_header('logged');
+    }else{
+        get_header();
+    }
+}
+
+ function get_count_posts_by_author($post_type = 'post', $authorID){
+   global $wpdb;
+   if( empty($authorID) ) return;
+   
+    $result_count = the_count_active_camp($post_type, $authorID);
+    if($result_count)
+      return $result_count;
+    else
+      return false;
+ }
+
+ function the_count_active_camp($post_type, $authorID){
+    $expire_camp = 0;
+    $Query = new WP_Query(array( 
+      'post_type'=> $post_type,
+      'post_status' => array('publish'),
+      'post_author' => $authorID,
+      'posts_per_page' => -1,
+    ) 
+    );
+    if($Query->have_posts()){
+      $totalCount = 0;
+      $Count = $Query->found_posts;
+      $i = 1;
+      while($Query->have_posts()): $Query->the_post(); 
+        $expire_date = get_field('capmpaign_to_date', get_the_ID());
+        $expire ='';
+        if( !empty($expire_date) ) $expire = $expire_date;
+        if( camp_expire_date($expire) ){
+          $expire_camp += $i;
+        }
+      endwhile;
+      $totalCount = ( $Count - $expire_camp );
+      wp_reset_postdata();
+      return $totalCount;
+    }
+    return false;
+ }

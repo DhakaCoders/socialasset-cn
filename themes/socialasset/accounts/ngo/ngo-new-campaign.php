@@ -29,7 +29,7 @@
               <div class="date-field">
                 <label>From:</label>
                 <div class="date-input">
-                  <input type="text" name="fromt_date" id="datepicker2" required="required">
+                  <input type="text" name="fromt_date" id="datepicker2" required="required" autocomplete="off">
                   <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
                 </div>
               </div>
@@ -38,7 +38,7 @@
               <div class="date-field">
                 <label>To:</label>
                 <div class="date-input">
-                  <input type="text" name="to_date" id="datepicker3" required="required">
+                  <input type="text" name="to_date" id="datepicker3" required="required" autocomplete="off">
                   <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
                 </div>
               </div>

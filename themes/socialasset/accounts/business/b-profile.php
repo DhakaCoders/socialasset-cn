@@ -19,12 +19,12 @@
       }
     ?>
     <div class="tab-con-title">
-      <strong>Account Details</strong>
+      <strong>My Account</strong>
     </div>
-    
       <div class="clearfix tab-con-col-row">
-        <form action="" method="post">
+        
         <div class="tab-con-col-4">
+          <form action="" method="post">
           <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
             <div class="profile-edit-step-1 profile-img-step-1">
               <div class="profile-img branding-logo" id="profile-priview">
@@ -45,14 +45,8 @@
                 </label>
               </div>
             </div>
+            <strong>Web Flow</strong>
 
-            <?php 
-            $ngoname = '';
-            if( isset($umetas['_ngo_name']) && !empty($umetas['_ngo_name']) ){
-              printf('<strong>%s</strong>', $umetas['_ngo_name']);
-              $ngoname = $umetas['_ngo_name'];
-            }
-            ?>
             <?php if(isset($user->user_email) && !empty($user->user_email)): ?>
             <span style="display: block;"><?php echo $user->user_email; ?></span>
             <?php endif;?>
@@ -65,19 +59,6 @@
               }
             }
             ?>
-
-            <div class="plr-30 profile-edit-step-2">
-                <div class="fl-input-field-row clearfix sa-input text-left username-filed">
-                <label>Username</label>
-                <input id="get_username" type="text" name="_ngo_name" value="<?php echo $ngoname; ?>">
-              </div>
-              <div class="fl-input-field-row clearfix sa-input text-left username-filed">
-                <label>About Your NGO</label>
-                <textarea name="_about_ngo" placeholder="Type a brief about your NGO"><?php if( isset($umetas['_about_ngo']) && !empty($umetas['_about_ngo']) ){
-                    printf('%s', $umetas['_about_ngo']);
-                  }?></textarea>
-              </div>
-            </div>
             <div style="height: 1px"></div>
             <hr class="clearfix">
             <div class="plr-30">
@@ -87,7 +68,7 @@
               </div>
               <input type="hidden" name="user_change_profile_image_nonce" value="<?php echo wp_create_nonce('user-change-profile-image-nonce'); ?>"/>
               <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
-                
+              <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
                 <input type="submit" name="save_profile_logo" value="Save Changes">
                 <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
                 <a href="javascript:void(0)" id="edit-profile-cancle-btn" href="#">Cancel</a>
@@ -95,6 +76,7 @@
             </div>
           </div>
         </div>
+      </div>
         </form>
         <div class="tab-con-col-8">
           <div class="has-bx-shadow profile-rgt-info-bx-cntlr">
@@ -139,7 +121,6 @@
               <?php 
                 $newsl_check = $umetas['_get_newsletters'];
               ?>
-              
               <div class="switch-item">
                 <div class="switch-checkbox">
                   <input type="checkbox" id="checkbox-switch1">
@@ -156,7 +137,7 @@
               </div>
               <div class="switch-item">
                 <div class="switch-checkbox">
-                  <input type="checkbox" id="checkbox-switch3" value="">
+                  <input type="checkbox" id="checkbox-switch3">
                   <span class="checkbox-slider"></span>
                 </div>
                 <label for="checkbox-switch3">Emails for new campaigns</label>

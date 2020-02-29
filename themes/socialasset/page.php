@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_camp_header(); ?>
 
 <?php while( have_posts() ): the_post(); ?>
 <div class="sc-dsc-wrp">

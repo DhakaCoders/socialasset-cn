@@ -32,7 +32,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="header">
+<header class="header hdr-has-shadow">
   <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -45,7 +45,7 @@
             <!-- 
               If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
              -->
-            <div class="hdr-rgt">
+            <div class="hdr-rgt logged-menu">
               <nav class="main-nav logout-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
@@ -93,11 +93,27 @@
                     <li><a href="#">My Profile</a></li>
                     <li>
                       <i class="fas fa-sign-out-alt"></i>
-                      <a href="#">Log out</a>
+                      <?php 
+                      $user = wp_get_current_user();
+                      if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
+                      ?>
+                      <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
+                      <?php
+                      }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
+                      ?>
+                      <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
+                      <?php
+                      }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
+                      ?>
+                      <a href="<?php get_ao_custom_logout('business-login'); ?>">Log out</a>
+                      <?php
+                      }
+                      ?>
                     </li>
                   </ul>
                 </div>
-              </nav>              
+              </nav>
+              
               <div class="humberger-menu-btn">
                 <strong>MENU</strong>
                 <div class="humberger-menu-btn-lines">
@@ -105,9 +121,10 @@
                   <span></span>
                   <span></span>
                 </div>
-              </div>              
+              </div>
+              
             </div>
-            <div class="humberger-menu humberger-menu-xlg">
+            <div class="humberger-menu">
               <ul class="clearfix ulc">
                 <li><a href="#">Humanity</a></li>
                 <li><a href="#">Animals</a></li>
@@ -131,81 +148,6 @@
                 </div>
               </div>
             </div>
-
-
-            <!-- 
-              If you want logged navbar. please use the class on '.humberger-menu .humberger-menu-xs  .logged-menu'
-             -->
-            <div class="humberger-menu humberger-menu-xs logged-menu clearfix">
-              <div class="humberger-menu-items clearfix">
-                <ul class="clearfix ulc xs-logout-inner-menu">
-                  <li><a href="#">For NGOs</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">For Businesses</a>
-                    <ul class="sub-menu">
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Campaigns</a></li>
-                </ul>
-                <ul class="clearfix ulc xs-logged-inner-menu">
-                  <li><a href="#">How it Works</a></li>
-                  <li><a href="#">Support a Campaign</a></li>
-                </ul>
-                <ul class="clearfix ulc">
-                  <li><a href="#">Humanity</a></li>
-                  <li><a href="#">Animals</a></li>
-                  <li><a href="#">Environment</a></li>
-                  <li><a href="#">Health</a></li>
-                  <li><a href="#">Education</a></li>
-                </ul>
-                <ul class="clearfix ulc">
-                  <li><a href="#">What We Do</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              <div class="xs-menu-footer clearfix">
-                <div class="xs-login-area">
-                  <h6>Login</h6>
-                  <div>
-                    <a href="#">For <strong>NGOs</strong></a>
-                    <a href="#">For <strong>USERs</strong></a>
-                  </div>
-                </div>
-                <div class="xs-hdr-login-profile">
-                  <div class="hdr-login-profile">
-                    <div>
-                      <div class="hdr-login-profile-img">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/hdr-login-profile-img.png">
-                      </div>
-                      <strong>Georgio</strong>
-                    </div>
-                    <ul class="ulc clearfix">
-                      <li><a href="#">My Contributions</a></li>
-                      <li><a href="#">My Profile</a></li>
-                      <li>
-                        <i class="fas fa-sign-out-alt"></i>
-                        <a href="#">Log out</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="languages-area">
-                  <label>Languages:</label>
-                  <div class="site-lang-holder clearfix">
-                    <div class="site-lang">
-                      <a href="#" class="active">En <span class="ede-down-angle"></span></a>
-                      <a href="#">Gr</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>

@@ -467,7 +467,13 @@ $('.archive_date').change(function(){
   var userDate = $(this).val();
   var datearr = userDate.split('/');
   var date_string = datearr[0]+'-'+datearr[1]+'-'+datearr[2];
-  window.location.href = mycampaigns_url+date_string;
+  window.location.href = mycampaigns_url+'/?archive='+date_string;
+  //$('#archive_form').submit();
+});
+
+$('#campaign_sort').on('change', function(){               
+  var campSort = $(this).val();
+  window.location.href = mycampaigns_url+'/?sorting='+campSort;
   //$('#archive_form').submit();
 });
 
@@ -482,11 +488,6 @@ $('#perpage_set').on('change', function(){
   setCookie('per_page', pageNum, 1);              
   window.location.href = location.href;
 });
-
-if( $('#active_camp_count').length ){
-  var ActiveCampCount = $('#active_camp_count').data('active_capm');
-  $('#total_active_camp').text(ActiveCampCount)
-}
 
     //new WOW().init();
 

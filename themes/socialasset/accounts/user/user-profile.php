@@ -19,9 +19,8 @@
       }
     ?>
     <div class="tab-con-title">
-      <strong>Account Details</strong>
+      <strong>My Account</strong>
     </div>
-    
       <div class="clearfix tab-con-col-row">
         <form action="" method="post">
         <div class="tab-con-col-4">
@@ -41,42 +40,22 @@
                 <input type="button" name="" value="" id="choose-file">
                 <label for="choose-file">
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
-                  <span class="file-up-instruction-txt">CLICK TO ADD<br> YOUR LOGO</span>
                 </label>
               </div>
             </div>
-
             <?php 
-            $ngoname = '';
-            if( isset($umetas['_ngo_name']) && !empty($umetas['_ngo_name']) ){
-              printf('<strong>%s</strong>', $umetas['_ngo_name']);
-              $ngoname = $umetas['_ngo_name'];
+            $urname = '';
+            if( isset($user->first_name) && !empty($user->first_name) ){
+              printf('<strong id="set_username">%s</strong>', $user->first_name);
+              $urname = $user->first_name;
             }
             ?>
             <?php if(isset($user->user_email) && !empty($user->user_email)): ?>
-            <span style="display: block;"><?php echo $user->user_email; ?></span>
+            <span><?php echo $user->user_email; ?></span>
             <?php endif;?>
-            <?php 
-            if( isset($umetas['_user_account_status']) && !empty($umetas['_user_account_status']) ){
-              if($umetas['_user_account_status'] == 'draft'){
-                printf('<span class="status-published-title color-red">STATUS: %s</span>', $umetas['_user_account_status']);
-              }else{
-                printf('<span class="status-published-title">STATUS: %s</span>', $umetas['_user_account_status']);
-              }
-            }
-            ?>
-
-            <div class="plr-30 profile-edit-step-2">
-                <div class="fl-input-field-row clearfix sa-input text-left username-filed">
-                <label>Username</label>
-                <input id="get_username" type="text" name="_ngo_name" value="<?php echo $ngoname; ?>">
-              </div>
-              <div class="fl-input-field-row clearfix sa-input text-left username-filed">
-                <label>About Your NGO</label>
-                <textarea name="_about_ngo" placeholder="Type a brief about your NGO"><?php if( isset($umetas['_about_ngo']) && !empty($umetas['_about_ngo']) ){
-                    printf('%s', $umetas['_about_ngo']);
-                  }?></textarea>
-              </div>
+            <div class="fl-input-field-row profile-edit-step-2 clearfix sa-input plr-30 text-left username-filed">
+              <label>Your Name</label>
+              <input id="get_username" type="text" name="" value="<?php echo $urname; ?>">
             </div>
             <div style="height: 1px"></div>
             <hr class="clearfix">
@@ -87,7 +66,6 @@
               </div>
               <input type="hidden" name="user_change_profile_image_nonce" value="<?php echo wp_create_nonce('user-change-profile-image-nonce'); ?>"/>
               <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
-                
                 <input type="submit" name="save_profile_logo" value="Save Changes">
                 <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
                 <a href="javascript:void(0)" id="edit-profile-cancle-btn" href="#">Cancel</a>
@@ -139,7 +117,6 @@
               <?php 
                 $newsl_check = $umetas['_get_newsletters'];
               ?>
-              
               <div class="switch-item">
                 <div class="switch-checkbox">
                   <input type="checkbox" id="checkbox-switch1">
@@ -156,7 +133,7 @@
               </div>
               <div class="switch-item">
                 <div class="switch-checkbox">
-                  <input type="checkbox" id="checkbox-switch3" value="">
+                  <input type="checkbox" id="checkbox-switch3">
                   <span class="checkbox-slider"></span>
                 </div>
                 <label for="checkbox-switch3">Emails for new campaigns</label>

@@ -3,7 +3,6 @@ global $msg, $wp_query;
 defined( 'ABSPATH' ) || exit; 
 include('header.php'); 
 ?>
-<a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
 <div class="gray-bg">
   <section class="ngo-profile-sec">
     <div class="container">
@@ -12,16 +11,16 @@ include('header.php');
             <div class="ngo-profile-sec-iner width-1115">
               <?php 
               include('menu.php');
-              $action = $wp_query->get( 'action' );
-              $id = $wp_query->get( 'id' );
-              if( isset($action) && !empty($action) ){
-                if( $action == 'mycampaigns'){
+              $var1 = $wp_query->get( 'var1' );
+              $var2 = $wp_query->get( 'var2' );
+              if( isset($var1) && !empty($var1) ){
+                if( $var1 == 'mycampaigns'){
                   include('ngo-campaigns.php');
-                }elseif($action == 'add-campaign'){
+                }elseif($var1 == 'add-campaign'){
                   include('ngo-new-campaign.php');
-                }elseif( $action == 'edit-campaign' && !empty($id)){
+                }elseif( $var1 == 'edit-campaign' && !empty($var2)){
                   include('ngo-edit-campaign.php');
-                }elseif($action == 'edit-campaign'){
+                }elseif($var1 == 'edit-campaign'){
                   include('ngo-profile.php');
                 }else{
                   include('ngo-profile.php');

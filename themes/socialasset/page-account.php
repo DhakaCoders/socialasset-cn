@@ -2,7 +2,7 @@
 /*
   Template Name: Account
 */
-  get_header();
+  get_camp_header();
 ?>
 
 <div class="content-center-cntlr gray-bg">

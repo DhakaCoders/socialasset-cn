@@ -25,7 +25,8 @@ a,input,img,textarea,button{
     background: #999797;
     color: #fff;
 }
-.ncc-submit-btns button:hover{
+.ncc-submit-btns button:hover,
+.ncc-submit-btns a:hover{
     background: #0055FF;
     border-color: #0055FF;
     color: #fff;

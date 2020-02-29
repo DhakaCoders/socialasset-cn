@@ -15,7 +15,7 @@ function shortcode_user_myaccount(){
 	if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) { 
 		include_once(ACCOUNT_DIR .'/ngo/ngo-myaccount.php');
 	}elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
-		include_once(ACCOUNT_DIR .'/ngo/ngo-myaccount.php');
+		include_once(ACCOUNT_DIR .'/user/user-myaccount.php');
 	}elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
 		include_once(ACCOUNT_DIR .'/business/business-myaccount.php');
 	}else{
