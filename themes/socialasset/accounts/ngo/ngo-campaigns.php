@@ -90,12 +90,8 @@ $Query = new WP_Query(array(
                    $term_name = $category->name; 
                 }
             }
-            $SupportLimit = get_post_meta( get_the_ID() , 'target_supporters', true );
-            $totalSupport = get_post_meta( get_the_ID() , '_supported_count', true );
             $camp_data = get_edit_campaign_post_data(get_the_ID());
-            $expire_date = get_field('capmpaign_to_date', get_the_ID());
-            $expire ='';
-            if( !empty($expire_date) ) $expire = $expire_date;
+
           ?>
             <tr class="edit-action" id="camppost_<?php echo get_the_ID(); ?>">
               <td>
@@ -124,7 +120,7 @@ $Query = new WP_Query(array(
                       <?php echo wpautop( camp_excerpt(), true ); ?>
                       <div class="campaign-action">
                         <a href="<?php echo home_url('myaccount/edit-campaign/'.get_the_ID())?>">Edit</a> 
-                        <?php if( !camp_expire_date($expire) ){ ?>
+                        <?php if( !camp_expire_date(get_the_ID()) ){ ?>
                         | <a href="<?php echo esc_url(home_url('myaccount/mycampaigns/'.get_the_ID()));?>" onclick="return confirm('Are you sure you want to delete at this campaign: <?php echo get_the_title() ?>?')" style="color: red;" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('my_delete_camp_nonce') ?>" class="delete-capm">Delete</a> 
                         <?php } ?>
                         | <a href="<?php the_permalink(); ?>" target="_blank">View</a> 
@@ -137,7 +133,7 @@ $Query = new WP_Query(array(
                 <div class="tbl-td">
                   <strong>Status</strong>
                   <?php
-                    if( camp_expire_date($expire) ){
+                    if( camp_expire_date(get_the_ID()) ){
                       echo '<span class="status-btn status-btn-expired">EXPIRED</span>';
                     }elseif($camp_data->post_status == 'publish'){
                       echo '<span class="status-btn status-btn-active">ACTIVE</span>';
@@ -151,15 +147,10 @@ $Query = new WP_Query(array(
                 </div>
               </td>
               <td>
-                <?php 
-                  $percentange = camp_progress_bar($SupportLimit, $totalSupport);
-                  $prog_value = 0;
-                  if( $percentange ) $prog_value = $percentange;
-                ?>
                 <div class="tbl-td">
                   <strong>Progress</strong>
                   <div class="ngo-td-progress">
-                    <span><?php echo $prog_value; ?>%</span>
+                    <span><?php echo camp_progress_bar(get_the_ID()); ?>%</span>
                   </div>
                 </div>
               </td>

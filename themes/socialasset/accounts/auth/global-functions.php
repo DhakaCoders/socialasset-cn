@@ -16,19 +16,33 @@ function user_profile_image_update(){
 	if (isset( $_POST["save_profile_logo"] ) && wp_verify_nonce($_POST['user_change_profile_image_nonce'], 'user-change-profile-image-nonce')) {
 		$user = wp_get_current_user();
 		if( $user ){
-			if(isset( $_POST["_ngo_name"] ) && !empty($_POST["_ngo_name"])){
-				update_user_meta( $user->ID, '_ngo_name', $_POST["_ngo_name"]);
-			}
 			if(isset( $_POST["_profile_logo_id"] ) && !empty($_POST["_profile_logo_id"])){
 				if(! add_user_meta( $user->ID, '_profile_logo_id', $_POST['_profile_logo_id'], true )){ 
 					update_user_meta( $user->ID, '_profile_logo_id', $_POST['_profile_logo_id'] );
 				}
 			}
+
+			/* NGO */
+			if(isset( $_POST["_ngo_name"] ) && !empty($_POST["_ngo_name"])){
+				update_user_meta( $user->ID, '_ngo_name', sanitize_text_field($_POST["_ngo_name"]) );
+			}
+			
 			if(isset( $_POST["_about_ngo"] ) && !empty($_POST["_about_ngo"])){
-				if(! add_user_meta( $user->ID, '_about_ngo', $_POST['_about_ngo'], true )){ 
-					update_user_meta( $user->ID, '_about_ngo', $_POST['_about_ngo'] );
+				if(! add_user_meta( $user->ID, '_about_ngo', sanitize_text_field( $_POST['_about_ngo'], true ) ) ){ 
+					update_user_meta( $user->ID, '_about_ngo', sanitize_text_field( $_POST['_about_ngo'] ) );
 				}
 			}
+			/* NGO */
+			/* User */
+			if(isset( $_POST["yourname"] ) && !empty($_POST["yourname"])){
+				$userdata = array(
+		            'ID'        =>  $user->ID,
+		            'first_name' => sanitize_text_field($_POST["yourname"])
+		        );  
+	    		wp_update_user($userdata);
+			}
+			/* User */
+
 			$msg['success'] = 'Updated successfully.';
 
 		}else{
@@ -71,7 +85,6 @@ function user_notification_settings_update(){
 	if (isset( $_POST["notification_settings"] ) && wp_verify_nonce($_POST['user_notification_settings_nonce'], 'user-notification-settings-nonce')) {
 		$user = wp_get_current_user();
 		if( $user ){
-			echo $_POST["_get_newsletters"];
 			if(isset( $_POST["_get_newsletters"] ) && !empty($_POST["_get_newsletters"])){
 				update_user_meta( $user->ID, '_get_newsletters', $_POST["_get_newsletters"]);
 				$msg['success'] = 'Settings updated successfully.';
@@ -174,13 +187,22 @@ function my_support_capm(){
  
 }
 
-function camp_progress_bar($limit = 0, $vote_count = 0){
-	if( !empty($limit) && !empty($vote_count)){
+function camp_progress_bar($post_id){
+	$limit = get_post_meta( $post_id , 'target_supporters', true );
+	$vote_count = get_post_meta( $post_id , '_supported_count', true );
+	if( 
+		isset($limit) &&
+		isset($vote_count) &&
+		!empty($limit) && 
+		!empty($vote_count)
+	)
+	{
 		$divided = ($vote_count / $limit);
 		$percentange = ($divided * 100);
 		return $percentange;
-	}else{
-		return false;
+	}
+	else{
+		return 0;
 	}
 }
 

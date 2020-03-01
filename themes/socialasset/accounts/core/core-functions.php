@@ -192,9 +192,9 @@ function camp_excerpt($limit = 13, $dot = ' ...') {
   return $excerpt;
 }
 
-function camp_expire_date($expiredate){
-
-  if( !empty($expiredate) ){
+function camp_expire_date($post_id){ 
+  if( !empty($post_id) ){
+    $expiredate = get_field('capmpaign_to_date', $post_id);
     $expire = strtotime($expiredate);
     $today = strtotime("today midnight"); 
     if( $today >= $expire ){
@@ -207,11 +207,17 @@ function camp_expire_date($expiredate){
 
 }
 
-function date_remaining($expire){
-  $diff = false;
-  $time = new DateTime($expire);
+function date_remaining($post_id){
+  $diff = false; 
+  if( !empty($post_id) ){
+    
+  $expiredate = get_field('capmpaign_to_date', $post_id);
+  $time = new DateTime($expiredate);
   $timediff = $time->diff(new DateTime());
-  if(!empty($timediff)):
+
+  $expire = strtotime($expiredate);
+  $today = strtotime("today midnight"); 
+  if(!empty($timediff) && ($today <= $expire)):
     if( $timediff->y >=2){
       $diff = $timediff->format('%y years left');
     }
@@ -235,6 +241,8 @@ function date_remaining($expire){
     }
   endif;
   return $diff;
+  }
+  return false;
 }
 
 function get_camp_video_url($video_id){

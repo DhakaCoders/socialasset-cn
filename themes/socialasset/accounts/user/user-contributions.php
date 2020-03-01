@@ -53,10 +53,6 @@ $Query = new WP_Query(array(
                 }
             }
             $camp_data = get_edit_campaign_post_data(get_the_ID());
-            $expire_date = get_field('capmpaign_to_date', get_the_ID());
-            $expire ='';
-            if( !empty($expire_date) ) $expire = $expire_date;
-
             $authorID = get_the_author_meta('ID');
             $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID ) );
 
@@ -94,7 +90,7 @@ $Query = new WP_Query(array(
                 <div class="tbl-td">
                   <strong>Status</strong>
                   <?php
-                    if( camp_expire_date($expire) ){
+                    if( camp_expire_date(get_the_ID()) ){
                       echo '<span class="status-btn status-btn-expired">EXPIRED</span>';
                     }elseif($camp_data->post_status == 'publish'){
                       echo '<span class="status-btn status-btn-active">ACTIVE</span>';

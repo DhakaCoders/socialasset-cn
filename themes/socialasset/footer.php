@@ -76,6 +76,7 @@
 
 <script src="<?php echo THEME_URI; ?>/assets/js/jquery-ui.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/masonry.pkgd.min.js"></script>
+<script src="<?php echo THEME_URI; ?>/assets/js/packery.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/tag.suggest/js/tag-it.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/account.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/main.js"></script>

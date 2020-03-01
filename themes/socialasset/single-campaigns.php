@@ -4,19 +4,15 @@ while( have_posts() ): the_post();
 $thisID = get_the_ID();
 
 $categories = get_the_terms( $thisID, 'campaign' );
-$term_name = '';
+$term_name = $term_slug = $termlink = '';
 if ( ! empty( $categories ) ) {
     foreach( $categories as $category ) {
        $term_name = $category->name; 
+       $term_slug = $category->slug;
     }
 }
 $authorID = get_the_author_meta('ID');
 $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID ) );
-$SupportLimit = get_post_meta( $thisID , 'target_supporters', true );
-$totalSupport = get_post_meta( $thisID , '_supported_count', true );
-$expire_date = get_field('capmpaign_to_date', $thisID);
-$expire ='';
-if( !empty($expire_date) ) $expire = $expire_date;
 ?>
 <section class="miracle-plan-sec">
   <div class="container">
@@ -135,30 +131,24 @@ if( !empty($expire_date) ) $expire = $expire_date;
                   <?php endif; ?>
                 </ul> 
                 <hr>
-                <?php 
-                  $percentange = camp_progress_bar($SupportLimit, $totalSupport);
-                  $prog_value = 0;
-                  if( $percentange ) $prog_value = $percentange;
-                ?>
                 <div class="miracle-plan-progress-bar-con">
                   <div class="miracle-plan-progress-top-des clearfix">
                     <span>Support</span>
-                    <span><strong class="progress-par"><?php echo $prog_value; ?></strong>%</span>
+                    <span><strong class="progress-par"><?php echo camp_progress_bar($thisID); ?></strong>%</span>
                   </div>
                   <div class="miracle-plan-progress-main">
-                    <span style="width: <?php echo $prog_value; ?>%"></span>
+                    <span style="width: <?php echo camp_progress_bar($thisID); ?>%"></span>
                   </div>
                   <div class="miracle-plan-progress-btm-des">
                     <?php 
-                        if(!empty($expire)): 
-                          if(date_remaining($expire)):
-                      ?>
-                    <span><?php echo date_remaining($expire);?></span>
-                    <?php endif; endif; ?>
+                      if(date_remaining($thisID)):
+                    ?>
+                    <span><?php echo date_remaining($thisID);?></span>
+                    <?php endif; ?>
                   </div>
                   <div class="miracle-plan-progress-link-wrp">
                   	<?php 
-      			        if( camp_expire_date($expire) ){
+      			        if( camp_expire_date($thisID) ){
                   	?>
                     <span class="support-btn status-btn-expired"><i class="far fa-clock"></i>EXPIRED</span>
                 	  <?php }else{ ?>
@@ -200,5 +190,140 @@ if( !empty($expire_date) ) $expire = $expire_date;
     </div>
   </div>    
 </section>
+<?php
+if( !empty($term_slug) ):
+$query = new WP_Query(array( 
+    'post_type'=> 'campaigns',
+    'post_status' => 'publish',
+    'posts_per_page' => 4,
+    'orderby' => 'date',
+    'order'=> 'DESC',
+    'post__not_in'   => array( $thisID ),
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'campaign',
+        'field' => 'slug',
+        'terms' => $term_slug
+      )
+    )
+  ) 
+);
+if($query->have_posts()):
+?>
+<section class="user-rel-camp-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="user-rel-camp-innr">
+          <div class="user-rel-camp-head text-center">
+            <h4>Relevant Campaigns</h4>
+            <p>You may also be interested in</p>
+          </div>
+          <div class="upcoming-campaigns-main">
+            <div class="user-campaign-list-cntlr">
+              <ul class=" ulc clearfix">
+                <?php 
+                  while($query->have_posts()): $query->the_post(); 
+                  $attach_id = get_post_thumbnail_id(get_the_ID());
+                  if( !empty($attach_id) ){
+                    $feaimg_src = cbv_get_image_src($attach_id, 'campgrid');
+                  }else{
+                    $feaimg_src = THEME_URI.'/assets/images/dfcampgrid.png';
+                  }
+                  $rel_terms = get_the_terms( get_the_ID(), 'campaign' );
+                  $rel_term_name = '';
+                  if ( ! empty( $rel_terms ) ) {
+                      foreach( $rel_terms as $rel_term ) {
+                         $rel_term_name = $rel_term->name; 
+                      }
+                  }
+                ?>
+                <li class="campaigns-list-item-wrp">
+                  <div class="campaigns-list-item">
+                    <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
+                    <div class="campaigns-item-des">
+                      <div class="campaigns-item-des-inr">
+                        <div class="campaigns-item-cat-name">
+                          <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
+                          <span>
+                            <i class="far fa-heart"></i>
+                          </span>
+                        </div>
+                        <div class="campaigns-item-des-btm">
+                          <div>
+                            <h6><?php the_title(); ?></h6>
+                            <?php echo wpautop( camp_excerpt(14, ''), true ); ?>
+                          </div>
+                          <div class="campaigns-vote-info">
+                            <div class="campaigns-vote-percentage-bar clearfix">
+                              <div class="campaigns-vote-percentage-number"><span><?php echo camp_progress_bar(get_the_ID()); ?>%</span></div>
+                              <div class="campaigns-vote-percentage">
+                                <div>
+                                  <span style="width: <?php echo camp_progress_bar(get_the_ID()); ?>%"></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="months-left">
+                            <?php if(date_remaining(get_the_ID())): ?>
+                              <i class="far fa-clock"></i>
+                              <span><?php echo date_remaining(get_the_ID()); ?></span>
+                            <?php endif; ?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="campaigns-list-item-des-hover">
+                      <div class="campaigns-list-item-des-hover-inr">
+                        <a class="overlay-link" href="<?php the_permalink(); ?>"></a>
+                        <div class="campaigns-item-cat-name">
+                          <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
+                          <span>
+                            <i class="far fa-heart"></i>
+                          </span>
+                        </div>
+                        <div class="campaigns-list-item-des-hover-des">
+                          <h6><?php the_title(); ?></h6>
+                          <?php echo wpautop( camp_excerpt(30, ''), true ); ?>
+                        </div>
+                        <div class="campaigns-vote-percentage-hover-bar">
+                          <div class="campaigns-vote-info">
+                            <div class="campaigns-vote-percentage-bar clearfix">
+                              <div class="campaigns-vote-percentage-number"><span><?php echo camp_progress_bar(get_the_ID()); ?>%</span></div>
+                              <div class="campaigns-vote-percentage">
+                                <div>
+                                  <span style="width: <?php echo camp_progress_bar(get_the_ID()); ?>%"></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="months-left">
+                            <?php if(date_remaining(get_the_ID())): ?>
+                              <i class="far fa-clock"></i>
+                              <span><?php echo date_remaining(get_the_ID()); ?></span>
+                            <?php endif; ?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <?php endwhile; ?>
+              </ul>
+              <div class="show-more-btn">
+                <a href="<?php echo esc_url( get_term_link($term_slug, 'campaign') );?>">SHOW MORE</a>
+              </div>
+            </div>
+          </div>          
+        </div>  
+      </div>
+    </div>
+  </div>     
+</section>
+<?php 
+endif;  
+wp_reset_postdata();
+endif;
+?>
 <?php endwhile; ?>
 <?php get_footer(); ?>

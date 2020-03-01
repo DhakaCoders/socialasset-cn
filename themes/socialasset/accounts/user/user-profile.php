@@ -44,10 +44,10 @@
               </div>
             </div>
             <?php 
-            $urname = '';
+            $frname = '';
             if( isset($user->first_name) && !empty($user->first_name) ){
               printf('<strong id="set_username">%s</strong>', $user->first_name);
-              $urname = $user->first_name;
+              $frname = $user->first_name;
             }
             ?>
             <?php if(isset($user->user_email) && !empty($user->user_email)): ?>
@@ -55,7 +55,7 @@
             <?php endif;?>
             <div class="fl-input-field-row profile-edit-step-2 clearfix sa-input plr-30 text-left username-filed">
               <label>Your Name</label>
-              <input id="get_username" type="text" name="" value="<?php echo $urname; ?>">
+              <input id="get_username" type="text" name="yourname" value="<?php echo $frname; ?>" required="required">
             </div>
             <div style="height: 1px"></div>
             <hr class="clearfix">

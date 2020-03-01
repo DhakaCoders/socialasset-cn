@@ -54,12 +54,6 @@ if( isset($_GET['sorting']) && !empty($_GET['sorting'])){
                    $term_name = $category->name; 
                 }
             }
-
-            $SupportLimit = get_post_meta( get_the_ID() ,'target_supporters', true );
-            $totalSupport = get_post_meta( get_the_ID() , '_supported_count', true );
-            $expire_date = get_field('capmpaign_to_date', get_the_ID());
-            $expire ='';
-            if( !empty($expire_date) ) $expire = $expire_date;
           ?>
         <li class="campaigns-list-item-wrp">
           <div class="campaigns-list-item">
@@ -74,29 +68,21 @@ if( isset($_GET['sorting']) && !empty($_GET['sorting'])){
                 <div class="campaigns-item-des-btm">
                   <div>
                     <h6><?php the_title(); ?></h6>
-                    <?php echo wpautop( camp_excerpt(), true );
-
-                    $percentange = camp_progress_bar($SupportLimit, $totalSupport);
-                    $prog_value = 0;
-                    if( $percentange ) $prog_value = $percentange;
-                    ?>
+                    <?php echo wpautop( camp_excerpt(), true ); ?>
                   </div>
                   <div class="campaigns-vote-percentage-bar clearfix">
-                      <div class="campaigns-vote-percentage-number"><span><?php echo $prog_value; ?>%</span></div>
+                      <div class="campaigns-vote-percentage-number"><span><?php echo camp_progress_bar(get_the_ID()); ?>%</span></div>
                       <div class="campaigns-vote-percentage">
                         <div>
-                          <span style="width: <?php echo $prog_value; ?>%"></span>
+                          <span style="width: <?php echo camp_progress_bar(get_the_ID()); ?>%"></span>
                         </div>
                       </div>
                     </div>
                     <div class="months-left">
-                      <?php 
-                        if(!empty($expire)): 
-                          if(date_remaining($expire)):
-                      ?>
+                      <?php if(date_remaining(get_the_ID())): ?>
                       <i class="far fa-clock"></i>
-                      <span><?php echo date_remaining($expire);?></span>
-                      <?php endif; endif; ?>
+                      <span><?php echo date_remaining(get_the_ID());?></span>
+                      <?php endif;?>
                     </div>
                   </div>
               </div>

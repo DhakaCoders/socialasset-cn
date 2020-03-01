@@ -25,6 +25,7 @@ if( !function_exists('cbv_theme_setup') ){
 		}
         add_image_size( 'prodgrid', 278, 210, true );
         add_image_size( 'campthumb', 114, 78, true );
+        add_image_size( 'campgrid', 295, 230, true );
 
 		
 		// add size to media uploader
