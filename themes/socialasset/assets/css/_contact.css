@@ -12,7 +12,9 @@ sa-contact-form-sec-wrp
 	width: 100%;
 	margin: 0 auto;
 }
-
+span.wpcf7-not-valid-tip {
+    margin-top: 12px;
+}
 /*
 --------------------
  Contact Form Css
