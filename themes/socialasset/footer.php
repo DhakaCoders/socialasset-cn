@@ -1,24 +1,39 @@
+<?php 
+  $spacialArry = array(".", "/", "+", " ");$replaceArray = '';
+  $continfo = get_field('contactinfo', 'options');
+  $adres =  $continfo['address'];
+  $gmapsurl = $continfo['google_maps'];
+  $e_mailadres = $continfo['emailaddress'];
+  $show_telefoon = $continfo['telephone'];
+  $telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
+  $copyright_text = get_field('copyright_text', 'options');
+  $gmaplink = !empty($gmapsurl)?$gmapsurl: 'javascript:void()';
+  $smedias = get_field('socialmedia', 'options');
+?>
 <footer class="footer-wrp">
   <div class="ftr-main">
     <div class="container-lg">
       <div class="row">
         <div class="col-md-6 col-sm-12">
           <div class="ftr-col-1">
-            <h5>Get in Touch</h5>
+            <?php _e('<h5>Get in Touch</h5>', THEME_NAME);?>
             <ul class="ulc">
-              <li>
-                <a href="#">30 Arch. Kyprianos Str. <br>3036 Limassol</a>
-              </li>
-              <li>
-                <a href="#">T. &nbsp; 2500 2500</a>
-              </li>
-              <li>
-                <a href="#">E. info@mymentor.com</a>
-              </li>
+              <?php if( !empty( $adres ) ) printf('<li><a href="%s">%s</a></li>', $gmaplink, $adres);  ?>
+              <?php if( !empty( $show_telefoon ) ) printf('<li><a href="tel:%s">T. &nbsp; %s</a></li>', $telefoon, $show_telefoon);  ?>
+              <?php if( !empty( $e_mailadres ) ) printf('<li><a href="mailto:%s">E. %s</a></li>', $e_mailadres, $e_mailadres);  ?>
             </ul> 
             <div class="ftr-social">
-              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <?php 
+                if(!empty($smedias)): 
+                foreach($smedias as $smedia): 
+              ?>
+                <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                  <?php echo $smedia['icon']; ?>
+                </a>
+              <?php 
+                endforeach; 
+                endif; 
+              ?>
             </div>        
           </div>
         </div>
@@ -32,11 +47,15 @@
                 <button><i class="fas fa-long-arrow-alt-right"></i></button>
               </form>
             </div>
-            <ul class="ulc clearfix">
-              <li><a href="#">PRIVACY POLICY</a></li>
-              <li><a href="#">TERMS OF USE</a></li>
-              <li><a href="#">COOKIES POLICY</a></li>
-            </ul>
+            <?php 
+              $ftmenuOptions = array( 
+                  'theme_location' => 'cbv_copyright_menu', 
+                  'menu_class' => 'ulc clearfix',
+                  'container' => 'copynav',
+                  'container_class' => 'copynav'
+                );
+              wp_nav_menu( $ftmenuOptions ); 
+            ?>
           </div>
         </div>
       </div>
@@ -47,7 +66,7 @@
       <div class="row">
         <div class="col-6">
           <div class="ftr-btm-lft">
-            <span>COPYRIGHT ©2019 </span>
+            <?php if( !empty( $copyright_text ) ) printf( '<span>%s</span>', $copyright_text); ?>  
           </div>
         </div>
         <div class="col-6">

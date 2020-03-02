@@ -15,6 +15,15 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+  $headertab = get_field('headertab', 'options');
+  $logoObj = $headertab['logo'];
+  if( is_array($logoObj) ){
+    $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+  }else{
+    $logo_tag = '';
+  }
+?>
 <header class="header hdr-has-shadow">
   <div class="container-fluid">
       <div class="row">
@@ -22,7 +31,9 @@
           <div class="header-inr clearfix">
             <div class="hdr-lft">
               <div class="logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/logo.png"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a>
               </div>
             </div>
             <!-- 
@@ -108,19 +119,23 @@
               
             </div>
             <div class="humberger-menu">
-              <ul class="clearfix ulc">
-                <li><a href="#">Humanity</a></li>
-                <li><a href="#">Animals</a></li>
-                <li><a href="#">Environment</a></li>
-                <li><a href="#">Health</a></li>
-                <li><a href="#">Education</a></li>
-              </ul>
-              <ul class="clearfix ulc">
-                <li><a href="#">What We Do</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
+              <?php 
+                $catOptions = array( 
+                    'theme_location' => 'cbv_cat_menu', 
+                    'menu_class' => 'clearfix ulc',
+                    'container' => 'catnav',
+                    'container_class' => 'catnav'
+                  );
+                wp_nav_menu( $catOptions );
+
+                $menuOptions = array( 
+                    'theme_location' => 'cbv_main_menu', 
+                    'menu_class' => 'clearfix ulc',
+                    'container' => 'hnav',
+                    'container_class' => 'hnav'
+                  );
+                wp_nav_menu( $menuOptions ); 
+              ?>
               <div class="languages-area">
                 <label>Languages:</label>
                 <div class="site-lang-holder clearfix">
