@@ -358,14 +358,21 @@ if( $('#scrollToAarea').length ){
   });
 }*/
 
-if( $('.masonry').length ){
-  $('.masonry').packery({
-    // options
-    itemSelector: '.campaigns-list-item-wrp',
-  });
 
+
+function campMasonry(){
+  if( $('.masonry').length ){
+  $('.masonry').packery({
+      // options
+      itemSelector: '.campaigns-list-item-wrp',
+    });
+
+  }
 }
 
+$(window).load(function() {
+    campMasonry();
+});
 
 if (windowWidth > 991) {
   $('.humberger-menu-btn').on('click', function(){
@@ -415,10 +422,51 @@ $('.archive_date').change(function(){
   window.location.href = mycampaigns_url+'/?archive='+date_string;
   //$('#archive_form').submit();
 });
+if($("#hashtag").length){
+  var tagVal = $("#hashtag").data('htag');
+}
+function queryTag(){
+  if (tagVal !='' )
+    return tagVal;
+  else
+    return false;
+}
 
+if($("#sorting").length){
+  var querySort = $("#sorting").data('sort');
+}
+function querySorting(){
+  if(querySort !='')
+    return querySort;
+  else
+    return false;
+}
+if($("#key_word").length){
+  var key_word = $("#key_word").data('keyword');
+
+}
+function campKeyWord(){
+  if(key_word != '' && typeof key_word != "undefined")
+    return key_word;
+  else
+    return false;
+}
 $('#campaign_sort').on('change', function(){               
   var campSort = $(this).val();
-  window.location.href = mycampaigns_url+'/?sorting='+campSort;
+  var key_word = '';
+  var hashtag = '';
+  if(campKeyWord() != ''){
+    key_word = campKeyWord();
+    window.location.href = mycampaigns_url+'/?search='+key_word+'&sorting='+campSort;
+  }
+  else if(queryTag() != ''){
+    hashtag = queryTag();
+    window.location.href = mycampaigns_url+'/?hashtag='+hashtag+'&sorting='+campSort;
+  }
+  else{
+    window.location.href = mycampaigns_url+'/?sorting='+campSort;
+  }
+  
   //$('#archive_form').submit();
 });
 
@@ -433,6 +481,77 @@ $('#perpage_set').on('change', function(){
   setCookie('per_page', pageNum, 1);              
   window.location.href = location.href;
 });
+
+if($("#catID").length){
+  var catID = $("#catID").data('termid');
+}
+
+function catId(){
+  if(catID != '')
+    return catID;
+  else
+    return false;
+}
+
+$("#loadMore").on('click', function(e) {
+    e.preventDefault();
+    var catID = '';
+    var key_word = '';
+    var sortQuery = '';
+    var query_Tag = '';
+    if(catId() != '') catID = catId();
+
+    if(campKeyWord() != '') key_word = campKeyWord();
+
+    if(querySorting() != '' ) sortQuery = querySorting();
+    if(queryTag() != '' ) query_Tag = queryTag();
+    //init
+    var that = $(this);
+    var page = $(this).data('page');
+    var newPage = page + 1;
+    var ajaxurl = that.data('url');
+    //ajax call
+    $.ajax({
+        url: ajaxurl,
+        type: 'post',
+        data: {
+            page: page,
+            cat_id: catID,
+            key_word: key_word,
+            sorting: sortQuery,
+            htag: query_Tag,
+            action: 'ajax_camp_script_load_more'
+        },
+        beforeSend: function ( xhr ) {
+            $('#ajxaloader').show();
+             
+        },
+        
+        success: function(html ) {
+            //check
+            if (html  == 0) {
+                $('.show-more-btn').prepend('<div class="clearfix"></div><div class="text-center"><p>Geen producten meer om te laden.</p></div>');
+                $('.show-more-btn').hide();
+                $('#ajxaloader').hide();
+            } else {
+                /* packery */
+                var $container = $('.masonry').packery();
+                var $html = $( html );
+                $container.append( $html );
+                $container.packery( 'appended', $html );
+                /* packery */
+                $('#ajxaloader').hide();
+                that.data('page', newPage);
+                //$('#ajax-content').append(html .substr(html .length-1, 1) === '0'? html.substr(0, html.length-1) : html);
+                
+            }
+        },
+        error: function(html ) {
+            console.log('asdfsd');
+        },
+    });
+});
+
 
     //new WOW().init();
 

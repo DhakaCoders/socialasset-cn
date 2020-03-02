@@ -174,4 +174,6 @@ if($camp_data && isset($var2) && !empty($var2)){
     </div>
   </div>
 </div>
+<script type='text/javascript' src="<?php echo esc_url( home_url('/wp-includes/js/tinymce/tinymce.min.js?ver=4960-20190918') );?>"></script>
+<script src="<?php echo esc_url( home_url('/wp-admin/js/editor.min.js?ver=5.3.2') );?>"></script>
 <?php } ?>

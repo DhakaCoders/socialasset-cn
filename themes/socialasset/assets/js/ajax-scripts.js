@@ -1,44 +1,4 @@
 jQuery(document).ready(function($) {
-   /* if($('#business-signup').length){
-        $('#business-signup').on('click', function(e){
-             e.preventDefault();
-            //$('#login p.status').show().text(ajax_user_signup_object.loadingmessage);
-            var error = false;
-            var serialized = jQuery( '#business-form' ).serialize();
-            console.log(serialized);
-
-            jQuery.ajax({
-                type: 'POST',
-                dataType: 'JSON',
-                url: ajax_business_signup_object.ajaxurl,
-                data: serialized,
-                success: function(data){
-                    console.log(data);
-                    if(typeof(data['buser_status']) != "undefined" &&  data['buser_status'].length != 0 && data['buser_status'] == 'success'){
-                        
-                        if(typeof(data['bsignup_success']) != "undefined" &&  data['bsignup_success'].length != 0){
-                          jQuery("#after-bsignup-hide").remove();
-                          jQuery('#success-signup').text(data['bsignup_success']);
-                        }
-                        
-                    }else{
-                        if(typeof(data['email']) != "undefined" &&  data['email'].length != 0){
-                            jQuery('.email_error').text(data['email']);
-                            error = true;
-                        }
-                        if(typeof(data['pass']) != "undefined" &&  data['pass'].length != 0){
-                            jQuery('.pass_error').text(data['pass']);
-                            error = true;
-                        }
-                        if(error == true){
-                            jQuery('#business_password').val('');
-                        }
-                    }
-                }
-            });
-        });
-    }*/
-
     $(document).on( 'click', '.delete-capm', function() {
         var id = $(this).data('id');
         var nonce = $(this).data('nonce');
