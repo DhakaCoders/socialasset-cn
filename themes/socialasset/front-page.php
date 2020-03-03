@@ -1,23 +1,8 @@
 <?php 
-/*
-  Template Name: About
-*/
   get_camp_header();
-  $thisID = get_the_ID();
 ?>
 <?php
-  $gwform = get_field('form', $thisID);
-  $gmap = get_field('googlemaps', $thisID);
-  $spacialArry = array(".", "/", "+", " ", "(", ")");$replaceArray = '';
-  $adres = $gmap['address'];
-  $gmapsurl = $gmap['google_map_url'];
-  $email = $gmap['email'];
-  $show_telefoon = $gmap['telephone'];
-  $schedules = $gmap['schedule'];
-  $telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
-  $gmaplink = !empty($gmapsurl)?$gmapsurl: 'javascript:void()';
-  $smedias = get_field('socialmedia', 'options');
-  $google_map = $gmap['maps'];
+  $intro = get_field('introsec', HOMEID);
 ?>
 <section class="hm-banner-slider-sec">
   <div class="hm-banner-slider">
@@ -98,17 +83,34 @@
   <a href="#hm-wc-social-assets-sec" class="hm-bnr-scroll"><img src="<?php echo THEME_URI; ?>/assets/images/hm-bnr-scroll.png" alt=""></a>  
 </section>
 
+<?php
+  $sassets = get_field('socialasset', HOMEID);
+  $ngop_src = $bussp_src = $ngo_icon = $buss_icon = '';
+  if( !empty($sassets['ngo_image']) ) 
+    $ngop_src = cbv_get_image_src($sassets['ngo_image'], 'grid1');
+  if( !empty($sassets['ngo_icon']) ) 
+    $ngo_icon = cbv_get_image_tag($sassets['ngo_icon']);
 
+  if( !empty($sassets['buss_image']) ) 
+  $bussp_src = cbv_get_image_src($sassets['buss_image'], 'grid1');
+
+  if( !empty($sassets['busicon']) ) 
+    $buss_icon = cbv_get_image_tag($sassets['busicon']);
+?>
 <section class="hm-wc-social-assets-sec" id="hm-wc-social-assets-sec">
   <div class="hm-wc-social-assets-top">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="hm-wc-social-assets-top-innr text-center">
-            <h1>Welcome to Social Asset</h1>
-            <p><strong>“Social Asset is the interface between business and social problems”</strong></p>
-            <p>Our Platform achieves the link between the needs of society, inparticular, the needs of local government, NGOs and social enterprises, with businesses that meet these needs as CSR (Corporate Social Responsibility) actions.</p>
-            <a href="#">MORE ABOUT US</a>
+            <?php if( !empty($sassets['title']) ) printf('<h1>%s</h1>', $sassets['title']); ?>
+            <?php 
+            if( !empty($sassets['content']) ) echo wpautop( $sassets['content'] ); 
+            $link3 = $sassets['link'];
+            if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+              printf('<a href="%s" target="%s">%s</a>', $link3['url'], $link3['target'], $link3['title']); 
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -128,18 +130,23 @@
               <li>
                 <div class="join-journey-sct-grid-inner clearfix">
                   <div class="join-journey-sct-grid-img-top-wrap">
-                    <div class="join-journey-sct-grid-img-top" style="background: url('<?php echo THEME_URI; ?>/assets/images/jjs-grid-1.png');">
+                    <div class="join-journey-sct-grid-img-top" style="background: url('<?php echo $ngop_src; ?>');">
                       <div class="jjsg-media-icon">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/jjs-grid-media.png">
+                        <?php echo $ngo_icon; ?>
                       </div>
                     </div>
                   </div>
                   <div class="jjsg-des-top-wrap">
                     <div class="jjsg-des-top">
                       <div class="jjsg-des">
-                        <h3>For NGOS</h3>
-                        <p>AI allows our bot to provides non-bias and reliable<br> feedback regarding career development and<br> challenges.</p>
-                        <a href="#">CREATE CAMPAIGN</a>
+                        <?php if( !empty($sassets['ngo_title']) ) printf('<h3>%s</h3>', $sassets['ngo_title']); ?>
+                        <?php 
+                        if( !empty($sassets['ngo_content']) ) echo wpautop( $sassets['ngo_content'] ); 
+                        $link4 = $sassets['ngo_link'];
+                        if( is_array( $link4 ) &&  !empty( $link4['url'] ) ){
+                          printf('<a href="%s" target="%s">%s</a>', $link4['url'], $link4['target'], $link4['title']); 
+                        }
+                        ?>
                       </div>
                       <span><img src="<?php echo THEME_URI; ?>/assets/images/hm-join-journey-1.png" alt=""></span>
                     </div>
@@ -149,18 +156,23 @@
               <li>
                 <div class="join-journey-sct-grid-inner clearfix">
                   <div class="join-journey-sct-grid-img-bottom-wrap">
-                    <div class="join-journey-sct-grid-img-bottom" style="background: url('<?php echo THEME_URI; ?>/assets/images/jjs-grid-2.png');">
+                    <div class="join-journey-sct-grid-img-bottom" style="background: url('<?php echo $bussp_src; ?>');">
                       <div class="jjsg-media-icon">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/wwd-campaigns-grid-1.png">
+                        <?php echo $buss_icon; ?>
                       </div>
                     </div>
                   </div>
                   <div class="jjsg-des-bottom-wrap">
                     <div class="jjsg-des-bottom">
                       <div class="jjsg-des">
-                        <h3>For Businesses</h3>
-                        <p>AI allows us to aggregate your data into a career path<br> and connect you with the right resources to make it<br> happen.</p>
-                        <a href="#">MORE INFO</a>
+                        <?php if( !empty($sassets['buss_title']) ) printf('<h3>%s</h3>', $sassets['buss_title']); ?>
+                        <?php 
+                        if( !empty($sassets['buss_content']) ) echo wpautop( $sassets['buss_content'] ); 
+                        $link5 = $sassets['busslink'];
+                        if( is_array( $link5 ) &&  !empty( $link5['url'] ) ){
+                          printf('<a href="%s" target="%s">%s</a>', $link5['url'], $link5['target'], $link5['title']); 
+                        }
+                        ?>
                       </div>
                       <span><img src="<?php echo THEME_URI; ?>/assets/images/hm-join-journey-2.png" alt=""></span>
                     </div>
@@ -175,36 +187,53 @@
   </div>
 </section>
 
-
+<?php 
+  if( !empty($sassets['user_image']) ) 
+  $userp_src = cbv_get_image_src($sassets['user_image'], 'grid2');
+?>
 <section class="hm-user-support-sec">
   <div class="container-xlg">
     <div class="row">
       <div class="col-sm-12">
-        <div class="hm-user-support-inner" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-user-support-bg.jpg');">
+        <div class="hm-user-support-inner" style="background: url('<?php echo $userp_src; ?>');">
           <div class="hm-user-support-rgt-des hide-md">
-            <h3>For Users</h3>
-            <p>Access certified courses and <br> publications related to your field</p>
-            <a href="#">SUPPORT A CAMPAIGN</a>
+            <?php if( !empty($sassets['user_title']) ) printf('<h3>%s</h3>', $sassets['user_title']); ?>
+            <?php if( !empty($sassets['user_content']) ) echo wpautop( $sassets['user_content'] );
+
+              $link6 = $sassets['userlink'];
+              if( is_array( $link6 ) &&  !empty( $link6['url'] ) ){
+                printf('<a href="%s" target="%s">%s</a>', $link6['url'], $link6['target'], $link6['title']); 
+              }
+            ?>
           </div>
         </div>
         <div class="hm-user-support-rgt-des show-md">
-          <h3>For Users</h3>
-          <p>Access certified courses and <br> publications related to your field</p>
-          <a href="#">SUPPORT A CAMPAIGN</a>
+          <?php if( !empty($sassets['user_title']) ) printf('<h3>%s</h3>', $sassets['user_title']); ?>
+          <?php if( !empty($sassets['user_content']) ) echo wpautop( $sassets['user_content'] );
+
+            $link6 = $sassets['userlink'];
+            if( is_array( $link6 ) &&  !empty( $link6['url'] ) ){
+              printf('<a href="%s" target="%s">%s</a>', $link6['url'], $link6['target'], $link6['title']); 
+            }
+          ?>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
+<?php 
+  $upcamp = get_field('upcampaigns', HOMEID);
+?>
 <section class="upcoming-campaigns-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="upcoming-campaigns-head text-center">
-          <h4>Upcoming Campaigns</h4>
-          <p>Learn everything about our goal through our projects.</p>
+          <?php 
+            if( !empty($upcamp['title']) ) printf('<h4>%s</h4>', $upcamp['title']); 
+            if( !empty($upcamp['content']) ) echo wpautop( $upcamp['content'] );
+          ?>
         </div>
         <div class="upcoming-campaigns-main">
           <div class="user-campaign-list-cntlr">
@@ -845,7 +874,10 @@
     </div>
   </div>    
 </section>
-
+<?php 
+  $testmls = get_field('testimonials', HOMEID);
+  $quotes = $testmls['quote'];
+?>
 
 <section class="hm-testimonials-sec">
   <div class="container">
@@ -853,59 +885,51 @@
       <div class="col-12">
         <div class="hm-testimonials-innr">
           <div class="hm-testimonials-head text-center text-white">
-            <h4>Testimonials</h4>
-            <p>Here’re what our clients have to say about our services</p>
+          <?php 
+            if( !empty($testmls['title']) ) printf('<h4>%s</h4>',$testmls['title']); 
+            if( !empty($testmls['content']) ) echo wpautop( $testmls['content'] );
+          ?>
           </div>
-
+          <?php if( !empty($quotes) ): ?>
           <div class="hm-testimonials-slider dft-slider-dot-con">
+            <?php 
+              foreach( $quotes as $quote ): 
+                $quote_tag = '';
+                if( !empty($quote['image']) ) 
+                  $quote_tag = cbv_get_image_tag($quote['image']);
+            ?>
             <div class="hm-testimonials-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-avatar.png" alt=""></i>              
-              <p><strong>MYMENTOR</strong> makes me feel confident about my Qualifications and my daly performance in my job. I suggest to all women who work in STEAM domain to try this product.</p>
+              <i><?php echo $quote_tag; ?></i>              
+              <?php if( !empty($quote['content']) ) echo wpautop( $quote['content'] ); ?>
               <div class="hm-testimonials-ftr">
-                <span>Mary M.</span>
-                <strong>Junior Developer</strong>                
+                <?php 
+                  if( !empty($quote['name']) ) printf('<span>%s</span>',$quote['name']);
+                  if( !empty($quote['designation']) ) printf('<strong>%s</strong>',$quote['designation']);
+                ?>              
               </div>
               <span class="top-q-icon"><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-top-q-icon.png" alt=""></span>
               <span class="btm-q-icon"><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-btm-q-icon.png" alt=""></span>
             </div>
-            
-
-            <div class="hm-testimonials-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-avatar.png" alt=""></i>              
-              <p><strong>MYMENTOR</strong> makes me feel confident about my Qualifications and my daly performance in my job. I suggest to all women who work in STEAM domain to try this product.</p>
-              <div class="hm-testimonials-ftr">
-                <span>Mary M.</span>
-                <strong>Junior Developer</strong>                
-              </div>
-              <span class="top-q-icon"><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-top-q-icon.png" alt=""></span>
-              <span class="btm-q-icon"><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-btm-q-icon.png" alt=""></span>
-            </div>
-            <div class="hm-testimonials-slider-item d-">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-avatar.png" alt=""></i>              
-              <p><strong>MYMENTOR</strong> makes me feel confident about my Qualifications and my daly performance in my job. I suggest to all women who work in STEAM domain to try this product.</p>
-              <div class="hm-testimonials-ftr">
-                <span>Mary M.</span>
-                <strong>Junior Developer</strong>                
-              </div>
-              <span class="top-q-icon"><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-top-q-icon.png" alt=""></span>
-              <span class="btm-q-icon"><img src="<?php echo THEME_URI; ?>/assets/images/testimonials-btm-q-icon.png" alt=""></span>
-            </div>
+            <?php endforeach; ?>
           </div>
           <span class="hm-testimonials-icon"><img src="<?php echo THEME_URI; ?>/assets/images/hm-testimonials-icon.png" alt=""></span>
+          <?php endif; ?>
         </div>
       </div>
     </div>
   </div>    
 </section>
 
-
+<?php 
+  $csassets = get_field('csocialassets', HOMEID);
+?>
 <section class="hm-partner-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="hm-partner-innr">
           <div class="hm-partner-head text-center">
-            <h4>Companies that use Social Assets</h4>
+            <?php if( !empty($csassets['title']) ) printf('<h4>%s</h4>',$csassets['title']); ?>
           </div>
 
           <div class="hm-partner-slider clearfix dft-slider-dot-con">
@@ -935,15 +959,19 @@
   </div>    
 </section>
 
-
+<?php 
+  $blog = get_field('blog', HOMEID);
+?>
 <section class="hm-blog-sec">
   <div class="container-md">
     <div class="row">
       <div class="col-12">
         <div class="hm-blog-innr">
           <div class="hm-blog-head text-center">
-            <h4>Our Blog</h4>
-            <p>Learn everything about our goal through our projects.</p>
+            <?php 
+              if( !empty($blog['title']) ) printf('<h4>%s</h4>', $blog['title']); 
+              if( !empty($blog['content']) ) echo wpautop( $blog['content'] );
+            ?>
           </div>
           <div class="hm-blog-grid-wrp clearfix">
             <div class="hm-blog-grid-item">
