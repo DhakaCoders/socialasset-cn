@@ -13,7 +13,8 @@
   if( !empty($intro['poster']) ) $vposter_tag = cbv_get_image_tag($intro['poster'], 'vposter');
 
   if( !empty($intro['video_url']) ):
-    $poster_tag = '<a data-fancybox href="https://youtu.be/_Nua3Cjdik0">';
+    $video_url = $intro['video_url'];
+    $poster_tag = '<a data-fancybox href="{$video_url}">';
     $poster_tag .= $vposter_tag;
     $poster_tag .= '</a>';
   else:

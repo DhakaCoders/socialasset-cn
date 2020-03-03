@@ -33,6 +33,7 @@ if( !function_exists('cbv_theme_setup') ){
         add_image_size( 'abgrid3', 802, 462, true );
         add_image_size( 'abgrid4', 560, 214, true );
         add_image_size( 'abgrid5', 470, 336, true );
+        add_image_size( 'faqgrid', 730, 406, true );
 
 		
 		// add size to media uploader
