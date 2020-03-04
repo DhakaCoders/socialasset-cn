@@ -36,12 +36,19 @@ function save_my_custom_user_profile_field( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false;
     if( isset($_POST['_user_account_status']) && !empty($_POST['_user_account_status']))
-    update_user_meta( absint( $user_id ), '_user_account_status', wp_kses_post( $_POST['_user_account_status'] ) );
+    	update_user_meta( absint( $user_id ), '_user_account_status', wp_kses_post( $_POST['_user_account_status'] ) );
 	else
-	update_user_meta( absint( $user_id ), '_user_account_status', wp_kses_post( 'draft' ) );
+		update_user_meta( absint( $user_id ), '_user_account_status', wp_kses_post( 'draft' ) );
 
-    update_user_meta( absint( $user_id ), '_show_my_profile', wp_kses_post( $_POST['_show_my_profile'] ) );
-    update_user_meta( absint( $user_id ), '_show_my_campaigns', wp_kses_post( $_POST['_show_my_campaigns'] ) );
+    if( isset($_POST['_show_my_profile']) && !empty($_POST['_show_my_profile']))
+    	update_user_meta( absint( $user_id ), '_show_my_profile', wp_kses_post( $_POST['_show_my_profile'] ) );
+	else
+		update_user_meta( absint( $user_id ), '_show_my_profile', wp_kses_post( 'false' ) );
+	
+	if( isset($_POST['_show_my_campaigns']) && !empty($_POST['_show_my_campaigns']))
+    	update_user_meta( absint( $user_id ), '_show_my_campaigns', wp_kses_post( $_POST['_show_my_campaigns'] ) );
+	else
+		update_user_meta( absint( $user_id ), '_show_my_campaigns', wp_kses_post( 'false' ) );
 }
 
 
