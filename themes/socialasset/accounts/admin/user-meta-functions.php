@@ -35,7 +35,33 @@ add_action( 'edit_user_profile_update', 'save_my_custom_user_profile_field' );
 function save_my_custom_user_profile_field( $user_id ) {
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false;
+    if( isset($_POST['_user_account_status']) && !empty($_POST['_user_account_status']))
     update_user_meta( absint( $user_id ), '_user_account_status', wp_kses_post( $_POST['_user_account_status'] ) );
+	else
+	update_user_meta( absint( $user_id ), '_user_account_status', wp_kses_post( 'draft' ) );
+
     update_user_meta( absint( $user_id ), '_show_my_profile', wp_kses_post( $_POST['_show_my_profile'] ) );
     update_user_meta( absint( $user_id ), '_show_my_campaigns', wp_kses_post( $_POST['_show_my_campaigns'] ) );
 }
+
+
+//add columns to User panel list page
+function add_user_columns($column) {
+    $column['_user_account_status'] = 'Account Status';
+    return $column;
+}
+add_filter( 'manage_users_columns', 'add_user_columns' );
+
+//add the data
+function add_user_column_data( $val, $column_name, $user_id ) {
+    $user = get_userdata($user_id);
+
+    switch ($column_name) {
+        case '_user_account_status' :
+            return $user->_user_account_status;
+            break;
+        default:
+    }
+    return;
+}
+add_filter( 'manage_users_custom_column', 'add_user_column_data', 10, 3 );
