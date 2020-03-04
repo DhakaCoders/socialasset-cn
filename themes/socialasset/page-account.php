@@ -15,8 +15,8 @@
           <span id="success-signup" class="success-signup"></span>
           <div id="after-signup-hide">
             <div class="fl-tabs clearfix text-center">
-              <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
-              <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
+              <button class="tab-link tabRegister current" data-tab="tab-1"><span>REGISTER</span></button>
+              <button class="tab-link tabLogin" data-tab="tab-2"><span>Log in</span></button>
             </div>
             <div id="tab-1" class="fl-tab-content current">
               <div class="tab-con-inr">
@@ -24,7 +24,7 @@
                   <input type="hidden" name="action" value="ngo_user_create_account">
                   <div class="register-hdr-con">
                     <strong>Create your free online account</strong>
-                    <span>Already have an account? <a href="#">Sign in here</a></span>
+                    <span>Already have an account? <a id="goSinginTab" href="#login">Sign in here</a></span>
                   </div>
                   <div class="register-type-btn">
                     <a href="javascript:void(0)" class="register-ngo-btn">
@@ -60,12 +60,10 @@
                         <div class="fl-input-field-row sa-input">
                           <label>Create a password *</label>
                           <input type="password" name="user_password" id="password" placeholder="Password">
-                          <span class="pass_error error-msg"></span>
                         </div>
                         <div class="fl-input-field-row sa-input">
                           <label>Confirm password *</label>
                           <input type="password" name="confirm_password" id="confirm_password" placeholder="Password">
-                          <span class="conpass_error error-msg"></span>
                         </div>
                         <span class="pass_match_error error-msg"></span>
                       </div>
