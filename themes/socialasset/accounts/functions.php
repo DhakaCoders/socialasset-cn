@@ -1,5 +1,6 @@
 <?php
 include_once(ACCOUNT_DIR .'/core/core-functions.php');
+include_once(ACCOUNT_DIR .'/admin/user-meta-functions.php');
 include_once(ACCOUNT_DIR .'/shortcodes/shortcode-functions.php');
 include_once(ACCOUNT_DIR .'/auth/global-functions.php');
 include_once(ACCOUNT_DIR .'/ngo/ngo-functions.php');

@@ -520,6 +520,7 @@ $("#loadMore").on('click', function(e) {
             key_word: key_word,
             sorting: sortQuery,
             htag: query_Tag,
+            el_li: 'not',
             action: 'ajax_camp_script_load_more'
         },
         beforeSend: function ( xhr ) {

@@ -2,11 +2,27 @@
   get_camp_header();
 ?>
 <?php
-  $intro = get_field('introsec', HOMEID);
+  $slide = get_field('slidesec', HOMEID);
+  if( $slide ): 
+    $slideitems = $slide['slide'];
+    if( $slideitems ): 
 ?>
 <section class="hm-banner-slider-sec">
   <div class="hm-banner-slider">
-    <div class="hm-banner-slider-item hm-banner-design-1" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-item02.jpg')">
+    <?php 
+      $scampbg_src = $scampleft_src = $snorm_src = '';
+      foreach( $slideitems as $item ): 
+        $scapm = $item['slidecampaign'];
+        $snorm = $item['slidenormal'];
+    ?>
+    <?php 
+      if($item['slide_type'] == 'campaign'): 
+        if( !empty($scapm['bgimage']) ) 
+          $scampbg_src = cbv_get_image_src($scapm['bgimage'], 'slidebg');
+        if( !empty($scapm['image']) ) 
+          $scampleft_src = cbv_get_image_src($scapm['image'], 'slidecapm');
+    ?>
+    <div class="hm-banner-slider-item hm-banner-design-1" style="background: url('<?php echo $scampbg_src; ?>')">
       <span class="hm-banner-slider-rb-icon">
         <img src="<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-rb-icon.png" alt="">
       </span>
@@ -14,19 +30,33 @@
         <div class="row">
           <div class="col-12">
             <div class="hm-banner-slider-item-innr clearfix">
-              <div class="hm-banner-slider-item-lft-bg hide-sm" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-banner-design-1-lft-bg.png')"></div>
+              <div class="hm-banner-slider-item-lft-bg hide-sm" style="background: url('<?php echo $scampleft_src; ?>')"></div>
               <div class="hm-banner-slider-item-rgt-des text-white">
-                <span class="actionaid-tag">Actionaid</span>
-                <h4>Clean South Crete</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et risus libero. Vestibulum ante ipsum primis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                <a href="#">VIEW CAMPAIGN</a>
+              <?php 
+                if( !empty($scapm['subtitle']) ) printf('<span class="actionaid-tag">%s</span>',$scapm['subtitle']);
+                if( !empty($scapm['title']) ) printf('<h4>%s</h4>',$scapm['title']);
+              ?>
+              <?php 
+                if( !empty($scapm['content']) ) echo wpautop( $scapm['content'] );
+
+                $link = $scapm['link'];
+                if( is_array( $link ) &&  !empty( $link['url'] ) ){
+                  printf('<a href="%s" target="%s">%s</a>', $link['url'], $link['target'], $link['title']); 
+                }
+              ?>
               </div>
             </div>
           </div>
         </div>
       </div>    
     </div>
-    <div class="hm-banner-slider-item hm-banner-design-2" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-item01.jpg')">
+    <?php 
+      else: 
+
+      if( !empty($snorm['bgimage']) ) 
+          $snorm_src = cbv_get_image_src($snorm['bgimage'], 'slidebg');
+    ?>
+    <div class="hm-banner-slider-item hm-banner-design-2" style="background: url('<?php echo $snorm_src; ?>')">
       <span class="hm-banner-slider-rb-icon">
         <img src="<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-rb-icon.png" alt="">
       </span>
@@ -35,54 +65,24 @@
           <div class="col-12">
             <div class="hm-banner-slider-item-innr">
               <span class="sr-only-txt"></span>
-              <h2>The Interface between  <br><span class="bus">Business</span> and <span class="soc">Social</span> Problems</h2>
-              <a href="#">CREATE ACCOUNT</a>
+              <?php 
+                if( !empty($snorm['content']) ) printf('<h2>%s</h2>', $snorm['content']);
+                $link = $snorm['link'];
+                if( is_array( $link ) &&  !empty( $link['url'] ) ){
+                  printf('<a href="%s" target="%s">%s</a>', $link['url'], $link['target'], $link['title']); 
+                }
+              ?>
             </div>
           </div>
         </div>
       </div>    
     </div>
-    <div class="hm-banner-slider-item hm-banner-design-1" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-item02.jpg')">
-      <span class="hm-banner-slider-rb-icon">
-        <img src="<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-rb-icon.png" alt="">
-      </span>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="hm-banner-slider-item-innr clearfix">
-              <div class="hm-banner-slider-item-lft-bg hide-sm" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-banner-design-1-lft-bg.png')">
-              </div>
-              <div class="hm-banner-slider-item-rgt-des text-white">
-                <span class="actionaid-tag">Actionaid</span>
-                <h4>Clean South Crete</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et risus libero. Vestibulum ante ipsum primis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                <a href="#">VIEW CAMPAIGN</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>    
-    </div>
-    <div class="hm-banner-slider-item hm-banner-design-2" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-item01.jpg')">
-      <span class="hm-banner-slider-rb-icon">
-        <img src="<?php echo THEME_URI; ?>/assets/images/hm-banner-slider-rb-icon.png" alt="">
-      </span>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="hm-banner-slider-item-innr">
-              <span class="sr-only-txt"></span>
-              <h2>The Interface between <span class="bus">Business</span> and <span class="soc">Social</span> Problems</h2>
-              <a href="#">CREATE ACCOUNT</a>
-            </div>
-          </div>
-        </div>
-      </div>    
-    </div>
+    <?php endif; ?>
+    <?php endforeach; ?>
   </div>
   <a href="#hm-wc-social-assets-sec" class="hm-bnr-scroll"><img src="<?php echo THEME_URI; ?>/assets/images/hm-bnr-scroll.png" alt=""></a>  
 </section>
-
+<?php endif; endif; ?>
 <?php
   $sassets = get_field('socialasset', HOMEID);
   $ngop_src = $bussp_src = $ngo_icon = $buss_icon = '';
@@ -796,76 +796,43 @@
   <span class="hm-wc-social-assets-top-shape"></span> 
 </section>
 
-
+<?php 
+$htermsg = get_field('ccategory', HOMEID);
+$hterms = $htermsg['cselect'];
+if ( ! empty( $hterms ) && ! is_wp_error( $hterms ) ):
+?>
 <section class="hm-explore-campaigns-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="hm-explore-campaigns-innr text-center">
           <ul class="ulc clearfix">
+            <?php 
+                foreach ( $hterms as $hterm ) { 
+                $thumbnail_id = get_field( 'image', $hterm, false );
+                if( !empty($thumbnail_id) ){
+                    $term_image = cbv_get_image_src($thumbnail_id);
+                }
+                else{
+                   $term_image = THEME_URI .'/assets/images/campcat.png';
+                }
+            ?>
             <li>
               <div class="hm-explore-campaigns-con">
-                <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/m-explore-campaigns-bg-1.png)"></div>
+                <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo $term_image; ?>)"></div>
                 <div class="hm-explore-campaigns-des-wrp">
                   <div class="hm-explore-campaigns-des">
-                    <strong>Environment <br>Campaigns</strong>
+                    <strong><?php echo $hterm->name; ?> <br>Campaigns</strong>
                     <span>12 opened</span>
                   </div>                  
                 </div>
-                <a class="overlay-link" href="#"></a>
+                <a class="overlay-link" href="<?php echo esc_url( get_term_link($hterm) );?>"></a>
               </div>
             </li>
-            <li>
-              <div class="hm-explore-campaigns-con">
-                <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/m-explore-campaigns-bg-2.png)"></div>
-                <div class="hm-explore-campaigns-des-wrp">
-                  <div class="hm-explore-campaigns-des">
-                    <strong>Animal Planet <br>Campaigns</strong>
-                    <span>6 opened</span>
-                  </div>
-                </div>
-                <a class="overlay-link" href="#"></a>
-              </div>
-            </li>
-            <li>
-              <div class="hm-explore-campaigns-con">
-                <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/m-explore-campaigns-bg-3.png)"></div>
-                <div class="hm-explore-campaigns-des-wrp">
-                  <div class="hm-explore-campaigns-des">
-                    <strong>Human <br>Campaigns</strong>
-                    <span>32 opened</span>
-                  </div>
-                </div>
-                <a class="overlay-link" href="#"></a>
-              </div>
-            </li>
-            <li class="w-50">
-              <div class="hm-explore-campaigns-con">
-                <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/m-explore-campaigns-bg-4.png)"></div>
-                <div class="hm-explore-campaigns-des-wrp">
-                  <div class="hm-explore-campaigns-des">
-                    <strong>Health <br>Campaigns</strong>
-                    <span>12 opened</span>
-                  </div>
-                </div>
-                <a class="overlay-link" href="#"></a>
-              </div>
-            </li>
-            <li class="w-50">
-              <div class="hm-explore-campaigns-con">
-                <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/m-explore-campaigns-bg-5.png)"></div>
-                <div class="hm-explore-campaigns-des-wrp">
-                  <div class="hm-explore-campaigns-des">
-                    <strong>Education <br>Campaigns</strong>
-                    <span>No opened yet</span>
-                  </div>
-                </div>
-                <a class="overlay-link" href="#"></a>
-              </div>
-            </li>
+            <?php } ?>
           </ul>
           <div class="hm-explore-campaigns-link">
-            <a class="hm-explore-btn" href="#">EXPLORE ALL CAMPAIGNS</a>
+            <a class="hm-explore-btn" href="<?php echo home_url( 'campaigns' ); ?>">EXPLORE ALL CAMPAIGNS</a>
             <br>
             <a class="hm-campaign-btn" href="#">START A CAMPAIGN</a>  
           </div>
@@ -874,6 +841,7 @@
     </div>
   </div>    
 </section>
+<?php endif; ?>
 <?php 
   $testmls = get_field('testimonials', HOMEID);
   $quotes = $testmls['quote'];
@@ -922,6 +890,7 @@
 
 <?php 
   $csassets = get_field('csocialassets', HOMEID);
+  $clogos = $csassets['clogo'];
 ?>
 <section class="hm-partner-sec">
   <div class="container">
@@ -931,28 +900,20 @@
           <div class="hm-partner-head text-center">
             <?php if( !empty($csassets['title']) ) printf('<h4>%s</h4>',$csassets['title']); ?>
           </div>
-
+          <?php if( $clogos ): ?>
           <div class="hm-partner-slider clearfix dft-slider-dot-con">
+            <?php 
+              $clogo_tag = '';
+              foreach( $clogos as $clogo ): 
+                if( !empty($clogo['logo']) ) 
+                  $clogo_tag = cbv_get_image_tag($clogo['logo']);
+            ?>
             <div class="hm-partner-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/partner-1.png" alt=""></i>
+              <i><?php echo $clogo_tag; ?></i>
             </div>
-            <div class="hm-partner-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/partner-2.png" alt=""></i>
-            </div>
-            <div class="hm-partner-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/partner-3.png" alt=""></i>
-            </div>
-            <div class="hm-partner-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/partner-4.png" alt=""></i>
-            </div>
-            <div class="hm-partner-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/partner-1.png" alt=""></i>
-            </div>
-            <div class="hm-partner-slider-item">
-              <i><img src="<?php echo THEME_URI; ?>/assets/images/partner-3.png" alt=""></i>
-            </div>
-
+            <?php endforeach; ?>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -960,8 +921,17 @@
 </section>
 
 <?php 
-  $blog = get_field('blog', HOMEID);
-?>
+$blog = get_field('blog', HOMEID);
+
+$blg_query = new WP_Query(array( 
+    'post_type'=> 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => 3,
+    'orderby' => 'date',
+    'order'=> 'desc'
+  ) 
+);
+?>   
 <section class="hm-blog-sec">
   <div class="container-md">
     <div class="row">
@@ -973,47 +943,39 @@
               if( !empty($blog['content']) ) echo wpautop( $blog['content'] );
             ?>
           </div>
+          <?php if($blg_query->have_posts()): ?>
           <div class="hm-blog-grid-wrp clearfix">
+            <?php 
+              $blog_src = '';
+              while($blg_query->have_posts()): $blg_query->the_post();
+                
+                $attach_id = get_post_thumbnail_id(get_the_ID());
+                if( !empty($attach_id) )
+                  $blog_src = cbv_get_image_tag($attach_id,'bloggrid');
+                else
+                  $blog_src = THEME_URI .'/assets/images/blogdef.png';
+            ?>
             <div class="hm-blog-grid-item">
               <div class="hm-blog-grid-item-innr">
                 <div class="hm-blog-grid-bg">
-                  <div class="hm-blog-grid-bg-main" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-blog1.png');"></div>
+                  <div class="hm-blog-grid-bg-main" style="background: url('<?php echo $blog_src; ?>');"></div>
                 </div>
                 <div class="hm-blog-grid-des mHc">
-                  <h6>Writing in the Sciences</h6>
-                  <p>This course teaches scientists to become more effective writer. Topics include: principles of good writing,  the format of a scientific manuscript, ethical issues in scientific publications.</p>
+                  <h6><?php the_title();?></h6>
+                  <?php the_excerpt();?>
                 </div>
-                <a href="#" class="overlay-link"></a>              
+                <a href="<?php the_permalink();?>" class="overlay-link"></a>              
               </div>  
             </div>
-            <div class="hm-blog-grid-item">
-              <div class="hm-blog-grid-item-innr">
-                <div class="hm-blog-grid-bg">
-                  <div class="hm-blog-grid-bg-main" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-blog2.png');"></div>
-                </div>
-                <div class="hm-blog-grid-des mHc">
-                  <h6>Introduction to Translational Science</h6>
-                  <p>Translational science seeks to speed up the process of moving research discoveries from the laboratory into healthcare practices.</p>
-                </div>
-                <a href="#" class="overlay-link"></a>              
-              </div>  
-            </div>
-            <div class="hm-blog-grid-item">
-              <div class="hm-blog-grid-item-innr">
-                <div class="hm-blog-grid-bg">
-                  <div class="hm-blog-grid-bg-main" style="background: url('<?php echo THEME_URI; ?>/assets/images/hm-blog3.png');"></div>
-                </div>
-                <div class="hm-blog-grid-des mHc">
-                  <h6>Open Source tools for Data Science</h6>
-                  <p>In this course, you’ll learn about Jupyter Notebooks, RStudio IDE, Apache Zeppelin and Data Science Experience.</p>
-                </div>
-                <a href="#" class="overlay-link"></a>              
-              </div>  
-            </div>
+            <?php endwhile; ?>
           </div>
           <div class="hm-blog-load-more text-center">
             <a href="#">VIEW ALL ARTICLES</a>
           </div>
+          <?php 
+            endif;  
+            wp_reset_postdata();
+          ?>
         </div>
       </div>
     </div>

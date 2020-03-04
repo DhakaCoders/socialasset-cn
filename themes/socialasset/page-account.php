@@ -81,12 +81,14 @@
                       <div class="fl-or-text">
                         <span>Or</span>
                       </div>
+                      <?php global $authUrl; if (isset($authUrl)): ?>
                       <div class="fl-sign-in-another">
-                        <a class="gogle-login-btn" href="#">
+                        <a class="gogle-login-btn" href="<?php echo $authUrl; ?>">
                           <i class="fab fa-google"></i>
                           Sign In with Google
                         </a>
                       </div>
+                      <?php endif; ?>
                     </div>
                   </form>
               </div>

@@ -4,13 +4,15 @@
  */
 
 function campaign_script_load_more($args = array()) {
-  $keyword = $sorting = $hashtag = '';
+  $keyword = $sorting = $hashtag = $termid = '';
   $ccat = get_queried_object();
+  if( $ccat ) $termid = @$ccat->term_id;
+
   if( isset($_GET['search']) && !empty($_GET['search'])) $keyword = $_GET['search'];
   if( isset($_GET['sorting']) && !empty($_GET['sorting'])) $sorting = $_GET['sorting'];
   if( isset($_GET['hashtag']) && !empty($_GET['hashtag'])) $hashtag = $_GET['hashtag'];
   echo '<ul class="ulc masonry" id="ajax-content">';
-      ajax_camp_script_load_more($args, $ccat->term_id, $keyword, $hashtag, $sorting);
+      ajax_camp_script_load_more($args, $termid, $keyword, $hashtag, $sorting);
   echo '</ul>';
   echo '<div class="show-more-btn">
   <div class="ajaxloading" id="ajxaloader" style="display:none"><img src="'.THEME_URI.'/assets/images/loading.gif" alt="loader"></div>
@@ -54,8 +56,8 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
     if(isset($_POST['page']) && !empty($_POST['page'])){
         $paged = $_POST['page'] + $paged;
     }
-
-    if(isset($htag) && !empty($htag)){
+    $termQuery = '';
+    if(isset($htag) && !empty($htag) && !empty($term_id)){
       $termQuery = array(
         'relation' => 'AND',
         array(
@@ -70,7 +72,16 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         )
       );
     }
-    else{
+    elseif( isset($htag) && !empty($htag)){
+      $termQuery = array(
+        array(
+          'taxonomy' => 'campaign_tag',
+          'field' => 'slug',
+          'terms' => $htag
+        )
+      );
+    }
+    elseif( isset($term_id) && !empty($term_id)){
       $termQuery = array(
         array(
           'taxonomy' => 'campaign',
@@ -108,7 +119,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
           }
       }
     ?>
-        <li class="campaigns-list-item-wrp <?php if(($i == 1)): ?>campaigns-list-item-50<?php endif; if(isset($_POST['cat_id']) && !empty($_POST['cat_id'])) echo $_POST['cat_id'];?> ">
+        <li class="campaigns-list-item-wrp <?php if(($i == 1)): ?>campaigns-list-item-50<?php endif; if(isset($_POST['el_li']) && !empty($_POST['el_li'])) echo $_POST['el_li'];?> ">
           <div class="campaigns-list-item">
             <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
             <div class="campaigns-item-des">
