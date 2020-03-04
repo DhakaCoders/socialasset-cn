@@ -36,7 +36,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
           'post_status' => 'publish',
           'posts_per_page' => -1,
           'orderby' => 'date',
-          'order'=> '',
+          'order'=> 'desc',
           'tax_query' => array(
             array(
               'taxonomy' => 'faq',

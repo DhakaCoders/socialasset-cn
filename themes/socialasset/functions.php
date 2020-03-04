@@ -8,7 +8,7 @@ defined( 'THEME_DIR' ) or define( 'THEME_DIR', get_template_directory() );
 defined( 'THEME_URI' ) or define( 'THEME_URI', get_template_directory_uri() );
 
 defined( 'HOMEID' ) or define( 'HOMEID', get_option('page_on_front') );
-
+global $authUrl;
 /**
 Theme Setup->>
 */
@@ -23,6 +23,8 @@ if( !function_exists('cbv_theme_setup') ){
 		if(function_exists('add_theme_support')) {
 			add_theme_support('category-thumbnails');
 		}
+        add_image_size( 'slidecapm', 438, 442, true );
+        add_image_size( 'slidebg', 1920, 872, true );
         add_image_size( 'prodgrid', 278, 210, true );
         add_image_size( 'campthumb', 114, 78, true );
         add_image_size( 'campgrid', 295, 230, true );
@@ -34,6 +36,7 @@ if( !function_exists('cbv_theme_setup') ){
         add_image_size( 'abgrid4', 560, 214, true );
         add_image_size( 'abgrid5', 470, 336, true );
         add_image_size( 'faqgrid', 730, 406, true );
+        add_image_size( 'bloggrid', 358, 360, true );
 
 		
 		// add size to media uploader
@@ -83,6 +86,7 @@ add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
 /**
 Includes->>
 */
+require_once(THEME_DIR .'/api/google/vendor/autoload.php');
 include_once(THEME_DIR .'/inc/widgets-area.php');
 include_once(THEME_DIR .'/inc/cbv-functions.php');
 include_once(THEME_DIR .'/accounts/functions.php');
@@ -219,4 +223,61 @@ function printr($args){
 	echo '<pre>';
 	print_r ($args);
 	echo '</pre>';
+}
+
+
+
+// Fill CLIENT ID, CLIENT SECRET ID, REDIRECT URI from Google Developer Console
+ $client_id = '136855992043-v42do0o03j2gfdf23a165ca2kuvfspip.apps.googleusercontent.com';
+ $client_secret = 'Hy397eOPnxqV_hB0UeFR_ub4';
+ $redirect_uri = 'http://localhost/2020/02/socialasset/myaccount/';
+ $simple_api_key = 'AIzaSyAwqC2W0nhqhI_Sq93UJGZc0NzHILuvbZc';
+ 
+//Create Client Request to access Google API
+$client = new Google_Client();
+$client->setApplicationName("Social Assets App");
+$client->setClientId($client_id);
+$client->setClientSecret($client_secret);
+$client->setRedirectUri($redirect_uri);
+$client->setDeveloperKey($simple_api_key);
+$client->addScope("https://www.googleapis.com/auth/userinfo.email");
+
+//Send Client Request
+$objOAuthService = new Google_Service_Oauth2($client);
+
+//Logout
+if (isset($_REQUEST['logout'])) {
+  unset($_SESSION['access_token']);
+  $client->revokeToken();
+  header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL)); //redirect user back to page
+}
+
+//Authenticate code from Google OAuth Flow
+//Add Access Token to Session
+if (isset($_GET['code'])) {
+  $client->authenticate($_GET['code']);
+  $_SESSION['access_token'] = $client->getAccessToken();
+  header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+}
+
+//Set Access Token to make Request
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+  $client->setAccessToken($_SESSION['access_token']);
+}
+
+//Get User Data from Google Plus
+//If New, Insert to Database
+if ($client->getAccessToken()) {
+  $userData = $objOAuthService->userinfo->get();
+  var_dump($userData);exit();
+  if(!empty($userData)) {
+    $objDBController = new DBController();
+    $existing_member = $objDBController->getUserByOAuthId($userData->id);
+    if(empty($existing_member)) {
+        $objDBController->insertOAuthUser($userData);
+    }
+  }
+  $_SESSION['access_token'] = $client->getAccessToken();
+} else {
+  $authUrl = $client->createAuthUrl();
 }
