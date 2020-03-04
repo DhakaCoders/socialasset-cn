@@ -30,10 +30,10 @@ function ngo_user_create_account(){
   			$ngo_name = sanitize_text_field($_POST["ngo_name"]);
   			if(empty($ngo_name)) {
 				//invalid email
-				$data['ngo_name'] = 'NGO name is required';
+				$data['ngo_name'] = 'NGO name is required.';
 				$success = false;
-			}elseif(!preg_match("/^[a-zA-Z]+$/", $ngo_name)) {
-			    $data['ngo_name'] = 'Please enter a valid Ngo name';
+			}elseif(!preg_match("/^[a-zA-Z0-9 .-]+$/", $ngo_name)) {
+			    $data['ngo_name'] = 'Only latter, number, space, dot and dash are supported.';
 			    $success = false;
 			}
 			$username = '';
@@ -42,7 +42,7 @@ function ngo_user_create_account(){
   			$your_name = sanitize_text_field($_POST["your_name"]);
   			if(empty($your_name)) {
 				//invalid email
-				$data['ur_name'] = 'Name is required';
+				$data['ur_name'] = 'Name is required.';
 				$success = false;
 			}
 			$userrole = 'subscriber';
@@ -50,29 +50,29 @@ function ngo_user_create_account(){
 
   		if(!is_email($user_email)) {
 			//invalid email
-			$data['email'] = 'Invalid email';
+			$data['email'] = 'Invalid email address.';
 			$success = false;
 		}elseif(email_exists($user_email)) {
 			//Email address already registered
-			$data['email'] = 'Email already registered';
+			$data['email'] = 'Email already registered.';
 			$success = false;
 		}elseif(empty($user_email)) {
 			//Email address already registered
-			$data['email'] = 'Email is required';
+			$data['email'] = 'Email is required.';
 			$success = false;
 		}
 
 		if(empty($user_password)) {
-			$data['pass'] = 'Password is required';
+			$data['pass'] = 'Password is required.';
 			$success = false;
 		}
 		if(empty($conf_password)) {
-			$data['con_password'] = 'Confirm password is required';
+			$data['con_password'] = 'Confirm password is required.';
 			$success = false;
 		}
 		if(!empty($user_password) && !empty($conf_password) ) {
-			if($user_password != $conf_password){
-				$data['match_pass'] = "Don't match password";
+			if($user_password !== $conf_password){
+				$data['match_pass'] = "Password do not match!";
 				$success = false;
 			}
 			
@@ -82,7 +82,7 @@ function ngo_user_create_account(){
 			$user_login = $exp[0];
 			if(empty($user_login)) {
 				// Username already registered
-				$data['username'] = 'Something was wrong please try again';
+				$data['username'] = 'Something went wrong. Please try again latter.';
 				$success = false;
 			}
 		}
@@ -123,7 +123,7 @@ function ngo_user_create_account(){
 				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
 					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
 				}
-	            $data['signup_success'] = 'Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.';
+	            $data['signup_success'] = 'Registration Request has been sent successfully. We will review and send a confirmation within 72 hours. Thanks for patient.';
             	$data['user_status'] = 'success';
 			}else{
 				$data['user_status'] = 'error';

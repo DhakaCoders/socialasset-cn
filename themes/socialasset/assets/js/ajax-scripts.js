@@ -40,7 +40,7 @@ function UserAddSupport(id){
             }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
                 alert('supported already');
             }else{
-                alert('Something wrong please try again');
+                alert('Something went wrong please try again later.');
             }
         }
     })

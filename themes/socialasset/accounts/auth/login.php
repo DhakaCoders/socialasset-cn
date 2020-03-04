@@ -58,14 +58,14 @@ function business_login_account(){
 	            do_action( 'wp_login', $user->user_login );
 	            if ( is_user_logged_in() ){
 	            	$data['user_name'] = $user->user_login;
-	            	$data['login_success'] = 'Login successfully. Please wait a second';
+	            	$data['login_success'] = 'Login successfull. Please wait...';
 	            	$data['login_status'] = 'success';
 	                echo json_encode($data);
 	    			wp_die();
 	            }
 	        }
 		}else{
-			$data['loging_error'] = 'Invalid username Or Password';
+			$data['loging_error'] = 'Invalid username Or password';
 		}
 
         echo json_encode($data);
@@ -129,7 +129,7 @@ function ngo_user_login_account(){
 	            do_action( 'wp_login', $user->user_login );
 	            if ( is_user_logged_in() ){
 	            	$data['user_name'] = $user->user_login;
-	            	$data['login_success'] = 'Login successfully. Please wait a second';
+	            	$data['login_success'] = 'Login successfull. Please wait...';
 	            	$data['login_status'] = 'success';
 	                echo json_encode($data);
 	    			wp_die();

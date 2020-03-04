@@ -5,7 +5,7 @@
         if($umetas['_user_account_status'] == 'draft'){
     ?>
     <div class="profile-is-draft">
-      <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
+      <p><strong>Your profile is DRAFT</strong> Lorem ipsum donor sit met.</p>
       <i class="fas fa-times"></i>
     </div>
     <?php } }?>
