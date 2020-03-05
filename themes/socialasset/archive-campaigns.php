@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-get_header(); 
+get_camp_header(); 
 $thisID = get_the_ID();
 $ccat = get_queried_object();
 
@@ -41,7 +41,7 @@ $tags = get_terms( array(
                     $term_image = cbv_get_image_src($thumbnail_id, 'catgrid');
                 }
                 else{
-                   $term_image = '';
+                   $term_image = THEME_URI .'/assets/images/catsmldf.png';
                 }
                 ?>
                 <li>

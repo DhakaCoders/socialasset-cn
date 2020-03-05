@@ -1175,7 +1175,8 @@ span.status-published-title.color-red{
 	padding: 0 10px;
 }
 
-.profile-is-draft{
+.profile-is-draft,
+.action-success{
 	background: #F96E83;
 	border-radius: 3px;
 	color: #fff;
@@ -1185,7 +1186,8 @@ span.status-published-title.color-red{
 	margin-bottom: 15px;
 	position: relative;
 }
-.profile-is-draft i{
+.profile-is-draft i,
+.action-success i{
 	position: absolute;
 	top: 50%;
 	right: 20px;
@@ -1194,13 +1196,18 @@ span.status-published-title.color-red{
 	-webkit-transform: translateY(-50%);
 	cursor: pointer;
 }
-.profile-is-draft p{
+.profile-is-draft p,
+.action-success p{
 	margin-bottom: 0;
 }
-.profile-is-draft p strong{
+.profile-is-draft p strong,
+.action-success p strong{
 	font-weight: 700;
 	display: inline;
 	padding-right: 7px;
+}
+.action-success{
+	background: #38CBB1;
 }
 .ngo-td-progress{
 	text-align: center;

@@ -5,7 +5,8 @@ add_action( 'edit_user_profile', 'my_custom_user_profile_field' );
 function my_custom_user_profile_field( $user ) { 
 	$status = get_the_author_meta( '_user_account_status', $user->ID );
 	$myprofile = get_the_author_meta( '_show_my_profile', $user->ID );
-	$mycamp = get_the_author_meta( '_show_my_campaigns', $user->ID );
+    $mycamp = get_the_author_meta( '_show_my_campaigns', $user->ID );
+	$createcamp = get_the_author_meta( '_show_create_campaign', $user->ID );
 ?>
     <h3>User Status: </h3>
     <table class="form-table">
@@ -27,6 +28,14 @@ function my_custom_user_profile_field( $user ) {
                 <input type="checkbox" <?php echo (!empty($mycamp) && $mycamp == 'true')? 'checked': ''; ?> name="_show_my_campaigns" id="_show_my_campaigns" value="true"> Yes
             </td>
         </tr>
+        <?php if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ): ?>
+        <tr>
+            <th><label for="my-custom-user-profile-field">Create Campaign Tab:</label></th>
+            <td>
+                <input type="checkbox" <?php echo ( isset($createcamp) && !empty($createcamp) && $createcamp == 'true')? 'checked': ''; ?> name="_show_create_campaign" id="_show_create_campaign" value="true"> Yes
+            </td>
+        </tr>
+        <?php endif; ?>
     </table>
 <?php }
 
@@ -49,6 +58,11 @@ function save_my_custom_user_profile_field( $user_id ) {
     	update_user_meta( absint( $user_id ), '_show_my_campaigns', wp_kses_post( $_POST['_show_my_campaigns'] ) );
 	else
 		update_user_meta( absint( $user_id ), '_show_my_campaigns', wp_kses_post( 'false' ) );
+
+    if( isset($_POST['_show_create_campaign']) && !empty($_POST['_show_create_campaign']))
+        update_user_meta( absint( $user_id ), '_show_create_campaign', wp_kses_post( $_POST['_show_create_campaign'] ) );
+    else
+        update_user_meta( absint( $user_id ), '_show_create_campaign', wp_kses_post( 'false' ) );
 }
 
 

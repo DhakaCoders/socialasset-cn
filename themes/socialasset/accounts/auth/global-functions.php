@@ -88,7 +88,12 @@ function user_notification_settings_update(){
 			if(isset( $_POST["_get_newsletters"] ) && !empty($_POST["_get_newsletters"])){
 				update_user_meta( $user->ID, '_get_newsletters', $_POST["_get_newsletters"]);
 				$msg['success'] = 'Settings updated successfully.';
-			}else{
+			}
+			elseif(!isset( $_POST["_get_newsletters"] ) && empty($_POST["_get_newsletters"])){
+				update_user_meta( $user->ID, '_get_newsletters', 0);
+				$msg['success'] = 'Settings updated successfully.';
+			}
+			else{
 				$msg['error'] = 'Settings could not update.';
 			}
 			
@@ -230,3 +235,45 @@ if(!function_exists('get_user_profile_logo_tag')){
 	}
 }
 
+function camp_user_role($role = ''){
+	$user = wp_get_current_user();
+	if($user && !empty($role)):
+		if ( in_array( $role, (array) $user->roles ) && is_user_logged_in() )
+			return true;
+		elseif(in_array( $role, (array) $user->roles ) && is_user_logged_in())
+		    return true;
+		elseif(in_array( $role, (array) $user->roles ) && is_user_logged_in())
+			return true;
+		else
+			return false;
+	else:
+		return false;
+	endif;
+}
+
+function get_current_user_name(){
+	$user = wp_get_current_user();
+	//printr($user);
+	if($user)
+		if( !empty($user->first_name) )
+			return $user->first_name;
+		else
+			return ucfirst($user->display_name);
+	else
+		return false;
+}
+
+function get_author_avatar(){
+	$user = wp_get_current_user();
+	if( $user ){
+		$umetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $user->ID ) ); 
+		if( isset($umetas['_profile_logo_id']) && !empty($umetas['_profile_logo_id']) ){
+	      echo get_user_profile_logo_tag($umetas['_profile_logo_id']); 
+	    }else{
+	    	echo '<img src="'.THEME_URI.'/assets/images/user.png" alt="user avatar">';
+	    }
+	}else{
+		echo '<img src="'.THEME_URI.'/assets/images/user.png" alt="user avatar">';
+	}
+
+}

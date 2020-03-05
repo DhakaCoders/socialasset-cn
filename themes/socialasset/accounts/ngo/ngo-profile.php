@@ -1,3 +1,7 @@
+<?php 
+$index = '_show_my_profile';
+if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
+?>
 <div id="tab-1" class="">
   <div class="tab-con-inr xs-center-width">
     <?php 
@@ -15,7 +19,7 @@
         printf('<div class="profile-is-draft"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['error']);
       }
       if(isset($msg) && array_key_exists("success",$msg)){ 
-        printf('<div class="profile-is-draft"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['success']);
+        printf('<div class="action-success"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['success']);
       }
     ?>
     <div class="tab-con-title">
@@ -149,7 +153,7 @@
               </div>
               <div class="switch-item">
                 <div class="switch-checkbox">
-                  <input type="checkbox" name="_get_newsletters" id="checkbox-switch2" <?php echo ($newsl_check == 1)? 'checked': '';?> value="">
+                  <input type="checkbox" name="_get_newsletters" id="checkbox-switch2"  value="<?php echo ($newsl_check == 1)? $newsl_check: '0';?>">
                   <span class="checkbox-slider"></span>
                 </div>
                 <label for="checkbox-switch2">Newsletters</label>

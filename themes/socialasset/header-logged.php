@@ -69,40 +69,51 @@
                   <button class="campaign-btn">Start a Campaign</button>
                 </div>
               </nav>
+              <?php 
+                global $wp_query;
+                $var1 = $wp_query->get( 'var1' );
+              ?>
               <nav class="main-nav logged-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
                     <li><a href="#">What We Do</a></li>
-                    <li class="current-menu-item"><a href="#">How it Works</a></li>
-                    <li><a href="#">Support a Campaign</a></li>
+                    <li><a href="#">How it Works</a></li>
                   </ul>
+                  <?php if ( camp_user_role('ngo') ) { ?>
+                  <ul class="clearfix ulc">
+                    <li class="<?php echo ($var1 == 'add-campaign') ? 'current-menu-item' : ''; ?>"><a href="<?php echo home_url('myaccount/add-campaign/'); ?>">Create a Campaign</a></li>
+                  </ul>
+                  <?php }elseif( camp_user_role('subscriber') || camp_user_role('business')){ ?>
+                  <ul class="clearfix ulc">
+                    <li><a href="<?php echo home_url( 'campaigns' ); ?>">Support a Campaign</a></li>
+                  </ul>
+                  <?php } ?>
                 </div>
                 <div class="hdr-login-profile">
                   <div class="hdr-login-profile-img">
-                    <img src="<?php echo THEME_URI; ?>/assets/images/hdr-login-profile-img.png">
+                    <?php get_author_avatar(); ?>
                   </div>
-                  <strong>Georgio</strong>
+                  <?php if( get_current_user_name() ): ?>
+                  <strong><?php echo get_current_user_name(); ?></strong>
+                  <?php endif; ?>
                   <ul class="ulc clearfix">
-                    <li><a href="#">My Contributions</a></li>
-                    <li><a href="#">My Profile</a></li>
+                    <?php if ( camp_user_role('ngo') ) { ?>
+                      <li><a href="<?php echo home_url('myaccount/mycampaigns/'); ?>">My Campaigns</a></li>
+                    <?php }elseif( camp_user_role('subscriber')){ ?>
+                      <li><a href="<?php echo home_url('myaccount/contributions/'); ?>">My Contributions</a></li>
+                    <?php }elseif(camp_user_role('business')){ ?>
+                    <li><a href="<?php echo home_url('myaccount/supported-campaigns/'); ?>">My Contributions</a></li>
+                    <?php } ?>
+                    <li><a href="<?php echo home_url('myaccount'); ?>">My Profile</a></li>
                     <li>
                       <i class="fas fa-sign-out-alt"></i>
-                      <?php 
-                      $user = wp_get_current_user();
-                      if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
-                      ?>
+                      <?php if ( camp_user_role('ngo') ) { ?>
                       <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
-                      <?php
-                      }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
-                      ?>
+                      <?php }elseif( camp_user_role('subscriber') ){ ?>
                       <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
-                      <?php
-                      }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
-                      ?>
+                      <?php }elseif(camp_user_role('business')){ ?>
                       <a href="<?php get_ao_custom_logout('business-login'); ?>">Log out</a>
-                      <?php
-                      }
-                      ?>
+                      <?php } ?>
                     </li>
                   </ul>
                 </div>
@@ -118,7 +129,7 @@
               </div>
               
             </div>
-            <div class="humberger-menu">
+            <div class="humberger-menu humberger-menu-xlg">
               <?php 
                 $catOptions = array( 
                     'theme_location' => 'cbv_cat_menu', 
@@ -146,6 +157,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

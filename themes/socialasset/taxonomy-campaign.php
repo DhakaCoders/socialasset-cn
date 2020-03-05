@@ -41,7 +41,7 @@ $tags = get_terms( array(
                     $term_image = cbv_get_image_src($thumbnail_id, 'catgrid');
                 }
                 else{
-                   $term_image = '';
+                   $term_image = THEME_URI .'/assets/images/catsmldf.png';
                 }
                 ?>
                 <li <?php echo ($term->slug == $ccat->slug)? 'class="cat-active"': ''; ?>>

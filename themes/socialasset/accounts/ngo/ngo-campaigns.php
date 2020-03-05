@@ -1,4 +1,8 @@
 <?php 
+$index = '_show_my_campaigns';
+if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
+
+
 $date_arg = $keyword = '';
 $per_page = 3;
 if(isset($_GET['search']) && !empty($_GET['search'])){
@@ -31,6 +35,7 @@ $Query = new WP_Query(array(
     'posts_per_page' => $per_page,
     'paged' => $paged,
     'order'=> 'DESC',
+    'author' => $user->ID, 
     's' => $keyword,
     'date_query' => array($date_arg),
   ) 
@@ -39,7 +44,20 @@ $Query = new WP_Query(array(
 ?>
 <span id="all_campaign" data-campurl="<?php echo esc_url(home_url('myaccount/mycampaigns/'));?>" style="display: none;"></span>
 <div id="tab-2" class="">
+
   <div class="tab-con-inr">
+  <?php 
+    $draft = true;
+    if( isset($umetas['_user_account_status']) && !empty($umetas['_user_account_status']) ){
+      if($umetas['_user_account_status'] == 'draft'){
+        $draft = false;
+  ?>
+  <div class="profile-is-draft">
+    <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
+    <i class="fas fa-times"></i>
+  </div>
+  <?php } }?>
+
     <div class="ngo-campaigns-tab-hdr clearfix">
       <strong><span id="total_active_camp"><?php echo get_count_posts_by_author('campaigns', $user->ID); ?></span> Active Campaigns</strong>
       <div class="ngo-campaigns-tab-hdr-rgt">
@@ -119,11 +137,14 @@ $Query = new WP_Query(array(
                       <strong><?php the_title(); ?></strong>
                       <?php echo wpautop( camp_excerpt(), true ); ?>
                       <div class="campaign-action">
-                        <a href="<?php echo home_url('myaccount/edit-campaign/'.get_the_ID())?>">Edit</a> 
-                        <?php if( !camp_expire_date(get_the_ID()) ){ ?>
-                        | <a href="<?php echo esc_url(home_url('myaccount/mycampaigns/'.get_the_ID()));?>" onclick="return confirm('Are you sure you want to delete at this campaign: <?php echo get_the_title() ?>?')" style="color: red;" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('my_delete_camp_nonce') ?>" class="delete-capm">Delete</a> 
+                        <?php if( $draft ): ?>
+                        <a href="<?php echo home_url('myaccount/edit-campaign/'.get_the_ID())?>">Edit</a> |
+                        <?php endif; ?>
+
+                        <?php if( !camp_expire_date(get_the_ID()) && $draft ){ ?>
+                         <a href="<?php echo esc_url(home_url('myaccount/mycampaigns/'.get_the_ID()));?>" onclick="return confirm('Are you sure you want to delete at this campaign: <?php echo get_the_title() ?>?')" style="color: red;" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('my_delete_camp_nonce') ?>" class="delete-capm">Delete</a> |
                         <?php } ?>
-                        | <a href="<?php the_permalink(); ?>" target="_blank">View</a> 
+                        <a href="<?php the_permalink(); ?>" target="_blank">View</a> 
                       </div>
                     </div>
                   </div>

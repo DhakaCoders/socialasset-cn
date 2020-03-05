@@ -1,4 +1,7 @@
 <?php 
+$index = '_show_my_campaigns';
+if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
+ 
 $active_camp = 0;
 if(isset($umetas['_support_camp_ids']) && !empty($umetas['_support_camp_ids'])):
 $support_ids = $umetas['_support_camp_ids'];
@@ -18,6 +21,18 @@ $Query = new WP_Query(array(
 <?php if( $Query->have_posts() ): ?>
 <div id="tab-2" class="">
   <div class="tab-con-inr">
+    <?php 
+      if( isset($umetas['_user_account_status']) && !empty($umetas['_user_account_status']) ){
+        if($umetas['_user_account_status'] == 'draft'){
+    ?>
+    <div class="profile-is-draft">
+      <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
+      <i class="fas fa-times"></i>
+    </div>
+    <?php 
+      } }
+    ?>
+
     <div class="user-profile-1-hdr clearfix">
       <strong>Contributions</strong>
       <span><?php echo $Query->found_posts; ?> Contributions</span>

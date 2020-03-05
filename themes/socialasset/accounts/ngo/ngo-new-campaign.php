@@ -1,5 +1,25 @@
+<?php 
+$index = '_show_create_campaign';
+if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
+?>
 <div id="tab-3" class="">
   <div class="tab-con-inr">
+  <?php 
+    $draft = true;
+    if( isset($umetas['_user_account_status']) && !empty($umetas['_user_account_status']) ){
+      if($umetas['_user_account_status'] == 'draft'){
+        $draft = false;
+  ?>
+  <div class="profile-is-draft">
+    <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
+    <i class="fas fa-times"></i>
+  </div>
+  <?php 
+    } }
+
+    if( !$draft ) return;
+  ?>
+
     <div class="ngo-create-campaign-con">
       <div class="ngo-create-campaign-con-des-hdr">
         <p>Fill the following steps and create a new Campaign!</p>
@@ -9,7 +29,7 @@
         printf('<div class="profile-is-draft"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['error']);
       }
       if(isset($msg) && array_key_exists("success",$msg)){ 
-        printf('<div class="profile-is-draft"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['success']);
+        printf('<div class="action-success"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['success']);
       }
     ?>
       <form action="" method="post">

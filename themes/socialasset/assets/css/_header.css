@@ -31,6 +31,9 @@ header.header{
 .logo a img{
 	width: 100%;
 }
+.logged-main-nav .main-nav-menu ul {
+    float: left;
+}
 .main-nav-menu > ul{
 	padding-top: 18px;
 	padding-right: 20px;

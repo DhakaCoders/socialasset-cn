@@ -1,4 +1,7 @@
 <?php 
+$index = '_show_my_campaigns';
+if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
+
 $order = 'asc';
 if( isset($_GET['sorting']) && !empty($_GET['sorting'])){
   $order = $_GET['sorting'];
@@ -6,6 +9,18 @@ if( isset($_GET['sorting']) && !empty($_GET['sorting'])){
 ?>
 <div id="tab-2" class="">
   <div class="tab-con-inr ">
+    <?php 
+      if( isset($umetas['_user_account_status']) && !empty($umetas['_user_account_status']) ){
+        if($umetas['_user_account_status'] == 'draft'){
+    ?>
+    <div class="profile-is-draft">
+      <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
+      <i class="fas fa-times"></i>
+    </div>
+    <?php 
+      } }
+    ?>
+
     <div class="supported-campaigns-tab-hdr clearfix">
       <strong>Your Campaigns</strong>
       <div class="sort-by clearfix">

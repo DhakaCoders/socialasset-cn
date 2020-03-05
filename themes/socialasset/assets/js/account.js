@@ -67,8 +67,19 @@ $('#change_pass_form').submit(function(){
 
 $('input[type="checkbox"]').change(function(){
     this.value = (Number(this.checked));
+    //$(this).attr('checked', false);
+    if (this.value == 1) {
+      $(this).attr("checked", true);
+    } else {
+      $(this).attr("checked", false);
+    }
 });
 
+$('input[type="checkbox"]').each(function(e){
+    if($(this).val() == 1){
+        $(this).attr("checked", true);
+    }
+});
 
 if( windowWidth > 767 ){
   var windowHeight = $(window).height();
