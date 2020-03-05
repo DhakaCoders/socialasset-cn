@@ -44,6 +44,9 @@ function ngo_user_create_account(){
 				//invalid email
 				$data['ur_name'] = 'Name is required.';
 				$success = false;
+			}elseif(!preg_match("/^[a-zA-Z .-]+$/", $your_name)) {
+			    $data['ur_name'] = 'Only latter, space, dot and dash are supported.';
+			    $success = false;
 			}
 			$userrole = 'subscriber';
   		}
