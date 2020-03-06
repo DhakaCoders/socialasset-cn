@@ -4,21 +4,6 @@ NGO Profile:
 1. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
 
-2. MY NGO’S PROFILE ar header change korte hobe
+2. About NGO text update hoy na
 
-3. Account draft a thakle baki tabs gulo kaj korbe na
-
-
-5. tinymce.min.js ai script ta pore load hochce, tai editor kaj korche na 1st a. Network tab a buja jay.
-- https://wordpress.org/support/topic/wp-polyfill-error/
-- https://wordpress.stackexchange.com/questions/325570/wordpress-v5-0-3-gutenberg-js-error-uncaught-syntaxerror-missing-after-arg
-
-6. Draft mgs ta protita tab a dekhabe
-
-7. Active Campaigns onek gulo dekhay but ami only 1 ta post korlam. Ar post ta approve hote hobe na.
-
-8. Profile image udpate issue
-
-9. Newsletters active korle ar deactive hoy na
-
-10. 'Password updated successfully.' sucess mgs gulor bg change hobe
+3. Notification Settings a only newslatter rakho

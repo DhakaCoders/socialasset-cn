@@ -8,12 +8,15 @@ $('.profile-submit-btn a').on('click', function(){
 
 
 $('.edit-profile-btn').on('click', function(){
-  $('.profile-edit-step-1').hide();
+  $('.profile-img-step-1').addClass('modeEdit');
+  $('.profile-submit-btn.profile-edit-step-1').hide();
   $('.profile-edit-step-2').show();
 });
 
 $('#edit-profile-cancle-btn').on('click', function(){
-  $('.profile-edit-step-1').show();
+  //$('.profile-edit-step-1').show();
+  $('.profile-submit-btn.profile-edit-step-1').show();
+  $('.profile-img-step-1').removeClass('modeEdit');
   $('.profile-edit-step-2').hide();
 });
 
@@ -149,7 +152,6 @@ if( $('.mixContainer').length ){
     mixer.sort(this.value);
   });
 }
-
 
 /**
 Acount - Login/Register 1

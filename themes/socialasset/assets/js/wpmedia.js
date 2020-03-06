@@ -49,7 +49,7 @@ jQuery(document).ready( function($){
            mattachment = mediaUploader.state().get('selection').first().toJSON(); 
         $('#_featured_picture').val(mattachment.id);
         //$('#profile-picture-priview').css('background-image', 'url(' + attachment.url + ')');
-        $('#featured-picture-priview').html($('<img>',{id:'set-post-thumb',src:mattachment.sizes.medium.url}));
+        $('#featured-picture-priview').html($('<img>',{id:'set-post-thumb',src:mattachment.sizes.full.url}));
         })
         
         mediaUploader.open();
@@ -94,12 +94,12 @@ jQuery(document).ready( function($){
                   //console.log(attachments[i].attributes.type);
                   //sample function 1: add image preview
                   if(attachments[i].attributes.type == 'video'){
-                    $('#myplugin-placeholder').prepend('<li id="myplugin-image-li' + 
+                    $('#myplugin-placeholder .uploadedImage').append('<li id="myplugin-image-li' + 
                     attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><video> <source src="'+attachments[i].attributes.url + '" type="video/mp4"><input id="myplugin-image-input' + 
                     attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 
                     attachments[i].id + '"><div class="removeGallery" onclick="DeleteGalleryImage('+attachments[i].id+'); return false"><i class="fa fa-trash"></i></div></div></li>');
                   }else{
-                    $('#myplugin-placeholder').prepend('<li id="myplugin-image-li' + 
+                    $('#myplugin-placeholder .uploadedImage').append('<li id="myplugin-image-li' + 
                     attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><img src="' + 
                     attachments[i].attributes.sizes.thumbnail.url + '" ><input id="myplugin-image-input' + 
                     attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 

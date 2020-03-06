@@ -50,7 +50,6 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
                 <label>From:</label>
                 <div class="date-input">
                   <input type="text" name="fromt_date" id="datepicker2" required="required" autocomplete="off">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
                 </div>
               </div>
             </div>
@@ -59,7 +58,6 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
                 <label>To:</label>
                 <div class="date-input">
                   <input type="text" name="to_date" id="datepicker3" required="required" autocomplete="off">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
                 </div>
               </div>
             </div>
@@ -74,6 +72,7 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
               <span>Upload a cover Image</span>
               <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-black.png"></i>
               </div>
+              <div class="isreadyUpload"></div>
               <input type="hidden" id="_featured_picture" name="_thumbnail_id" value="">
               <div id="featured-picture-priview" class="featured-picture clearfix"></div>
             </div>
@@ -82,6 +81,8 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
             <label><strong>Campaign Gallery</strong> (Upload more images and videos)</label>
             <div class="ncc-campaign-gallery-list" >
               <ul class="ulc clearfix" id="myplugin-placeholder">
+                <span class="uploadedImage" 
+                style="display: inline-block;vertical-align: top; margin-right: -4px;"></span>
                 <li>
                   <div class="ncc-campaign-gallery-add-img" id="campaign_gallery">
                     <!-- <input type="file" name="campaign_gallery"> -->

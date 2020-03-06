@@ -139,7 +139,7 @@ function defer_parsing_of_js ( $url ) {
     return "$url' defer ";
     
 }
-if ( ! is_admin() ) {
+if ( ! is_admin() && !is_user_logged_in() ) {
     add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
 }
 

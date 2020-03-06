@@ -30,6 +30,7 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
         <form action="" method="post">
         <div class="tab-con-col-4">
           <div class="has-bx-shadow profile-basic-info-bx-cntlr text-center">
+            
             <div class="profile-edit-step-1 profile-img-step-1">
               <div class="profile-img branding-logo" id="profile-priview">
                 <?php 
@@ -39,8 +40,6 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
                 ?>
               </div>
               <input type="hidden" id="_profile_logo_id" name="_profile_logo_id" value="">
-            </div>
-            <div class="profile-edit-step-2 profile-img-step-2">
               <div class="profile-img-edit">
                 <input type="button" name="" value="" id="choose-file">
                 <label for="choose-file">
@@ -48,8 +47,11 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
                   <span class="file-up-instruction-txt">CLICK TO ADD<br> YOUR LOGO</span>
                 </label>
               </div>
+
             </div>
 
+
+            <div class="profileInfo">
             <?php 
             $ngoname = '';
             if( isset($umetas['_ngo_name']) && !empty($umetas['_ngo_name']) ){
@@ -69,8 +71,8 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
               }
             }
             ?>
-
-            <div class="plr-30 profile-edit-step-2">
+           </div>
+            <div class="plr-30 profile-edit-step-2 profileFieldUpdate">
                 <div class="fl-input-field-row clearfix sa-input text-left username-filed">
                 <label>Username</label>
                 <input id="get_username" type="text" name="_ngo_name" value="<?php echo $ngoname; ?>">
