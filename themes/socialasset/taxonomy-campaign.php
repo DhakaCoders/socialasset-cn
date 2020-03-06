@@ -27,8 +27,10 @@ $tags = get_terms( array(
         <div class="row">
           <div class="col-sm-12">
             <div class="page-entry-hdr">
-              <h1>Campaigns</h1>
-              <p>View all campaigns or sort by category, date lorem ipsum</p>
+              <?php 
+                if( !empty($ccat->name) ) printf('<h1>%s</h1>', $ccat->name); 
+                if( !empty($ccat->description) ) echo wpautop( $ccat->description, true );
+              ?>
             </div>
           </div>
           <div class="col-sm-12">
