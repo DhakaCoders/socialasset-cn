@@ -16,7 +16,7 @@ function campaign_script_load_more($args = array()) {
   echo '</ul>';
   echo '<div class="show-more-btn">
   <div class="ajaxloading" id="ajxaloader" style="display:none"><img src="'.THEME_URI.'/assets/images/loading.gif" alt="loader"></div>
-   <a href="#" id="loadMore"  data-page="1" data-url="'.admin_url("admin-ajax.php").'" >SHOW MORE</a><span>23 of 62 Campaigns</span>';
+   <a href="#" id="loadMore"  data-page="1" data-url="'.admin_url("admin-ajax.php").'" >SHOW MORE</a><span><span id="ploadCount">0</span> of <span id="putCount">0</span> Campaigns</span>';
    echo '</div>';
 
 }
@@ -56,6 +56,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
     if(isset($_POST['page']) && !empty($_POST['page'])){
         $paged = $_POST['page'] + $paged;
     }
+    $totalP = ($num * $paged);
     $termQuery = '';
     if(isset($htag) && !empty($htag) && !empty($term_id)){
       $termQuery = array(
@@ -203,7 +204,10 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         <?php
         $i++;
     endwhile;
-    echo '<span id="totalPost" data-totalp="'.$count.'"></span>'; 
+    if(!isset($_POST['el_li']) && empty($_POST['el_li'])){
+      echo '<span id="totalPost" data-totalp="'.$count.'"></span>'; 
+    }
+    echo '<span class="totalLoadP" data-tloadp="'.$totalP.'"></span>'; 
     }else{
       echo '<div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>';
       echo '<style>.show-more-btn{display:none;}</style>';
