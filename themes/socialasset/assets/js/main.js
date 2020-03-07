@@ -498,20 +498,13 @@ function catId(){
 
 if($("#totalPost").length){
   var totalP = $("#totalPost").data('totalp');
+  var tloadp = $("#totalPost").data('tloadp');
   $("#putCount").text(totalP);
+  $("#ploadCount").text(tloadp);
 }
 
-function totalLoadPost(){
-  if($(".totalLoadP").length){
-    var tloadp = $(".totalLoadP").data('tloadp');
-    console.log(tloadp);
-    $("#ploadCount").text(tloadp);
-  }
-}
-totalLoadPost();
 $("#loadMore").on('click', function(e) {
     e.preventDefault();
-    totalLoadPost();
     var catID = '';
     var key_word = '';
     var sortQuery = '';
@@ -561,7 +554,10 @@ $("#loadMore").on('click', function(e) {
                 $('#ajxaloader').hide();
                 that.data('page', newPage);
                 //$('#ajax-content').append(html .substr(html .length-1, 1) === '0'? html.substr(0, html.length-1) : html);
-                
+                var num = $container.find("li").length;
+                if (num > 1) {
+                  $("#ploadCount").text(num);
+                }
             }
         },
         error: function(html ) {

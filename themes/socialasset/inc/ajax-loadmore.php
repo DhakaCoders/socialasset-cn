@@ -128,6 +128,9 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
             <?php if( !empty($feaimg_src)): ?>
             <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
             <?php endif; ?>
+            <?php if( ($i == 1) && empty($feaimg_src)): ?>
+              <div class="campaigns-item-img dfcimg" style="background: url(<?php echo THEME_URI.'/assets/images/dfcampgrid.png'; ?>);"></div>
+            <?php endif; ?>
             <div class="campaigns-item-des">
               <div class="campaigns-item-des-inr">
                 <div class="campaigns-item-cat-name">
@@ -205,11 +208,11 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         $i++;
     endwhile;
     if(!isset($_POST['el_li']) && empty($_POST['el_li'])){
-      echo '<span id="totalPost" data-totalp="'.$count.'"></span>'; 
+      echo '<span id="totalPost" data-totalp="'.$count.'" data-tloadp="'.$totalP.'"></span>'; 
     }
-    echo '<span class="totalLoadP" data-tloadp="'.$totalP.'"></span>'; 
+     
     }else{
-      echo '<div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>';
+      //echo '<div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>';
       echo '<style>.show-more-btn{display:none;}</style>';
     }  
     
