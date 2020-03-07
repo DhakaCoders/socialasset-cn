@@ -36,10 +36,10 @@
 .page-banner-controller .page-banner-des-inner{
 	height: 100%;
 }
-.page-banner-des-inner h1.banner-page-title{
+.page-banner-des-inner h1.banner-page-title,
+.banner-page-title{
 	margin-bottom: 0;
 	color: #fff;
-	text-transform: capitalize;
 	font-weight: 700;
 	text-align: center;
 }
