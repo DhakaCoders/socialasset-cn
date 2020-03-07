@@ -8,12 +8,12 @@
 
 
 == Business Profile:
-1. 'UPPORTED CAMPAIGNS' sort korle url amon hoy '?hashtag=undefined&sorting=desc'
+1. 'SUPPORTED CAMPAIGNS' tab a sort korle url amon hoy '?hashtag=undefined&sorting=desc'
 
 
 == Single Campaing page:
-1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe
-2. Alaways '0 Active Campaigns' dekhay
+1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe. Design add korci.
+2. Kokhono o '0 Active Campaigns' dekhay
 3. 'supported successfully' alert na diye button ar niche text show korte hobe
 4. Relevant Campaigns update korte hobe
 5. Share button ar kaj korte hobe 
@@ -24,18 +24,18 @@
 
 
 == Blog:
-1. Blog page ta ki kora hoice?
+1. Blog ta ki kora hoice?
 
 
 == General:
 1. Sob header gulo setup korte hobe
-2. Whole site ta check/udpate korte hobe
-3. User login thakle business-login page a jete parbe na
-4. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe
-5. Forget password ta korte hobe
-6. Show ajax loading before this message
+2. User login thakle business-login page a jete parbe na
+3. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe
+4. Forget password ta korte hobe
+5. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
-7. Design check/update korte hobe
+6. Development check/update korte hobe
+6. Design check/update korte hobe
 
 
 == Q for Client: 
