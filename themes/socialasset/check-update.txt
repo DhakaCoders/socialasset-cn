@@ -2,7 +2,7 @@
 1. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
 
-== User/User Profile: 
+== User Profile: 
 1. CONTRIBUTIONS tab kichu na thakle akta message dekhate hobe
 
 == Business Profile:
@@ -16,12 +16,17 @@
 5. Share button ar kaj korte hobe 
 6. Support - 0.33333333333333%. 2 decimal place a ante hobe
 7. Business account support korle '%' barbe na
+8. CAMPAIGNS create page a preview button hide korte hobe
+9. Gallery te akoi image bar bar deya jabe na
 
 == Blog:
 1. Blog page ta ki kora hoice?
 
-== General
+== General:
 1. Sob header gulo setup korte hobe
 2. Whole site ta check/udpate korte hobe
 3. User login thakle business-login page a jete parbe na
 4. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe
+
+Q for Client: 
+1. Can more than one Business support a CAMPAIGNS?
