@@ -502,6 +502,9 @@ a.linkedin-login-btn:hover{
 	left: 0;
 	z-index: 1;
 }
+.register-type-con .filter-check-row span.checkmark{
+	top: -3px;
+}
 .filter-check-row span.checkmark{
     position: absolute;
     top: 0;
