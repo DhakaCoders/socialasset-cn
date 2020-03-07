@@ -1,16 +1,20 @@
-NGO Profile: 
-
+== NGO Profile: 
 1. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
 
-User/User Profile: 
-
+== User/User Profile: 
 1. CONTRIBUTIONS tab kichu na thakle akta message dekhate hobe
 
-Single Campaing page:
+== Business Profile:
+1. Business name ta dynamic korte hobe.
 
+== Single Campaing page:
 1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe
 2. Alaways '0 Active Campaigns' dekhay
 3. 'supported successfully' alert na diye button ar niche text show korte hobe
 4. Relevant Campaigns update korte hobe
 5. Share button ar kaj korte hobe 
+
+== General
+1. Sob header gulo setup korte hobe
+2. Whole site ta check/udpate korte hobe
