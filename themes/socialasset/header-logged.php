@@ -42,21 +42,26 @@
             <div class="hdr-rgt logged-menu">
               <nav class="main-nav logged-main-nav">
                 <div class="main-nav-menu">
-                  <ul class="clearfix ulc">
-                    <li><a href="#">What We Do</a></li>
-                    <li><a href="#">How it Works</a></li>
-                  </ul>
+                  <?php 
+                    $logOptions = array( 
+                        'theme_location' => 'cbv_logmain_menu', 
+                        'menu_class' => 'clearfix ulc',
+                        'container' => 'loggedinm',
+                        'container_class' => 'loggedinm'
+                      );
+                    wp_nav_menu( $logOptions );
+                  ?>
                   <?php if ( camp_user_role('ngo') ) { ?>
                     <ul class="ulc clearfix">
                       <li><a href="<?php echo esc_url(home_url('myaccount/add-campaign')); ?>">Create a Campaign</a></li>
                     </ul>
                   <?php }elseif( camp_user_role('subscriber') ){ ?>
                     <ul class="ulc clearfix">
-                      <li><a href="<?php echo esc_url(home_url('myaccount/add-campaign')); ?>">Create a Campaign</a></li>
+                      <li><a href="<?php echo esc_url(home_url('campaigns')); ?>">Support a Campaign</a></li>
                     </ul>
                   <?php }elseif( camp_user_role('business') ){ ?>
                     <ul class="ulc clearfix">
-                      <li><a href="<?php echo esc_url(home_url('myaccount/add-campaign')); ?>">Create a Campaign</a></li>
+                      <li><a href="<?php echo esc_url(home_url('campaigns')); ?>">Support a Campaign</a></li>
                     </ul>
                   <?php } ?>
                 </div>

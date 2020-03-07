@@ -52,8 +52,8 @@ if( !function_exists('cbv_theme_setup') ){
 		) );
 
 		register_nav_menus( array(
-          'cbv_main_menu' => __( 'Main Menu', THEME_NAME ),
-          'cbv_logmain_menu' => __( 'Loggedin Main Menu', THEME_NAME ),
+          'cbv_main_menu' => __( 'Logout Main Menu', THEME_NAME ),
+          'cbv_logmain_menu' => __( 'Logged Main Menu', THEME_NAME ),
           'cbv_popup_menu1' => __( 'Popup Menu 1', THEME_NAME ),
           'cbv_popup_menu2' => __( 'Popup Menu 2', THEME_NAME ),
           'cbv_copyright_menu' => __( 'Copyright Menu', THEME_NAME ),
