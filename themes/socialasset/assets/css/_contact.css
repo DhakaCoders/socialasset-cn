@@ -250,6 +250,20 @@ sa-google-map-sec-wrp
 	padding-right: 13px;
 }
 
+span.wpcf7-not-valid-tip{
+	font-size:14px!important; 
+}
+div.wpcf7-response-output{
+	padding: 10px!important;
+}
+.bootstrap-select .dropdown-toggle:focus{
+	border: none!important;
+}
+.btn-light.focus, 
+.btn-light:focus{
+	box-shadow: none!important;
+	border: none!important;
+}
 /*
 ----------------
  Responive Css

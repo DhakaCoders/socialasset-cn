@@ -274,6 +274,9 @@ h1.abt-page-title span::after {
     width: 55%;
     float: left;
   }
+  .abt-social-asset-sec{
+    padding-top: 120px;
+  }
 
 }
 
@@ -299,10 +302,13 @@ h1.abt-page-title span::after {
     width: 100%;
   }
   .abt-social-asset-sec {
-    padding: 100px 0 185px;
+    padding: 100px 0 100px;
   }
   .core-value-head h2 {
     font-size: 40px;
+  }
+  .about-story-des-main h3{
+    margin-bottom: 25px;
   }
 }
 
@@ -363,6 +369,9 @@ h1.abt-page-title span::after {
   h1.abt-page-title br{
     display: none;
   }
+  .about-story-des-main p br{
+    display: none;
+  }
 }
 
 @media(max-width: 575px){
@@ -391,6 +400,12 @@ h1.abt-page-title span::after {
   }
   .abt-social-asset-lft p {
     margin-bottom: 20px;
+  }
+  .core-value-col-innr h6{
+    font-size: 21px;
+  }
+  .about-story-bg-1-main{
+    min-height: 327px;
   }
 }
 
