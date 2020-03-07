@@ -1,6 +1,6 @@
 <?php get_camp_header(); ?>
 <?php while( have_posts() ): the_post(); ?>
-<section class="normal-page policy-page-sec">  
+<section class="post-single policy-page-sec">  
 	<div class="container">
 		<div class="row">
 			<div id="items-content" class="col-sm-12">

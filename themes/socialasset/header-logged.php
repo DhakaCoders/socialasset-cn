@@ -40,39 +40,6 @@
               If you want logged navbar. please use the class on '.hdr-rgt .logged-menu'
              -->
             <div class="hdr-rgt logged-menu">
-              <nav class="main-nav logout-main-nav">
-                <div class="main-nav-menu">
-                  <ul class="clearfix ulc">
-                    <li><a href="#">What We Do</a></li>
-                    <li class="current-menu-item"><a href="#">For NGOs</a></li>
-                    <li class="menu-item-has-children">
-                      <a href="#">For Businesses</a>
-                      <ul class="sub-menu">
-                        <li><a href="#">sub menu item</a></li>
-                        <li><a href="#">sub menu item</a></li>
-                        <li><a href="#">sub menu item</a></li>
-                        <li><a href="#">sub menu item</a></li>
-                        <li><a href="#">sub menu item</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Campaigns</a></li>
-                  </ul>
-                </div>
-                <div class="hdr-btns clearfix">
-                  <div class="login-btn">
-                    <button>LOGIN</button>
-                    <ul class="ulc">
-                      <li><a href="#">For <strong>NGOs</strong></a></li>
-                      <li><a href="#">For <strong>USERs</strong></a></li>
-                    </ul>
-                  </div>
-                  <button class="campaign-btn">Start a Campaign</button>
-                </div>
-              </nav>
-              <?php 
-                global $wp_query;
-                $var1 = $wp_query->get( 'var1' );
-              ?>
               <nav class="main-nav logged-main-nav">
                 <div class="main-nav-menu">
                   <ul class="clearfix ulc">
@@ -80,13 +47,35 @@
                     <li><a href="#">How it Works</a></li>
                   </ul>
                   <?php if ( camp_user_role('ngo') ) { ?>
-                  <ul class="clearfix ulc">
-                    <li class="<?php echo ($var1 == 'add-campaign') ? 'current-menu-item' : ''; ?>"><a href="<?php echo home_url('myaccount/add-campaign/'); ?>">Create a Campaign</a></li>
-                  </ul>
-                  <?php }elseif( camp_user_role('subscriber') || camp_user_role('business')){ ?>
-                  <ul class="clearfix ulc">
-                    <li><a href="<?php echo home_url( 'campaigns' ); ?>">Support a Campaign</a></li>
-                  </ul>
+                  <?php 
+                    $ngoOptions = array( 
+                        'theme_location' => 'cbv_ngo_menu', 
+                        'menu_class' => 'clearfix ulc',
+                        'container' => 'ngoOptions',
+                        'container_class' => 'ngoOptions'
+                      );
+                    wp_nav_menu( $ngoOptions );
+                  ?>
+                  <?php }elseif( camp_user_role('subscriber') ){ ?>
+                    <?php 
+                      $subOptions = array( 
+                          'theme_location' => 'cbv_sub_menu', 
+                          'menu_class' => 'clearfix ulc',
+                          'container' => 'subOptions',
+                          'container_class' => 'subOptions'
+                        );
+                      wp_nav_menu( $subOptions );
+                    ?>
+                  <?php }elseif( camp_user_role('business') ){ ?>
+                    <?php 
+                      $busOptions = array( 
+                          'theme_location' => 'cbv_Business_menu', 
+                          'menu_class' => 'clearfix ulc',
+                          'container' => 'busOptions',
+                          'container_class' => 'busOptions'
+                        );
+                      wp_nav_menu( $busOptions );
+                    ?>
                   <?php } ?>
                 </div>
                 <div class="hdr-login-profile">
@@ -132,18 +121,18 @@
             <div class="humberger-menu humberger-menu-xlg">
               <?php 
                 $catOptions = array( 
-                    'theme_location' => 'cbv_cat_menu', 
+                    'theme_location' => 'cbv_popup_menu1', 
                     'menu_class' => 'clearfix ulc',
-                    'container' => 'catnav',
-                    'container_class' => 'catnav'
+                    'container' => 'pupnavs',
+                    'container_class' => 'pupnavs'
                   );
                 wp_nav_menu( $catOptions );
 
                 $menuOptions = array( 
-                    'theme_location' => 'cbv_main_menu', 
+                    'theme_location' => 'cbv_popup_menu2', 
                     'menu_class' => 'clearfix ulc',
-                    'container' => 'hnav',
-                    'container_class' => 'hnav'
+                    'container' => 'pupnava',
+                    'container_class' => 'pupnava'
                   );
                 wp_nav_menu( $menuOptions ); 
               ?>

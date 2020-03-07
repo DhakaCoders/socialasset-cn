@@ -62,8 +62,9 @@
                   <div class="login-btn">
                     <button>LOGIN</button>
                     <ul class="ulc">
-                      <li><a href="#">For <strong>NGOs</strong></a></li>
-                      <li><a href="#">For <strong>USERs</strong></a></li>
+                      <li><a href="<?php echo esc_url(home_url('account/?login=ngo')); ?>">For <strong>NGOs</strong></a></li>
+                      <li><a href="<?php echo esc_url(home_url('account/?login=user')); ?>">For <strong>USERs</strong></a></li>
+
                     </ul>
                   </div>
                   <button class="campaign-btn">Start a Campaign</button>
@@ -81,18 +82,18 @@
             <div class="humberger-menu humberger-menu-xlg">
               <?php 
                 $catOptions = array( 
-                    'theme_location' => 'cbv_cat_menu', 
+                    'theme_location' => 'cbv_popup_menu1', 
                     'menu_class' => 'clearfix ulc',
-                    'container' => 'catnav',
-                    'container_class' => 'catnav'
+                    'container' => 'pupnavs',
+                    'container_class' => 'pupnavs'
                   );
                 wp_nav_menu( $catOptions );
 
                 $menuOptions = array( 
-                    'theme_location' => 'cbv_main_menu', 
+                    'theme_location' => 'cbv_popup_menu2', 
                     'menu_class' => 'clearfix ulc',
-                    'container' => 'hnav',
-                    'container_class' => 'hnav'
+                    'container' => 'pupnava',
+                    'container_class' => 'pupnava'
                   );
                 wp_nav_menu( $menuOptions ); 
               ?>
