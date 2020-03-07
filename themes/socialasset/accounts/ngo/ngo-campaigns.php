@@ -40,7 +40,6 @@ $Query = new WP_Query(array(
     'date_query' => array($date_arg),
   ) 
 );
-
 ?>
 <span id="all_campaign" data-campurl="<?php echo esc_url(home_url('myaccount/mycampaigns/'));?>" style="display: none;"></span>
 <div id="tab-2" class="">
@@ -93,6 +92,7 @@ $Query = new WP_Query(array(
           </thead>
           <tbody>
           <?php 
+            $post_count = 0;
             while($Query->have_posts()): $Query->the_post(); 
             $attach_id = get_post_thumbnail_id(get_the_ID());
             if( !empty($attach_id) ){
@@ -109,7 +109,7 @@ $Query = new WP_Query(array(
                 }
             }
             $camp_data = get_edit_campaign_post_data(get_the_ID());
-
+            $post_count += 1;
           ?>
             <tr class="edit-action" id="camppost_<?php echo get_the_ID(); ?>">
               <td>
@@ -199,26 +199,43 @@ $Query = new WP_Query(array(
               'prev_next' => false
             ) );
             endif; 
+            $total_camp = $Query->found_posts;
           ?>
       </div>
       <div class="showing-page-select">
         <div class="sa-selctpicker-ctlr">
           <select class="selectpicker" id="perpage_set">
-            <option <?php echo ($per_page == 1)? 'selected="selected"': ''; ?>>1</option>
-            <option <?php echo ($per_page == 2)? 'selected="selected"': ''; ?>>2</option>
-            <option <?php echo ($per_page == 3)? 'selected="selected"': ''; ?>>3</option>
-            <option <?php echo ($per_page == 4)? 'selected="selected"': ''; ?>>4</option>
-            <option <?php echo ($per_page == 5)? 'selected="selected"': ''; ?>>5</option>
-            <option <?php echo ($per_page == 6)? 'selected="selected"': ''; ?>>6</option>
-            <option <?php echo ($per_page == 7)? 'selected="selected"': ''; ?>>7</option>
-            <option <?php echo ($per_page == 8)? 'selected="selected"': ''; ?>>8</option>
-            <option <?php echo ($per_page == 9)? 'selected="selected"': ''; ?>>9</option>
-            <option <?php echo ($per_page == 10)? 'selected="selected"': ''; ?>>10</option>
-             <option <?php echo ($per_page == 11)? 'selected="selected"': ''; ?>>11</option>
+            <?php
+              
+              $x = 1; for( $x; $x < 11; $x++  ){ 
+                if( $x <= $total_camp ){
+            ?>
+            <option <?php echo ($per_page == $x)? 'selected="selected"': ''; ?>><?php echo $x; ?></option>
+            <?php 
+                }
+              } 
+            ?>
           </select>
         </div>
-        <span>Showing 1-<?php echo $per_page; ?> of <?php echo $Query->found_posts;?></span>
+        <span>Showing <?php
+        if($var2_int =='' ){
+          echo '1-'.($per_page);
+        }
+        else{
+          if($var2_int == 1){
+            echo '1-';
+            echo ($per_page);
+          }
+          else{
+            echo '1-';
+            echo ($per_page + 1); 
+          }
+
+        }
+         
+         ?> of <?php echo $Query->found_posts;?></span>
       </div>
+
     </div>
     <?php else: ?>
     <?php endif; wp_reset_postdata();?>

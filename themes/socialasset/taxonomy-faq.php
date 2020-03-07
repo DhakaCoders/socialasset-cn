@@ -1,7 +1,4 @@
 <?php 
-/*
-  Template Name: What Wedo
-*/
   get_camp_header();
   $thisID = get_the_ID();
   $ccat = get_queried_object();
