@@ -201,6 +201,14 @@ $('#goSinginTab').on('click', function(e){
     goToByScroll('.fl-login-form', 50);
 });
 
+$('span.actionHide').on('click', function(){
+  var target = $(this).attr('data-target');
+  $(this).closest(target).slideUp();
+});
+
+/*
+Helper functions
+**/
 function goToByScroll(id, offset){
   if(id){
       // Remove "link" from the ID

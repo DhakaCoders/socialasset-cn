@@ -1,9 +1,16 @@
-
 NGO Profile: 
 
 1. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
 
-2. About NGO text update hoy na
+User/User Profile: 
 
-3. Notification Settings a only newslatter rakho
+1. CONTRIBUTIONS tab kichu na thakle akta message dekhate hobe
+
+Single Campaing page:
+
+1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe
+2. Alaways '0 Active Campaigns' dekhay
+3. 'supported successfully' alert na diye button ar niche text show korte hobe
+4. Relevant Campaigns update korte hobe
+5. Share button ar kaj korte hobe 

@@ -9,17 +9,16 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
         if($umetas['_user_account_status'] == 'draft'){
     ?>
     <div class="profile-is-draft">
-      <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
-      <i class="fas fa-times"></i>
+      <p><strong>Your profile is DRAFT</strong></p>
     </div>
     <?php } }?>
 
     <?php 
       if(isset($msg) && array_key_exists("error",$msg)){ 
-        printf('<div class="profile-is-draft"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['error']);
+        printf('<div class="profile-is-draft"><p><strong>%s</strong></p><span class="actionHide" data-target=".profile-is-draft"><i class="fas fa-times"></i></span></div>', $msg['error']);
       }
       if(isset($msg) && array_key_exists("success",$msg)){ 
-        printf('<div class="action-success"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['success']);
+        printf('<div class="action-success"><p><strong>%s</strong></p><span class="actionHide" data-target=".action-success"><i class="fas fa-times"></i></span></div>', $msg['success']);
       }
     ?>
     <div class="tab-con-title">
@@ -38,15 +37,15 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
                 ?>
               </div>
               <input type="hidden" id="_profile_logo_id" name="_profile_logo_id" value="">
-            </div>
-            <div class="profile-edit-step-2 profile-img-step-2">
               <div class="profile-img-edit">
                 <input type="button" name="" value="" id="choose-file">
                 <label for="choose-file">
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
+                  <span class="file-up-instruction-txt">CLICK TO ADD<br> YOUR LOGO</span>
                 </label>
               </div>
             </div>
+            <div class="profileInfo">
             <?php 
             $frname = '';
             if( isset($user->first_name) && !empty($user->first_name) ){
@@ -57,6 +56,8 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
             <?php if(isset($user->user_email) && !empty($user->user_email)): ?>
             <span><?php echo $user->user_email; ?></span>
             <?php endif;?>
+            </div>
+
             <div class="fl-input-field-row profile-edit-step-2 clearfix sa-input plr-30 text-left username-filed">
               <label>Your Name</label>
               <input id="get_username" type="text" name="yourname" value="<?php echo $frname; ?>" required="required">
