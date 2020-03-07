@@ -142,3 +142,11 @@ function get_count_posts_by_cat($post_type = 'post', $catid){
     }
     return false;
  }
+
+function array_insert(&$array, $position, $insert_arr)
+{
+    if (is_int($position)) {
+        return array_merge(array_slice($array, 0, $position), $insert_arr, array_slice($array, $position));
+    }
+    return false;
+}

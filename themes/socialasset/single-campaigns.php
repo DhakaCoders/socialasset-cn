@@ -221,12 +221,14 @@ if($query->have_posts()):
             <div class="user-campaign-list-cntlr">
               <ul class=" ulc clearfix">
                 <?php 
+                  $ClassAdd = '';
                   while($query->have_posts()): $query->the_post(); 
                   $attach_id = get_post_thumbnail_id(get_the_ID());
                   if( !empty($attach_id) ){
                     $feaimg_src = cbv_get_image_src($attach_id, 'campgrid');
                   }else{
-                    $feaimg_src = THEME_URI.'/assets/images/dfcampgrid.png';
+                    $feaimg_src = '';
+                    $ClassAdd = ' only-des';
                   }
                   $rel_terms = get_the_terms( get_the_ID(), 'campaign' );
                   $rel_term_name = '';
@@ -236,9 +238,11 @@ if($query->have_posts()):
                       }
                   }
                 ?>
-                <li class="campaigns-list-item-wrp">
+                <li class="campaigns-list-item-wrp<?php echo $ClassAdd; ?>">
                   <div class="campaigns-list-item">
+                    <?php if( !empty($feaimg_src) ): ?>
                     <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
+                     <?php endif; ?>
                     <div class="campaigns-item-des">
                       <div class="campaigns-item-des-inr">
                         <div class="campaigns-item-cat-name">
@@ -282,7 +286,11 @@ if($query->have_posts()):
                         </div>
                         <div class="campaigns-list-item-des-hover-des">
                           <h6><?php the_title(); ?></h6>
+                          <?php if( !empty($feaimg_src) ): ?>
                           <?php echo wpautop( camp_excerpt(30, ''), true ); ?>
+                          <?php else: ?>
+                            <?php echo wpautop( camp_excerpt(14, ''), true ); ?>
+                          <?php endif; ?>
                         </div>
                         <div class="campaigns-vote-percentage-hover-bar">
                           <div class="campaigns-vote-info">
