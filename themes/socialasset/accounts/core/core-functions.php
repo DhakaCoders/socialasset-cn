@@ -8,23 +8,23 @@ function get_ao_custom_logout($page_link = ''){
     
 }
 
-//add_filter('secure_auth_redirect', 'redirect_user_frontend_dashboard');
+add_action('admin_head', 'redirect_user_frontend_dashboard');
 function redirect_user_frontend_dashboard(){
   $user = wp_get_current_user();
   if( is_admin() ){
     if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ) {
-      if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
-  	    exit;
-      }
+      $redirect_to = site_url() . '/myaccount';
+      echo '<script>window.location.href="'.$redirect_to.'"</script>';
+      exit();
     }elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
-      if ( wp_safe_redirect( site_url() . '/myaccount/' ) ) {
-    	 exit;
-    	}
+      $redirect_to = site_url() . '/myaccount';
+      echo '<script>window.location.href="'.$redirect_to.'"</script>';
+      exit();
         
     }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
-      if ( wp_safe_redirect( site_url() . '/myaccount/') ) {
-    		exit;
-    	}
+      $redirect_to = site_url() . '/myaccount';
+      echo '<script>window.location.href="'.$redirect_to.'"</script>';
+      exit();
     }
   }
    return false;
@@ -182,6 +182,18 @@ function get_campaign_tags(){
 
 function camp_excerpt($limit = 13, $dot = ' ...') {
   $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).$dot;
+  } else {
+    $excerpt = implode(" ",$excerpt).$dot;
+  } 
+  $excerpt = preg_replace('`\[[^\]]*\]`',$dot,$excerpt);
+  return $excerpt;
+}
+
+function get_custom_excerpt($cont, $limit = 13, $dot = '') {
+  $excerpt = explode(' ', $cont, $limit);
   if (count($excerpt)>=$limit) {
     array_pop($excerpt);
     $excerpt = implode(" ",$excerpt).$dot;

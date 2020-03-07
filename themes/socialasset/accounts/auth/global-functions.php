@@ -28,9 +28,8 @@ function user_profile_image_update(){
 			}
 			
 			if(isset( $_POST["_about_ngo"] ) && !empty($_POST["_about_ngo"])){
-				if(! add_user_meta( $user->ID, '_about_ngo', sanitize_text_field( $_POST['_about_ngo'], true ) ) ){ 
-					update_user_meta( $user->ID, '_about_ngo', sanitize_text_field( $_POST['_about_ngo'] ) );
-				}
+				update_user_meta( $user->ID, '_about_ngo', sanitize_text_field( $_POST['_about_ngo'] ) );
+
 			}
 			/* NGO */
 			/* User */

@@ -224,6 +224,7 @@
 
 <?php 
   $upcamp = get_field('upcampaigns', HOMEID);
+  $scamps = $upcamp['scamp'];
 ?>
 <section class="upcoming-campaigns-sec">
   <div class="container">
@@ -235,37 +236,60 @@
             if( !empty($upcamp['content']) ) echo wpautop( $upcamp['content'] );
           ?>
         </div>
+        <?php if( $scamps ): ?>
         <div class="upcoming-campaigns-main">
           <div class="user-campaign-list-cntlr">
             <ul class=" ulc masonry">
-              <li class="campaigns-list-item-wrp campaigns-list-item-50">
+              <?php $i = 1;
+                $no_image = $rel_term_name = '';  
+                foreach( $scamps  as $scamp ): 
+                  $attach_id = get_post_thumbnail_id( $scamp->ID );
+                  if( !empty($attach_id) ){
+                    $feaimg_src = cbv_get_image_src($attach_id, 'campgrid');
+                  }else{
+                    $feaimg_src = THEME_URI.'/assets/images/dfcampgrid.png';
+                    $no_image = ' no-image';
+                  }
+                  $rel_terms = get_the_terms( $scamp->ID, 'campaign' );
+                  
+                  if ( ! empty( $rel_terms ) ) {
+                      foreach( $rel_terms as $rel_term ) {
+                         $rel_term_name = $rel_term->name; 
+                      }
+                  }
+              ?>
+              <li class="campaigns-list-item-wrp <?php if( $i == 1 ) echo 'campaigns-list-item-50'; echo $no_image; ?>">
                 <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);"></div>
+                  <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
                   <div class="campaigns-item-des">
                     <div class="campaigns-item-des-inr">
                       <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
+                        <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
                         <span>
                           <i class="far fa-heart"></i>
                         </span>
                       </div>
                       <div class="campaigns-item-des-btm">
                         <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
+                          <h6><?php echo $scamp->post_title; ?></h6>
+                      <?php 
+                        echo wpautop(get_custom_excerpt($scamp->post_content, 14)); 
+                      ?>
                         </div>
                         <div class="campaigns-vote-info">
                           <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
+                            <div class="campaigns-vote-percentage-number"><span><?php echo camp_progress_bar($scamp->ID); ?>%</span></div>
                             <div class="campaigns-vote-percentage">
                               <div>
-                                <span style="width: 30%"></span>
+                                <span style="width: <?php echo camp_progress_bar($scamp->ID); ?>%"></span>
                               </div>
                             </div>
                           </div>
                           <div class="months-left">
+                          <?php if(date_remaining($scamp->ID)): ?>
                             <i class="far fa-clock"></i>
-                            <span>3 months left</span>
+                            <span><?php echo date_remaining($scamp->ID); ?></span>
+                          <?php endif; ?>
                           </div>
                         </div>
                       </div>
@@ -274,30 +298,34 @@
 
                   <div class="campaigns-list-item-des-hover">
                     <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
+                      <a class="overlay-link" href="<?php echo get_the_permalink($scamp->ID); ?>"></a>
                       <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
+                        <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
                         <span>
                           <i class="far fa-heart"></i>
                         </span>
                       </div>
                       <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        <h6><?php echo $scamp->post_title; ?></h6>
+                      <?php 
+                        echo wpautop(get_custom_excerpt($scamp->post_content, 30)); 
+                      ?>
                       </div>
                       <div class="campaigns-vote-percentage-hover-bar">
                         <div class="campaigns-vote-info">
                           <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
+                            <div class="campaigns-vote-percentage-number"><span><?php echo camp_progress_bar($scamp->ID); ?>%</span></div>
                             <div class="campaigns-vote-percentage">
                               <div>
-                                <span style="width: 30%"></span>
+                                <span style="width: <?php echo camp_progress_bar($scamp->ID); ?>%"></span>
                               </div>
                             </div>
                           </div>
                           <div class="months-left">
+                          <?php if(date_remaining($scamp->ID)): ?>
                             <i class="far fa-clock"></i>
-                            <span>3 months left</span>
+                            <span><?php echo date_remaining($scamp->ID); ?></span>
+                          <?php endif; ?>
                           </div>
                         </div>
                       </div>
@@ -306,490 +334,14 @@
 
                 </div>
               </li>
-              <li class="campaigns-list-item-wrp">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);"></div>
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li class="campaigns-list-item-wrp no-image">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);"></div>
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Salamamina - Oil Spoil </h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Salamamina - Oil Spoil </h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li class="campaigns-list-item-wrp">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);"></div>
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li class="campaigns-list-item-wrp only-des">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet</p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li class="campaigns-list-item-wrp">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);"></div>
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li class="campaigns-list-item-wrp">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);"></div>
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li class="campaigns-list-item-wrp">
-                <div class="campaigns-list-item">
-                  <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/user-campaign-list-img-02.png);">
-                  </div>
-                  <div class="campaigns-item-des">
-                    <div class="campaigns-item-des-inr">
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-item-des-btm">
-                        <div>
-                          <h6>Clean South Crete</h6>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac massa.</p>
-                        </div>
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="campaigns-list-item-des-hover">
-                    <div class="campaigns-list-item-des-hover-inr">
-                      <a class="overlay-link" href="#"></a>
-                      <div class="campaigns-item-cat-name">
-                        <strong>environment</strong>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
-                      </div>
-                      <div class="campaigns-list-item-des-hover-des">
-                        <h6>Clean South Crete</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit a met, consectetur adip iscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                      </div>
-                      <div class="campaigns-vote-percentage-hover-bar">
-                        <div class="campaigns-vote-info">
-                          <div class="campaigns-vote-percentage-bar clearfix">
-                            <div class="campaigns-vote-percentage-number"><span>30%</span></div>
-                            <div class="campaigns-vote-percentage">
-                              <div>
-                                <span style="width: 30%"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="months-left">
-                            <i class="far fa-clock"></i>
-                            <span>3 months left</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-
-
+              <?php $i++; endforeach; ?>
             </ul>
             <div class="show-more-btn">
-              <a href="#">EXPLORE ALL CAMPAIGNS</a>
+              <a href="<?php echo home_url( 'campaigns' ); ?>">EXPLORE ALL CAMPAIGNS</a>
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </div> 
@@ -823,7 +375,9 @@ if ( ! empty( $hterms ) && ! is_wp_error( $hterms ) ):
                 <div class="hm-explore-campaigns-des-wrp">
                   <div class="hm-explore-campaigns-des">
                     <strong><?php echo $hterm->name; ?> <br>Campaigns</strong>
-                    <span>12 opened</span>
+                    <?php if( get_count_posts_by_cat('campaigns', $hterm->term_id) ): ?>
+                    <span><?php echo get_count_posts_by_cat('campaigns', $hterm->term_id); ?> opened</span>
+                    <?php else: echo '<span>0 opened</span>';endif; ?>
                   </div>                  
                 </div>
                 <a class="overlay-link" href="<?php echo esc_url( get_term_link($hterm) );?>"></a>
