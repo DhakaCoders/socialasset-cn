@@ -236,7 +236,7 @@ span.miraclePlanthumbSlider-item img{
 .miracle-plan-progress-btm-des span::before {
   content: "";
   position: absolute;
-  top:0;
+  top:-2px;
   left: 0;
   background: url('../images/miracle-plan-icon-1.png');
   background-position: center center;
