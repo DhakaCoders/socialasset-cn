@@ -533,7 +533,7 @@ $blg_query = new WP_Query(array(
             <?php endwhile; ?>
           </div>
           <div class="hm-blog-load-more text-center">
-            <a href="#">VIEW ALL ARTICLES</a>
+            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">VIEW ALL ARTICLES</a>
           </div>
           <?php 
             endif;  

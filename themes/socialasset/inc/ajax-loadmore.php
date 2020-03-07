@@ -205,6 +205,9 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         <?php
         $i++;
     endwhile; 
+    else:
+      echo '<div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>';
+      echo '<style>.show-more-btn{display:none;}</style>';
     endif;  
     
     wp_reset_postdata();

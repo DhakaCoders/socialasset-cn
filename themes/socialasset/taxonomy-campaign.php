@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-get_header(); 
+get_camp_header(); 
 $thisID = get_the_ID();
 $ccat = get_queried_object();
 
