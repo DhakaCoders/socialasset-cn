@@ -354,6 +354,9 @@ min-height: 42px;
 	background: #03D39B;
 	border-radius: 10px;
 }
+.campaigns-vote-percentage div span{
+	left: 0!important;
+}
 
 .campaigns-vote-percentage-number{
 	text-align: right;
