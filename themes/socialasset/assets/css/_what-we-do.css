@@ -296,7 +296,6 @@
 	    margin-bottom: 22px;
 	}
 	.wwd-campaigns-sec {
-	    padding-top: 100px;
 	    padding-bottom: 100px;
 	}
 	.wwd-campaigns-title h3 {
@@ -329,9 +328,6 @@
 	.wwd-desc-sct-inner p {
 	    margin-bottom: 25px;
 	}
-	.join-journey-sct-title h3 {
-	    padding-bottom: 25px;
-	}
 	.join-journey-sct-grid-inner {
 	    min-height: 400px;
 	}
@@ -360,7 +356,7 @@
 	    margin-bottom: 18px;
 	}
 	.wwd-campaigns-sec {
-	    padding-top: 75px;
+	    padding-top: 120px;
 	    padding-bottom: 75px;
 	}
 	.wwd-campaigns-title h3 {
@@ -495,6 +491,9 @@
 	.wwd-campaigns-sec {
 	    padding-bottom: 55px;
 	}
+	.wwd-campaigns-sec{
+		padding-top: 100;
+	}
 }
 
 @media(max-width: 575px){
@@ -539,6 +538,9 @@
 	.wwd-user-sec-rgt-inner {
 	    min-height: 227px;
 	    padding: 50px 40px 50px 40px;
+	}
+	.wwd-campaigns-title h3{
+		line-height: 1.2;
 	}
 
 }
