@@ -163,7 +163,21 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                 		<?php } ?>
                     <a class="supportedbyUser support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>
                 	<?php } ?>
-                    <span class="share-btn" >SHARE <a href="#"></a></span>
+                    <div class="share-btn" >SHARE 
+                      <span class="share-btn-dot"></span>
+                      <div class="share-icons">
+                        <a href="#">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                          <i class="fas fa-envelope"></i>
+                        </a>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>             
