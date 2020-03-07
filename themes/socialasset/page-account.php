@@ -3,6 +3,13 @@
   Template Name: Account
 */
   get_camp_header();
+  $logintab = $tabClass = '';
+  if( isset($_GET['login']) && !empty($_GET['login'])){
+    $logintab = $_GET['login'];
+    if( $logintab == 'ngo' || $logintab == 'user')
+      $tabClass = ' current';
+  }
+
 ?>
 
 <div class="content-center-cntlr gray-bg">
@@ -16,7 +23,7 @@
           <div id="after-signup-hide">
             <div class="fl-tabs clearfix text-center">
               <button class="tab-link tabRegister current" data-tab="tab-1"><span>REGISTER</span></button>
-              <button class="tab-link tabLogin" data-tab="tab-2"><span>Log in</span></button>
+              <button class="tab-link tabLogin<?php echo $tabClass; ?>" data-tab="tab-2"><span>Log in</span></button>
             </div>
             <div id="tab-1" class="fl-tab-content current">
               <div class="tab-con-inr">

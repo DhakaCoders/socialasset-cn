@@ -145,34 +145,12 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
               <?php 
                 $newsl_check = $umetas['_get_newsletters'];
               ?>
-              
-              <div class="switch-item">
-                <div class="switch-checkbox">
-                  <input type="checkbox" id="checkbox-switch1">
-                  <span class="checkbox-slider"></span>
-                </div>
-                <label for="checkbox-switch1">I would like to receive notification through Email</label>
-              </div>
               <div class="switch-item">
                 <div class="switch-checkbox">
                   <input type="checkbox" name="_get_newsletters" id="checkbox-switch2"  value="<?php echo ($newsl_check == 1)? $newsl_check: '0';?>">
                   <span class="checkbox-slider"></span>
                 </div>
                 <label for="checkbox-switch2">Newsletters</label>
-              </div>
-              <div class="switch-item">
-                <div class="switch-checkbox">
-                  <input type="checkbox" id="checkbox-switch3" value="">
-                  <span class="checkbox-slider"></span>
-                </div>
-                <label for="checkbox-switch3">Emails for new campaigns</label>
-              </div>
-              <div class="switch-item">
-                <div class="switch-checkbox">
-                  <input type="checkbox" id="checkbox-switch4">
-                  <span class="checkbox-slider"></span>
-                </div>
-                <label for="checkbox-switch4">Lorem ipsum</label>
               </div>
             </div>
             <div style="height: 15px;"></div>
