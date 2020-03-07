@@ -111,9 +111,6 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
               <div class="miracle-plan-progress-camp">
                 <ul class="ulc clearfix">
                   <li>
-                    <i>
-                      <img src="<?php echo THEME_URI; ?>/assets/images/miracle-plan-des-icon-1.png" alt="">
-                    </i>
                     <?php 
   	                  if( isset($sumetas['_profile_logo_id']) && !empty($sumetas['_profile_logo_id']) ){
   	                ?>
@@ -164,9 +161,10 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                 		<?php }else{ ?>
                 			<a onclick="alert('If you want to support please login before.');" class="support-btn" href="javascript:void()"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
                 		<?php } ?>
+                    <a class="supportedbyUser support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>
                 	<?php } ?>
                     <span class="share-btn" >SHARE <a href="#"></a></span>
-                  </div>  
+                  </div>
                 </div>
               </div>             
             </div>   

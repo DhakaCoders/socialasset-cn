@@ -1,9 +1,42 @@
+== NGO Profile: 
+1. Per page select ta korte hobe
+2. MixItUp sorting ta korte hobe
 
-NGO Profile: 
 
-1. Show ajax loading before this message
+== User Profile: 
+1. CONTRIBUTIONS tab kichu na thakle akta message dekhate hobe
+
+
+== Business Profile:
+1. 'SUPPORTED CAMPAIGNS' tab a sort korle url amon hoy '?hashtag=undefined&sorting=desc'
+
+
+== Single Campaing page:
+1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe. Design add korci.
+2. Kokhono o '0 Active Campaigns' dekhay
+3. 'supported successfully' alert na diye button ar niche text show korte hobe
+4. Relevant Campaigns update korte hobe
+5. Share button ar kaj korte hobe 
+6. Support - 0.33333333333333%. 2 decimal place a ante hobe
+7. Business account support korle '%' barbe na
+8. CAMPAIGNS create page a preview button hide korte hobe
+9. Gallery te akoi image bar bar deya jabe na
+
+
+== Blog:
+1. Blog ta ki kora hoice?
+
+
+== General:
+1. Sob header gulo setup korte hobe
+2. User login thakle business-login page a jete parbe na
+3. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe
+4. Forget password ta korte hobe
+5. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
+6. Development check/update korte hobe
+6. Design check/update korte hobe
 
-2. About NGO text update hoy na
 
-3. Notification Settings a only newslatter rakho
+== Q for Client: 
+1. Can more than one Business support a CAMPAIGNS?

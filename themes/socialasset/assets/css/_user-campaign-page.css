@@ -176,17 +176,14 @@ span.miraclePlanthumbSlider-item img{
   margin-right: 16px;
   position: relative;
 }  
-.miracle-plan-progress-camp ul li i:first-child {
-  max-width: 42px;
+.miracle-plan-progress-camp ul li i:first-child,
+.miracle-plan-progress-camp ul li i img{
+  max-height: 42px;
 }  
-.miracle-plan-progress-camp ul li i:last-child {
+/*.miracle-plan-progress-camp ul li i:last-child {
   max-width: 105px;
   top: -2px;
-} 
-
-.miracle-plan-progress-camp ul li i img{
-  width: 100%;
-}
+} */
 .miracle-plan-progress-camp ul li:last-child {
   padding-left: 16px;
 }
@@ -275,7 +272,7 @@ span.miraclePlanthumbSlider-item img{
   font-weight: 900;
   text-transform: uppercase;
   background: #0055FF;
-  padding: 18px 10px 16px 60px;
+  padding: 20px 10px 16px 60px;
   max-width: 270px;
   width: 100%;
   min-height: 55px;
@@ -302,6 +299,25 @@ span.miraclePlanthumbSlider-item img{
 .miracle-plan-progress-link-wrp .support-btn:hover{
   color: #0055FF;
   background: transparent;
+}
+.miracle-plan-progress-link-wrp .support-btn.supportedbyUser{
+  color: #fff!important;
+  background: #F84574;
+  border-color: #F84574;
+}
+p.text-supportedbyUser{
+  font-weight: normal;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 12px;
+  line-height: 47px;
+  text-align: left;
+  color: #000;
+  margin: 0;
+}
+
+.miracle-plan-progress-link-wrp .support-btn.supportedbyUser:hover *{
+  color: #fff;
 }
 .miracle-plan-progress-link-wrp .share-btn{
   display: inline-block;

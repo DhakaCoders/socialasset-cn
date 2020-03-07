@@ -702,7 +702,9 @@ span.file-up-instruction-txt {
 .ngo-profile-sec .profile-img-edit,
 .ngo-profile-sec .profile-img,
 .business-profile-sec .profile-img,
-.business-profile-sec .profile-img-edit{
+.business-profile-sec .profile-img-edit,
+.user-profile-sec .profile-img,
+.user-profile-sec .profile-img-edit{
 	width: 130px;
 	height: 130px;
 	margin-bottom: 0;
