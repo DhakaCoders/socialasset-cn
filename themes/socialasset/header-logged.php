@@ -93,7 +93,9 @@
                     <?php }elseif(camp_user_role('business')){ ?>
                     <li><a href="<?php echo home_url('myaccount/supported-campaigns/'); ?>">My Contributions</a></li>
                     <?php } ?>
+                    <?php if ( camp_user_role('ngo') || camp_user_role('subscriber') || camp_user_role('business')) { ?>
                     <li><a href="<?php echo home_url('myaccount'); ?>">My Profile</a></li>
+                  <?php } ?>
                     <li>
                       <i class="fas fa-sign-out-alt"></i>
                       <?php if ( camp_user_role('ngo') ) { ?>
@@ -102,6 +104,8 @@
                       <a href="<?php get_ao_custom_logout('account'); ?>">Log out</a>
                       <?php }elseif(camp_user_role('business')){ ?>
                       <a href="<?php get_ao_custom_logout('business-login'); ?>">Log out</a>
+                      <?php }else{ ?>
+                        <a href="<?php get_ao_custom_logout('wp-admin'); ?>">Log out</a>
                       <?php } ?>
                     </li>
                   </ul>

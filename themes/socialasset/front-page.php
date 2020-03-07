@@ -263,9 +263,6 @@
                   <?php if( !empty($feaimg_src)): ?>
                   <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
                   <?php endif; ?>
-                  <?php if( ($i == 1) && empty($feaimg_src)): ?>
-                    <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI.'/assets/images/dfcampgrid.png'; ?>);"></div>
-                  <?php endif; ?>
                   <div class="campaigns-item-des">
                     <div class="campaigns-item-des-inr">
                       <div class="campaigns-item-cat-name">
@@ -533,7 +530,7 @@ $blg_query = new WP_Query(array(
             <?php endwhile; ?>
           </div>
           <div class="hm-blog-load-more text-center">
-            <a href="#">VIEW ALL ARTICLES</a>
+            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">VIEW ALL ARTICLES</a>
           </div>
           <?php 
             endif;  

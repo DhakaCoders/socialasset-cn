@@ -102,8 +102,9 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         'tax_query' => $termQuery
       ) 
     );
-    if($query->have_posts()):
+    if($query->have_posts()){
       $i = 1;
+      $count = $query->found_posts;
     while($query->have_posts()): $query->the_post();
       $attach_id = get_post_thumbnail_id(get_the_ID());
       $feaimg_src = $ClassAdd = '';
@@ -125,9 +126,6 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
           <div class="campaigns-list-item">
             <?php if( !empty($feaimg_src)): ?>
             <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
-            <?php endif; ?>
-            <?php if( ($i == 1) && empty($feaimg_src)): ?>
-              <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI.'/assets/images/dfcampgrid.png'; ?>);"></div>
             <?php endif; ?>
             <div class="campaigns-item-des">
               <div class="campaigns-item-des-inr">
@@ -204,8 +202,12 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         </li>
         <?php
         $i++;
-    endwhile; 
-    endif;  
+    endwhile;
+    echo '<span id="totalPost" data-totalp="'.$count.'"></span>'; 
+    }else{
+      echo '<div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>';
+      echo '<style>.show-more-btn{display:none;}</style>';
+    }  
     
     wp_reset_postdata();
     
