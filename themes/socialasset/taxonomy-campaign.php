@@ -11,8 +11,10 @@ $terms = get_terms( array(
     'number' => 6,
     'hide_empty' => false,
 ) );
+
 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
   $order = 'desc'; $search_result = '';
+
 
 $tags = get_terms( array(
     'orderby'    => 'name',
@@ -20,6 +22,19 @@ $tags = get_terms( array(
     'number' => 10,
     'taxonomy'   => 'campaign_tag' //i guess campaign_action  is your  taxonomy 
 ) );
+
+$activeid = $inactiveid = array();
+foreach( $terms as $term ){
+  if( $term->term_id == $ccat->term_id ){
+    $activeid[] = $term;
+  }else{
+    $inactiveid[] = $term;
+  }
+}
+
+$reterms = array_insert($inactiveid, 2, $activeid);
+
+
 ?>
 <span id="all_campaign" data-campurl="<?php echo esc_url(get_term_link($ccat));?>" style="display: none;"></span>
 <div class="has-shadow">
@@ -38,8 +53,8 @@ $tags = get_terms( array(
             <div class="campaigns-main-category">
               <ul class="ulc clearfix">
                 <?php 
-                foreach ( $terms as $term ) { 
-                $thumbnail_id = get_field( 'image', $term, false );
+                foreach ( $reterms as $reterm ) { 
+                $thumbnail_id = get_field( 'image', $reterm, false );
                 if( !empty($thumbnail_id) ){
                     $term_image = cbv_get_image_src($thumbnail_id, 'catgrid');
                 }
@@ -47,11 +62,11 @@ $tags = get_terms( array(
                    $term_image = THEME_URI .'/assets/images/catsmldf.png';
                 }
                 ?>
-                <li <?php echo ($term->slug == $ccat->slug)? 'class="cat-active"': ''; ?>>
+                <li <?php echo ($reterm->slug == $ccat->slug)? 'class="cat-active"': ''; ?>>
                   <div class="campaigns-main-cat-item">
                     <div class="campaigns-main-cat-bg" style="background: url(<?php echo $term_image; ?>);">
-                      <h6><?php echo $term->name; ?> <br>Campaigns</h6>
-                      <a class="overlay-link" href="<?php echo esc_url( get_term_link($term) );?>"></a>
+                      <h6><?php echo $reterm->name; ?> <br>Campaigns</h6>
+                      <a class="overlay-link" href="<?php echo esc_url( get_term_link($reterm) );?>"></a>
                     </div>
                   </div>
                 </li>

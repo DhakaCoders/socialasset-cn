@@ -241,14 +241,14 @@
           <div class="user-campaign-list-cntlr">
             <ul class=" ulc masonry">
               <?php $i = 1;
-                $no_image = $rel_term_name = '';  
+                $rel_term_name = $ClassAdd = '';  
                 foreach( $scamps  as $scamp ): 
                   $attach_id = get_post_thumbnail_id( $scamp->ID );
                   if( !empty($attach_id) ){
                     $feaimg_src = cbv_get_image_src($attach_id, 'campgrid');
                   }else{
-                    $feaimg_src = THEME_URI.'/assets/images/dfcampgrid.png';
-                    $no_image = ' no-image';
+                    $feaimg_src = '';
+                    $ClassAdd = ' only-des';
                   }
                   $rel_terms = get_the_terms( $scamp->ID, 'campaign' );
                   
@@ -258,9 +258,14 @@
                       }
                   }
               ?>
-              <li class="campaigns-list-item-wrp <?php if( $i == 1 ) echo 'campaigns-list-item-50'; echo $no_image; ?>">
+              <li class="campaigns-list-item-wrp <?php if( $i == 1 ) echo 'campaigns-list-item-50'; echo $ClassAdd; ?>">
                 <div class="campaigns-list-item">
+                  <?php if( !empty($feaimg_src)): ?>
                   <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
+                  <?php endif; ?>
+                  <?php if( ($i == 1) && empty($feaimg_src)): ?>
+                    <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI.'/assets/images/dfcampgrid.png'; ?>);"></div>
+                  <?php endif; ?>
                   <div class="campaigns-item-des">
                     <div class="campaigns-item-des-inr">
                       <div class="campaigns-item-cat-name">
@@ -307,8 +312,12 @@
                       </div>
                       <div class="campaigns-list-item-des-hover-des">
                         <h6><?php echo $scamp->post_title; ?></h6>
-                      <?php 
-                        echo wpautop(get_custom_excerpt($scamp->post_content, 30)); 
+                      <?php
+                        if( !empty($feaimg_src)):  
+                          echo wpautop(get_custom_excerpt($scamp->post_content, 30));
+                        else:
+                          echo wpautop(get_custom_excerpt($scamp->post_content, 14));
+                        endif;
                       ?>
                       </div>
                       <div class="campaigns-vote-percentage-hover-bar">

@@ -106,10 +106,12 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
       $i = 1;
     while($query->have_posts()): $query->the_post();
       $attach_id = get_post_thumbnail_id(get_the_ID());
+      $feaimg_src = $ClassAdd = '';
       if( !empty($attach_id) ){
         $feaimg_src = cbv_get_image_src($attach_id, 'campgrid');
-      }else{
-        $feaimg_src = THEME_URI.'/assets/images/dfcampgrid.png';
+      }
+      else{
+        $ClassAdd = ' only-des';
       }
       $rel_terms = get_the_terms( get_the_ID(), 'campaign' );
       $rel_term_name = '';
@@ -119,9 +121,14 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
           }
       }
     ?>
-        <li class="campaigns-list-item-wrp <?php if(($i == 1)): ?>campaigns-list-item-50<?php endif; if(isset($_POST['el_li']) && !empty($_POST['el_li'])) echo $_POST['el_li'];?> ">
+        <li class="campaigns-list-item-wrp <?php if(($i == 1)): ?>campaigns-list-item-50<?php endif; if(isset($_POST['el_li']) && !empty($_POST['el_li'])) echo $_POST['el_li']; echo $ClassAdd; ?> ">
           <div class="campaigns-list-item">
+            <?php if( !empty($feaimg_src)): ?>
             <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
+            <?php endif; ?>
+            <?php if( ($i == 1) && empty($feaimg_src)): ?>
+              <div class="campaigns-item-img" style="background: url(<?php echo THEME_URI.'/assets/images/dfcampgrid.png'; ?>);"></div>
+            <?php endif; ?>
             <div class="campaigns-item-des">
               <div class="campaigns-item-des-inr">
                 <div class="campaigns-item-cat-name">
@@ -166,7 +173,11 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
                 </div>
                 <div class="campaigns-list-item-des-hover-des">
                   <h6><?php the_title(); ?></h6>
+                  <?php if( !empty($feaimg_src)): ?>
                   <?php echo wpautop( camp_excerpt(30, ''), true ); ?>
+                  <?php else: ?>
+                    <?php echo wpautop( camp_excerpt(14, ''), true ); ?>
+                  <?php endif; ?>
                 </div>
                 <div class="campaigns-vote-percentage-hover-bar">
                   <div class="campaigns-vote-info">
