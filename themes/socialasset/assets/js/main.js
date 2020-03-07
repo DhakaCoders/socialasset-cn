@@ -59,6 +59,9 @@ Responsive on 767px
 
 
 
+  $('.share-btn').on('click', function(){
+    $('.share-icons').slideToggle(300);
+  });
 
 
 

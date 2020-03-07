@@ -330,7 +330,7 @@ p.text-supportedbyUser{
   font-weight: 700;
   text-transform: uppercase;
 }
-.miracle-plan-progress-link-wrp .share-btn a{
+.miracle-plan-progress-link-wrp .share-btn .share-btn-dot{
   display: inline-block;
   vertical-align: middle;
   margin-left: 9px;
@@ -345,7 +345,7 @@ p.text-supportedbyUser{
   font-size: 15px;
   position: relative;
 }
-.miracle-plan-progress-link-wrp .share-btn a::after{
+.miracle-plan-progress-link-wrp .share-btn .share-btn-dot::after{
   content: "";
   position: absolute;
   top: 6px;
@@ -356,10 +356,26 @@ p.text-supportedbyUser{
   width: 14px;
   height: 17px;
 }
-.miracle-plan-progress-link-wrp .share-btn a:hover{
+.miracle-plan-progress-link-wrp .share-btn .share-btn-dot:hover{
   background: #fff;
   border: 1px solid #0055ff;
 }
+
+.share-icons{
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  padding-top: 5px;
+}
+.share-icons a{
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 5px;
+  font-size: 15px;
+}
+
+
 .user-story-cmpaign-sec{
   padding-top: 45px;
   padding-bottom: 145px;
@@ -705,21 +721,24 @@ p.text-supportedbyUser{
     font-size: 11px;
   }
 
-.miracle-plan-progress-camp ul li i:first-child {
-  max-width: 35px;
-}
-.miracle-plan-progress-camp ul li i:last-child {
-  max-width: 95px;
-} 
-.miracle-plan-progress-camp ul li i {
-  margin-right: 15px;
-}
-.miracle-plan-progress-camp ul li:last-child {
-    padding-left: 15px;
-}
-.miracle-plan-progress-camp ul li:last-child span {
-  padding-top: 14px;
-}
+  .miracle-plan-progress-camp ul li i:first-child {
+    max-width: 35px;
+  }
+  .miracle-plan-progress-camp ul li i:last-child {
+    max-width: 95px;
+  } 
+  .miracle-plan-progress-camp ul li i {
+    margin-right: 15px;
+  }
+  .miracle-plan-progress-camp ul li:last-child {
+      padding-left: 15px;
+  }
+  .miracle-plan-progress-camp ul li:last-child span {
+    padding-top: 14px;
+  }
+  .share-icons{
+    left: 0;
+  }
 }
 
 
