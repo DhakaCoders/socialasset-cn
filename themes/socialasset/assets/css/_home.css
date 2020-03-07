@@ -689,7 +689,7 @@ span.btm-q-icon {
     vertical-align: baseline;
     position: absolute;
     top: 105px;
-    left: 64px;
+    left: 80px;
     max-width: 164px;
     z-index: -1;
 }
@@ -698,7 +698,7 @@ span.btm-q-icon {
 	vertical-align: baseline;
 	position: absolute;
 	top: 90px;
-	left: 30px;
+	left: 49px;
 	max-width: 164px;
 	z-index: -1;
 }
@@ -1089,7 +1089,7 @@ span.btm-q-icon {
 	    background: #F7F5F5;
 	}
 	.hm-blog-sec {
-	    padding: 50px 0;
+	    padding: 50px 0 70px;
 	}
 	.hm-user-support-sec {
 	    padding-bottom: 50px;
