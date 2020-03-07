@@ -26,8 +26,7 @@ $Query = new WP_Query(array(
         if($umetas['_user_account_status'] == 'draft'){
     ?>
     <div class="profile-is-draft">
-      <p><strong>Your profile is DRAFT</strong>   Lorem ipsum donor sit met.</p>
-      <i class="fas fa-times"></i>
+      <p><strong>Your profile is DRAFT</strong>.</p>
     </div>
     <?php 
       } }
