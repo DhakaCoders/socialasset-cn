@@ -221,10 +221,10 @@
   display: block;
 }
 
-h1.abt-page-title span{
+.banner-page-title span{
   position: relative;
 }
-h1.abt-page-title span::after {
+.banner-page-title span::after {
     content: "";
     position: absolute;
     height: 15px;
@@ -363,10 +363,10 @@ h1.abt-page-title span::after {
   .core-value-head {
     padding-bottom: 35px;
   }
-  h1.abt-page-title span::after {
+  .banner-page-title span::after {
     content: none;
   }
-  h1.abt-page-title br{
+  .banner-page-title br{
     display: none;
   }
   .about-story-des-main p br{
