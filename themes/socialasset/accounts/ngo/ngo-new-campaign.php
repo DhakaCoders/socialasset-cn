@@ -109,7 +109,6 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
           </div>
           <input type="hidden" name="ngo_add_campaign_nonce" value="<?php echo wp_create_nonce('ngo-add-campaign-nonce'); ?>"/>
           <div class="ncc-submit-btns">
-            <button>PREVIEW</button>
             <input type="submit" name="add_campaign" value="Submit">
           </div>
         </div>

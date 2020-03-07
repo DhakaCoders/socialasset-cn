@@ -47,35 +47,17 @@
                     <li><a href="#">How it Works</a></li>
                   </ul>
                   <?php if ( camp_user_role('ngo') ) { ?>
-                  <?php 
-                    $ngoOptions = array( 
-                        'theme_location' => 'cbv_ngo_menu', 
-                        'menu_class' => 'clearfix ulc',
-                        'container' => 'ngoOptions',
-                        'container_class' => 'ngoOptions'
-                      );
-                    wp_nav_menu( $ngoOptions );
-                  ?>
+                    <ul class="ulc clearfix">
+                      <li><a href="<?php echo esc_url(home_url('myaccount/add-campaign')); ?>">Create a Campaign</a></li>
+                    </ul>
                   <?php }elseif( camp_user_role('subscriber') ){ ?>
-                    <?php 
-                      $subOptions = array( 
-                          'theme_location' => 'cbv_sub_menu', 
-                          'menu_class' => 'clearfix ulc',
-                          'container' => 'subOptions',
-                          'container_class' => 'subOptions'
-                        );
-                      wp_nav_menu( $subOptions );
-                    ?>
+                    <ul class="ulc clearfix">
+                      <li><a href="<?php echo esc_url(home_url('myaccount/add-campaign')); ?>">Create a Campaign</a></li>
+                    </ul>
                   <?php }elseif( camp_user_role('business') ){ ?>
-                    <?php 
-                      $busOptions = array( 
-                          'theme_location' => 'cbv_Business_menu', 
-                          'menu_class' => 'clearfix ulc',
-                          'container' => 'busOptions',
-                          'container_class' => 'busOptions'
-                        );
-                      wp_nav_menu( $busOptions );
-                    ?>
+                    <ul class="ulc clearfix">
+                      <li><a href="<?php echo esc_url(home_url('myaccount/add-campaign')); ?>">Create a Campaign</a></li>
+                    </ul>
                   <?php } ?>
                 </div>
                 <div class="hdr-login-profile">

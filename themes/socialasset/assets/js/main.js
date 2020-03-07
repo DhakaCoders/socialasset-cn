@@ -496,8 +496,22 @@ function catId(){
     return false;
 }
 
+if($("#totalPost").length){
+  var totalP = $("#totalPost").data('totalp');
+  $("#putCount").text(totalP);
+}
+
+function totalLoadPost(){
+  if($(".totalLoadP").length){
+    var tloadp = $(".totalLoadP").data('tloadp');
+    console.log(tloadp);
+    $("#ploadCount").text(tloadp);
+  }
+}
+totalLoadPost();
 $("#loadMore").on('click', function(e) {
     e.preventDefault();
+    totalLoadPost();
     var catID = '';
     var key_word = '';
     var sortQuery = '';

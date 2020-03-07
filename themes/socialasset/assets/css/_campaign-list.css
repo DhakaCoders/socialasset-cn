@@ -532,6 +532,10 @@ min-height: 42px;
 .edit-action:hover .campaign-action {
     opacity: 1;
 }
+.show-more-btn span#putCount,
+.show-more-btn span#ploadCount {
+    display: inline;
+}
 @media(max-width: 991px){
 	.user-campaign-list-cntlr ul li{
 		width: 50%;
