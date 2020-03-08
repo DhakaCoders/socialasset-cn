@@ -105,13 +105,29 @@ if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
               </div>
             </div>
             <div class="fl-forget-row prib-plr">
-              <a href="#">Forgot your password?</a>
+              <a class="fl-forget-pass-btn" href="#">Forgot your password?</a>
             </div>
-            <div class="prib-plr">
+            <div class="prib-plr forgot-pass-field-before">
               <div class="prib-btns profile-submit-btn clearfix">
                 <input type="hidden" name="user_change_password_nonce" value="<?php echo wp_create_nonce('user-change-password-nonce'); ?>"/>
                 <input type="submit" name="change_pass" value="Change Password">
                 <input type="reset" name="" value="Cancel">
+              </div>
+            </div>
+            </form>
+            <form id="forgotpass" onsubmit="SubmitForgotPass(); return false">
+            <input type="hidden" name="action" value="user_forgot_password">
+            <div class="prib-plr forgot-pass-field-after">
+              <div class="prib-btns">
+                <div class="sa-input">
+                  <span class="useremail error-msg" style="display: none;"></span>
+                  <span id="generatedSuccess" class="success-login" style="display: none;"></span>
+                  <input type="email" name="useremail" id="useremail" placeholder="Enter your email">
+                </div>
+                <div class="profile-submit-btn clearfix">
+                  <input type="hidden" name="user_forgot_pass_nonce" value="<?php echo wp_create_nonce('user-forgot-pass-nonce'); ?>"/>
+                  <input type="submit" name="forgotpass" value="Send">
+                </div>
               </div>
             </div>
             </form>

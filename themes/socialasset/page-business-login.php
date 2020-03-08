@@ -63,12 +63,27 @@ get_camp_header();
                           <span class="loginpass_error error-msg"></span>
                         </div>
                         <div class="fl-forget-row">
-                          <a href="#">Forgot your password?</a>
+                          <a class="fl-forget-pass-btn" href="#">Forgot your password?</a>
                         </div>
-                        <div class="fl-submit-btn w-full">
+                        <div class="fl-submit-btn w-full forgot-pass-field-before">
                           <input type="hidden" name="business_login_nonce" value="<?php echo wp_create_nonce('business-login-nonce'); ?>"/>
                           <input type="submit" value="Sign In">
                         </div>
+                        </form>
+                        <form id="forgotpass" onsubmit="SubmitForgotPass(); return false">
+                          <input type="hidden" name="action" value="user_forgot_password">
+                        <div class="forgot-pass-field-after">
+                          <div class="sa-input">
+                            <span class="useremail error-msg" style="display: none;"></span>
+                            <span id="generatedSuccess" class="success-login" style="display: none;"></span>
+                            <input type="email" name="useremail" id="useremail" placeholder="Enter your email">
+                          </div>
+                          <div class="profile-submit-btn clearfix">
+                            <input type="hidden" name="user_forgot_pass_nonce" value="<?php echo wp_create_nonce('user-forgot-pass-nonce'); ?>"/>
+                            <input type="submit" name="forgotpass" value="Send">
+                          </div>
+                        </div>
+                        </form>
                         <div class="fl-or-text">
                           <span>Or</span>
                         </div>
@@ -82,7 +97,6 @@ get_camp_header();
                             Sign In with LinkedIn
                           </a>
                         </div>
-                      </form>
                     </div>
                   </div>
                 </div>

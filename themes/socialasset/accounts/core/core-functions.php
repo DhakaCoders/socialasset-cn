@@ -297,7 +297,7 @@ function cam_generate_password($_len) {
     $_alphaSmall = 'abcdefghijklmnopqrstuvwxyz';            // small letters
     $_alphaCaps  = strtoupper($_alphaSmall);                // CAPITAL LETTERS
     $_numerics   = '1234567890';                            // numerics
-    $_specialChars = '`~!@#$%^&*()-_=+]}[{;:,<.>/?\'"\|';   // Special Characters
+    $_specialChars = '`~!@#$%^&*()-_=+]}[{;:,./?\'"\|';   // Special Characters
 
     $_container = $_alphaSmall.$_alphaCaps.$_numerics.$_specialChars;   // Contains all characters
     $password = '';         // will contain the desired pass
