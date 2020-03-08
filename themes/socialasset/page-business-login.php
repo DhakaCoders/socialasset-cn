@@ -1,8 +1,10 @@
 <?php 
+checked_loggedin();
 /*
   Template Name: Business Login
 */
 get_camp_header();
+
 ?>
 <div class="content-center-cntlr gray-bg">
   <span class="login-form-clip"><img src="<?php echo THEME_URI; ?>/assets/images/form-clip.png"></span>

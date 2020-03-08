@@ -108,6 +108,8 @@ if( isset($_GET['sorting']) && !empty($_GET['sorting'])){
       </ul>
     </div>
     <?php endif; wp_reset_postdata();?>
+    <?php else: ?>
+      <div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>
     <?php endif; ?>
   </div>
 </div>

@@ -4,38 +4,38 @@
 
 
 == User Profile: 
-1. CONTRIBUTIONS tab kichu na thakle akta message dekhate hobe
+1. CONTRIBUTIONS tab kichu na thakle akta message dekhate hobe -- Fixed
 
 
 == Business Profile:
-1. 'SUPPORTED CAMPAIGNS' tab a sort korle url amon hoy '?hashtag=undefined&sorting=desc'
+1. 'SUPPORTED CAMPAIGNS' tab a sort korle url amon hoy '?hashtag=undefined&sorting=desc' -- Fixed
 
 
 == Single Campaing page:
 1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe. Design add korci.
-2. Kokhono o '0 Active Campaigns' dekhay
+2. Kokhono o '0 Active Campaigns' dekhay - Fixed
 3. 'supported successfully' alert na diye button ar niche text show korte hobe
-4. Relevant Campaigns update korte hobe
+4. Relevant Campaigns update korte hobe -- Fixed
 5. Share button ar kaj korte hobe 
-6. Support - 0.33333333333333%. 2 decimal place a ante hobe
-7. Business account support korle '%' barbe na
-8. CAMPAIGNS create page a preview button hide korte hobe
-9. Gallery te akoi image bar bar deya jabe na
+6. Support - 0.33333333333333%. 2 decimal place a ante hobe  -- Fixed
+7. Business account support korle '%' barbe na -- Fixed
+8. CAMPAIGNS create page a preview button hide korte hobe -- Fixed
+9. Gallery te akoi image bar bar deya jabe na -- Fixed
 
 
 == Blog:
-1. Blog ta ki kora hoice?
+1. Blog ta ki kora hoice? -- Fixed
 
 
 == General:
-1. Sob header gulo setup korte hobe
-2. User login thakle business-login page a jete parbe na
-3. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe
+1. Sob header gulo setup korte hobe -- Fixed
+2. User login thakle business-login page a jete parbe na -- Fixed
+3. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe  -- Fixed
 4. Forget password ta korte hobe
 5. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
 6. Development check/update korte hobe
-6. Design check/update korte hobe
+6. Design check / update korte hobe
 
 
 == Q for Client: 

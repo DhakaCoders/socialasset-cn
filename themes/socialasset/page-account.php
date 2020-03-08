@@ -1,8 +1,10 @@
 <?php 
+checked_loggedin();
 /*
   Template Name: Account
 */
   get_camp_header();
+  
   $logintab = $tabClass = '';
   if( isset($_GET['login']) && !empty($_GET['login'])){
     $logintab = $_GET['login'];

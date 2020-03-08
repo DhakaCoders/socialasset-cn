@@ -57,7 +57,7 @@ jQuery(document).ready( function($){
   }
 
   if($('#campaign_gallery').length){
-    var multiMediaUploader; 
+    var multiMediaUploader; var duplicateID = 0;
       // multiple image selection for gallery
       $('#campaign_gallery').on('click', function(e){
          e.preventDefault();
@@ -93,17 +93,22 @@ jQuery(document).ready( function($){
               //console.log(attachments[i].id);
                   //console.log(attachments[i].attributes.type);
                   //sample function 1: add image preview
+                  duplicateID = $("#myplugin-image-input"+attachments[i].id).val()
                   if(attachments[i].attributes.type == 'video'){
-                    $('#myplugin-placeholder .uploadedImage').append('<li id="myplugin-image-li' + 
-                    attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><video> <source src="'+attachments[i].attributes.url + '" type="video/mp4"><input id="myplugin-image-input' + 
-                    attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 
-                    attachments[i].id + '"><div class="removeGallery" onclick="DeleteGalleryImage('+attachments[i].id+'); return false"><i class="fa fa-trash"></i></div></div></li>');
+                    if( duplicateID != attachments[i].id ){
+                      $('#myplugin-placeholder .uploadedImage').append('<li id="myplugin-image-li' + 
+                      attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><video> <source src="'+attachments[i].attributes.url + '" type="video/mp4"><input id="myplugin-image-input' + 
+                      attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 
+                      attachments[i].id + '"><div class="removeGallery" onclick="DeleteGalleryImage('+attachments[i].id+'); return false"><i class="fa fa-trash"></i></div></div></li>');
+                    }
                   }else{
-                    $('#myplugin-placeholder .uploadedImage').append('<li id="myplugin-image-li' + 
-                    attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><img src="' + 
-                    attachments[i].attributes.sizes.thumbnail.url + '" ><input id="myplugin-image-input' + 
-                    attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 
-                    attachments[i].id + '"><div class="removeGallery" onclick="DeleteGalleryImage('+attachments[i].id+'); return false"><i class="fa fa-trash"></i></div></div></li>');
+                    if( duplicateID != attachments[i].id ){
+                      $('#myplugin-placeholder .uploadedImage').append('<li id="myplugin-image-li' + 
+                      attachments[i].id +'"><div class="ncc-campaign-gallery-add-img"><img src="' + 
+                      attachments[i].attributes.url + '" ><input id="myplugin-image-input' + 
+                      attachments[i].id +'" type="hidden" name="attachment_id_array[]"  value="' + 
+                      attachments[i].id + '"><div class="removeGallery" onclick="DeleteGalleryImage('+attachments[i].id+'); return false"><i class="fa fa-trash"></i></div></div></li>');
+                    }
                 }
               }
           })
@@ -117,7 +122,6 @@ jQuery(document).ready( function($){
 function DeleteGalleryImage(id){
       var answer = confirm("Are you sure you want to remove gallery image?");
       if( answer == true ){
-        console.log(id);
         jQuery('#myplugin-image-li'+id).remove('#myplugin-image-li'+id);
       }
       return;

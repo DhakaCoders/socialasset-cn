@@ -458,11 +458,11 @@ $('#campaign_sort').on('change', function(){
   var campSort = $(this).val();
   var key_word = '';
   var hashtag = '';
-  if(campKeyWord() != ''){
+  if(campKeyWord() != '' && typeof campKeyWord() != "undefined"){
     key_word = campKeyWord();
     window.location.href = mycampaigns_url+'/?search='+key_word+'&sorting='+campSort;
   }
-  else if(queryTag() != ''){
+  else if(queryTag() != '' && typeof queryTag() != "undefined"){
     hashtag = queryTag();
     window.location.href = mycampaigns_url+'/?hashtag='+hashtag+'&sorting='+campSort;
   }

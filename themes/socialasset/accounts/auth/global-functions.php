@@ -43,7 +43,7 @@ function user_profile_image_update(){
 			/* User */
 
 			$msg['success'] = 'Updated successfully.';
-
+			stop_fom_resubmittion();
 		}else{
   			$msg['error'] = 'Something was wrong please try again.';
   		}
@@ -68,6 +68,7 @@ function user_change_password_customly(){
 	    		$user_id = wp_update_user($userdata);
 	    		if($user_id){
 	    			$msg['success'] = 'Password updated successfully.';
+	    			stop_fom_resubmittion();
 	    		}else{
 	    			$msg['error'] = 'Could not update';
 	    		}
@@ -87,15 +88,16 @@ function user_notification_settings_update(){
 			if(isset( $_POST["_get_newsletters"] ) && !empty($_POST["_get_newsletters"])){
 				update_user_meta( $user->ID, '_get_newsletters', $_POST["_get_newsletters"]);
 				$msg['success'] = 'Settings updated successfully.';
+				stop_fom_resubmittion();
 			}
 			elseif(!isset( $_POST["_get_newsletters"] ) && empty($_POST["_get_newsletters"])){
 				update_user_meta( $user->ID, '_get_newsletters', 0);
 				$msg['success'] = 'Settings updated successfully.';
+				stop_fom_resubmittion();
 			}
 			else{
 				$msg['error'] = 'Settings could not update.';
 			}
-			
 
 		}else{
   			$msg['error'] = 'Settings could not update.';
@@ -145,10 +147,12 @@ function my_support_capm(){
 
 			    $expSup_ids[] = $user->ID;
 			    $impSup_ids = implode(',', $expSup_ids);
-			    $total_count = $get_counts + 1;
 			    update_user_meta( $user->ID, '_support_camp_ids', $impCamp_ids );
 				update_post_meta( $post_id, '_supporter_ids', $impSup_ids );
-				update_post_meta( $post_id, '_supported_count', $total_count );
+				if(in_array( 'subscriber', (array) $user->roles )){
+					$total_count = $get_counts + 1;
+					update_post_meta( $post_id, '_supported_count', $total_count );
+				}
 				$data['success'] = 'success';
 
 			}
@@ -168,12 +172,17 @@ function my_support_capm(){
 					$expUser_ids = explode(',', $getUser_ids);
 					$expUser_ids[] = $user->ID;
 		    		$impCamp_ids = implode(',', $expUser_ids);
-		    		$total_count = $get_counts + 1;
 					update_post_meta( $post_id, '_supporter_ids', $impCamp_ids );
-					update_post_meta( $post_id, '_supported_count', $total_count );
+					if(in_array( 'subscriber', (array) $user->roles )){
+						$total_count = $get_counts + 1;
+						update_post_meta( $post_id, '_supported_count', $total_count );
+					}
 				}else{
 					update_post_meta( $post_id, '_supporter_ids', $user->ID );
-					update_post_meta( $post_id, '_supported_count', 1 );
+					if(in_array( 'subscriber', (array) $user->roles )){
+						update_post_meta( $post_id, '_supported_count', 1 );
+					}
+					
 				}
 				
 				$data['success'] = 'success';
@@ -203,7 +212,7 @@ function camp_progress_bar($post_id){
 	{
 		$divided = ($vote_count / $limit);
 		$percentange = ($divided * 100);
-		return $percentange;
+		return round($percentange, 2);
 	}
 	else{
 		return 0;
@@ -236,7 +245,8 @@ if(!function_exists('get_user_profile_logo_tag')){
 
 function camp_user_role($role = ''){
 	$user = wp_get_current_user();
-	if($user && !empty($role)):
+	
+	if($user && !empty($role) && $user->cap_key !=NULL ):
 		if ( in_array( $role, (array) $user->roles ) && is_user_logged_in() )
 			return true;
 		elseif(in_array( $role, (array) $user->roles ) && is_user_logged_in())
@@ -245,6 +255,30 @@ function camp_user_role($role = ''){
 			return true;
 		else
 			return false;
+	else:
+		return false;
+	endif;
+}
+
+function checked_loggedin(){
+	$user = wp_get_current_user();
+	
+	if($user && $user->cap_key !=NULL ):
+		if ( in_array( 'ngo', (array) $user->roles ) && is_user_logged_in() ){
+			echo '<script>window.location.href="'.site_url().'/myaccount"</script>'; exit();
+		}
+		elseif(in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in()){
+		    echo '<script>window.location.href="'.site_url().'/myaccount"</script>'; exit();
+		}
+		elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){
+			echo '<script>window.location.href="'.site_url().'/myaccount"</script>'; exit();
+		}
+		elseif(in_array( 'administrator', (array) $user->roles ) && is_user_logged_in()){
+			echo '<script>window.location.href="'.site_url().'"</script>'; exit();
+		}
+		else{
+			return false;
+		}
 	else:
 		return false;
 	endif;

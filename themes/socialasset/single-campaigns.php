@@ -144,23 +144,29 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                     <?php endif; ?>
                   </div>
                   <div class="miracle-plan-progress-link-wrp">
-                  	<?php 
-      			        if( camp_expire_date($thisID) ){
-                  	?>
+                	<?php if( camp_expire_date($thisID) ){ ?>
                     <span class="support-btn status-btn-expired"><i class="far fa-clock"></i>EXPIRED</span>
-                	  <?php }else{ ?>
-                		<?php 
-                		$user = wp_get_current_user();
-                      	if ( in_array( 'subscriber', (array) $user->roles ) && is_user_logged_in() ) {
-                		?>
+                	<?php 
+                  }
+                  else{ 
+                  ?>
+              		<?php 
+              		  $user = wp_get_current_user();
+                    $campIDs = get_user_meta( $user->ID, '_support_camp_ids', true );
+                    echo $campIDs;
+                    $expIDs = explode(',', $campIDs);
+                    if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) {
+              		?>
                 		<a class="support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
-                		<?php }elseif(in_array( 'business', (array) $user->roles ) && is_user_logged_in()){ ?>
-                			<a class="support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
-                		<?php }elseif( (in_array( 'administrator', (array) $user->roles ) || in_array( 'ngo', (array) $user->roles ) ) && is_user_logged_in()){ ?>
-
-                		<?php }else{ ?>
-                			<a onclick="alert('If you want to support please login before.');" class="support-btn" href="javascript:void()"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
-                		<?php } ?>
+              		<?php 
+                  }
+                  elseif( (in_array( 'administrator', (array) $user->roles ) || in_array( 'ngo', (array) $user->roles ) ) && is_user_logged_in()){ 
+                  
+                  }
+                  else{ 
+                  ?>
+                	  <a onclick="alert('If you want to support please login before.');" class="support-btn" href="javascript:void()"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
+                	<?php } ?>
                     <a class="supportedbyUser support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>
                 	<?php } ?>
                     <div class="share-btn" >SHARE 

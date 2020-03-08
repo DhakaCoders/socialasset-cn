@@ -282,3 +282,12 @@ function camp_is_date($date){
   }
   return false;
 }
+
+
+function stop_fom_resubmittion(){
+  echo '<script>
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+      </script>';
+}

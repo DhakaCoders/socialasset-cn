@@ -3,22 +3,8 @@ $index = '_show_my_campaigns';
 if( isset($umetas[$index]) && $umetas[$index] != 'true') return;
  
 $active_camp = 0;
-if(isset($umetas['_support_camp_ids']) && !empty($umetas['_support_camp_ids'])):
-$support_ids = $umetas['_support_camp_ids'];
-$array_support_ids = explode(',', $support_ids);
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$Query = new WP_Query(array( 
-    'post_type'=> 'campaigns',
-    'post_status' => array('publish', 'draft', 'pending'),
-    'posts_per_page' => 10,
-    'paged' => $paged,
-    'order'=> 'DESC',
-    'post__in' => $array_support_ids
-  ) 
-);
-
 ?>
-<?php if( $Query->have_posts() ): ?>
+
 <div id="tab-2" class="">
   <div class="tab-con-inr">
     <?php 
@@ -31,7 +17,22 @@ $Query = new WP_Query(array(
     <?php 
       } }
     ?>
+    <?php 
+      if(isset($umetas['_support_camp_ids']) && !empty($umetas['_support_camp_ids'])):
+      $support_ids = $umetas['_support_camp_ids'];
+      $array_support_ids = explode(',', $support_ids);
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $Query = new WP_Query(array( 
+          'post_type'=> 'campaigns',
+          'post_status' => array('publish', 'draft', 'pending'),
+          'posts_per_page' => 10,
+          'paged' => $paged,
+          'order'=> 'DESC',
+          'post__in' => $array_support_ids
+        ) 
+      );
 
+    if( $Query->have_posts() ): ?>
     <div class="user-profile-1-hdr clearfix">
       <strong>Contributions</strong>
       <span><?php echo $Query->found_posts; ?> Contributions</span>
@@ -135,8 +136,10 @@ $Query = new WP_Query(array(
         </table>
       </div>
     </div>
-
+    <?php endif; wp_reset_postdata();?>
+    <?php else: ?>
+      <div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>
+    <?php endif; ?>
   </div>
 </div>
-<?php endif; wp_reset_postdata();?>
-<?php endif; ?>
+

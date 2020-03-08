@@ -58,13 +58,16 @@ $Query = new WP_Query(array(
   <?php } }?>
 
     <div class="ngo-campaigns-tab-hdr clearfix">
+      <?php if( $Query->have_posts() ): ?>
       <strong><span id="total_active_camp"><?php echo get_count_posts_by_author('campaigns', $user->ID); ?></span> Active Campaigns</strong>
+      <?php endif; ?>
       <div class="ngo-campaigns-tab-hdr-rgt">
         <form id="archive_form">
           <div class="ngo-archive">
             <label>Archive</label>
             <div class="ngo-archive-date">
-              <input type="text" class="archive_date" id="datepicker">
+                  <input type="text" name="to_date" id="datepicker3" autocomplete="off">
+              <input type="text" class="archive_date" id="datepicker" >
               <img src="<?php echo THEME_URI; ?>/assets/images/calender.png">
             </div>
           </div>
@@ -238,6 +241,7 @@ $Query = new WP_Query(array(
 
     </div>
     <?php else: ?>
+      <div class="postnot-found" style="text-align:center; padding:20px 0;">No results!</div>
     <?php endif; wp_reset_postdata();?>
   </div>
 </div>
