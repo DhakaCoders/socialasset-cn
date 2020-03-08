@@ -15,6 +15,9 @@ checked_loggedin();
       $firstTab = 'current';
       $lastTab = '';      
     }
+  }else{
+      $firstTab = 'current';
+      $lastTab = '';     
   }
 
 ?>

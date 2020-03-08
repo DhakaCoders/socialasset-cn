@@ -45,7 +45,7 @@ function business_login_account(){
 		    
 	 		if(!$user || !wp_check_password($password, $user->user_pass, $user->ID) || ($user->roles[0] != 'business') ) {
 				// if the user name doesn't exist
-				$data['loging_error'] = 'Invalid username Or Password';
+				$data['loging_error'] = 'Invalid username or Password';
 				$success = false;
 			}
 			if($success){
@@ -65,7 +65,7 @@ function business_login_account(){
 	            }
 	        }
 		}else{
-			$data['loging_error'] = 'Invalid username Or password';
+			$data['loging_error'] = 'Invalid username or password';
 		}
 
         echo json_encode($data);
@@ -116,7 +116,7 @@ function ngo_user_login_account(){
 		    
 	 		if(!$user || !wp_check_password($password, $user->user_pass, $user->ID) || ($user->roles[0] == 'business') ) {
 				// if the user name doesn't exist
-				$data['loging_error'] = 'Invalid username Or Password';
+				$data['loging_error'] = 'Invalid username or Password';
 				$success = false;
 			}
 			if($success){
@@ -136,7 +136,7 @@ function ngo_user_login_account(){
 	            }
 	        }
 		}else{
-			$data['loging_error'] = 'Invalid username Or Password';
+			$data['loging_error'] = 'Invalid username or Password';
 		}
 
         echo json_encode($data);

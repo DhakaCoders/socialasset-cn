@@ -305,7 +305,8 @@ span.miraclePlanthumbSlider-item img{
   background: #F84574;
   border-color: #F84574;
 }
-p.text-supportedbyUser{
+p.text-supportedbyUser,
+.mgsBar p{
   font-weight: normal;
   font-style: italic;
   text-decoration: underline;
@@ -314,6 +315,9 @@ p.text-supportedbyUser{
   text-align: left;
   color: #000;
   margin: 0;
+}
+.mgsBar p{
+  margin-top: 10px;
 }
 
 .miracle-plan-progress-link-wrp .support-btn.supportedbyUser:hover *{
@@ -344,6 +348,7 @@ p.text-supportedbyUser{
   color: #000;
   font-size: 15px;
   position: relative;
+  cursor: pointer;
 }
 .miracle-plan-progress-link-wrp .share-btn .share-btn-dot::after{
   content: "";
@@ -356,23 +361,26 @@ p.text-supportedbyUser{
   width: 14px;
   height: 17px;
 }
-.miracle-plan-progress-link-wrp .share-btn .share-btn-dot:hover{
+.miracle-plan-progress-link-wrp .share-btn .share-btn-dot:hover,
+.miracle-plan-progress-link-wrp .share-btn.thisactive .share-btn-dot{
   background: #fff;
   border: 1px solid #0055ff;
 }
 
-.share-icons{
-  position: absolute;
-  top: 100%;
-  right: 0;
-  display: none;
-  padding-top: 5px;
+.share-icons {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    padding-top: 10px;
+    width: 120px;
+    text-align: right;
 }
 .share-icons a{
   display: inline-block;
   vertical-align: baseline;
   margin: 5px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 

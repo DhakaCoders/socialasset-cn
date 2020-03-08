@@ -73,7 +73,7 @@ function business_create_account(){
 				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
 					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
 				}
-	            $data['bsignup_success'] = 'Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.';
+	            $data['bsignup_success'] = 'We have received your registration request. We review your request and contact with you within 72 hours.';
             	$data['buser_status'] = 'success';
 			}else{
 				$data['buser_status'] = 'error';

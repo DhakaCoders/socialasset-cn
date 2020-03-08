@@ -213,6 +213,11 @@ $('.fl-forget-pass-btn').on('click', function(e){
      $(".forgot-pass-field-before").toggleClass('forgot-pass-field-after-deactive');
 });
 
+$('.showMgs').on('click', function(){
+  var mgs = $(this).data('mgs');
+  var target = $(this).data('target');
+  $(target).html('<p>'+mgs+'</p>');
+});
 
 /*
 Helper functions

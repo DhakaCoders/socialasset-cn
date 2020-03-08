@@ -126,7 +126,7 @@ function ngo_user_create_account(){
 				if (! add_user_meta( $new_user_id, 'show_admin_bar_front', 'false', true )){ 
 					update_user_meta ( $new_user_id, 'show_admin_bar_front', 'false' );
 				}
-	            $data['signup_success'] = 'Registration Request has been sent successfully. We will review and send a confirmation within 72 hours. Thanks for patient.';
+	            $data['signup_success'] = 'We have received your registration request. We review your request and contact with you within 72 hours.';
             	$data['user_status'] = 'success';
 			}else{
 				$data['user_status'] = 'error';
