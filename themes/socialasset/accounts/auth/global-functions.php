@@ -8,8 +8,9 @@ function global_action_hook(){
 		user_notification_settings_update();
 		ajax_my_support_capm_init();
 	}
-	
+	forgot_password_init();
 }
+
 
 function user_profile_image_update(){
 	global $msg;
@@ -198,6 +199,65 @@ function my_support_capm(){
     echo json_encode($data);
 	die();
  
+}
+
+function forgot_password_init(){
+    wp_register_script('ajax-forgotpass-script', get_stylesheet_directory_uri(). '/assets/js/ajax-scripts.js', array('jquery') );
+    wp_enqueue_script('ajax-forgotpass-script');
+
+    wp_localize_script( 'ajax-forgotpass-script', 'ajax_forgotpass_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_user_forgot_password', 'user_forgot_password');
+	add_action('wp_ajax_user_forgot_password', 'user_forgot_password');
+}
+
+function user_forgot_password(){
+	global $msg;
+	if (isset( $_POST["action"] ) && wp_verify_nonce($_POST['user_forgot_pass_nonce'], 'user-forgot-pass-nonce')) {
+		$user_email   	= sanitize_email($_POST["useremail"]);
+		if(!is_email($user_email)) {
+			//invalid email
+			$data['email'] = 'Invalid email address.';
+			$success = false;
+		}elseif(email_exists($user_email)) {
+			$user = get_user_by( 'email', $user_email );
+			$generatePass = cam_generate_password(8);
+			$userdata = array(
+	            'ID'        =>  $user->ID,
+	            'user_pass' => $generatePass
+	        );  
+	    	$userid = wp_update_user($userdata);
+	    	if($userid){
+	    		if( !empty($user->first_name) )
+					$name = $user->first_name;
+				else
+					$name = ucfirst($user->display_name);
+
+				if ( in_array( 'ngo', (array) $user->roles ) || in_array( 'subscriber', (array) $user->roles ))
+					$redirect_to = site_url() . '/account';
+				elseif(in_array( 'business', (array) $user->roles ))
+					$redirect_to = site_url() . '/business-login';
+				else
+					$redirect_to = site_url();
+	    	$body  = '<p>Hi '.$name.'!</p>';
+	    	$body  = '<p>Your generated new password.</p>';
+	    	$body  = '<p>New Password: '.$generatePass.'</p>';
+		    $body .= '<p>Please <a href="'.$redirect_to.'">Click Here for Login</a></p>';
+		    $send = wp_mail( $user_email, 'New Password', $body );
+		    if($phone_result){
+				$msgs['success'] = 'New password has been set and sent to the email';
+			}else{
+				$msgs['error'] = 'Something was wrong! Please try again.';
+			}
+	    	}
+		}else{
+			$data['email'] = 'Email address does not match';
+		}
+		echo json_encode($_POST['user_forgot_pass_nonce']);
+		wp_die();
+	}
 }
 
 function camp_progress_bar($post_id){

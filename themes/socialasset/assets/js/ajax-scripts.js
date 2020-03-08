@@ -50,6 +50,27 @@ function UserAddSupport(id){
     })
     return false;
 }
+function SubmitForgotPass(){
+    var serialized = jQuery( '#forgotpass' ).serialize();
+    console.log(serialized);
+    jQuery.ajax({
+        type: 'post',
+        dataType: 'JSON',
+        url: ajax_forgotpass_object.ajaxurl,
+        data: serialized,
+        success: function( result ) {
+            console.log(result);
+            if( typeof(result['success']) != "undefined" &&  result['success'].length != 0 && result['success'] == 'success' ) {
+                
+            }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
+               
+            }else{
+                
+            }
+        }
+    })
+    return false;
+}
 function SubmitSignupFormData(){
     var error = false;
     var serialized = jQuery( '#user-signup' ).serialize();
