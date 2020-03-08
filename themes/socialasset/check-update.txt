@@ -12,7 +12,7 @@
 
 
 == Single Campaing page:
-1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe. Design add korci.
+1. Current user support korle 'SUPPORTED BY YOU' button and text dekhabe. Design add korci. -- Fixed
 2. Kokhono o '0 Active Campaigns' dekhay - Fixed
 3. 'supported successfully' alert na diye button ar niche text show korte hobe
 4. Relevant Campaigns update korte hobe -- Fixed

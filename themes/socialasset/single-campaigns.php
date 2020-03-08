@@ -151,13 +151,26 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                   else{ 
                   ?>
               		<?php 
+                    $expIDs = $scamIDs = array();
               		  $user = wp_get_current_user();
                     $campIDs = get_user_meta( $user->ID, '_support_camp_ids', true );
-                    echo $campIDs;
-                    $expIDs = explode(',', $campIDs);
+                    if( isset($campIDs) && !empty($campIDs) ) {
+                      $expIDs = preg_split ("/\,/", $campIDs);
+                      foreach ($expIDs as $key => $scid) {
+                        $scamIDs[] = $scid;
+                      }
+                    }
+
                     if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) {
               		?>
-                		<a class="support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
+                  <?php 
+                    if( !empty($scamIDs) && in_array( $thisID, (array)$scamIDs ) ): 
+                  ?>
+                		<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>
+                  <?php else: ?>
+                    <a class="support-btn support-capm" id="supportUser" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
+                    <span id="supportStatus"></span>
+                  <?php endif; ?>
               		<?php 
                   }
                   elseif( (in_array( 'administrator', (array) $user->roles ) || in_array( 'ngo', (array) $user->roles ) ) && is_user_logged_in()){ 
@@ -167,7 +180,7 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                   ?>
                 	  <a onclick="alert('If you want to support please login before.');" class="support-btn" href="javascript:void()"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
                 	<?php } ?>
-                    <a class="supportedbyUser support-btn support-capm" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>
+                    
                 	<?php } ?>
                     <div class="share-btn" >SHARE 
                       <span class="share-btn-dot"></span>

@@ -36,11 +36,15 @@ function UserAddSupport(id){
         success: function( result ) {
             console.log(result);
             if( typeof(result['success']) != "undefined" &&  result['success'].length != 0 && result['success'] == 'success' ) {
-                alert('supported successfully');
+                jQuery("#supportStatus").html(' ');
+                jQuery("#supportUser").text('supported successfully');
             }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
-                alert('supported already');
+                jQuery("#supportUser").remove();
+                jQuery("#supportStatus").html(
+                    '<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>'
+                    );
             }else{
-                alert('Something went wrong please try again later.');
+                jQuery("#supportStatus").html('Something went wrong please try again later.');
             }
         }
     })
