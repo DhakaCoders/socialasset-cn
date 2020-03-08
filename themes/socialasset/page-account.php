@@ -8,8 +8,13 @@ checked_loggedin();
   $logintab = $tabClass = '';
   if( isset($_GET['login']) && !empty($_GET['login'])){
     $logintab = $_GET['login'];
-    if( $logintab == 'ngo' || $logintab == 'user')
-      $tabClass = ' current';
+    if( $logintab == 'ngo' || $logintab == 'user'){
+      $firstTab = '';
+      $lastTab = 'current';
+    }else{
+      $firstTab = 'current';
+      $lastTab = '';      
+    }
   }
 
 ?>
@@ -24,10 +29,10 @@ checked_loggedin();
           <span id="success-signup" class="success-signup"></span>
           <div id="after-signup-hide">
             <div class="fl-tabs clearfix text-center">
-              <button class="tab-link tabRegister current" data-tab="tab-1"><span>REGISTER</span></button>
-              <button class="tab-link tabLogin<?php echo $tabClass; ?>" data-tab="tab-2"><span>Log in</span></button>
+              <button class="tab-link tabRegister <?php echo $firstTab; ?>" data-tab="tab-1"><span>REGISTER</span></button>
+              <button class="tab-link tabLogin <?php echo $lastTab; ?>" data-tab="tab-2"><span>Log in</span></button>
             </div>
-            <div id="tab-1" class="fl-tab-content current">
+            <div id="tab-1" class="fl-tab-content <?php echo $firstTab; ?>">
               <div class="tab-con-inr">
                 <form id="user-signup" onsubmit="SubmitSignupFormData(); return false">
                   <input type="hidden" name="action" value="ngo_user_create_account">
@@ -102,7 +107,7 @@ checked_loggedin();
                   </form>
               </div>
             </div>
-            <div id="tab-2" class="fl-tab-content">
+            <div id="tab-2" class="fl-tab-content <?php echo $lastTab; ?>">
               <div class="tab-con-inr">
                 <div class="login-form">
                   <span id="loginerror" class="login-error"></span>

@@ -173,7 +173,7 @@ function BusinessSubmitLoginFormData(){
                   function redirect_page(){
                     window.location.href = ajax_business_login_object.redirecturl;
                   }
-                  setTimeout(redirect_page,5000);
+                  setTimeout(redirect_page,3000);
                 }
                 
             }else{
