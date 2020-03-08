@@ -206,6 +206,14 @@ $('span.actionHide').on('click', function(){
   $(this).closest(target).slideUp();
 });
 
+
+$('.fl-forget-pass-btn').on('click', function(e){
+  e.preventDefault();
+     $(".forgot-pass-field-after").toggleClass('forgot-pass-field-after-active');
+     $(".forgot-pass-field-before").toggleClass('forgot-pass-field-after-deactive');
+});
+
+
 /*
 Helper functions
 **/

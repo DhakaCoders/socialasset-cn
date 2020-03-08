@@ -674,7 +674,6 @@ span.file-up-instruction-txt {
 	width: auto;
 	height: auto;
 	border-radius: 0;
-	border-radius: 50%;
 }
 .profile-img-step-1,
 .profile-img-step-2{
@@ -1910,6 +1909,29 @@ a.ui-datepicker-next:after {
 	z-index: 9;
 	opacity: 1;
 }
+
+.forgot-pass-field-after{
+	display: none;
+}
+.forgot-pass-field-after .prib-btns{
+	display: block;
+}
+.forgot-pass-field-after .sa-input{
+	margin-bottom: 10px;
+}
+.forgot-pass-field-after .profile-submit-btn input[type="submit"]{
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.forgot-pass-field-after.forgot-pass-field-after-active{
+	display: block;
+}
+.forgot-pass-field-before.forgot-pass-field-after-deactive{
+	display: none;
+}
+
+
 @media(max-width: 1499px){
 
 }
