@@ -31,7 +31,7 @@
 1. Sob header gulo setup korte hobe -- Fixed
 2. User login thakle business-login page a jete parbe na -- Fixed
 3. Kono form submit korar por, reload button a click korle Resubmittion alert ta remove korte hobe  -- Fixed
-4. Forget password ta korte hobe
+4. Forget password ta korte hobe -- Fixed
 5. Show ajax loading before this message
 - Registration Request has been sent successfully. We will send to email for account confirmation within 72 hours. Thanks for patient.
 6. Development check/update korte hobe
