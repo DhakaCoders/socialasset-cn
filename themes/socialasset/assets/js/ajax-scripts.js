@@ -52,20 +52,33 @@ function UserAddSupport(id){
 }
 function SubmitForgotPass(){
     var serialized = jQuery( '#forgotpass' ).serialize();
-    console.log(serialized);
     jQuery.ajax({
         type: 'post',
         dataType: 'JSON',
         url: ajax_forgotpass_object.ajaxurl,
         data: serialized,
+        beforeSend: function() {    
+            jQuery('.useremail').show();
+            jQuery('#generatedSuccess').show();
+        },
         success: function( result ) {
-            console.log(result);
-            if( typeof(result['success']) != "undefined" &&  result['success'].length != 0 && result['success'] == 'success' ) {
-                
-            }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
-               
-            }else{
-                
+            if( typeof(result['success']) != "undefined" &&  result['success'].length != 0) {
+                jQuery('#useremail').val('');
+                jQuery('.useremail').text('');
+                jQuery('#generatedSuccess').text(result['success']);
+            }if(typeof(result['email']) != "undefined" &&  result['email'].length != 0){
+                jQuery('#generatedSuccess').text('');
+                jQuery('.useremail').text(result['email']);
+            }if(typeof(result['error']) != "undefined" &&  result['error'].length != 0){
+                jQuery('#generatedSuccess').text('');
+                jQuery('.useremail').text(result['error']);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 500) {
+              console.log('Internal error: ' + jqXHR.responseText);
+            } else {
+              console.log('Unexpected error.');
             }
         }
     })

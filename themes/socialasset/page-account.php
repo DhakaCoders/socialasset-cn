@@ -131,7 +131,9 @@ checked_loggedin();
                       <input type="hidden" name="action" value="user_forgot_password">
                     <div class="forgot-pass-field-after">
                       <div class="sa-input">
-                        <input type="email" name="useremail" placeholder="Enter your email">
+                        <span class="useremail error-msg" style="display: none;"></span>
+                        <span id="generatedSuccess" class="success-login" style="display: none;"></span>
+                        <input type="email" name="useremail" id="useremail" placeholder="Enter your email">
                       </div>
                       <div class="profile-submit-btn clearfix">
                         <input type="hidden" name="user_forgot_pass_nonce" value="<?php echo wp_create_nonce('user-forgot-pass-nonce'); ?>"/>

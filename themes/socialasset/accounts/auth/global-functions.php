@@ -219,14 +219,14 @@ function user_forgot_password(){
 		$user_email   	= sanitize_email($_POST["useremail"]);
 		if(!is_email($user_email)) {
 			//invalid email
-			$data['email'] = 'Invalid email address.';
+			$msg['email'] = 'Invalid email address.';
 			$success = false;
 		}elseif(email_exists($user_email)) {
 			$user = get_user_by( 'email', $user_email );
 			$generatePass = cam_generate_password(8);
 			$userdata = array(
 	            'ID'        =>  $user->ID,
-	            'user_pass' => $generatePass
+	            'user_pass' => esc_attr($generatePass)
 	        );  
 	    	$userid = wp_update_user($userdata);
 	    	if($userid){
@@ -242,20 +242,20 @@ function user_forgot_password(){
 				else
 					$redirect_to = site_url();
 	    	$body  = '<p>Hi '.$name.'!</p>';
-	    	$body  = '<p>Your generated new password.</p>';
-	    	$body  = '<p>New Password: '.$generatePass.'</p>';
+	    	$body  .= '<p>Your generated new password below.</p>';
+	    	$body  .= '<p>New Password: '.$generatePass.'</p>';
 		    $body .= '<p>Please <a href="'.$redirect_to.'">Click Here for Login</a></p>';
 		    $send = wp_mail( $user_email, 'New Password', $body );
-		    if($phone_result){
-				$msgs['success'] = 'New password has been set and sent to the email';
+		    if($body){
+				$msg['success'] = 'New password has been set and sent the password to your mail '.$generatePass;
 			}else{
-				$msgs['error'] = 'Something was wrong! Please try again.';
+				$msg['error'] = 'Something went wrong! Please try again.';
 			}
 	    	}
 		}else{
-			$data['email'] = 'Email address does not match';
+			$msg['email'] = 'Email address does not match';
 		}
-		echo json_encode($_POST['user_forgot_pass_nonce']);
+		echo json_encode($msg);
 		wp_die();
 	}
 }
