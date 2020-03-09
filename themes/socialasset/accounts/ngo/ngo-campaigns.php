@@ -220,23 +220,49 @@ $Query = new WP_Query(array(
             ?>
           </select>
         </div>
-        <span>Showing <?php
-        if($var2_int =='' ){
-          echo '1-'.($per_page);
-        }
-        else{
-          if($var2_int == 1){
-            echo '1-';
-            echo ($per_page);
-          }
-          else{
-            echo '1-';
-            echo ($per_page + 1); 
-          }
 
+        <?php 
+        $showCount    = true;
+        // Calculate the total number of pages
+        $numPages = ceil($total_camp / $per_page);
+        // Is there only one page? will not need to continue
+        if ($numPages == 1){
+            if ($showCount){
+                $info = 'Showing : ' . $total_camp;
+                return $info;
+            }else{
+                return '';
+            }
         }
-         
-         ?> of <?php echo $Query->found_posts;?></span>
+        
+        if (!is_numeric($paged) || $paged == 0){
+            $paged = 1;
+        }
+        
+        // Links content string variable
+        $output = '';
+        
+        // Showing links notification
+        if ($showCount){
+           $currentOffset = ($paged > 1)?($paged - 1)*$per_page:$paged;
+            if($paged == 1)
+              $info = 'Showing ' . ($currentOffset) . '-' ;
+            else
+              $info = 'Showing ' . ($currentOffset+1) . '-' ;
+        
+           if( ($currentOffset + $per_page) <= $total_camp )
+              $info .= $paged * $per_page;
+           else
+              $info .= $total_camp;
+           
+           $info .= ' of ' . $total_camp;
+        
+           $output .= $info;
+        }
+        
+        echo '<span>'.$output.'</span>';
+        // Ca
+        ?>
       </div>
 
     </div>
