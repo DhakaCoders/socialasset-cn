@@ -1,5 +1,5 @@
 == NGO Profile: 
-1. Per page select ta korte hobe
+1. Per page select ta korte hobe - Fixed
 2. MixItUp sorting ta korte hobe
 
 
