@@ -60,6 +60,7 @@ Responsive on 767px
 
 
   $('.share-btn').on('click', function(){
+    $(this).toggleClass('thisactive');
     $('.share-icons').slideToggle(300);
   });
 

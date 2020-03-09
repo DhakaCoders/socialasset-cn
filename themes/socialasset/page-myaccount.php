@@ -5,7 +5,7 @@
 get_camp_header(); ?>
 <?php while( have_posts() ): the_post(); ?>
 
-<?php the_content(); ?>
+<?php shortcode_user_myaccount2(); ?>
 
 <?php endwhile; ?>
 

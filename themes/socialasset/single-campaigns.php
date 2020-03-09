@@ -128,7 +128,7 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                   <?php endif; ?>
                 </ul> 
                 <hr>
-                <div class="miracle-plan-progress-bar-con">
+                <div id="campaing-progress-bar" class="miracle-plan-progress-bar-con">
                   <div class="miracle-plan-progress-top-des clearfix">
                     <span>Support</span>
                     <span><strong class="progress-par"><?php echo camp_progress_bar($thisID); ?></strong>%</span>
@@ -144,7 +144,8 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                     <?php endif; ?>
                   </div>
                   <div class="miracle-plan-progress-link-wrp">
-                	<?php if( camp_expire_date($thisID) ){ ?>
+                	<div class="btnVariations">
+                  <?php if( camp_expire_date($thisID) ){ ?>
                     <span class="support-btn status-btn-expired"><i class="far fa-clock"></i>EXPIRED</span>
                 	<?php 
                   }
@@ -166,10 +167,9 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                   <?php 
                     if( !empty($scamIDs) && in_array( $thisID, (array)$scamIDs ) ): 
                   ?>
-                		<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>
+                		<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a>
                   <?php else: ?>
-                    <a class="support-btn support-capm" id="supportUser" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
-                    <span id="supportStatus"></span>
+                    <a class="support-btn support-capm" id="supportUser" href="#" onclick="UserAddSupport(<?php echo $thisID; ?>); return false;"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a><span id="supportStatus"></span>
                   <?php endif; ?>
               		<?php 
                   }
@@ -178,10 +178,13 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                   }
                   else{ 
                   ?>
-                	  <a onclick="alert('If you want to support please login before.');" class="support-btn" href="javascript:void()"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
+                	  <a class="support-btn showMgs" data-target=".mgsBar"
+                    data-mgs="You must <a href='<?php echo esc_url(home_url('/account/?login=user')); ?>'>login</a> to support this campaign."
+                    class="support-btn" href="javascript:void(0)"><i class="far fa-heart"></i>SUPPORT THIS CAMPAIGN</a>
                 	<?php } ?>
                     
                 	<?php } ?>
+                </div>
                     <div class="share-btn" >SHARE 
                       <span class="share-btn-dot"></span>
                       <div class="share-icons">
@@ -196,7 +199,13 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                         </a>
                       </div>
                     </div>
-                    
+                  </div>
+                  <div class="mgsBar">
+                  <?php 
+                    if( !empty($scamIDs) && in_array( $thisID, (array)$scamIDs ) ){
+                      echo '<p class="text-supportedbyUser">Hey, you have followed this campaign!</p>';
+                    }
+                  ?>
                   </div>
                 </div>
               </div>             

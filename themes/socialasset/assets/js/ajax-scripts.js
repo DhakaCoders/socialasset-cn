@@ -36,15 +36,15 @@ function UserAddSupport(id){
         success: function( result ) {
             console.log(result);
             if( typeof(result['success']) != "undefined" &&  result['success'].length != 0 && result['success'] == 'success' ) {
-                jQuery("#supportStatus").html(' ');
-                jQuery("#supportUser").text('supported successfully');
+                jQuery(".btnVariations").html(' ');
+                jQuery(".btnVariations").html('<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a>');
             }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
                 jQuery("#supportUser").remove();
                 jQuery("#supportStatus").html(
-                    '<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a> <p class="text-supportedbyUser">Hey, you have followed this campaign!</p>'
+                    '<a class="supportedbyUser support-btn support-capm" href="#" onclick="return false;"><i class="fas fa-heart"></i>SUPPORTED BY YOU</a>'
                     );
             }else{
-                jQuery("#supportStatus").html('Something went wrong please try again later.');
+                jQuery("#campaing-progress-bar .mgsBar").html('Something went wrong please try again later.');
             }
         }
     })
@@ -207,7 +207,7 @@ function BusinessSubmitLoginFormData(){
                   function redirect_page(){
                     window.location.href = ajax_business_login_object.redirecturl;
                   }
-                  setTimeout(redirect_page,5000);
+                  setTimeout(redirect_page,3000);
                 }
                 
             }else{
@@ -255,7 +255,7 @@ function SubmitLoginFormData(){
                   function redirect_page(){
                     window.location.href = ajax_user_ngo_login_object.redirecturl;
                   }
-                  setTimeout(redirect_page,5000);
+                  setTimeout(redirect_page,3000);
                 }
                 
             }else{

@@ -58,10 +58,10 @@ if($camp_data && isset($var2) && !empty($var2)){
     <div class="ngo-create-campaign-con">
       <?php 
       if(isset($msg) && array_key_exists("error",$msg)){ 
-        printf('<div class="profile-is-draft"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['error']);
+        printf('<div class="profile-is-draft"><p><strong>%s</strong></p><span class="actionHide" data-target=".profile-is-draft"><i class="fas fa-times"></i></span></div>', $msg['error']);
       }
       if(isset($msg) && array_key_exists("success",$msg)){ 
-        printf('<div class="action-success"><p><strong>%s</strong></p><i class="fas fa-times"></i></div>', $msg['success']);
+        printf('<div class="action-success"><p><strong>%s</strong></p><span class="actionHide" data-target=".action-success"><i class="fas fa-times"></i></span></div>', $msg['success']);
       }
     ?>
       <form action="" method="post">

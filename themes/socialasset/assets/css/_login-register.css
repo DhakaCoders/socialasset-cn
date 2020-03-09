@@ -655,6 +655,8 @@ a.linkedin-login-btn:hover{
 	align-items: center;
 	justify-content: center;
 	padding: 5px;
+	border-radius: 100%;
+	overflow: hidden;
 }
 
 span.file-up-instruction-txt {
@@ -674,6 +676,8 @@ span.file-up-instruction-txt {
 	width: auto;
 	height: auto;
 	border-radius: 0;
+	max-width: 130px;
+	width: 130px;
 }
 .profile-img-step-1,
 .profile-img-step-2{
