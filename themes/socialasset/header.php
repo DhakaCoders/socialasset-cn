@@ -61,7 +61,7 @@
 
                     </ul>
                   </div>
-                  <button class="campaign-btn">Start a Campaign</button>
+                  <button onclick='window.location.href = "<?php echo home_url('account/?login=ngo'); ?>"' class="campaign-btn">Start a Campaign</button>
                 </div>
               </nav>             
               <div class="humberger-menu-btn">
