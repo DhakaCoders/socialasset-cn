@@ -316,9 +316,6 @@ p.text-supportedbyUser,
   color: #000;
   margin: 0;
 }
-.mgsBar p{
-  margin-top: 10px;
-}
 
 .miracle-plan-progress-link-wrp .support-btn.supportedbyUser:hover *{
   color: #fff;
