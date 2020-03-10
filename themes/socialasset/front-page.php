@@ -416,7 +416,7 @@ if ( ! empty( $hterms ) && ! is_wp_error( $hterms ) ):
           <div class="hm-explore-campaigns-link">
             <a class="hm-explore-btn" href="<?php echo home_url( 'campaigns' ); ?>">EXPLORE ALL CAMPAIGNS</a>
             <br>
-            <a class="hm-campaign-btn" href="#">START A CAMPAIGN</a>  
+            <a class="hm-campaign-btn" href="<?php echo home_url('account/?login=ngo'); ?>">START A CAMPAIGN</a>  
           </div>
         </div>
       </div>

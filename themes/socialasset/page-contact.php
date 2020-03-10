@@ -77,7 +77,7 @@
     </div>
   </div>
   <?php if( !empty($google_map) && $google_map):?>
-  <div id="googlemap" data-latitude="<?php echo $google_map['lat']; ?>" data-longitude="<?php echo $google_map['lng']; ?>"></div>
+  <div id="googlemap" data-markerurl="<?php echo THEME_URI; ?>/assets/images/map-marker.png" data-latitude="<?php echo $google_map['lat']; ?>" data-longitude="<?php echo $google_map['lng']; ?>"></div>
   <?php endif; ?>
 </section>
 <?php get_footer(); ?>

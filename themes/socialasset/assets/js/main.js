@@ -185,7 +185,7 @@ Start Contact Google Map ->>
 if( $('#googlemap').length ){
     var latitude = $('#googlemap').data('latitude');
     var longitude = $('#googlemap').data('longitude');
-
+    var markerurl = $('#googlemap').data('markerurl');
     var myCenter= new google.maps.LatLng(latitude,  longitude);
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     function initialize(){
@@ -207,7 +207,7 @@ if( $('#googlemap').length ){
 
       var marker= new google.maps.Marker({
         position:myCenter,
-        icon:'assets/images/map-marker.png'
+        icon: markerurl
         });
       marker.setMap(map);
     }

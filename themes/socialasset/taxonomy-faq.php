@@ -23,7 +23,9 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
             <li <?php echo ($term->slug == $ccat->slug)? 'class="faq-tab-active"': ''; ?>><a href="<?php echo esc_url( get_term_link($term) );?>">FOR <strong> <?php echo $term->name; ?></strong></a></li>
             <?php } ?>
           </ul>
-          <h6>Frequent Asked Question for Supporters</h6>
+          <?php if( isset($ccat->description) && !empty($ccat->description)): ?>
+          <h6><?php echo $ccat->description; ?></h6>
+          <?php endif; ?>
         </div>
       </div>
 

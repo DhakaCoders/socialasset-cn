@@ -102,6 +102,54 @@
               </div>
             </div>
 
+            <div class="humberger-menu humberger-menu-xs clearfix">
+              <div class="humberger-menu-items clearfix">
+                <?php 
+                  $logoutOptions = array( 
+                      'theme_location' => 'cbv_main_menu', 
+                      'menu_class' => 'clearfix ulc xs-logout-inner-menu',
+                      'container' => 'logoutm',
+                      'container_class' => 'logoutm'
+                    );
+                  wp_nav_menu( $logoutOptions );
+
+                $catOptions = array( 
+                    'theme_location' => 'cbv_popup_menu1', 
+                    'menu_class' => 'clearfix ulc',
+                    'container' => 'pupnavs',
+                    'container_class' => 'pupnavs'
+                  );
+                wp_nav_menu( $catOptions );
+
+                $menuOptions = array( 
+                    'theme_location' => 'cbv_popup_menu2', 
+                    'menu_class' => 'clearfix ulc',
+                    'container' => 'pupnava',
+                    'container_class' => 'pupnava'
+                  );
+                wp_nav_menu( $menuOptions ); 
+              ?>
+              </div>
+              <div class="xs-menu-footer clearfix">
+                <div class="xs-login-area">
+                  <h6>Login</h6>
+                  <div>
+                    <a href="<?php echo esc_url(home_url('account/?login=ngo')); ?>">For <strong>NGOs</strong></a>
+                    <a href="<?php echo esc_url(home_url('account/?login=user')); ?>">For <strong>USERs</strong></a>
+                  </div>
+                </div>
+                <div class="languages-area">
+                  <label>Languages:</label>
+                  <div class="site-lang-holder clearfix">
+                    <div class="site-lang">
+                      <a href="#" class="active">En <span class="ede-down-angle"></span></a>
+                      <a href="#">Gr</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
