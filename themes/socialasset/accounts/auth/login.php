@@ -2,9 +2,11 @@
 add_action('wp_enqueue_scripts', 'account_login_action_hooks');
 
 function account_login_action_hooks(){
-	ajax_user_ngo_login_init();
-	ajax_business_login_init();
-	ajax_modal_login_init();
+	if( !is_user_logged_in() ){
+		ajax_user_ngo_login_init();
+		ajax_business_login_init();
+		ajax_modal_login_init();
+	}
 }
 
 
