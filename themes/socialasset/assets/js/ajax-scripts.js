@@ -70,8 +70,8 @@ function UserAddSupportByHeart(id){
                 jQuery("#hearts"+id).html('<i class="far fa-check-circle"></i>');
                 jQuery("#heartsup"+id).html('<i class="far fa-check-circle"></i>');
             }else{
-                jQuery("#hearts"+id).html('<i class="far fa-ban"></i>');
-                jQuery("#heartsup"+id).html('<i class="far fa-ban"></i>');
+                jQuery("#hearts"+id).html('<i class="far fa-times-circle"></i>');
+                jQuery("#heartsup"+id).html('<i class="far fa-times-circle"></i>');
             }
         }
     })
