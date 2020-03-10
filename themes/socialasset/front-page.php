@@ -388,6 +388,7 @@ if ( ! empty( $hterms ) && ! is_wp_error( $hterms ) ):
         <div class="hm-explore-campaigns-innr text-center">
           <ul class="ulc clearfix">
             <?php 
+                $i = 1;
                 foreach ( $hterms as $hterm ) { 
                 $thumbnail_id = get_field( 'image', $hterm, false );
                 if( !empty($thumbnail_id) ){
@@ -396,8 +397,13 @@ if ( ! empty( $hterms ) && ! is_wp_error( $hterms ) ):
                 else{
                    $term_image = THEME_URI .'/assets/images/campcat.png';
                 }
+                if( $i > 3 ){
+                  $hmexcls = 'w-50';
+                }else{
+                  $hmexcls = '';
+                }
             ?>
-            <li>
+            <li class="<?php echo $hmexcls; ?>">
               <div class="hm-explore-campaigns-con">
                 <div class="hm-explore-campaigns-con-bg" style="background: url(<?php echo $term_image; ?>)"></div>
                 <div class="hm-explore-campaigns-des-wrp">
@@ -411,7 +417,7 @@ if ( ! empty( $hterms ) && ! is_wp_error( $hterms ) ):
                 <a class="overlay-link" href="<?php echo esc_url( get_term_link($hterm) );?>"></a>
               </div>
             </li>
-            <?php } ?>
+            <?php $i++; } ?>
           </ul>
           <div class="hm-explore-campaigns-link">
             <a class="hm-explore-btn" href="<?php echo home_url( 'campaigns' ); ?>">EXPLORE ALL CAMPAIGNS</a>
