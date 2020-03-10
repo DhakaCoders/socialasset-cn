@@ -8,7 +8,7 @@ $ccat = get_queried_object();
 
 $terms = get_terms( array(
     'taxonomy' => 'campaign',
-    'number' => 6,
+    'number' => 5,
     'hide_empty' => false,
 ) );
 

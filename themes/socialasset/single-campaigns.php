@@ -27,7 +27,7 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
             ( !empty($_GET['preview_id']) ) 
           ): 
         ?>
-        <div><a class="backto-panel" href="<?php echo esc_url(home_url('myaccount/edit-campaign/'.$thisID));?>">BACK TO YOUR PANEL</a></div>
+        <div class="previewBack"><a class="backto-panel" href="<?php echo esc_url(home_url('myaccount/edit-campaign/'.$thisID));?>">BACK TO YOUR PANEL</a></div>
         <?php endif; ?>
         <div class="miracle-plan-innr clearfix">
           <div class="miracle-plan-slider-wrp">
