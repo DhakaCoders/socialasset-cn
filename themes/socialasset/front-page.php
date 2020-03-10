@@ -269,10 +269,22 @@
                   <div class="campaigns-item-des">
                     <div class="campaigns-item-des-inr">
                       <div class="campaigns-item-cat-name">
-                        <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
-                        <span>
+                        <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); 
+                        $scamIDs = array();
+                        $scamIDs = get_camp_support_ids();
+                        $user = wp_get_current_user();
+                        if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) {
+                        ?>
+                          <span id="hearts<?php echo $scamp->ID; ?>">
+                        <?php if( !empty($scamIDs) && in_array( $scamp->ID, (array)$scamIDs ) ): ?>
+                            <i class="far fa-check-circle"></i>
+                        <?php else: ?>
                           <i class="far fa-heart"></i>
-                        </span>
+                        <?php endif; ?>
+                          </span>
+                        <?php }else {?>
+                          <span><i class="far fa-heart"></i></span>
+                        <?php } ?>
                       </div>
                       <div class="campaigns-item-des-btm">
                         <div>
@@ -305,10 +317,17 @@
                     <div class="campaigns-list-item-des-hover-inr">
                       <a class="overlay-link" href="<?php echo get_the_permalink($scamp->ID); ?>"></a>
                       <div class="campaigns-item-cat-name">
-                        <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
-                        <span>
-                          <i class="far fa-heart"></i>
-                        </span>
+                        <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); 
+                        if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) { 
+                        ?>
+                        <?php if( !empty($scamIDs) && in_array( $scamp->ID, (array)$scamIDs ) ): ?>
+                        <span><i class="far fa-check-circle"></i></span>
+                        <?php else: ?>
+                          <span id="heartsup<?php echo $scamp->ID; ?>" onclick="UserAddSupportByHeart(<?php echo $scamp->ID; ?>); return false;"><i class="far fa-heart"></i></span>
+                        <?php endif; ?>
+                        <?php }else{ ?>
+                          <span id="quickViewOpener" data-toggle="modal" data-target="#quickViewModal"><i class="far fa-heart"></i></span>
+                        <?php } ?>
                       </div>
                       <div class="campaigns-list-item-des-hover-des">
                         <h6><?php echo $scamp->post_title; ?></h6>

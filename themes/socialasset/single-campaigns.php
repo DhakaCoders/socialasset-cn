@@ -152,15 +152,9 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
                   else{ 
                   ?>
               		<?php 
-                    $expIDs = $scamIDs = array();
-              		  $user = wp_get_current_user();
-                    $campIDs = get_user_meta( $user->ID, '_support_camp_ids', true );
-                    if( isset($campIDs) && !empty($campIDs) ) {
-                      $expIDs = preg_split ("/\,/", $campIDs);
-                      foreach ($expIDs as $key => $scid) {
-                        $scamIDs[] = $scid;
-                      }
-                    }
+                    $scamIDs = array();
+                    $user = wp_get_current_user();
+                    $scamIDs = get_camp_support_ids();
 
                     if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) {
               		?>

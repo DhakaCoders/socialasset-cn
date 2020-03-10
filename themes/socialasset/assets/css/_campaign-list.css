@@ -437,6 +437,7 @@ min-height: 42px;
 
 .campaigns-list-item-des-hover .campaigns-item-cat-name span{
 	right: 10px;
+	z-index: 999;
 }
 
 .campaigns-list-item-des-hover-des{
