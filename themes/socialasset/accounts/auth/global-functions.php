@@ -246,8 +246,8 @@ function user_forgot_password(){
 	    	$body  .= '<p>New Password: '.$generatePass.'</p>';
 		    $body .= '<p>Please <a href="'.$redirect_to.'">Click Here for Login</a></p>';
 		    $send = wp_mail( $user_email, 'New Password', $body );
-		    if($body){
-				$msg['success'] = 'New password has been set and sent the password to your mail '.$generatePass;
+		    if($send){
+				$msg['success'] = 'New password has been set and sent the password to your mail.';
 			}else{
 				$msg['error'] = 'Something went wrong! Please try again.';
 			}
