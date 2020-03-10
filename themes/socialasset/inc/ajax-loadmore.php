@@ -128,16 +128,28 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
             <?php if( !empty($feaimg_src)): ?>
             <div class="campaigns-item-img" style="background: url(<?php echo $feaimg_src; ?>);"></div>
             <?php endif; ?>
-            <?php if( ($i == 1) && empty($feaimg_src)): ?>
+            <?php if( ($i == 1) && empty($feaimg_src) && !isset($_POST['el_li']) && empty($_POST['el_li'])): ?>
               <div class="campaigns-item-img dfcimg" style="background: url(<?php echo THEME_URI.'/assets/images/dfcampgrid.png'; ?>);"></div>
             <?php endif; ?>
             <div class="campaigns-item-des">
               <div class="campaigns-item-des-inr">
                 <div class="campaigns-item-cat-name">
-                  <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
-                  <span>
+                  <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name);
+                  $scamIDs = array();
+                  $scamIDs = get_camp_support_ids();
+                  $user = wp_get_current_user();
+                  if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) {
+                  ?>
+                    <span id="hearts<?php echo get_the_ID(); ?>">
+                  <?php if( !empty($scamIDs) && in_array( get_the_ID(), (array)$scamIDs ) ): ?>
+                      <i class="far fa-check-circle"></i>
+                  <?php else: ?>
                     <i class="far fa-heart"></i>
-                  </span>
+                  <?php endif; ?>
+                    </span>
+                  <?php }else {?>
+                    <span><i class="far fa-heart"></i></span>
+                  <?php } ?>
                 </div>
                 <div class="campaigns-item-des-btm">
                   <div>
@@ -168,10 +180,17 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
               <div class="campaigns-list-item-des-hover-inr">
                 <a class="overlay-link" href="<?php the_permalink(); ?>"></a>
                 <div class="campaigns-item-cat-name">
-                  <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); ?>
-                  <span>
-                    <i class="far fa-heart"></i>
-                  </span>
+                  <?php if( !empty($rel_term_name) ) printf('<strong>%s</strong>', $rel_term_name); 
+                  if ( (in_array( 'subscriber', (array) $user->roles ) ) || ( in_array( 'business', (array) $user->roles ) ) && is_user_logged_in() ) { 
+                  ?>
+                  <?php if( !empty($scamIDs) && in_array( get_the_ID(), (array)$scamIDs ) ): ?>
+                  <span><i class="far fa-check-circle"></i></span>
+                  <?php else: ?>
+                    <span id="heartsup<?php echo get_the_ID(); ?>" onclick="UserAddSupportByHeart(<?php echo get_the_ID(); ?>); return false;"><i class="far fa-heart"></i></span>
+                  <?php endif; ?>
+                  <?php }else{ ?>
+                    <span id="quickViewOpener" data-toggle="modal" data-target="#quickViewModal"><i class="far fa-heart"></i></span>
+                  <?php } ?>
                 </div>
                 <div class="campaigns-list-item-des-hover-des">
                   <h6><?php the_title(); ?></h6>

@@ -81,6 +81,52 @@
     </div>   
   </div>  
 </footer>
+<?php if( !is_user_logged_in() ): ?>
+<div class="modal fade vn-modal-con-wrap" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-content">
+          <div class="modal-login-form">
+            <div class="login-form">
+                <span id="mloginerror" class="login-error"></span>
+                <span id="msuccess-login" class="success-login"></span>
+                <form id="modal-login" onsubmit="SubmitModalFormData(); return false">
+                  <input type="hidden" name="action" value="user_modal_login_account">
+                  <div class="fl-input-field-row sa-input">
+                    <label>Email *</label>
+                    <input type="email" name="memail" id="mloginuser" placeholder="Your Email">
+                    <span class="loginemail_error error-msg"></span>
+                  </div>
+                  <div class="fl-input-field-row sa-input">
+                    <label>Password *</label>
+                    <input type="password" name="mpassword" id="mloginpassword" placeholder="Password">
+                    <span class="loginpass_error error-msg"></span>
+                  </div>
+                  <div class="fl-submit-btn w-full forgot-pass-field-before">
+                    <input type="hidden" name="user_modal_login_nonce" value="<?php echo wp_create_nonce('user-modal-login-nonce'); ?>"/>
+                    <input type="submit" value="Sign In">
+                  </div>
+                </form>
+                <div class="fl-or-text">
+                  <span>Or</span>
+                </div>
+                <div class="fl-sign-in-another">
+                  <a class="gogle-login-btn" href="#">
+                    <i class="fab fa-google"></i>
+                    Sign In with Google
+                  </a>
+                  <a class="facebook-login-btn" href="#">
+                    <i class="fab fa-facebook-square"></i>
+                    Sign In with LinkedIn
+                  </a>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php endif; ?>
 <?php wp_footer(); ?>
 <script>
     jQuery(function(){

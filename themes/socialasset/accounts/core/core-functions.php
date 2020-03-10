@@ -309,3 +309,18 @@ function cam_generate_password($_len) {
 
     return $password;       // Returns the generated Pass
 }
+
+function get_camp_support_ids(){
+  $expIDs = $scamIDs = array();
+  $user = wp_get_current_user();
+  if( !$user && empty($user) ) return;
+  $campIDs = get_user_meta( $user->ID, '_support_camp_ids', true );
+  if( isset($campIDs) && !empty($campIDs) ) {
+    $expIDs = preg_split ("/\,/", $campIDs);
+    foreach ($expIDs as $key => $scid) {
+      $scamIDs[] = $scid;
+    }
+    return $scamIDs;
+  }
+  return $scamIDs;
+}

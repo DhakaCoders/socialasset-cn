@@ -50,6 +50,34 @@ function UserAddSupport(id){
     })
     return false;
 }
+
+function UserAddSupportByHeart(id){
+    jQuery.ajax({
+        type: 'post',
+        dataType: 'JSON',
+        url: ajax_support_camp_object.ajaxurl,
+        data: {
+            action: 'my_support_capm',
+            nonce: 'nonce',
+            id: id
+        },
+        success: function( result ) {
+            console.log(result);
+            if( typeof(result['success']) != "undefined" &&  result['success'].length != 0 && result['success'] == 'success' ) {
+                jQuery("#hearts"+id).html('<i class="far fa-check-circle"></i>');
+                jQuery("#heartsup"+id).html('<i class="far fa-check-circle"></i>');
+            }else if(typeof(result['error']) != "undefined" &&  result['error'].length != 0 && result['error'] == 'added'){
+                jQuery("#hearts"+id).html('<i class="far fa-check-circle"></i>');
+                jQuery("#heartsup"+id).html('<i class="far fa-check-circle"></i>');
+            }else{
+                jQuery("#hearts"+id).html('<i class="far fa-ban"></i>');
+                jQuery("#heartsup"+id).html('<i class="far fa-ban"></i>');
+            }
+        }
+    })
+    return false;
+}
+
 function SubmitForgotPass(){
     var serialized = jQuery( '#forgotpass' ).serialize();
     jQuery.ajax({
@@ -274,6 +302,54 @@ function SubmitLoginFormData(){
 
                 if(error == true){
                     jQuery('#login-password').val('');
+                }
+            }
+        }
+    });
+
+    return false
+}
+
+function SubmitModalFormData(){
+    var error = false;
+    var serialized = jQuery( '#modal-login' ).serialize();
+    //console.log(serialized);
+    jQuery.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        url: ajax_user_modal_login_object.ajaxurl,
+        data: serialized,
+        success: function(data){
+            console.log(data);
+            if(typeof(data['login_status']) != "undefined" &&  data['login_status'].length != 0 && data['login_status'] == 'success'){
+                
+                if(typeof(data['login_success']) != "undefined" &&  data['login_success'].length != 0){
+                  jQuery('#mloginerror').text('');
+                  jQuery('#mloginuser').val('');
+                  jQuery('#mloginpassword').val('');
+                  jQuery('#msuccess-login').text(data['login_success']);
+                  function redirect_page(){
+                    window.location.href = '';
+                  }
+                  setTimeout(redirect_page,3000);
+                }
+                
+            }else{
+                if(typeof(data['email']) != "undefined" &&  data['email'].length != 0){
+                    jQuery('.loginemail_error').text(data['email']);
+                    error = true;
+                }
+                if(typeof(data['pass']) != "undefined" &&  data['pass'].length != 0){
+                    jQuery('.loginpass_error').text(data['pass']);
+                    error = true;
+                }
+                if(typeof(data['loging_error']) != "undefined" &&  data['loging_error'].length != 0){
+                    jQuery('#mloginerror').text(data['loging_error']);
+                    error = true;
+                }
+
+                if(error == true){
+                    jQuery('#mloginpassword').val('');
                 }
             }
         }
