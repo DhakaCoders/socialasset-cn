@@ -539,7 +539,7 @@ $blg_query = new WP_Query(array(
                 
                 $attach_id = get_post_thumbnail_id(get_the_ID());
                 if( !empty($attach_id) )
-                  $blog_src = cbv_get_image_tag($attach_id,'bloggrid');
+                  $blog_src = cbv_get_image_src($attach_id,'bloggrid');
                 else
                   $blog_src = THEME_URI .'/assets/images/blogdef.png';
             ?>
