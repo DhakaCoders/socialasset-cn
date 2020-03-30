@@ -9,7 +9,7 @@ $ccat = get_queried_object();
 $terms = get_terms( array(
     'taxonomy' => 'campaign',
     'hide_empty' => false,
-    'number' => 6
+    'number' => 5
 ) );
 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
   $order = 'desc'; $search_result = '';

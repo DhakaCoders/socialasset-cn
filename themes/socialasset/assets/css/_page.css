@@ -149,10 +149,12 @@ Start sitemap
 	background: #fff;
 }
 
-
-
-
-
+.inner-404.clearfix {
+    text-align: center;
+}
+.inner-404.clearfix strong {
+    font-size: 50px;
+}
 
 
 @media(max-width: 1499px){

@@ -38,7 +38,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         $ajax = true;
     }
     //number of posts per page default
-    $num = 2;
+    $num = 3;
     //page number
     $paged = 1;
     if(isset($_POST['cat_id']) && !empty($_POST['cat_id'])){
@@ -58,6 +58,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
     }
     $totalP = ($num * $paged);
     $termQuery = '';
+
     if(isset($htag) && !empty($htag) && !empty($term_id)){
       $termQuery = array(
         'relation' => 'AND',
@@ -91,7 +92,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         )
       );
     }
-    
+
     $query = new WP_Query(array( 
         'post_type'=> 'campaigns',
         'post_status' => 'publish',
@@ -100,7 +101,6 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         'paged'=>$paged,
         'orderby' => 'date',
         'order'=> $sort,
-        'tax_query' => $termQuery
       ) 
     );
     if($query->have_posts()){
@@ -122,6 +122,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
              $rel_term_name = $rel_term->name; 
           }
       }
+      if( !camp_expire_date(get_the_ID()) ):
     ?>
         <li class="campaigns-list-item-wrp <?php if(($i == 1)): ?>campaigns-list-item-50<?php endif; if(isset($_POST['el_li']) && !empty($_POST['el_li'])) echo $_POST['el_li']; echo $ClassAdd; ?> ">
           <div class="campaigns-list-item">
@@ -225,6 +226,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         </li>
         <?php
         $i++;
+      endif;
     endwhile;
     if(!isset($_POST['el_li']) && empty($_POST['el_li'])){
       echo '<span id="totalPost" data-totalp="'.$count.'" data-tloadp="'.$totalP.'"></span>'; 

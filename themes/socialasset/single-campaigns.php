@@ -107,7 +107,7 @@ $sumetas = array_map( function( $a ){ return $a[0]; }, get_user_meta( $authorID 
               <span class="human-tag"><?php echo $term_name; ?></span>
           	  <?php endif; ?>
               <h3><?php the_title(); ?></h3>
-              <p>Traumatic events can create persistent mental and physical stress. We have 6 year of experience spreading a proven first aid technique: TTT. Help us Help more!</p>
+              <?php echo wpautop( camp_excerpt(30, ''), true ); ?>
               <div class="miracle-plan-progress-camp">
                 <ul class="ulc clearfix">
                   <li>
