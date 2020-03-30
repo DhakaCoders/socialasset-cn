@@ -568,6 +568,15 @@ $("#loadMore").on('click', function(e) {
 });
 
 
+if (windowWidth > 767) {
+  if( $('#sidebar2').length ){
+  $('#sidebar2').stickySidebar({
+      topSpacing: 100,
+      bottomSpacing: 60
+  });
+}
+}
+
     //new WOW().init();
 
 })(jQuery);

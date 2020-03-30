@@ -121,8 +121,10 @@ span.miraclePlanthumbSlider-item img{
 .miracle-plan-des-wrp{
   width: 39.5%;
   float: left;  
-  padding-left: 45px;
   padding-top: 5px;
+}
+.miracle-plan-des-innr{
+  padding-left: 45px;
 }
 .miracle-plan-des-wrp span.human-tag{
   display: inline-block;
