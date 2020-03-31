@@ -669,12 +669,16 @@ p.text-supportedbyUser,
 @media(max-width: 991px){
   .miracle-plan-slider-wrp {
     width: 100%;
+    float: none;
   }
   .miracle-plan-des-wrp {
-    width: 100%;
-    float: left;
+    width: auto;
+    float: none;
     padding: 0;
     padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table!important;
   }
   .user-story-cmpaign-con {
     padding-left: 0;
