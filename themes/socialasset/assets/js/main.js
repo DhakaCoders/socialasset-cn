@@ -568,6 +568,26 @@ $("#loadMore").on('click', function(e) {
 });
 
 
+
+var containerWidth = $('.container').outerWidth();
+var containerRightWidth = (windowWidth - containerWidth) / 2;
+$('#customSidebar').css("right", containerRightWidth)
+
+function containerRightWidthCal(){
+  var windowWidth = $(window).width();
+  var containerWidth = $('.container').outerWidth();
+  var containerRightWidth = (windowWidth - containerWidth) / 2;
+
+  $('#customSidebar').css("right", containerRightWidth)
+}
+containerRightWidthCal();
+$(window).on('resize', function(){
+  containerRightWidthCal();
+});
+
+
+//alert(containerRightWidth);
+
     //new WOW().init();
 
 })(jQuery);

@@ -41,6 +41,8 @@
       <div class="col-sm-12">
         <div class="text-center">
           <a id="quickViewOpener" href="#" class="btn btn-primary" data-toggle="modal" data-target="#quickViewModal">User – campaign page – popup-personal details</a>
+          <div style="height: 20px;"></div>
+          <a id="loginRegisterOpener" href="#" class="btn btn-primary" data-toggle="modal" data-target="#loginRegisterModal">Login Reginster popup</a>
         </div>
       </div>
     </div>
@@ -49,21 +51,142 @@
 <div class="modal fade vn-modal-con-wrap" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-content">
-          <div class="modal-login-form">
-            <p>Fill the fields to lore ipsum.. </p>
+        <div class="modal-login-form">
+          <p>Fill the fields to lore ipsum.. </p>
+          <div class="login-form">
+            <form>
+              <div class="fl-input-field-row sa-input">
+                <label>Name *</label>
+                <input type="text" name="" placeholder="Your Name">
+              </div>
+              <div class="fl-input-field-row sa-input">
+                <label>Email *</label>
+                <input type="email" name="" placeholder="Your Email">
+              </div>
+              <div class="fl-submit-btn w-full">
+                <input type="submit" value="COMPLETE YOUR SUPPORT">
+              </div>
+              <div class="fl-or-text">
+                <span>Or</span>
+              </div>
+              <div class="fl-sign-in-another">
+                <a class="gogle-login-btn" href="#">
+                  <i class="fab fa-google"></i>
+                  Sign In with Google
+                </a>
+                <a class="facebook-login-btn" href="#">
+                  <i class="fab fa-facebook-square"></i>
+                  Sign In with LinkedIn
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade vn-modal-con-wrap" id="loginRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="fl-login-form">
+        <div class="fl-tabs clearfix text-center">
+          <button class="tab-link current" data-tab="tab-1"><span>REGISTER</span></button>
+          <button class="tab-link" data-tab="tab-2"><span>Log in</span></button>
+        </div>
+        <div id="tab-1" class="fl-tab-content current">
+          <div class="tab-con-inr">
+            <form>
+              <div class="register-hdr-con">
+                <strong>Create your free online account</strong>
+                <span>Already have an account? <a href="#">Sign in here</a></span>
+              </div>
+              <div class="register-type-btn">
+                <a href="javascript:void(0)" class="register-ngo-btn">
+                  I’m NGO - <span>BeSupported</span>
+                </a>
+                <a href="javascript:void(0)" class="register-supporter-btn">I’m Supporter</a>
+              </div>
+              <div class="register-type-con">
+                  <div class="register-type-select">
+                    <div class="sa-selctpicker-ctlr">
+                      <select class="selectpicker" id="user-type-selection">
+                          <option selected="" value="Ngo">I am a NGO</option>
+                          <option selected="" value="User">I’m Supporter</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="fl-input-field-row sa-input ngo-name showCntrl" id="showNgo">
+                    <label>NGO Name *</label>
+                    <input type="text" name="" placeholder="Example Co.">
+                  </div>
+                  <div class="fl-input-field-row sa-input user-name showCntrl" id="showUser">
+                    <label>Your Name *</label>
+                    <input type="text" name="" placeholder="Your Name">
+                  </div>
+                  <div class="fl-input-field-row sa-input">
+                    <label>Email *</label>
+                    <input type="email" name="" placeholder="Your Email">
+                  </div>
+                  <div class="fl-input-field-row-grd clearfix">
+                    <div class="fl-input-field-row sa-input">
+                      <label>Create a password *</label>
+                      <input type="password" name="" placeholder="Password">
+                    </div>
+                    <div class="fl-input-field-row sa-input">
+                      <label>Confirm password *</label>
+                      <input type="password" name="" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="agree-checkmark">
+                    <div class="filter-check-row clearfix">
+                      <input type="checkbox" id="agree" name="agree" value="YES">
+                      <span class="checkmark"></span> 
+                      <label for="agree"> I have read & agree to Terms of Service</label>
+                    </div>
+                  </div>
+                  <div class="fl-submit-btn w-full">
+                    <input type="submit" value="Create Account">
+                  </div>
+                  <div class="fl-or-text">
+                    <span>Or</span>
+                  </div>
+                  <div class="fl-sign-in-another">
+                    <a class="gogle-login-btn" href="#">
+                      <i class="fab fa-google"></i>
+                      Sign In with Google
+                    </a>
+                  </div>
+                </div>
+              </form>
+          </div>
+        </div>
+        <div id="tab-2" class="fl-tab-content">
+          <div class="tab-con-inr">
             <div class="login-form">
               <form>
-                <div class="fl-input-field-row sa-input">
-                  <label>Name *</label>
-                  <input type="text" name="" placeholder="Your Name">
-                </div>
                 <div class="fl-input-field-row sa-input">
                   <label>Email *</label>
                   <input type="email" name="" placeholder="Your Email">
                 </div>
-                <div class="fl-submit-btn w-full">
-                  <input type="submit" value="COMPLETE YOUR SUPPORT">
+                <div class="fl-input-field-row sa-input">
+                  <label>Password *</label>
+                  <input type="password" name="" placeholder="Password">
+                </div>
+                <div class="fl-forget-row">
+                  <a class="fl-forget-pass-btn" href="#">Forgot your password?</a>
+                </div>
+                <div class="fl-submit-btn w-full forgot-pass-field-before">
+                  <input type="submit" value="Sign In">
+                </div>
+                <div class="forgot-pass-field-after">
+                  <div class="sa-input">
+                    <input type="email" name="" placeholder="Enter your email">
+                  </div>
+                  <div class="profile-submit-btn clearfix">
+                    <input type="submit" name="" value="Send">
+                  </div>
                 </div>
                 <div class="fl-or-text">
                   <span>Or</span>
@@ -75,16 +198,18 @@
                   </a>
                   <a class="facebook-login-btn" href="#">
                     <i class="fab fa-facebook-square"></i>
-                    Sign In with LinkedIn
+                    Sign In with Facebook
                   </a>
                 </div>
               </form>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 </section>
 
  

@@ -20,7 +20,8 @@ a.backto-panel {
   padding: 135px 0 90px;
 } 
 .miracle-plan-slider-wrp{
-  width: 60.5%;
+  width: 100%;
+  max-width: 751px;
   float: left;
 }
 .miraclePlanBigSlider .miraclePlanBigSlider-item{
@@ -119,10 +120,39 @@ span.miraclePlanthumbSlider-item img{
   width: 100%;
 }
 .miracle-plan-des-wrp{
-  width: 39.5%;
-  float: left;  
-  padding-left: 45px;
+ 
   padding-top: 5px;
+}
+
+#customSidebar{
+   width: 100%;
+   max-width: 480px;
+   
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 10%;
+  padding-top: 215px;
+  z-index: 5;
+  height: 100%;
+}
+#customSidebar .miracle-plan-des-innr{
+  background: #F4F5F9; 
+  padding: 20px 15px;
+  border-radius: 5px;
+}
+.user-rel-camp-sec{
+  position: relative;
+  z-index: 6;
+}
+
+.footer-wrp{
+  position: relative;
+  z-index: 7;
+}
+
+.miracle-plan-des-innr{
+  padding-left: 45px;
 }
 .miracle-plan-des-wrp span.human-tag{
   display: inline-block;
@@ -558,16 +588,45 @@ p.text-supportedbyUser,
 
 
 
-@media(max-width: 1499px){
-
+@media(max-width: 1799px){
+  .miracle-plan-sec{
+    padding-top: 80px;
+  }
+  #customSidebar{
+    padding-top: 160px;
+    max-width: 520px;
+  }
+  .miracle-plan-slider-wrp,
+  .user-story-cmpaign-con{
+    max-width: 715px;
+  }
+  .miracle-plan-des-wrp h3{
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+  .miracle-plan-progress-camp ul{
+    padding-bottom: 15px;
+  }
+  .miracle-plan-progress-btm-des{
+    padding-bottom: 20px;
+  }
+  .miracle-plan-progress-camp hr{
+    margin: 5px 0 15px;
+  }
 }
 
 @media(max-width: 1399px){
-
+  .miracle-plan-slider-wrp,
+  .user-story-cmpaign-con {
+      max-width: 720px;
+  }
 }
 
 @media(max-width: 1299px){
-
+  .miracle-plan-slider-wrp,
+  .user-story-cmpaign-con {
+      max-width: 650px;
+  }
 }
 
 @media(max-width: 1199px){
@@ -593,21 +652,33 @@ p.text-supportedbyUser,
   .user-story-cmpaign-sec {
     padding-bottom: 100px;
   }
+  .miracle-plan-slider-wrp, 
+  .user-story-cmpaign-con,
+  .miracle-plan-des-wrp {
+      max-width: 639px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      padding-left: 0;
+      padding-right: 0;
+  }
+
 }
 
 @media(max-width: 991px){
   .miracle-plan-slider-wrp {
     width: 100%;
+    float: none;
   }
   .miracle-plan-des-wrp {
-    width: 100%;
-    float: left;
+    width: auto;
+    float: none;
     padding: 0;
     padding-top: 30px;
-  }
-  .miracle-plan-des-innr{
-    max-width: 550px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: table!important;
   }
   .user-story-cmpaign-con {
     padding-left: 0;
@@ -616,6 +687,9 @@ p.text-supportedbyUser,
   }
   .user-rel-camp-sec .show-more-btn {
     padding-bottom: 60px!important;
+  }
+  .miracle-plan-des-innr {
+      padding-left: 0;
   }
 }
 
