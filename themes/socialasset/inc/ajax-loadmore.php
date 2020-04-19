@@ -101,6 +101,7 @@ function ajax_camp_script_load_more($args, $term_id='', $keyword = '', $htag = '
         'paged'=>$paged,
         'orderby' => 'date',
         'order'=> $sort,
+        'tax_query' => $termQuery
       ) 
     );
     if($query->have_posts()){
