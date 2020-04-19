@@ -43,6 +43,28 @@ box-shadow: 0px 14px 23px 0px rgba(227,228,232,1);
 	border-radius: 28px;
 }
 
+/*login-register-modal*/
+#loginRegisterModal .modal-dialog,
+#loginRegisterModal .modal-content{
+}
+
+#loginRegisterModal .fl-login-form{
+	max-width: 100%;
+	background: transparent!important;
+	box-shadow: none!important;
+	background: transparent;
+}
+
+@media(max-width: 575px){
+	#loginRegisterModal .fl-login-form{
+		padding: 35px 20px;
+	}
+	#loginRegisterModal .fl-input-field-row.sa-input{
+		width: 100%;
+	}
+}
+
+
 
 
 /* 
